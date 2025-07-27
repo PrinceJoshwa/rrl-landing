@@ -1,0 +1,349 @@
+// import { Button } from "@/components/ui/button"
+// import { MapPin, Home, ArrowRight, Star, Calendar } from "lucide-react"
+// import Image from "next/image"
+
+// const properties = [
+//   {
+//     name: "RRL Palacio",
+//     location: "Medahalli",
+//     type: "Luxury Property",
+//     status: "Ready to Move",
+//     description: "Our newly constructed luxury property, situated in Medahalli",
+//     image: "/placeholder.svg?height=300&width=400&text=RRL+Palacio",
+//     features: ["3 BHK", "2 BHK", "Premium Amenities"],
+//     rating: 4.8,
+//   },
+//   {
+//     name: "RRL Palm Altezze",
+//     location: "Varthur, Bangalore",
+//     type: "Premium Property",
+//     status: "Under Construction",
+//     description: "Our latest premium property located at Varthur, Bangalore",
+//     image: "/placeholder.svg?height=300&width=400&text=RRL+Palm+Altezze",
+//     features: ["2 BHK", "3 BHK", "Garden View"],
+//     rating: 4.9,
+//   },
+//   {
+//     name: "RRL Sequoia",
+//     location: "Varthur, Bangalore",
+//     type: "Luxurious Villa",
+//     status: "Ready to Move",
+//     description: "Our latest luxurious Villa located at Varthur, Bangalore",
+//     image: "/placeholder.svg?height=300&width=400&text=RRL+Sequoia",
+//     features: ["4 BHK Villa", "Private Garden", "Premium Location"],
+//     rating: 4.7,
+//   },
+//   {
+//     name: "RRL Nature Woods",
+//     location: "Sarjapur",
+//     type: "Premium Property",
+//     status: "Award Winner",
+//     description: "Our premium awarded property, situated in heart of Sarjapur",
+//     image: "/placeholder.svg?height=300&width=400&text=RRL+Nature+Woods",
+//     features: ["2 BHK", "3 BHK", "Nature View"],
+//     rating: 4.9,
+//   },
+// ]
+
+// export function Properties() {
+//   return (
+//     <section className="py-24 bg-white relative overflow-hidden">
+//       {/* Background Pattern */}
+//       <div className="absolute inset-0 opacity-5">
+//         <div className="absolute top-1/4 left-0 w-96 h-96 bg-emerald-200 rounded-full blur-3xl"></div>
+//         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-amber-200 rounded-full blur-3xl"></div>
+//       </div>
+
+//       <div className="container mx-auto px-4 relative">
+//         <div className="text-center mb-16">
+//           <div className="inline-flex items-center space-x-2 glass-effect rounded-full px-6 py-3 text-amber-800 mb-6">
+//             <Home className="h-5 w-5" />
+//             <span className="font-semibold">Find Your Dream Home</span>
+//           </div>
+
+//           <h2 className="text-4xl lg:text-5xl font-playfair font-bold text-slate-900 mb-6">
+//             RRL Premium
+//             <span className="text-gradient block">Properties</span>
+//           </h2>
+
+//           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+//             Your Next Address: Tour Our Exceptional Properties. From spacious bedrooms and state-of-the-art kitchens to
+//             breathtaking views and meticulously designed interiors, we provide you with a comprehensive overview of what
+//             each property has to offer.
+//           </p>
+//         </div>
+
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+//           {properties.map((property, index) => (
+//             <div key={index} className="group cursor-pointer" style={{ animationDelay: `${index * 0.1}s` }}>
+//               <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-3 border border-slate-100">
+//                 {/* Image Container */}
+//                 <div className="relative overflow-hidden">
+//                   <Image
+//                     src={property.image || "/placeholder.svg"}
+//                     alt={property.name}
+//                     width={400}
+//                     height={300}
+//                     className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+//                   />
+
+//                   {/* Status Badge */}
+//                   <div className="absolute top-4 left-4">
+//                     <div
+//                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
+//                         property.status === "Award Winner"
+//                           ? "bg-amber-600 text-white"
+//                           : property.status === "Ready to Move"
+//                             ? "bg-emerald-600 text-white"
+//                             : "bg-blue-600 text-white"
+//                       }`}
+//                     >
+//                       {property.status}
+//                     </div>
+//                   </div>
+
+//                   {/* Rating */}
+//                   <div className="absolute top-4 right-4 glass-effect rounded-full px-2 py-1">
+//                     <div className="flex items-center space-x-1">
+//                       <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
+//                       <span className="text-xs font-semibold text-slate-700">{property.rating}</span>
+//                     </div>
+//                   </div>
+
+//                   {/* Hover Overlay */}
+//                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+//                     <div className="absolute bottom-4 left-4 right-4">
+//                       <Button
+//                         size="sm"
+//                         className="w-full bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30"
+//                       >
+//                         View Details
+//                       </Button>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Content */}
+//                 <div className="p-6">
+//                   <div className="flex items-start justify-between mb-3">
+//                     <div>
+//                       <h3 className="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">
+//                         {property.name}
+//                       </h3>
+//                       <div className="flex items-center space-x-2 text-slate-500 mt-1">
+//                         <MapPin className="h-4 w-4" />
+//                         <span className="text-sm">{property.location}</span>
+//                       </div>
+//                     </div>
+//                     <div className="text-xs text-amber-600 font-semibold bg-amber-50 px-2 py-1 rounded-full">
+//                       {property.type}
+//                     </div>
+//                   </div>
+
+//                   <p className="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed">{property.description}</p>
+
+//                   {/* Features */}
+//                   <div className="flex flex-wrap gap-2 mb-4">
+//                     {property.features.map((feature, idx) => (
+//                       <span key={idx} className="bg-slate-100 text-slate-700 px-2 py-1 rounded-lg text-xs font-medium">
+//                         {feature}
+//                       </span>
+//                     ))}
+//                   </div>
+
+//                   {/* Footer */}
+//                   <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+//                     <div className="flex items-center space-x-2">
+//                       <Calendar className="h-4 w-4 text-slate-400" />
+//                       <span className="text-xs text-slate-500">Available Now</span>
+//                     </div>
+//                     <ArrowRight className="h-4 w-4 text-amber-600 group-hover:translate-x-1 transition-transform" />
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* CTA Section */}
+//         <div className="text-center">
+//           <Button
+//             size="lg"
+//             className="gradient-primary text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 group"
+//           >
+//             View All Properties
+//             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+//           </Button>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+
+import { Button } from "@/components/ui/button"
+import { MapPin, Home, ArrowRight, Star, Calendar } from "lucide-react"
+import Image from "next/image"
+
+const properties = [
+  {
+    name: "RRL Palacio",
+    location: "Medahalli",
+    type: "Luxury Property",
+    status: "Ready to Move",
+    description: "Our newly constructed luxury property, situated in Medahalli",
+    image: "/placeholder.svg?height=300&width=400&text=RRL+Palacio",
+    features: ["3 BHK", "2 BHK", "Premium Amenities"],
+    rating: 4.8,
+  },
+  {
+    name: "RRL Palm Altezze",
+    location: "Varthur, Bangalore",
+    type: "Premium Property",
+    status: "Under Construction",
+    description: "Our latest premium property located at Varthur, Bangalore",
+    image: "/placeholder.svg?height=300&width=400&text=RRL+Palm+Altezze",
+    features: ["2 BHK", "3 BHK", "Garden View"],
+    rating: 4.9,
+  },
+  {
+    name: "RRL Sequoia",
+    location: "Varthur, Bangalore",
+    type: "Luxurious Villa",
+    status: "Ready to Move",
+    description: "Our latest luxurious Villa located at Varthur, Bangalore",
+    image: "/placeholder.svg?height=300&width=400&text=RRL+Sequoia",
+    features: ["4 BHK Villa", "Private Garden", "Premium Location"],
+    rating: 4.7,
+  },
+  {
+    name: "RRL Nature Woods",
+    location: "Sarjapur",
+    type: "Premium Property",
+    status: "Award Winner",
+    description: "Our premium awarded property, situated in heart of Sarjapur",
+    image: "/placeholder.svg?height=300&width=400&text=RRL+Nature+Woods",
+    features: ["2 BHK", "3 BHK", "Nature View"],
+    rating: 4.9,
+  },
+]
+
+export function Properties() {
+  return (
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 glass-effect rounded-full px-6 py-3 text-amber-800 mb-6">
+            <Home className="h-5 w-5" />
+            <span className="font-semibold">Find Your Dream Home</span>
+          </div>
+
+          <h2 className="text-4xl lg:text-5xl font-playfair font-bold text-slate-900 mb-6">
+            RRL Premium
+            <span className="text-gradient block">Properties</span>
+          </h2>
+
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Your Next Address: Tour Our Exceptional Properties. From spacious bedrooms and state-of-the-art kitchens to
+            breathtaking views and meticulously designed interiors, we provide you with a comprehensive overview of what
+            each property has to offer.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {properties.map((property, index) => (
+            <div key={index} className="group cursor-pointer">
+              {/* Fixed Height Card */}
+              <div className="card-consistent bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-slate-100 h-[480px]">
+                {/* Image Container - Fixed Height */}
+                <div className="relative overflow-hidden h-56">
+                  {/* <Image
+                    src={property.image || "/placeholder.svg"}
+                    alt={property.name}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  /> */}
+
+                  {/* Status Badge */}
+                  <div className="absolute top-4 left-4">
+                    <div
+                      className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        property.status === "Award Winner"
+                          ? "bg-amber-600 text-white"
+                          : property.status === "Ready to Move"
+                            ? "bg-emerald-600 text-white"
+                            : "bg-blue-600 text-white"
+                      }`}
+                    >
+                      {property.status}
+                    </div>
+                  </div>
+
+                  {/* Rating */}
+                  <div className="absolute top-4 right-4 glass-effect rounded-full px-2 py-1">
+                    <div className="flex items-center space-x-1">
+                      <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
+                      <span className="text-xs font-semibold text-slate-700">{property.rating}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content - Flexible Height */}
+                <div className="card-content p-6">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-1">
+                        {property.name}
+                      </h3>
+                      <div className="flex items-center space-x-2 text-slate-500 mt-1">
+                        <MapPin className="h-4 w-4 flex-shrink-0" />
+                        <span className="text-sm line-clamp-1">{property.location}</span>
+                      </div>
+                    </div>
+                    <div className="text-xs text-amber-600 font-semibold bg-amber-50 px-2 py-1 rounded-full whitespace-nowrap ml-2">
+                      {property.type}
+                    </div>
+                  </div>
+
+                  <p className="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed">{property.description}</p>
+
+                  {/* Features */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {property.features.slice(0, 3).map((feature, idx) => (
+                      <span key={idx} className="bg-slate-100 text-slate-700 px-2 py-1 rounded-lg text-xs font-medium">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Footer - Always at bottom */}
+                  <div className="card-footer">
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="h-4 w-4 text-slate-400" />
+                        <span className="text-xs text-slate-500">Available Now</span>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-amber-600 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center">
+          <Button
+            size="lg"
+            className="gradient-primary text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300 group"
+          >
+            View All Properties
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
