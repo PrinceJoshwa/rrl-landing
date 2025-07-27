@@ -114,7 +114,7 @@ export function Testimonials() {
               </div>
 
               {/* Navigation */}
-              <div className="absolute top-1/2 -translate-y-1/2 -left-6">
+              <div className="absolute top-1/2 -translate-y-1/2 -left-0">
                 <Button
                   variant="outline"
                   size="icon"
@@ -125,7 +125,7 @@ export function Testimonials() {
                 </Button>
               </div>
 
-              <div className="absolute top-1/2 -translate-y-1/2 -right-6">
+              <div className="absolute top-1/2 -translate-y-1/2 -right-0">
                 <Button
                   variant="outline"
                   size="icon"
