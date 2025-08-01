@@ -195,16 +195,17 @@ export function Hero() {
       title: "Times Real Estate Icons Award",
       subtitle: "2025 Winner",
       description: "RRL Groups has crowned esteem award as builder of the year in Mid segment housing",
-      // image:
-      //   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RRL%20About%202-zM9MmpwqCq6RKBnrSJZ3uTXYC1oaYS.png",
+      // image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/award-iK7jltSorzWXAP0rA8yDuJSIx7Jd5c.jpeg",
+      image: "/awardhome.jpeg",
       badge: "Award Winner",
     },
     {
       title: "Global Real Estate Brand",
       subtitle: "2023 Champion",
       description: "Recognized globally for excellence in affordable luxury real estate development",
+      image:"/awardhome1.jpeg",
       // image:
-      //   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RRL%20Awards%201.png-FksyLN1g6wHuUiW2glPRE7i36SyyTN.jpeg",
+      //   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Award-1-300x200-X3AjoDa1JBlcgyPO3QA0i6JXVTftkv.jpeg",
       badge: "Global Recognition",
     },
   ]
@@ -308,16 +309,16 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Content - Static Image */}
+          {/* Right Content - Award Images */}
           <div className="relative">
             <div className="relative bg-white rounded-3xl shadow-2xl p-8">
-              {/* <Image
+              <Image
                 src={slides[currentSlide].image || "/placeholder.svg"}
                 alt={slides[currentSlide].title}
                 width={600}
                 height={400}
                 className="rounded-2xl w-full h-auto"
-              /> */}
+              />
 
               {/* Content Overlay */}
               <div className="absolute bottom-8 left-8 right-8 glass-effect rounded-2xl p-6">

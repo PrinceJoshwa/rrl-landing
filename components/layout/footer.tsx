@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Facebook, Linkedin, Mail, Phone, MapPin, Award } from "lucide-react"
+import Image from "next/image"
 
 const propertyLinks = [
   { name: "RRL Palacio", href: "/projects/palacio" },
@@ -32,13 +33,13 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1 space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 gradient-primary rounded-2xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">RRL</span>
-              </div>
-              <div>
-                <div className="font-playfair font-bold text-xl">RRL GROUP</div>
-                <div className="text-xs text-slate-400">Since 1996</div>
-              </div>
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-tXvIxVwZw5OQO7ujFIBV8ovBrR76Sz.png"
+                alt="RRL Group Logo"
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+              />
             </div>
 
             <p className="text-slate-300 text-sm leading-relaxed">
