@@ -34,7 +34,8 @@ export function Footer() {
           <div className="lg:col-span-1 space-y-6">
             <div className="flex items-center space-x-3">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-tXvIxVwZw5OQO7ujFIBV8ovBrR76Sz.png"
+                // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-tXvIxVwZw5OQO7ujFIBV8ovBrR76Sz.png"
+                src="/logo.png"
                 alt="RRL Group Logo"
                 width={120}
                 height={40}
@@ -55,19 +56,19 @@ export function Footer() {
             <div className="flex space-x-3">
               <Link
                 href="#"
-                className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300"
+                className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#d9a406] transition-colors duration-300"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
-                className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300"
+                className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#d9a406] transition-colors duration-300"
               >
                 <Linkedin className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
-                className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300"
+                className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-[#d9a406] transition-colors duration-300"
               >
                 <Mail className="h-5 w-5" />
               </Link>

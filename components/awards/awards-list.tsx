@@ -126,7 +126,7 @@ export function AwardsList() {
               className="bg-gradient-to-r from-slate-50 to-amber-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <div className="w-16 h-16 bg-[#d9a406] rounded-2xl flex items-center justify-center flex-shrink-0">
                   <award.icon className="h-8 w-8 text-white" />
                 </div>
 

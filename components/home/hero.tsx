@@ -144,7 +144,7 @@
 
 //               {/* Slide Content Overlay */}
 //               <div className="absolute bottom-8 left-8 right-8 glass-effect rounded-2xl p-6">
-//                 <div className="inline-block bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-semibold mb-3">
+//                 <div className="inline-block bg-[#d9a406] text-white px-3 py-1 rounded-full text-xs font-semibold mb-3">
 //                   {slides[currentSlide].badge}
 //                 </div>
 //                 <h3 className="text-xl font-bold text-slate-900 mb-2">{slides[currentSlide].title}</h3>
@@ -164,7 +164,7 @@
 //                   key={index}
 //                   onClick={() => setCurrentSlide(index)}
 //                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-//                     index === currentSlide ? "bg-amber-600 w-8" : "bg-slate-300"
+//                     index === currentSlide ? "bg-[#d9a406] w-8" : "bg-slate-300"
 //                   }`}
 //                 />
 //               ))}
@@ -322,11 +322,11 @@ export function Hero() {
 
               {/* Content Overlay */}
               <div className="absolute bottom-8 left-8 right-8 glass-effect rounded-2xl p-6">
-                <div className="inline-block bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                <div className="inline-block bg-[#d9a406] text-white px-3 py-1 rounded-full text-xs font-semibold mb-3">
                   {slides[currentSlide].badge}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">{slides[currentSlide].title}</h3>
-                <p className="text-sm text-slate-600">{slides[currentSlide].description}</p>
+                <p className="text-sm text-white">{slides[currentSlide].description}</p>
               </div>
 
               {/* Award Badge */}
@@ -342,7 +342,7 @@ export function Hero() {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide ? "bg-amber-600 w-8" : "bg-slate-300"
+                    index === currentSlide ? "bg-[#d9a406] w-8" : "bg-slate-300"
                   }`}
                 />
               ))}

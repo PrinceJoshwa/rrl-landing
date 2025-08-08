@@ -92,7 +92,7 @@
 //                     <div
 //                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
 //                         property.status === "Award Winner"
-//                           ? "bg-amber-600 text-white"
+//                           ? "bg-[#d9a406] text-white"
 //                           : property.status === "Ready to Move"
 //                             ? "bg-emerald-600 text-white"
 //                             : "bg-blue-600 text-white"
@@ -198,7 +198,7 @@ const residentialProperties = [
     status: "Ready to Move",
     description: "Our newly constructed luxury property, situated in Medahalli",
     image: "/LookProject2.jpeg",
-    features: ["3 BHK", "2 BHK", "Premium Amenities"],
+    features: [ "Premium Amenities", "Funrished smart homes"],
     rating: 4.8,
     price: "₹45 Lakhs onwards",
   },
@@ -210,7 +210,7 @@ const residentialProperties = [
     status: "Under Construction",
     description: "Our latest premium property located at Varthur, Bangalore",
     image: "/LookProject1.jpeg",
-    features: ["2 BHK", "3 BHK", "Garden View"],
+    features: ["High Raise  Apartment", "Premium Apartment"],
     rating: 4.9,
     price: "₹38 Lakhs onwards",
   },
@@ -219,10 +219,10 @@ const residentialProperties = [
     name: "RRL Sequoia",
     location: "Varthur, Bangalore",
     type: "Luxurious Villa",
-    status: "Ready to Move",
+    status: "Available",
     description: "Our latest luxurious Villa located at Varthur, Bangalore",
     image: "/Sequoia.jpg",
-    features: ["4 BHK Villa", "Private Garden", "Premium Location"],
+    features: ["4 BHK Villa", "Garden", "Premium Location"],
     rating: 4.7,
     price: "₹85 Lakhs onwards",
   },
@@ -234,22 +234,11 @@ const residentialProperties = [
     status: "Award Winner",
     description: "Our premium awarded property, situated in heart of Sarjapur",
     image: "/LookProject5.jpeg",
-    features: ["2 BHK", "3 BHK", "Nature View"],
+    features: ["Nature View", "High end award winning amenties"],
     rating: 4.9,
     price: "₹42 Lakhs onwards",
   },
-  {
-    id: "oasis",
-    name: "RRL Oasis",
-    location: "Bangalore",
-    type: "Residential Complex",
-    status: "Launching Soon",
-    description: "Upcoming residential project with modern amenities",
-    image: "/Oasis.jpg",
-    features: ["1 BHK", "2 BHK", "Swimming Pool"],
-    rating: 4.6,
-    price: "₹28 Lakhs onwards",
-  },
+  
 ]
 
 const commercialProperties = [
@@ -278,16 +267,16 @@ const commercialProperties = [
     price: "₹55 Lakhs onwards",
   },
   {
-    id: "business-park",
-    name: "RRL Business Park",
-    location: "Electronic City",
-    type: "Business Park",
-    status: "Under Development",
-    description: "State-of-the-art business park with modern infrastructure",
-    image: "/business.jpeg",
-    features: ["IT Spaces", "Food Court", "Conference Halls"],
-    rating: 4.5,
-    price: "₹75 Lakhs onwards",
+    id: "oasis",
+    name: "RRL Oasis",
+    location: "Bangalore",
+    type: "Commercial Building",
+    status: "Operational",
+    description: "Upcoming residential project with modern amenities",
+    image: "/Oasis.jpg",
+    features: ["1 BHK", "2 BHK", "Swimming Pool"],
+    rating: 4.6,
+    price: "₹28 Lakhs onwards",
   },
 ]
 
@@ -362,7 +351,7 @@ export function Properties() {
                     <div
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
                         property.status === "Award Winner"
-                          ? "bg-amber-600 text-white"
+                          ? "bg-[#d9a406] text-white"
                           : property.status === "Ready to Move" || property.status === "Operational"
                             ? "bg-emerald-600 text-white"
                             : "bg-blue-600 text-white"
@@ -401,7 +390,7 @@ export function Properties() {
                   <p className="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed">{property.description}</p>
 
                   {/* Price */}
-                  <div className="text-lg font-bold text-slate-900 mb-4">{property.price}</div>
+                  {/* <div className="text-lg font-bold text-slate-900 mb-4">{property.price}</div> */}
 
                   {/* Features */}
                   <div className="flex flex-wrap gap-2 mb-4">

@@ -108,7 +108,7 @@ export function AwardsHero() {
             {/* Award Highlights */}
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-[#D9A406] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <Star className="h-3 w-3 text-white" />
                 </div>
                 <div>
@@ -118,7 +118,7 @@ export function AwardsHero() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-[#d9a406] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <Star className="h-3 w-3 text-white" />
                 </div>
                 <div>
@@ -128,7 +128,7 @@ export function AwardsHero() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-[#d9a406] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <Star className="h-3 w-3 text-white" />
                 </div>
                 <div>
@@ -152,7 +152,7 @@ export function AwardsHero() {
             </div>
 
             {/* Floating Award Badge */}
-            <div className="absolute -top-6 -right-6 bg-amber-600 text-white p-4 rounded-full shadow-lg">
+            <div className="absolute -top-6 -right-6 bg-[#d9a406] text-white p-4 rounded-full shadow-lg">
               <Award className="h-8 w-8" />
             </div>
           </div>

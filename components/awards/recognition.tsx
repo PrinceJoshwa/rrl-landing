@@ -98,7 +98,7 @@ export function Recognition() {
             {/* Recognition Stats */}
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center p-4 bg-slate-50 rounded-lg">
-                <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <div className="w-12 h-12 bg-[#d9a406] rounded-lg flex items-center justify-center mx-auto mb-2">
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <div className="text-2xl font-bold text-slate-900">600+</div>
@@ -106,7 +106,7 @@ export function Recognition() {
               </div>
 
               <div className="text-center p-4 bg-slate-50 rounded-lg">
-                <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <div className="w-12 h-12 bg-[#d9a406] rounded-lg flex items-center justify-center mx-auto mb-2">
                   <Building className="h-6 w-6 text-white" />
                 </div>
                 <div className="text-2xl font-bold text-slate-900">7+</div>
@@ -114,9 +114,9 @@ export function Recognition() {
               </div>
             </div>
 
-            <Button className="gradient-primary text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
+            {/* <Button className="gradient-primary text-white font-semibold px-8 py-4 rounded-full hover:shadow-xl transition-all duration-300">
               RRL Recognition
-            </Button>
+            </Button> */}
           </div>
 
           {/* Right Content - Quote */}
@@ -132,7 +132,7 @@ export function Recognition() {
               </blockquote>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#d9a406] rounded-full flex items-center justify-center">
                   <span className="text-white font-bold">RRL</span>
                 </div>
                 <div>
@@ -142,8 +142,8 @@ export function Recognition() {
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-amber-600 rounded-full opacity-20"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-amber-600 rounded-full opacity-10"></div>
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-[#d9a406] rounded-full opacity-20"></div>
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[#d9a406] rounded-full opacity-10"></div>
             </div>
           </div>
         </div>

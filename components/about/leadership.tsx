@@ -204,7 +204,7 @@ export function Leadership() {
             </div>
 
             <div className="space-y-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#d9a406] rounded-xl flex items-center justify-center">
                 <Lightbulb className="h-6 w-6 text-white" />
               </div>
               <h3 className="font-bold text-slate-900">Innovation Focus</h3>

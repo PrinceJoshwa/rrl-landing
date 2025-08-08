@@ -26,7 +26,7 @@
 //     suffix: "+",
 //     label: "Sq Ft Covered",
 //     description: "Total construction area delivered",
-//     color: "from-amber-400 to-amber-600",
+//     color: "bg-[#d9a406]",
 //   },
 //   {
 //     icon: Award,
@@ -150,29 +150,33 @@ const stats = [
     icon: Users,
     value: "600+",
     label: "Happy Families",
-    description: "Satisfied customers across Bangalore",
-    color: "from-blue-400 to-blue-600",
+    description: "Satisfied customers",
+    // color: "from-blue-400 to-blue-600",
+    color: "bg-[#d9a406]",
+
   },
   {
     icon: Building,
     value: "3+",
     label: "Projects Completed",
     description: "Premium residential developments",
-    color: "from-emerald-400 to-emerald-600",
+    // color: "from-emerald-400 to-emerald-600",
+    color: "bg-black",
   },
   {
     icon: Target,
     value: "999+",
     label: "Sq Ft Covered",
     description: "Total construction area delivered",
-    color: "from-amber-400 to-amber-600",
+    color: "bg-[#d9a406]",
   },
   {
     icon: Award,
     value: "150+",
     label: "Dedicated Employees",
     description: "Professional team members",
-    color: "from-purple-400 to-purple-600",
+    // color: "from-purple-400 to-purple-600",
+    color: "bg-black",
   },
 ]
 
@@ -194,7 +198,7 @@ export function Stats() {
           {stats.map((stat, index) => (
             <div key={index} className="group">
               {/* Fixed Height Card */}
-              <div className="card-consistent bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 h-64">
+              <div className="card-consistent bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 h-68">
                 <div className="card-content">
                   {/* Icon */}
                   <div className="mb-6">

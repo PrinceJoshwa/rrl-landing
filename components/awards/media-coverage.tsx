@@ -110,7 +110,7 @@ export function MediaCoverage() {
 
               <div className="p-8">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#d9a406] rounded-full flex items-center justify-center">
                     <Globe className="h-5 w-5 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900">{outlet.name}</h3>
@@ -165,7 +165,7 @@ export function MediaCoverage() {
           </div>
 
           <div className="text-center glass-effect rounded-2xl p-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-[#d9a406] rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Award className="h-8 w-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-slate-900 mb-2">Global</div>

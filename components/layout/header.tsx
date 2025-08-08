@@ -191,6 +191,7 @@ const navigation = [
     },
   },
   { name: "Awards", href: "/awards" },
+  // { name: "Partners", href: "/partners" },
   { name: "Contact", href: "/contact" },
 ]
 
