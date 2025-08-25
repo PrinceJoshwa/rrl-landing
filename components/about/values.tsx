@@ -52,7 +52,7 @@ export function Values() {
               key={index}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#d9a406] rounded-2xl flex items-center justify-center mb-6">
                 <value.icon className="h-8 w-8 text-white" />
               </div>
 

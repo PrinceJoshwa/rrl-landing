@@ -19,7 +19,7 @@ export function ContactHero() {
             {/* Contact Info */}
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#d9a406] rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -30,7 +30,7 @@ export function ContactHero() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#d9a406] rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -40,7 +40,7 @@ export function ContactHero() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#d9a406] rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -52,7 +52,7 @@ export function ContactHero() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#d9a406] rounded-lg flex items-center justify-center flex-shrink-0">
                   <Clock className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -69,7 +69,7 @@ export function ContactHero() {
             <div className="bg-white rounded-2xl shadow-2xl p-8">
               <div className="aspect-video bg-slate-100 rounded-lg flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[#d9a406] rounded-full flex items-center justify-center mx-auto mb-4">
                     <Phone className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Ready to Connect?</h3>

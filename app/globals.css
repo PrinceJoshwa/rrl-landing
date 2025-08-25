@@ -59,55 +59,115 @@
 }
 
 /* Custom Styles */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.bg-gold-100 { background-color: #fef9e7; }
+.bg-gold-300 { background-color: #f8c471; }
+.bg-gold-400 { background-color: #f5b041; }
+.bg-gold-500 { background-color: #D9A406; }
+.bg-gold-600 { background-color: #b98a05; }
+.bg-gold-700 { background-color: #9a7104; }
+.bg-gold-800 { background-color: #7a5903; }
+.bg-gold-900 { background-color: #5b4102; }
+
+.text-gold-300 { color: #f8c471; }
+.text-gold-400 { color: #f5b041; }
+.text-gold-500 { color: #D9A406; }
+.text-gold-600 { color: #b98a05; }
+.text-gold-800 { color: #7a5903; }
+
+.border-gold-300 { border-color: #f8c471; }
+.border-gold-400 { border-color: #f5b041; }
+.border-gold-600 { border-color: #b98a05; }
+.border-gold-700 { border-color: #9a7104; }
+.border-gold-800 { border-color: #7a5903; }
+
+.bg-light-gold {
+  background-color: #fffaf0;
 }
 
-.gradient-primary {
-  /* background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%); */
-  /* background: linear-gradient(135deg,  #CBA116); */
-  background: linear-gradient(135deg,  #D9A406);
+.bg-light-black {
+  background-color: #1a1a1a;
 }
 
-.gradient-secondary {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+.bg-grid-white\/\[0\.05\] {
+  background-image: linear-gradient(white 1px, transparent 1px), linear-gradient(to right, white 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  opacity: 0.05;
 }
 
-.text-gradient {
-  /* background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%); */
-  background: linear-gradient(135deg,  #D9A406);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+
+/* Add these styles to the bottom of your globals.css file */
+
+.embla {
+  position: relative;
+  padding: 0 4rem; /* Adds space for the navigation buttons */
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.embla__viewport {
+  overflow: hidden;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
+.embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: -1.25rem; /* Offset the slide margin */
+}
+
+.embla__slide {
+  position: relative;
+  flex: 0 0 22%; /* Adjust width for how many slides to show */
+  min-width: 0;
+  padding-left: 1.25rem; /* Gutter between slides */
+}
+
+@media (max-width: 1024px) {
+  .embla__slide {
+    flex-basis: 33%;
   }
-  50% {
-    transform: translateY(-20px);
+}
+
+@media (max-width: 768px) {
+  .embla {
+    padding: 0 2.5rem;
+  }
+  .embla__slide {
+    flex-basis: 50%;
   }
 }
 
-.animate-slide-up {
-  animation: slideUp 0.6s ease-out forwards;
+.embla__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(217, 164, 6, 0.8); /* gold-500 with opacity */
+  color: black;
+  transition: all 0.2s ease-in-out;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.embla__button:hover {
+  background-color: #D9A406; /* gold-500 solid */
+}
+
+
+.embla__button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.embla__button--prev {
+  left: 0rem;
+}
+
+.embla__button--next {
+  right: 0rem;
 }

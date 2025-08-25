@@ -39,23 +39,23 @@ export function Timeline() {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-yellow-600 hidden md:block"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[#d9a406] hidden md:block"></div>
 
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
                 <div key={index} className="relative flex items-start space-x-8">
                   {/* Timeline dot */}
-                  <div className="hidden md:flex w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full items-center justify-center flex-shrink-0 relative z-10">
+                  <div className="hidden md:flex w-16 h-16 bg-[#d9a406] rounded-full items-center justify-center flex-shrink-0 relative z-10">
                     <milestone.icon className="h-8 w-8 text-white" />
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 bg-slate-50 rounded-2xl p-8 md:ml-0 ml-0">
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className="md:hidden w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
+                      <div className="md:hidden w-12 h-12 bg-[#d9a406] rounded-full flex items-center justify-center">
                         <milestone.icon className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-2xl font-bold text-yellow-600">{milestone.year}</div>
+                      <div className="text-2xl font-bold text-[#d9a406]">{milestone.year}</div>
                     </div>
 
                     <h3 className="text-xl font-bold text-slate-900 mb-2">{milestone.title}</h3>

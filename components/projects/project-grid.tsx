@@ -191,7 +191,7 @@ export function ProjectGrid() {
                     height={300}
                     className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 left-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  <div className="absolute top-4 left-4 bg-[#d9a406] text-white px-3 py-1 rounded-full text-xs font-medium">
                     {project.type}
                   </div>
                   <div className="absolute top-4 right-4 bg-white/90 text-slate-700 px-3 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
