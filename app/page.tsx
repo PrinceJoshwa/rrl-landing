@@ -3704,7 +3704,7 @@ function PartnersSection() {
     const marketingPartners = [
       { name: "Magic Bricks", src: "/logos/magic-bricks.png" },
       { name: "Housing.com", src: "/logos/housing-com.png" },
-      { name: "Marketly", src: "/logos/marketly.png" },
+      { name: "Marketly", src: "/logos/marketly.jpg" },
       { name: "99acres", src: "/logos/99acres.png" },
     ]
   
