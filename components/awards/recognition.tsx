@@ -25,7 +25,7 @@
 //                 <div className="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mx-auto mb-2">
 //                   <Users className="h-6 w-6 text-white" />
 //                 </div>
-//                 <div className="text-2xl font-bold text-slate-900">600+</div>
+//                 <div className="text-2xl font-bold text-slate-900">1000+</div>
 //                 <div className="text-sm text-slate-600">Happy Families</div>
 //               </div>
 
@@ -101,7 +101,7 @@ export function Recognition() {
                 <div className="w-12 h-12 bg-[#d9a406] rounded-lg flex items-center justify-center mx-auto mb-2">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <div className="text-2xl font-bold text-slate-900">600+</div>
+                <div className="text-2xl font-bold text-slate-900">1000+</div>
                 <div className="text-sm text-slate-600">Happy Families</div>
               </div>
 

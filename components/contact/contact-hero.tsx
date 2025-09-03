@@ -35,7 +35,7 @@ export function ContactHero() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900 mb-1">Email Us</h3>
-                  <p className="text-slate-600">enquiry@rrlbuildersanddevelopers.com</p>
+                  <p className="text-slate-600">info@rrl.com</p>
                 </div>
               </div>
 

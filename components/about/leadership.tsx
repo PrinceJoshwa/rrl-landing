@@ -242,7 +242,7 @@ export function Leadership() {
 
         {/* <div className="absolute -bottom-6 -left-6 glass-effect rounded-2xl p-4 shadow-lg hidden lg:block">
           <div className="text-center">
-            <div className="text-2xl font-bold text-emerald-600">600+</div>
+            <div className="text-2xl font-bold text-emerald-600">1000+</div>
             <div className="text-xs text-slate-600 font-medium">Happy Families</div>
           </div>
         </div> */}

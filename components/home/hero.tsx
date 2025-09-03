@@ -74,7 +74,7 @@
 //             {/* Key Stats */}
 //             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 //               <div className="text-center">
-//                 <div className="text-3xl font-bold text-slate-900">600+</div>
+//                 <div className="text-3xl font-bold text-slate-900">1000+</div>
 //                 <div className="text-sm text-slate-600">Happy Families</div>
 //               </div>
 //               <div className="text-center">
@@ -252,7 +252,7 @@ export function Hero() {
             {/* Key Stats - Fixed Height Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center h-20 flex flex-col justify-center">
-                <div className="text-3xl font-bold text-slate-900">600+</div>
+                <div className="text-3xl font-bold text-slate-900">1000+</div>
                 <div className="text-sm text-slate-600">Happy Families</div>
               </div>
               <div className="text-center h-20 flex flex-col justify-center">

@@ -133,20 +133,20 @@ function Hero() {
             {/* Key Stats */}
             <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
               <div className="text-center">
-                <div className="text-4xl font-bold text-gold-400">600+</div>
+                <div className="text-4xl font-bold text-gold-400">1000+</div>
                 <div className="text-sm text-gray-400">Happy Families</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-gold-400">29</div>
+                <div className="text-4xl font-bold text-gold-400">10</div>
                 <div className="text-sm text-gray-400">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-gold-400">3+</div>
+                <div className="text-4xl font-bold text-gold-400">5+</div>
                 <div className="text-sm text-gray-400">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-gold-400">999+</div>
-                <div className="text-sm text-gray-400">Sq Ft Covered</div>
+                <div className="text-4xl font-bold text-gold-400">500+</div>
+                <div className="text-sm text-gray-400">Trusted Partners</div>
               </div>
             </div>
 
@@ -182,7 +182,7 @@ function Hero() {
               <div className="h-6 w-px bg-gold-800"></div>
               <div className="flex items-center space-x-2">
                 <Building className="h-5 w-5 text-gold-400" />
-                <span className="text-sm font-medium text-gray-400">150+ Dedicated Employees</span>
+                <span className="text-sm font-medium text-gray-400">150+ Proud Employees</span>
               </div>
             </div>
           </motion.div>
@@ -443,26 +443,26 @@ function Stats() {
   const statsData = [
     {
       icon: Users,
-      value: "600+",
+      value: "1000+",
       label: "Happy Families",
       description: "Satisfied customers",
     },
     {
       icon: Building,
-      value: "3+",
+      value: "5+",
       label: "Projects Completed",
       description: "Premium residential developments",
     },
     {
       icon: Target,
-      value: "999+",
-      label: "Sq Ft Covered",
+      value: "500+",
+      label: "Trusted Partners",
       description: "Total construction area delivered",
     },
     {
       icon: Award,
       value: "150+",
-      label: "Dedicated Employees",
+      label: "Proud Employees",
       description: "Professional team members",
     },
   ]
@@ -524,7 +524,7 @@ function Stats() {
               "With our in-depth knowledge of the local market and industry trends, we offer valuable insights to help
               you make well-informed decisions. Let us build an affordable society together."
             </p>
-            <div className="mt-4 font-semibold text-gold-600">- RRL Developers and Builders</div>
+            <div className="mt-4 font-semibold text-gold-600">- RRL Groups</div>
           </div>
         </div>
       </div>
@@ -553,9 +553,9 @@ function Properties() {
       name: "RRL Palm Altezze",
       location: "Varthur, Bangalore",
       type: "Premium Property",
-      status: "Under Construction",
+      status: "Coming Soon",
       description: "Our latest premium property located at Varthur, Bangalore",
-      image: "/LookProject1.jpeg",
+      image: "/coming.png",
       features: ["High Rise Apartment", "Premium Apartment"],
       rating: 4.9,
       price: "₹38 Lakhs onwards",
@@ -565,7 +565,7 @@ function Properties() {
       name: "RRL Sequoia",
       location: "Varthur, Bangalore",
       type: "Luxurious Villa",
-      status: "Available",
+      status: "Coming Soon",
       description: "Our latest luxurious Villa located at Varthur, Bangalore",
       image: "/Sequoia.jpg",
       features: ["4 BHK Villa", "Garden", "Premium Location"],
@@ -577,7 +577,7 @@ function Properties() {
       name: "RRL Nature Woods",
       location: "Sarjapur",
       type: "Premium Property",
-      status: "Award Winner",
+      status: "Completed",
       description: "Our premium awarded property, situated in heart of Sarjapur",
       image: "/LookProject5.jpeg",
       features: ["Nature View", "High end award winning amenities"],
@@ -616,7 +616,7 @@ function Properties() {
       name: "RRL Oasis",
       location: "Bangalore",
       type: "Commercial Building",
-      status: "Operational",
+      status: "Upcoming Commercial Project",
       description: "Upcoming residential project with modern amenities",
       image: "/Oasis.jpg",
       features: ["1 BHK", "2 BHK", "Swimming Pool"],
@@ -734,8 +734,8 @@ function Properties() {
                     {property.description}
                   </p>
                   <div className="mt-auto flex items-center justify-between border-t border-gold-800 pt-4">
-                    <span className="text-lg font-bold text-gold-400">{property.price}</span>
-                    <ArrowRight className="h-5 w-5 text-gold-400 transition-transform group-hover:translate-x-1" />
+                    {/* <span className="text-lg font-bold text-gold-400">{property.price}</span> */}
+                    {/* <ArrowRight className="h-5 w-5 text-gold-400 transition-transform group-hover:translate-x-1" /> */}
                   </div>
                 </div>
                 </div>
@@ -753,7 +753,7 @@ function Properties() {
             </div>
           </div>
           <div className="rounded-2xl p-6 text-center bg-gray-900 border border-gold-800">
-            <div className="mb-2 text-3xl font-bold text-gold-400">600+</div>
+            <div className="mb-2 text-3xl font-bold text-gold-400">1000+</div>
             <div className="text-gray-400">Happy Customers</div>
           </div>
           <div className="rounded-2xl p-6 text-center bg-gray-900 border border-gold-800">
@@ -1049,13 +1049,13 @@ function Leadership() {
               <div className="rounded-3xl bg-gray-900 p-6 shadow-xl border border-gold-800">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/laksh.jpg-3CxmlRD88SRT3S6vzyz37wTrkmDwgZ.jpeg"
-                  alt="Mr. Lakshman"
+                  alt="Mr. Lakshman Reddy"
                   width={300}
                   height={400}
                   className="h-auto w-full rounded-2xl shadow-lg"
                 />
                 <div className="mt-4 text-center">
-                  <h3 className="font-bold text-white">Mr. Lakshman</h3>
+                  <h3 className="font-bold text-white">Mr. Lakshman Reddy</h3>
                   <p className="text-sm text-gray-400">Co-Founder & Director</p>
                 </div>
               </div>
@@ -1478,7 +1478,7 @@ function CallToAction() {
                     </div>
                     <div>
                       <h4 className="mb-2 text-lg font-semibold">Email Us</h4>
-                      <p className="text-gray-700">enquiry@rrlbuilders.com</p>
+                      <p className="text-gray-700">info@rrl.com</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">

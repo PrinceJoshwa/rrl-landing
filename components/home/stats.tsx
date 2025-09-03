@@ -148,7 +148,7 @@ import { Users, Building, Target, Award } from "lucide-react"
 const stats = [
   {
     icon: Users,
-    value: "600+",
+    value: "1000+",
     label: "Happy Families",
     description: "Satisfied customers",
     // color: "from-blue-400 to-blue-600",

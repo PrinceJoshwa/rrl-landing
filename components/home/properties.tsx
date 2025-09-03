@@ -249,7 +249,7 @@
 //           </div>
 
 //           <div className="text-center glass-effect rounded-2xl p-6">
-//             <div className="text-3xl font-bold text-slate-900 mb-2">600+</div>
+//             <div className="text-3xl font-bold text-slate-900 mb-2">1000+</div>
 //             <div className="text-slate-600">Happy Customers</div>
 //           </div>
 
@@ -586,7 +586,7 @@ export function Properties() {
           </div>
 
           <div className="text-center glass-effect rounded-2xl p-6">
-            <div className="text-3xl font-bold text-slate-900 mb-2">600+</div>
+            <div className="text-3xl font-bold text-slate-900 mb-2">1000+</div>
             <div className="text-slate-600">Happy Customers</div>
           </div>
 

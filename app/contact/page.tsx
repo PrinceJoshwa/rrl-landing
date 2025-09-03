@@ -64,7 +64,7 @@
 // //                 </div>
 // //                 <div>
 // //                   <h3 className="font-semibold text-slate-900 mb-1">Email Us</h3>
-// //                   <p className="text-slate-600">enquiry@rrlbuildersanddevelopers.com</p>
+// //                   <p className="text-slate-600">info@rrl.com</p>
 // //                 </div>
 // //               </div>
 
@@ -237,7 +237,7 @@
 // //                 </p>
 // //                 <div className="flex justify-center space-x-6 text-sm text-slate-500">
 // //                   <span>📞 +91-8068352626</span>
-// //                   <span>✉️ enquiry@rrlbuildersanddevelopers.com</span>
+// //                   <span>✉️ info@rrl.com</span>
 // //                 </div>
 // //               </div>
 // //             </div>
@@ -399,7 +399,7 @@
 //               </div>
 //               <div>
 //                 <h3 className="font-semibold text-black mb-1">Email Us</h3>
-//                 <p className="text-gray-700">enquiry@rrlbuildersanddevelopers.com</p>
+//                 <p className="text-gray-700">info@rrl.com</p>
 //               </div>
 //             </motion.div>
 //             <motion.div 
@@ -567,7 +567,7 @@ function ContactForm() {
               </div>
               <div>
                 <h3 className="font-semibold text-black mb-1">Email Us</h3>
-                <p className="text-gray-700">enquiry@rrlbuildersanddevelopers.com</p>
+                <p className="text-gray-700">info@rrl.com</p>
               </div>
             </motion.div>
             <motion.div 
@@ -682,7 +682,7 @@ function LocationMap() {
               {/* ADDED: Contact details below the map */}
               <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
                 <span>📞 +91-8068352626</span>
-                <span>✉️ enquiry@rrlbuildersanddevelopers.com</span>
+                <span>✉️ info@rrl.com</span>
               </div>
             </div>
           </div>

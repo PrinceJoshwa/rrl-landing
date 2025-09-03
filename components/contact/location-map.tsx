@@ -30,7 +30,7 @@ export function LocationMap() {
                 <p className="text-slate-600 mb-2">RRL Towers, 4th Floor, Sampige Jala, Sarjapur, Attibele Rd, Bengaluru, Karnataka 561113</p>
                 <div className="flex justify-center space-x-6 text-sm text-slate-500">
                   <span>📞 +91-8068352626</span>
-                  <span>✉️ enquiry@rrlbuildersanddevelopers.com</span>
+                  <span>✉️ info@rrl.com</span>
                 </div>
               </div>
             </div>

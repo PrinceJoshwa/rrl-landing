@@ -144,7 +144,7 @@ export function CallToAction() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Email Us</h4>
-                    <p className="text-slate-300">enquiry@rrlbuildersanddevelopers.com</p>
+                    <p className="text-slate-300">info@rrl.com</p>
                     <p className="text-xs text-slate-400 mt-1">We'll respond within 24 hours</p>
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export function CallToAction() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                    <span className="text-sm text-slate-300">600+ Happy Families</span>
+                    <span className="text-sm text-slate-300">1000+ Happy Families</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
