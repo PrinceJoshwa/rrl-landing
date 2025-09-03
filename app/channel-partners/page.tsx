@@ -55,7 +55,7 @@ export default function ChannelPartnersPage() {
         <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-3xl font-bold font-playfair sm:text-4xl">Empowering Success in Real Estate</h2>
             <p className="mx-auto mt-6 text-lg leading-relaxed text-gray-400">
-                At RRL, we know success is about more than transactions—it's about building strong relationships. Our channel partner program, "The Bridge," is built on a foundation of mutual growth, trust, and innovation. [cite: 148, 151, 152] Our dedicated partners are the backbone of our vision, helping us create lasting value for clients and transforming the real estate landscape together. 
+                At RRL, we know success is about more than transactions—it's about building strong relationships. Our channel partner program, "The Bridge is built on a foundation of mutual growth, trust, and innovation". Our dedicated partners are the backbone of our vision, helping us create lasting value for clients and transforming the real estate landscape together. 
             </p>
         </div>
       </section>
@@ -71,7 +71,7 @@ export default function ChannelPartnersPage() {
                 <div className="text-center">
                     <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gold-500 mx-auto mb-4"><BarChart className="h-8 w-8 text-black" /></div>
                     <h3 className="text-xl font-bold">Real Estate Training</h3>
-                    <p className="text-gray-400 mt-2">Comprehensive training and sales techniques to stay ahead in the market. [cite: 168, 169]</p>
+                    <p className="text-gray-400 mt-2">Comprehensive training and sales techniques to stay ahead in the market.</p>
                 </div>
                 <div className="text-center">
                     <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gold-500 mx-auto mb-4"><UserCheck className="h-8 w-8 text-black" /></div>
@@ -98,20 +98,20 @@ export default function ChannelPartnersPage() {
                 <Card className="bg-gray-900/50 border-gold-800">
                     <CardContent className="p-8">
                         <Star className="h-6 w-6 text-gold-400 mb-4" />
-                        <p className="text-gray-300 italic">"The best part of any RRL product is the value it provides. They consistently deliver the best returns and on-time handovers to residents, which makes our job easy. It all comes down to delivering customer happiness." [cite: 163, 164]</p>
+                        <p className="text-gray-300 italic">"The best part of any RRL product is the value it provides. They consistently deliver the best returns and on-time handovers to residents, which makes our job easy. It all comes down to delivering customer happiness."</p>
                         <div className="mt-4 pt-4 border-t border-gold-800">
                             <p className="font-bold text-white">Mudit Sharma</p>
-                            <p className="text-sm text-gray-400">Sales Head, Brick By Brick Consulting [cite: 159]</p>
+                            <p className="text-sm text-gray-400">Sales Head, Brick By Brick Consulting.</p>
                         </div>
                     </CardContent>
                 </Card>
                 <Card className="bg-gray-900/50 border-gold-800">
                     <CardContent className="p-8">
                         <Star className="h-6 w-6 text-gold-400 mb-4" />
-                        <p className="text-gray-300 italic">"Our strategic partnership with RRL has fostered sustained growth and mutual achievement. We have had the chance to collaborate closely, and we are fully aligned with their vision of quality and customer satisfaction." [cite: 160, 162]</p>
+                        <p className="text-gray-300 italic">"Our strategic partnership with RRL has fostered sustained growth and mutual achievement. We have had the chance to collaborate closely, and we are fully aligned with their vision of quality and customer satisfaction."</p>
                         <div className="mt-4 pt-4 border-t border-gold-800">
                             <p className="font-bold text-white">Shreyansh Chamaria</p>
-                            <p className="text-sm text-gray-400">Senior Vice President, Square Yards [cite: 160]</p>
+                            <p className="text-sm text-gray-400">Senior Vice President, Square Yards</p>
                         </div>
                     </CardContent>
                 </Card>
@@ -125,7 +125,7 @@ export default function ChannelPartnersPage() {
           <Card className="bg-gray-900/50 border-gold-800 p-8">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-playfair text-gold-400">Become a Channel Partner</CardTitle>
-              <p className="text-gray-400 mt-2">Register with us by filling out the form below. [cite: 166]</p>
+              <p className="text-gray-400 mt-2">Register with us by filling out the form below.</p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6 mt-6">

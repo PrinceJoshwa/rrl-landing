@@ -1350,8 +1350,8 @@ function FAQSection({
                 <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-3 font-semibold text-black transition-colors duration-300 hover:bg-gold-600">
                   Contact Our Experts
                 </a>
-                <a href="tel:+91-8068352626" className="inline-flex items-center justify-center rounded-full border-2 border-gold-700 px-8 py-3 font-semibold text-gold-300 transition-colors duration-300 hover:bg-gold-900/20">
-                  Call: +91-8068352626
+                <a href="tel:+91-8494966966" className="inline-flex items-center justify-center rounded-full border-2 border-gold-700 px-8 py-3 font-semibold text-gold-300 transition-colors duration-300 hover:bg-gold-900/20">
+                  Call: +91-8494966966
                 </a>
               </div>
             </div>
@@ -1468,8 +1468,8 @@ function CallToAction() {
                     </div>
                     <div>
                       <h4 className="mb-2 text-lg font-semibold">Call Us</h4>
-                      <p className="text-gray-700">+91-8068352626</p>
-                      <p className="text-gray-700">+91-73378 16991</p>
+                      <p className="text-gray-700">+91-8494966966</p>
+                      {/* <p className="text-gray-700">+91-73378 16991</p> */}
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">

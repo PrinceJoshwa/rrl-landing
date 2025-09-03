@@ -74,7 +74,7 @@ export default function EMICalculatorPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Home Loan EMI <span className="text-gold-400">Calculator</span>
+            Property Loan EMI <span className="text-gold-400">Calculator</span>
           </motion.h1>
           <motion.p
             className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-400"
@@ -82,7 +82,7 @@ export default function EMICalculatorPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            Estimate your monthly home loan payments and understand the costs involved before you purchase your dream property in India.
+            Estimate your monthly property loan payments and understand the costs involved before you purchase your dream property in India.
           </motion.p>
         </div>
       </motion.section>
@@ -203,25 +203,25 @@ export default function EMICalculatorPage() {
               Understanding Your <span className="text-gold-400">Mortgage</span>
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl">
-              Key terms to help you navigate the home loan process with confidence.
+              Key terms to help you navigate the property loan process with confidence.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="p-6 bg-gray-900/50 rounded-2xl border border-gold-800">
-                  <h3 className="font-bold text-gold-400 text-lg mb-2">Property Price [cite: 29]</h3>
-                  <p className="text-gray-400 text-sm">The total price of the property you intend to purchase. [cite: 30] Be sure to account for additional charges like GST, registration fees, and stamp duty. [cite: 30]</p>
+                  <h3 className="font-bold text-gold-400 text-lg mb-2">Property Price</h3>
+                  <p className="text-gray-400 text-sm">The total price of the property you intend to purchase. Be sure to account for additional charges like GST, registration fees, and stamp duty.</p>
               </div>
               <div className="p-6 bg-gray-900/50 rounded-2xl border border-gold-800">
-                  <h3 className="font-bold text-gold-400 text-lg mb-2">Down Payment [cite: 31]</h3>
-                  <p className="text-gray-400 text-sm">The initial amount you pay upfront, typically between 4% and 20% of the property price. [cite: 32] A payment of at least 20% often helps avoid additional mortgage insurance. [cite: 34]</p>
+                  <h3 className="font-bold text-gold-400 text-lg mb-2">Down Payment</h3>
+                  <p className="text-gray-400 text-sm">The initial amount you pay upfront, typically between 4% and 20% of the property price. A payment of at least 20% often helps avoid additional mortgage insurance.</p>
               </div>
               <div className="p-6 bg-gray-900/50 rounded-2xl border border-gold-800">
-                  <h3 className="font-bold text-gold-400 text-lg mb-2">Mortgage Term [cite: 35]</h3>
-                  <p className="text-gray-400 text-sm">The duration over which you plan to repay the home loan. [cite: 36] Common options in India include 15-year and 30-year fixed-rate plans. [cite: 36]</p>
+                  <h3 className="font-bold text-gold-400 text-lg mb-2">Mortgage Term</h3>
+                  <p className="text-gray-400 text-sm">The duration over which you plan to repay the property loan. Common options in India include 15-year and 30-year fixed-rate plans.</p>
               </div>
               <div className="p-6 bg-gray-900/50 rounded-2xl border border-gold-800">
-                  <h3 className="font-bold text-gold-400 text-lg mb-2">Interest Rate [cite: 38]</h3>
-                  <p className="text-gray-400 text-sm">The percentage charged by the lender for the loan. [cite: 39] This can vary depending on your credit score, down payment, and lender policies. [cite: 40]</p>
+                  <h3 className="font-bold text-gold-400 text-lg mb-2">Interest Rate</h3>
+                  <p className="text-gray-400 text-sm">The percentage charged by the lender for the loan. This can vary depending on your credit score, down payment, and lender policies.</p>
               </div>
           </div>
         </div>

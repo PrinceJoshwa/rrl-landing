@@ -132,8 +132,8 @@ export function CallToAction() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Call Us</h4>
-                    <p className="text-slate-300">+91-8068352626</p>
-                    <p className="text-slate-300">+91-73378 16991</p>
+                    <p className="text-slate-300">+91-8494966966</p>
+                    {/* <p className="text-slate-300">+91-73378 16991</p> */}
                     <p className="text-xs text-slate-400 mt-1">Monday - Saturday: 9:00 AM - 6:00 PM</p>
                   </div>
                 </div>

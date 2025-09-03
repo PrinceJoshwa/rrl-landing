@@ -53,7 +53,7 @@
 // //                 </div>
 // //                 <div>
 // //                   <h3 className="font-semibold text-slate-900 mb-1">Call Us</h3>
-// //                   <p className="text-slate-600">+91-8068352626</p>
+// //                   <p className="text-slate-600">+91-8494966966</p>
 // //                   <p className="text-slate-600">+91-73378 16991</p>
 // //                 </div>
 // //               </div>
@@ -236,7 +236,7 @@
 // //                   RRL Towers, 4th Floor, Sampige Jala, Sarjapur, Attibele Rd, Bengaluru, Karnataka 561113
 // //                 </p>
 // //                 <div className="flex justify-center space-x-6 text-sm text-slate-500">
-// //                   <span>📞 +91-8068352626</span>
+// //                   <span>📞 +91-8494966966</span>
 // //                   <span>✉️ info@rrl.com</span>
 // //                 </div>
 // //               </div>
@@ -385,7 +385,7 @@
 //               </div>
 //               <div>
 //                 <h3 className="font-semibold text-black mb-1">Call Us</h3>
-//                 <p className="text-gray-700">+91-8068352626</p>
+//                 <p className="text-gray-700">+91-8494966966</p>
 //               </div>
 //             </motion.div>
 //             <motion.div 
@@ -551,9 +551,9 @@ function ContactForm() {
               </div>
               <div>
                 <h3 className="font-semibold text-black mb-1">Call Us</h3>
-                <p className="text-gray-700">+91-8068352626</p>
+                <p className="text-gray-700">+91-8494966966</p>
                 {/* ADDED: Second phone number */}
-                <p className="text-gray-700">+91-73378 16991</p>
+                {/* <p className="text-gray-700">+91-73378 16991</p> */}
               </div>
             </motion.div>
             <motion.div 
@@ -681,7 +681,7 @@ function LocationMap() {
               <p className="text-gray-400 mb-2">RRL Towers, 4th Floor, Sampige Jala, Sarjapur, Attibele Rd, Bengaluru, Karnataka 561113</p>
               {/* ADDED: Contact details below the map */}
               <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
-                <span>📞 +91-8068352626</span>
+                <span>📞 +91-8494966966</span>
                 <span>✉️ info@rrl.com</span>
               </div>
             </div>
