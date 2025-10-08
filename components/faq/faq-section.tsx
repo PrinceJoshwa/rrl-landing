@@ -203,10 +203,10 @@
 //                 Contact Our Experts
 //               </a>
 //               <a
-//                 href="tel:+91-8494966966"
+//                 href="tel:+91-8068352626"
 //                 className="inline-flex items-center justify-center px-8 py-3 border-2 border-slate-300 text-slate-700 font-semibold rounded-full hover:bg-slate-50 transition-colors duration-300"
 //               >
-//                 Call: +91-8494966966
+//                 Call: +91-8068352626
 //               </a>
 //             </div>
 //           </div>
@@ -373,8 +373,8 @@ export function FAQSection({
                 <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-3 font-semibold text-black transition-colors duration-300 hover:bg-gold-600">
                   Contact Our Experts
                 </a>
-                <a href="tel:+91-8494966966" className="inline-flex items-center justify-center rounded-full border-2 border-gold-700 px-8 py-3 font-semibold text-gold-300 transition-colors duration-300 hover:bg-gold-900/20">
-                  Call: +91-8494966966
+                <a href="tel:+91-8068352626" className="inline-flex items-center justify-center rounded-full border-2 border-gold-700 px-8 py-3 font-semibold text-gold-300 transition-colors duration-300 hover:bg-gold-900/20">
+                  Call: +91-8068352626
                 </a>
               </div>
             </div>

@@ -78,12 +78,12 @@
 //                 {/* UPDATED: More detailed contact info */}
 //                 <div className="flex items-start space-x-3">
 //                     <Mail className="h-4 w-4 mt-1 text-gold-400 flex-shrink-0" />
-//                     <p>info@rrl.com</p>
+//                     <p>enquiry@rrlbuildersanddevelopers.com</p>
 //                 </div>
 //                 <div className="flex items-start space-x-3">
 //                     <Phone className="h-4 w-4 mt-1 text-gold-400 flex-shrink-0" />
 //                     <div>
-//                         <p>+91-8494966966</p>
+//                         <p>+91-8068352626</p>
 //                         <p>+91-73378 16991</p>
 //                     </div>
 //                 </div>
@@ -151,13 +151,13 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="h-4 w-4 mt-1 text-gold-400 flex-shrink-0" />
                 <div>
-                  <p>+91-8494966966</p>
+                  <p>+91-8068352626</p>
                   {/* <p>+91-73378 16991</p> */}
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="h-4 w-4 mt-1 text-gold-400 flex-shrink-0" />
-                <p>info@rrl.com</p>
+                <p>enquiry@rrlbuildersanddevelopers.com</p>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 mt-1 text-gold-400 flex-shrink-0" />
