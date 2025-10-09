@@ -494,7 +494,7 @@ const navigation = [
     href: "/projects",
     submenu: [
       { name: "RRL Palacio", href: "/projects/palacio" },
-      { name: "RRL Palm Altezze", href: "/projects/palm-altezze" },
+      // { name: "RRL Palm Altezze", href: "/projects/palm-altezze" },
       { name: "RRL Nature Woods", href: "/projects/nature-woods" },
       { name: "RRL Sequoia", href: "/projects/sequoia" },
       { name: "RRL Oasis", href: "/projects/oasis" },
