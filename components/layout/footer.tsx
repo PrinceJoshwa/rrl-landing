@@ -83,7 +83,7 @@
 //                 <div className="flex items-start space-x-3">
 //                     <Phone className="h-4 w-4 mt-1 text-gold-400 flex-shrink-0" />
 //                     <div>
-//                         <p>+91-8068352626</p>
+//                         <p>+91-8494966966</p>
 //                         <p>+91-73378 16991</p>
 //                     </div>
 //                 </div>
@@ -151,7 +151,7 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="h-4 w-4 mt-1 text-gold-400 flex-shrink-0" />
                 <div>
-                  <p>+91-8068352626</p>
+                  <p>+91-8494966966</p>
                   {/* <p>+91-73378 16991</p> */}
                 </div>
               </div>

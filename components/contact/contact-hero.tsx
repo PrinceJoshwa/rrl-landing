@@ -24,7 +24,7 @@ export function ContactHero() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900 mb-1">Call Us</h3>
-                  <p className="text-slate-600">+91-8068352626</p>
+                  <p className="text-slate-600">+91-8494966966</p>
                   {/* <p className="text-slate-600">+91-73378 16991</p> */}
                 </div>
               </div>

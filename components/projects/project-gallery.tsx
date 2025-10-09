@@ -190,22 +190,22 @@
 // // // // //   },
 // // // // //   "RRL Nature Woods": {
 // // // // //     address: "RRL Nature Woods, Sompura Gate, Sarjapur Road, Bengaluru, Karnataka 562125",
-// // // // //     contact: "+91-8068352626",
+// // // // //     contact: "+91-8494966966",
 // // // // //     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" // Placeholder, ideally specific to Nature Woods
 // // // // //   },
 // // // // //   "RRL Palm Altezze": {
 // // // // //     address: "RRL Palm Altezze, Varthur, Bengaluru, Karnataka 560087",
-// // // // //     contact: "+91-8068352626",
+// // // // //     contact: "+91-8494966966",
 // // // // //     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" // Placeholder, ideally specific to Palm Altezze
 // // // // //   },
 // // // // //   "RRL Oasis": {
 // // // // //     address: "Sarjapur Attibele Road, Bengaluru, Karnataka",
-// // // // //     contact: "+91-8068352626", // Using general contact as specific not provided
+// // // // //     contact: "+91-8494966966", // Using general contact as specific not provided
 // // // // //     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" // Generic map for now
 // // // // //   },
 // // // // //   "RRL Sequoia": {
 // // // // //     address: "Varthur, Bengaluru, Karnataka",
-// // // // //     contact: "+91-8068352626", // Using general contact as specific not provided
+// // // // //     contact: "+91-8494966966", // Using general contact as specific not provided
 // // // // //     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" // Generic map for now
 // // // // //   },
 // // // // //   "RRL Complex": {
@@ -584,22 +584,22 @@
 // // // //   },
 // // // //   "RRL Nature Woods": {
 // // // //     address: "RRL Nature Woods, Sompura Gate, Sarjapur Road, Bengaluru, Karnataka 562125",
-// // // //     contact: "+91-8068352626",
+// // // //     contact: "+91-8494966966",
 // // // //     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" // Placeholder, ideally specific to Nature Woods
 // // // //   },
 // // // //   "RRL Palm Altezze": {
 // // // //     address: "RRL Palm Altezze, Varthur, Bengaluru, Karnataka 560087",
-// // // //     contact: "+91-8068352626",
+// // // //     contact: "+91-8494966966",
 // // // //     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" // Placeholder, ideally specific to Palm Altezze
 // // // //   },
 // // // //   "RRL Oasis": {
 // // // //     address: "Sarjapur Attibele Road, Bengaluru, Karnataka",
-// // // //     contact: "+91-8068352626", // Using general contact as specific not provided
+// // // //     contact: "+91-8494966966", // Using general contact as specific not provided
 // // // //     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" // Generic map for now
 // // // //   },
 // // // //   "RRL Sequoia": {
 // // // //     address: "Varthur, Bengaluru, Karnataka",
-// // // //     contact: "+91-8068352626", // Using general contact as specific not provided
+// // // //     contact: "+91-8494966966", // Using general contact as specific not provided
 // // // //     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" // Generic map for now
 // // // //   },
 // // // //   "RRL Complex": {
@@ -966,12 +966,12 @@
 // // // // Data for addresses and map URLs
 // // // const addressDetails: Record<string, AddressContent> = {
 // // //     "RRL Palacio": { address: "RQMJ+XQ, Sarjapura – Attibele Rd, near OM/Home Classic, Billapura, Bengaluru, Karnataka 562125", contact: "073378 16991", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
-// // //     "RRL Nature Woods": { address: "RRL Nature Woods, Sompura Gate, Sarjapur Road, Bengaluru, Karnataka 562125", contact: "+91-8068352626", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
-// // //     "RRL Palm Altezze": { address: "RRL Palm Altezze, Varthur, Bengaluru, Karnataka 560087", contact: "+91-8068352626", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
-// // //     "RRL Sequoia": { address: "Varthur, Bengaluru, Karnataka", contact: "+91-8068352626", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
+// // //     "RRL Nature Woods": { address: "RRL Nature Woods, Sompura Gate, Sarjapur Road, Bengaluru, Karnataka 562125", contact: "+91-8494966966", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
+// // //     "RRL Palm Altezze": { address: "RRL Palm Altezze, Varthur, Bengaluru, Karnataka 560087", contact: "+91-8494966966", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
+// // //     "RRL Sequoia": { address: "Varthur, Bengaluru, Karnataka", contact: "+91-8494966966", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
 // // //     "RRL Towers": { address: "RRL Towers, 4th Floor, Sampige Jala, Sarjapur - Attibele Rd, Bengaluru, Karnataka 562125", contact: "+91-7337816996", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
 // // //     "RRL Complex": { address: "SY NO - 269, BIDURGUPPA VILLAGE, bus-stop, RRL COMPLEX, Sarjapur Attibele Rd, near Biderguppa, Bengaluru, Karnataka 562125", contact: "+91-7337816996", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
-// // //     "RRL Oasis": { address: "Sarjapur Attibele Road, Bengaluru, Karnataka", contact: "+91-8068352626", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
+// // //     "RRL Oasis": { address: "Sarjapur Attibele Road, Bengaluru, Karnataka", contact: "+91-8494966966", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
 // // // };
 
 // // // export function ProjectGallery({ projectName }: ProjectGalleryProps) {
@@ -1153,12 +1153,12 @@
 
 // // const addressDetails: Record<string, AddressContent> = {
 // //     "RRL Palacio": { address: "RQMJ+XQ, Sarjapura – Attibele Rd, near OM/Home Classic, Billapura, Bengaluru, Karnataka 562125", contact: "073378 16991", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
-// //     "RRL Nature Woods": { address: "RRL Nature Woods, Sompura Gate, Sarjapur Road, Bengaluru, Karnataka 562125", contact: "+91-8068352626", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
-// //     "RRL Palm Altezze": { address: "RRL Palm Altezze, Varthur, Bengaluru, Karnataka 560087", contact: "+91-8068352626", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
-// //     "RRL Sequoia": { address: "Varthur, Bengaluru, Karnataka", contact: "+91-8068352626", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
+// //     "RRL Nature Woods": { address: "RRL Nature Woods, Sompura Gate, Sarjapur Road, Bengaluru, Karnataka 562125", contact: "+91-8494966966", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
+// //     "RRL Palm Altezze": { address: "RRL Palm Altezze, Varthur, Bengaluru, Karnataka 560087", contact: "+91-8494966966", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
+// //     "RRL Sequoia": { address: "Varthur, Bengaluru, Karnataka", contact: "+91-8494966966", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
 // //     "RRL Towers": { address: "RRL Towers, 4th Floor, Sampige Jala, Sarjapur - Attibele Rd, Bengaluru, Karnataka 562125", contact: "+91-7337816996", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
 // //     "RRL Complex": { address: "SY NO - 269, BIDURGUPPA VILLAGE, bus-stop, RRL COMPLEX, Sarjapur Attibele Rd, near Biderguppa, Bengaluru, Karnataka 562125", contact: "+91-7337816996", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
-// //     "RRL Oasis": { address: "Sarjapur Attibele Road, Bengaluru, Karnataka", contact: "+91-8068352626", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
+// //     "RRL Oasis": { address: "Sarjapur Attibele Road, Bengaluru, Karnataka", contact: "+91-8494966966", mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9000000000004!2d77.7012345!3d12.899999999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae131111111111%3A0x1111111111111111!2sRRL%20Towers!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" },
 // // };
 
 // // export function ProjectGallery({ projectName }: ProjectGalleryProps) {
