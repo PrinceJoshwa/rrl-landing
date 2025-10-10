@@ -44,9 +44,46 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "RRL Builders & Developers - Award-Winning Real Estate in Bangalore",
+  title: "RRL Builders and Developers | Premium Builders in Bangalore",
   description:
-    "RRL Group - Pioneers of affordable luxury residential and commercial spaces in Bangalore since 1996. Times Real Estate Icon Awards 2025 winner.",
+    "We are RRL Builders and Developers, part of RRL Group of Companies. We provide Premium Living at Affordable Prices in Bangalore Prime Locations. Check us out!",
+  keywords: [
+    "rrl nature wood",
+    "upcoming apartments in sarjapur road",
+    "new apartments for sale bangalore",
+    "apartments in varthur",
+    "mall near me within 1.6 km",
+    "apartments near me",
+    "real estate projects near me",
+    "under construction apartments near me",
+    "apartments in sarjapur road for sale",
+    "top builders in bangalore",
+    "apartments for sale near me",
+    "3 bhk flats for sale bangalore",
+    "real estate developers near me",
+    "nearby apartments",
+    "properties near me",
+    "flats for sale bangalore",
+    "sarjapur road apartments",
+    "flats at sarjapur",
+    "apartment for sale in sarjapur",
+    "flats for sale in varthur",
+    "apartment for sale near me",
+    "sarjapur road",
+    "house for sale in sarjapur road",
+    "villas in varthur",
+    "sarjapur flats",
+    "flats in varthur",
+    "apartments for sale in sarjapur road",
+    "house for sale in varthur",
+    "sarjapur flats for sale",
+    "property in sarjapur",
+    "flats in sarjapur",
+    "ready to move flats in sarjapur road",
+    "properties in sarjapur",
+    "flats in sarjapur road bangalore",
+    "apartments in bangalore sarjapur road"
+  ],  
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
