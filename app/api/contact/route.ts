@@ -16,13 +16,13 @@ export async function POST(req: Request) {
       port: 465,
       secure: true,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: "enquiry@rrlbuildersanddevelopers.com",
+        pass: "Rrlbndadmin@123",
       },
     })
 
     await transporter.sendMail({
-      from: `"${name}" <${process.env.EMAIL_USER}>`,
+      from: `"${name}" <enquiry@rrlbuildersanddevelopers.com>`,
       to: "enquiry@rrlbuildersanddevelopers.com",
       subject: `New Enquiry from ${name}`,
       html: `

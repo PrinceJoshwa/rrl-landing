@@ -11,14 +11,14 @@ export async function POST(req: Request) {
       port: 465, 
       secure: true, 
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: "enquiry@rrlbuildersanddevelopers.com",
+        pass: "Rrlbndadmin@123",
       },
     })
 
     // ✅ prepare the email
     const mailOptions = {
-      from: `"${name}" <${process.env.EMAIL_USER}>`,
+      from: `"${name}" <enquiry@rrlbuildersanddevelopers.com>`,
       to: "enquiry@rrlbuildersanddevelopers.com", // where you want to receive it
       subject: "New Brochure Download Request",
       html: `
