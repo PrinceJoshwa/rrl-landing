@@ -550,7 +550,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { Menu, X, ChevronDown, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -591,45 +591,83 @@ function BrochureDownloadForm({ isMobile = false }) {
   const [open, setOpen] = useState(false)
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" })
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   setLoading(true)
+  //   try {
+  //     // ✅ Send data to Formspree
+  //     const res = await fetch("https://formspree.io/f/xgvnpbwo", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     })
+
+  //     if (res.ok) {
+  //       // ✅ Auto-download the brochure
+  //       const link = document.createElement("a")
+  //       link.href = "/brochures/rrl-company-brochure.pdf"
+  //       link.download = "RRL-Company-Brochure.pdf"
+  //       document.body.appendChild(link)
+  //       link.click()
+  //       document.body.removeChild(link)
+
+  //       // ✅ Reset form and close dialog
+  //       setFormData({ name: "", email: "", phone: "" })
+  //       setOpen(false)
+  //     } else {
+  //       alert("Failed to send your details. Please try again.")
+  //     }
+  //   } catch (error) {
+  //     console.error("Error submitting form:", error)
+  //     alert("Something went wrong. Please try again.")
+  //   } finally {
+  //     setLoading(false)
+  //   }
+  // }
+
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    try {
-      // ✅ Send data to Formspree
-      const res = await fetch("https://formspree.io/f/xgvnpbwo", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      })
+  e.preventDefault()
+  setLoading(true)
+  try {
+    // ✅ Send data to Formspree
+    const res = await fetch("https://formspree.io/f/xgvnpbwo", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
 
-      if (res.ok) {
-        // ✅ Auto-download the brochure
-        const link = document.createElement("a")
-        link.href = "/brochures/rrl-company-brochure.pdf"
-        link.download = "RRL-Company-Brochure.pdf"
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
+    if (res.ok) {
+      // ✅ Auto-download the brochure
+      const link = document.createElement("a")
+      link.href = "/brochures/rrl-company-brochure.pdf"
+      link.download = "RRL-Company-Brochure.pdf"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
 
-        // ✅ Reset form and close dialog
-        setFormData({ name: "", email: "", phone: "" })
-        setOpen(false)
-      } else {
-        alert("Failed to send your details. Please try again.")
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error)
-      alert("Something went wrong. Please try again.")
-    } finally {
-      setLoading(false)
+      // ✅ ADDED: Open thank-you page in a new tab to fire GTM event
+      window.open("/c3/thankyou", "_blank")
+
+      // ✅ Reset form and close dialog
+      setFormData({ name: "", email: "", phone: "" })
+      setOpen(false)
+    } else {
+      alert("Failed to send your details. Please try again.")
     }
+  } catch (error) {
+    console.error("Error submitting form:", error)
+    alert("Something went wrong. Please try again.")
+  } finally {
+    setLoading(false)
   }
+}
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
