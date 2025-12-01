@@ -7236,7 +7236,11 @@ function PartnersSection() {
     </motion.section>
   )
 }
-
+interface FAQSectionProps {
+  title?: string
+  subtitle?: string
+  defaultLocation?: "sarjapur" | "varthur"
+}
 function FAQSection({
   title = "Frequently Asked Questions",
   subtitle = "Everything you need to know about RRL properties, pricing, and locations in Bangalore",
