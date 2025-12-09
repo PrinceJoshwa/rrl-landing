@@ -6512,213 +6512,213 @@ function Leadership() {
 }
 
 // ========== 4. PROPERTIES COMPONENT (NO SEQUOIA, NO PRICE, NO AREA) ==========
-function Properties() {
-  const [activeTab, setActiveTab] = useState<"residential" | "commercial">("residential")
+// function Properties() {
+//   const [activeTab, setActiveTab] = useState<"residential" | "commercial">("residential")
 
-  const residentialProperties = [
-    { 
-      id: "palacio", 
-      name: "RRL Palacio", 
-      location: "Medahalli, Bangalore", 
-      status: "READY TO MOVE", 
-      statusColor: "bg-blue-600",
-      image: "/LookProject2.jpeg", 
-      features: ["Infinity Pool", "Co-working Lounge", "Kids Play Area"], 
-    },
-    { 
-      id: "palm-altezze", 
-      name: "RRL Palm Altezze", 
-      location: "Varthur, Bangalore", 
-      status: " JUST LAUNCHED", 
-      statusColor: "bg-yellow-600",
-      image: "/justlaunch.png", 
-      features: ["Clubhouse", "Landscaped Greens", "Smart Security"], 
-    },
-    { 
-      id: "nature-woods", 
-      name: "RRL Nature Woods", 
-      location: "Sarjapur, Bangalore", 
-      status: "READY TO MOVE", 
-      statusColor: "bg-blue-600",
-      image: "/LookProject5.jpeg", 
-      features: ["Nature Park", "Jogging Track", "Amphitheater"], 
-    },
-  ]
+//   const residentialProperties = [
+//     { 
+//       id: "palacio", 
+//       name: "RRL Palacio", 
+//       location: "Medahalli, Bangalore", 
+//       status: "READY TO MOVE", 
+//       statusColor: "bg-blue-600",
+//       image: "/LookProject2.jpeg", 
+//       features: ["Infinity Pool", "Co-working Lounge", "Kids Play Area"], 
+//     },
+//     { 
+//       id: "palm-altezze", 
+//       name: "RRL Palm Altezze", 
+//       location: "Varthur, Bangalore", 
+//       status: " JUST LAUNCHED", 
+//       statusColor: "bg-yellow-600",
+//       image: "/justlaunch.png", 
+//       features: ["Clubhouse", "Landscaped Greens", "Smart Security"], 
+//     },
+//     { 
+//       id: "nature-woods", 
+//       name: "RRL Nature Woods", 
+//       location: "Sarjapur, Bangalore", 
+//       status: "READY TO MOVE", 
+//       statusColor: "bg-blue-600",
+//       image: "/LookProject5.jpeg", 
+//       features: ["Nature Park", "Jogging Track", "Amphitheater"], 
+//     },
+//   ]
 
-  const commercialProperties = [
-    { 
-      id: "towers", 
-      name: "RRL Towers", 
-      location: "Sampige Jala, Sarjapur", 
-      status: "READY TO MOVE", 
-      statusColor: "bg-blue-600",
-      image: "/Tower.jpeg", 
-      features: ["24/7 Access", "Cafeteria", "Power Backup"], 
-    },
-    { 
-      id: "complex", 
-      name: "RRL Complex", 
-      location: "South Bangalore", 
-      status: "UNDER CONSTRUCTION", 
-      statusColor: "bg-yellow-600",
-      image: "/complex.jpg", 
-      features: ["Main Road Facing", "Visitor Parking", "Loading Bay"], 
-    },
-  ]
+//   const commercialProperties = [
+//     { 
+//       id: "towers", 
+//       name: "RRL Towers", 
+//       location: "Sampige Jala, Sarjapur", 
+//       status: "READY TO MOVE", 
+//       statusColor: "bg-blue-600",
+//       image: "/Tower.jpeg", 
+//       features: ["24/7 Access", "Cafeteria", "Power Backup"], 
+//     },
+//     { 
+//       id: "complex", 
+//       name: "RRL Complex", 
+//       location: "South Bangalore", 
+//       status: "UNDER CONSTRUCTION", 
+//       statusColor: "bg-yellow-600",
+//       image: "/complex.jpg", 
+//       features: ["Main Road Facing", "Visitor Parking", "Loading Bay"], 
+//     },
+//   ]
 
-  const currentProperties = activeTab === "residential" ? residentialProperties : commercialProperties
+//   const currentProperties = activeTab === "residential" ? residentialProperties : commercialProperties
 
-  return (
-    <motion.section
-      className="bg-black py-24"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8 } } }}
-    >
-      <div className="container mx-auto px-4">
-        {/* Header Section */}
-        <div className="mb-12 flex flex-col items-center text-center">
-          <motion.div
-            className="mb-4 inline-flex items-center space-x-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-2 text-gold-400"
-          >
-            <Home className="h-4 w-4" />
-            <span className="text-sm font-semibold uppercase tracking-wider">Premium Collections</span>
-          </motion.div>
+//   return (
+//     <motion.section
+//       className="bg-black py-24"
+//       initial="hidden"
+//       whileInView="visible"
+//       viewport={{ once: true, amount: 0.1 }}
+//       variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.8 } } }}
+//     >
+//       <div className="container mx-auto px-4">
+//         {/* Header Section */}
+//         <div className="mb-12 flex flex-col items-center text-center">
+//           <motion.div
+//             className="mb-4 inline-flex items-center space-x-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-2 text-gold-400"
+//           >
+//             <Home className="h-4 w-4" />
+//             <span className="text-sm font-semibold uppercase tracking-wider">Premium Collections</span>
+//           </motion.div>
           
-          <h2 className="mb-8 text-4xl font-bold font-playfair text-white lg:text-5xl">
-            Explore <span className="text-gold-400">RRL Projects</span>
-          </h2>
+//           <h2 className="mb-8 text-4xl font-bold font-playfair text-white lg:text-5xl">
+//             Explore <span className="text-gold-400">RRL Projects</span>
+//           </h2>
 
-          {/* Filter Tabs */}
-          <div className="relative inline-flex rounded-full bg-gray-900 p-1 border border-gold-900/50">
-            <button
-              onClick={() => setActiveTab("residential")}
-              className={`relative z-10 flex items-center space-x-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-300 ${
-                activeTab === "residential" ? "text-black bg-gold-500" : "text-gray-400 hover:text-white"
-              }`}
-            >
-              <span>Residential</span>
-            </button>
-            <button
-              onClick={() => setActiveTab("commercial")}
-              className={`relative z-10 flex items-center space-x-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-300 ${
-                activeTab === "commercial" ? "text-black bg-gold-500" : "text-gray-400 hover:text-white"
-              }`}
-            >
-              <span>Commercial</span>
-            </button>
-          </div>
-        </div>
+//           {/* Filter Tabs */}
+//           <div className="relative inline-flex rounded-full bg-gray-900 p-1 border border-gold-900/50">
+//             <button
+//               onClick={() => setActiveTab("residential")}
+//               className={`relative z-10 flex items-center space-x-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-300 ${
+//                 activeTab === "residential" ? "text-black bg-gold-500" : "text-gray-400 hover:text-white"
+//               }`}
+//             >
+//               <span>Residential</span>
+//             </button>
+//             <button
+//               onClick={() => setActiveTab("commercial")}
+//               className={`relative z-10 flex items-center space-x-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-300 ${
+//                 activeTab === "commercial" ? "text-black bg-gold-500" : "text-gray-400 hover:text-white"
+//               }`}
+//             >
+//               <span>Commercial</span>
+//             </button>
+//           </div>
+//         </div>
 
-        {/* PROPERTIES LIST */}
-        <div className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-2 max-w-7xl mx-auto">
-          {currentProperties.map((property, index) => (
-            <motion.div
-              key={property.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-neutral-900 border border-neutral-800 shadow-2xl transition-all hover:border-gold-500/30 sm:flex-row h-full sm:h-[400px]"
-            >
-              {/* LEFT: Image Section */}
-              <div className="relative h-64 w-full sm:h-full sm:w-[50%] shrink-0 overflow-hidden">
-                <Image
-                  src={property.image || "/placeholder.svg"}
-                  alt={property.name}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+//         {/* PROPERTIES LIST */}
+//         <div className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-2 max-w-7xl mx-auto">
+//           {currentProperties.map((property, index) => (
+//             <motion.div
+//               key={property.id}
+//               initial={{ opacity: 0, y: 30 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.5, delay: index * 0.1 }}
+//               className="group relative flex flex-col overflow-hidden rounded-[2rem] bg-neutral-900 border border-neutral-800 shadow-2xl transition-all hover:border-gold-500/30 sm:flex-row h-full sm:h-[400px]"
+//             >
+//               {/* LEFT: Image Section */}
+//               <div className="relative h-64 w-full sm:h-full sm:w-[50%] shrink-0 overflow-hidden">
+//                 <Image
+//                   src={property.image || "/placeholder.svg"}
+//                   alt={property.name}
+//                   fill
+//                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 
-                {/* Status Badge */}
-                <div className="absolute top-4 left-4 z-10">
-                   <div className={`rounded-full px-4 py-1.5 text-xs font-bold text-white shadow-lg backdrop-blur-sm ${property.statusColor} border border-white/20 tracking-wider`}>
-                      {property.status}
-                   </div>
-                </div>
-              </div>
+//                 {/* Status Badge */}
+//                 <div className="absolute top-4 left-4 z-10">
+//                    <div className={`rounded-full px-4 py-1.5 text-xs font-bold text-white shadow-lg backdrop-blur-sm ${property.statusColor} border border-white/20 tracking-wider`}>
+//                       {property.status}
+//                    </div>
+//                 </div>
+//               </div>
 
-              {/* RIGHT: Content Section */}
-              <div className="flex flex-col justify-between p-6 sm:p-8 w-full">
-                 <div>
-                    {/* Title */}
-                    <Link href={`/projects/${property.id}`}>
-                        <h3 className="text-2xl font-bold text-white font-playfair mb-2 hover:text-gold-400 transition-colors cursor-pointer">
-                            {property.name}
-                        </h3>
-                    </Link>
+//               {/* RIGHT: Content Section */}
+//               <div className="flex flex-col justify-between p-6 sm:p-8 w-full">
+//                  <div>
+//                     {/* Title */}
+//                     <Link href={`/projects/${property.id}`}>
+//                         <h3 className="text-2xl font-bold text-white font-playfair mb-2 hover:text-gold-400 transition-colors cursor-pointer">
+//                             {property.name}
+//                         </h3>
+//                     </Link>
                     
-                    {/* Location */}
-                    <div className="flex items-center text-gray-400 mb-8 text-sm">
-                        <MapPin className="mr-1.5 h-4 w-4 text-gold-500" />
-                        {property.location}
-                    </div>
+//                     {/* Location */}
+//                     <div className="flex items-center text-gray-400 mb-8 text-sm">
+//                         <MapPin className="mr-1.5 h-4 w-4 text-gold-500" />
+//                         {property.location}
+//                     </div>
 
-                    {/* GRAPHICS / ICONS instead of Price/Area */}
-                    <div className="flex justify-between gap-2 mb-6 border-t border-b border-gray-800 py-4">
-                        <div className="flex flex-col items-center text-center">
-                           <ShieldCheck className="h-6 w-6 text-gold-500 mb-2" />
-                           <span className="text-xs text-gray-400">RERA Approved</span>
-                        </div>
-                        <div className="flex flex-col items-center text-center">
-                           <Zap className="h-6 w-6 text-gold-500 mb-2" />
-                           <span className="text-xs text-gray-400">Premium Amenities</span>
-                        </div>
-                        <div className="flex flex-col items-center text-center">
-                           <CheckCircle2 className="h-6 w-6 text-gold-500 mb-2" />
-                           <span className="text-xs text-gray-400">Quality Build</span>
-                        </div>
-                    </div>
+//                     {/* GRAPHICS / ICONS instead of Price/Area */}
+//                     <div className="flex justify-between gap-2 mb-6 border-t border-b border-gray-800 py-4">
+//                         <div className="flex flex-col items-center text-center">
+//                            <ShieldCheck className="h-6 w-6 text-gold-500 mb-2" />
+//                            <span className="text-xs text-gray-400">RERA Approved</span>
+//                         </div>
+//                         <div className="flex flex-col items-center text-center">
+//                            <Zap className="h-6 w-6 text-gold-500 mb-2" />
+//                            <span className="text-xs text-gray-400">Premium Amenities</span>
+//                         </div>
+//                         <div className="flex flex-col items-center text-center">
+//                            <CheckCircle2 className="h-6 w-6 text-gold-500 mb-2" />
+//                            <span className="text-xs text-gray-400">Quality Build</span>
+//                         </div>
+//                     </div>
 
-                    {/* Amenities Tags */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                        {property.features.slice(0, 3).map((feature, i) => (
-                           <span key={i} className="text-xs text-gray-400 border border-neutral-700 rounded-full px-3 py-1">
-                               {feature}
-                           </span>
-                        ))}
-                    </div>
-                 </div>
+//                     {/* Amenities Tags */}
+//                     <div className="flex flex-wrap gap-2 mb-6">
+//                         {property.features.slice(0, 3).map((feature, i) => (
+//                            <span key={i} className="text-xs text-gray-400 border border-neutral-700 rounded-full px-3 py-1">
+//                                {feature}
+//                            </span>
+//                         ))}
+//                     </div>
+//                  </div>
 
-                 <div className="space-y-4">
-                    {/* Action Buttons Row */}
-                    <div className="grid grid-cols-2 gap-3">
-                        <a 
-                           href="https://wa.me/918494966966" 
-                           target="_blank" 
-                           rel="noreferrer"
-                           className="flex items-center justify-center rounded-lg bg-gold-500 py-3 text-sm font-bold text-black hover:bg-gold-400 transition-colors"
-                        >
-                           Whatsapp Us
-                        </a>
-                        <a 
-                           href="tel:+918494966966"
-                           className="flex items-center justify-center rounded-lg border border-gold-500 py-3 text-sm font-bold text-gold-500 hover:bg-gold-500 hover:text-black transition-colors"
-                        >
-                           Call Now
-                        </a>
-                    </div>
-                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+//                  <div className="space-y-4">
+//                     {/* Action Buttons Row */}
+//                     <div className="grid grid-cols-2 gap-3">
+//                         <a 
+//                            href="https://wa.me/918494966966" 
+//                            target="_blank" 
+//                            rel="noreferrer"
+//                            className="flex items-center justify-center rounded-lg bg-gold-500 py-3 text-sm font-bold text-black hover:bg-gold-400 transition-colors"
+//                         >
+//                            Whatsapp Us
+//                         </a>
+//                         <a 
+//                            href="tel:+918494966966"
+//                            className="flex items-center justify-center rounded-lg border border-gold-500 py-3 text-sm font-bold text-gold-500 hover:bg-gold-500 hover:text-black transition-colors"
+//                         >
+//                            Call Now
+//                         </a>
+//                     </div>
+//                  </div>
+//               </div>
+//             </motion.div>
+//           ))}
+//         </div>
 
-        <div className="text-center">
-          <Link href="/projects">
-            <Button
-              size="lg"
-              className="rounded-full border border-gold-500 bg-transparent px-10 py-6 text-lg font-semibold text-gold-500 transition-all duration-300 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_30px_rgba(234,179,8,0.4)]"
-            >
-              View All Properties
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </motion.section>
-  )
-}
+//         <div className="text-center">
+//           <Link href="/projects">
+//             <Button
+//               size="lg"
+//               className="rounded-full border border-gold-500 bg-transparent px-10 py-6 text-lg font-semibold text-gold-500 transition-all duration-300 hover:bg-gold-500 hover:text-black hover:shadow-[0_0_30px_rgba(234,179,8,0.4)]"
+//             >
+//               View All Properties
+//             </Button>
+//           </Link>
+//         </div>
+//       </div>
+//     </motion.section>
+//   )
+// }
 
 function Stats() {
   const statsData = [
@@ -6810,6 +6810,249 @@ function Stats() {
         </div>
       </div>
     </motion.section>
+  )
+}
+
+// Inside page.tsx
+
+// ========== 4. PROPERTIES COMPONENT (REDESIGNED) ==========
+function Properties() {
+  const [activeTab, setActiveTab] = useState<"residential" | "commercial">("residential")
+
+  // Updated data structure to match the reference image layout
+  const residentialProperties = [
+    { 
+      id: "palacio", 
+      name: "RRL Palacio", 
+      location: "Medahalli, Bangalore", 
+      type: "Apartment",
+      status: "READY TO MOVE", 
+      image: "/LookProject2.jpeg", 
+      bedrooms: "2, 3 BHK",
+      devSize: "1.5 Acres",
+      totalUnits: "120 Units",
+      price: "₹ 45 Lakhs*" 
+    },
+    { 
+      id: "palm-altezze", 
+      name: "RRL Palm Altezze", 
+      location: "Varthur, Bangalore", 
+      type: "Luxury Apartment",
+      status: "JUST LAUNCHED", 
+      image: "/justlaunch.png", 
+      bedrooms: "2, 3 BHK",
+      devSize: "2.25 Acres",
+      totalUnits: "195 Units",
+      price: "₹ 75 Lakhs*" 
+    },
+    { 
+      id: "nature-woods", 
+      name: "RRL Nature Woods", 
+      location: "Sarjapur, Bangalore", 
+      type: "Premium Apartment",
+      status: "READY TO MOVE", 
+      image: "/LookProject5.jpeg", 
+      bedrooms: "2, 3 BHK",
+      devSize: "2 Acres",
+      totalUnits: "150 Units",
+      price: "₹ 55 Lakhs*" 
+    },
+  ]
+
+  const commercialProperties = [
+    { 
+      id: "towers", 
+      name: "RRL Towers", 
+      location: "Sampige Jala, Sarjapur", 
+      type: "Commercial Space",
+      status: "READY TO MOVE", 
+      image: "/Tower.jpeg", 
+      bedrooms: "Office Spaces",
+      devSize: "0.5 Acres",
+      totalUnits: "4 Floors",
+      price: "₹ 65 Lakhs*" 
+    },
+    { 
+      id: "complex", 
+      name: "RRL Complex", 
+      location: "South Bangalore", 
+      type: "Retail & Office",
+      status: "UNDER CONSTRUCTION", 
+      image: "/complex.jpg", 
+      bedrooms: "Shops / Offices",
+      devSize: "1 Acre",
+      totalUnits: "20 Units",
+      price: "₹ 55 Lakhs*" 
+    },
+  ]
+
+  const currentProperties = activeTab === "residential" ? residentialProperties : commercialProperties
+
+  return (
+    <section className="bg-black py-24 relative">
+       <div className="absolute inset-0 bg-grid-white/[0.05]" />
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header Section */}
+        <div className="mb-16 flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-4 inline-flex items-center space-x-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-2 text-gold-400"
+          >
+            <Home className="h-4 w-4" />
+            <span className="text-sm font-semibold uppercase tracking-wider">Premium Collections</span>
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="mb-8 text-4xl font-bold font-playfair text-white lg:text-5xl"
+          >
+            Explore <span className="text-gold-400">RRL Projects</span>
+          </motion.h2>
+
+          {/* Filter Tabs */}
+          <div className="relative inline-flex rounded-full bg-gray-900 p-1 border border-gold-900/50">
+            <button
+              onClick={() => setActiveTab("residential")}
+              className={`relative z-10 flex items-center space-x-2 rounded-full px-8 py-3 text-sm font-bold transition-all duration-300 ${
+                activeTab === "residential" ? "text-black bg-gold-500" : "text-gray-400 hover:text-white"
+              }`}
+            >
+              <span>Residential</span>
+            </button>
+            <button
+              onClick={() => setActiveTab("commercial")}
+              className={`relative z-10 flex items-center space-x-2 rounded-full px-8 py-3 text-sm font-bold transition-all duration-300 ${
+                activeTab === "commercial" ? "text-black bg-gold-500" : "text-gray-400 hover:text-white"
+              }`}
+            >
+              <span>Commercial</span>
+            </button>
+          </div>
+        </div>
+
+        {/* PROPERTIES LIST - HORIZONTAL CARDS */}
+        <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
+          {currentProperties.map((property, index) => (
+            <motion.div
+              key={property.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative flex flex-col lg:flex-row overflow-hidden rounded-2xl bg-neutral-900 border border-gold-900/50 shadow-xl transition-all hover:border-gold-500/50 hover:shadow-gold-900/20"
+            >
+              {/* LEFT: Image Section (60% width on desktop) */}
+              <div className="relative h-64 lg:h-auto lg:w-[55%] shrink-0 overflow-hidden">
+                <Image
+                  src={property.image || "/placeholder.svg"}
+                  alt={property.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                
+                {/* Status Tag */}
+                <div className="absolute top-4 left-4">
+                   <span className="bg-gold-500 text-black text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">
+                      {property.status}
+                   </span>
+                </div>
+              </div>
+
+              {/* RIGHT: Content Section */}
+              <div className="flex flex-col p-6 lg:p-8 w-full bg-neutral-900">
+                 {/* Header: Title & Logo Area */}
+                 <div className="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 className="text-2xl font-bold text-white font-playfair mb-1 group-hover:text-gold-400 transition-colors">
+                            {property.name}
+                        </h3>
+                        <div className="flex items-center text-gray-400 text-sm">
+                            <MapPin className="mr-1.5 h-3.5 w-3.5 text-gold-500" />
+                            {property.location}
+                        </div>
+                    </div>
+                    {/* Placeholder for Project Logo if needed, currently using Icon */}
+                    <div className="h-10 w-10 rounded-full bg-gold-900/30 flex items-center justify-center border border-gold-500/30">
+                        <Building2 className="text-gold-400 h-5 w-5"/>
+                    </div>
+                 </div>
+
+                 {/* Grid Details (Reference Layout) */}
+                 <div className="grid grid-cols-2 gap-y-6 gap-x-4 mb-8 border-t border-b border-gray-800 py-6">
+                    {/* Item 1 */}
+                    <div className="flex items-start space-x-3">
+                        <Building className="h-5 w-5 text-gold-500 mt-0.5" />
+                        <div>
+                            <p className="text-xs text-gray-500 uppercase tracking-wide">Project Type</p>
+                            <p className="text-sm font-semibold text-gray-200">{property.type}</p>
+                        </div>
+                    </div>
+                     {/* Item 2 */}
+                     <div className="flex items-start space-x-3">
+                        <Home className="h-5 w-5 text-gold-500 mt-0.5" />
+                        <div>
+                            <p className="text-xs text-gray-500 uppercase tracking-wide">Configuration</p>
+                            <p className="text-sm font-semibold text-gray-200">{property.bedrooms}</p>
+                        </div>
+                    </div>
+                     {/* Item 3 */}
+                     <div className="flex items-start space-x-3">
+                        <Maximize className="h-5 w-5 text-gold-500 mt-0.5" />
+                        <div>
+                            <p className="text-xs text-gray-500 uppercase tracking-wide">Dev Size</p>
+                            <p className="text-sm font-semibold text-gray-200">{property.devSize}</p>
+                        </div>
+                    </div>
+                     {/* Item 4 */}
+                     <div className="flex items-start space-x-3">
+                        <Target className="h-5 w-5 text-gold-500 mt-0.5" />
+                        <div>
+                            <p className="text-xs text-gray-500 uppercase tracking-wide">Total Units</p>
+                            <p className="text-sm font-semibold text-gray-200">{property.totalUnits}</p>
+                        </div>
+                    </div>
+                 </div>
+
+                 {/* Footer: Price & Actions */}
+                 <div className="mt-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="w-full sm:w-auto bg-gray-800 rounded-lg px-4 py-3 text-center sm:text-left">
+                        <p className="text-xs text-gray-400">Starting From</p>
+                        <p className="text-xl font-bold text-white">{property.price}</p>
+                    </div>
+                    <div className="flex gap-3 w-full sm:w-auto">
+                        <a 
+                           href="tel:+918494966966"
+                           className="flex-1 sm:flex-none flex items-center justify-center h-12 w-12 rounded-lg border border-gray-600 text-white hover:border-gold-500 hover:text-gold-500 transition-all"
+                        >
+                            <Phone className="h-5 w-5" />
+                        </a>
+                        <Link href={`/projects/${property.id}`} className="flex-1">
+                            <Button className="w-full bg-gold-500 hover:bg-gold-600 text-black font-bold h-12 px-6 rounded-lg flex items-center justify-center">
+                                View Details <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </Link>
+                    </div>
+                 </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+            <Link href="/projects">
+                <Button variant="outline" className="border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-black rounded-full px-8 py-6">
+                    View All Projects
+                </Button>
+            </Link>
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -7631,7 +7874,7 @@ export default function HomePage() {
       <Testimonials />
       <AwardsSection />
       <Leadership />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <FAQSection />
       <ChannelPartnerCTA />
       <CallToAction />
