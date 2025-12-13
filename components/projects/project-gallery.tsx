@@ -21,13 +21,21 @@ const floorPlanDetails: Record<string, any> = { /* ... your floor plan data ... 
 const addressDetails: Record<string, any> = { /* ... your address data ... */ };
 
 export function ProjectGallery({ projectName }: ProjectGalleryProps) {
+  // const galleryImages = [
+  //   { src: "/LookProject1.jpeg", alt: "Exterior View" }, { src: "/LookProject2.jpeg", alt: "Children's Play Area" },
+  //   { src: "/LookProject3.jpeg", alt: "Modern Gymnasium" }, { src: "/LookProject4.jpeg", alt: "Clubhouse Interior" },
+  //   { src: "/LookProject5.jpeg", alt: "Swimming Pool" }, { src: "/LookProject6.jpeg", alt: "Landscaped Gardens" },
+  //   { src: "/LookProject7.jpeg", alt: "Sample Apartment" }, { src: "/LookProject8.jpeg", alt: "Jogging Track" },
+  //   { src: "/LookProject9.jpeg", alt: "Building Facade" }, { src: "/LookProject10.jpeg", alt: "Covered Parking" },
+  //   { src: "/LookProject11.jpeg", alt: "Community Hall" }, { src: "/LookProject12.jpeg", alt: "Entrance Lobby" },
+  // ];
   const galleryImages = [
-    { src: "/LookProject1.jpeg", alt: "Exterior View" }, { src: "/LookProject2.jpeg", alt: "Children's Play Area" },
+    // { src: "/LookProject1.jpeg", alt: "Exterior View" }, { src: "/LookProject2.jpeg", alt: "Children's Play Area" },
     { src: "/LookProject3.jpeg", alt: "Modern Gymnasium" }, { src: "/LookProject4.jpeg", alt: "Clubhouse Interior" },
     { src: "/LookProject5.jpeg", alt: "Swimming Pool" }, { src: "/LookProject6.jpeg", alt: "Landscaped Gardens" },
     { src: "/LookProject7.jpeg", alt: "Sample Apartment" }, { src: "/LookProject8.jpeg", alt: "Jogging Track" },
     { src: "/LookProject9.jpeg", alt: "Building Facade" }, { src: "/LookProject10.jpeg", alt: "Covered Parking" },
-    { src: "/LookProject11.jpeg", alt: "Community Hall" }, { src: "/LookProject12.jpeg", alt: "Entrance Lobby" },
+    // { src: "/LookProject11.jpeg", alt: "Community Hall" }, { src: "/LookProject12.jpeg", alt: "Entrance Lobby" },
   ];
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
