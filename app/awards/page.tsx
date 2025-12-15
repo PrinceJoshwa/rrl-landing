@@ -519,34 +519,64 @@ function AwardsList() {
 
 function MediaCoverage() {
   const mediaOutlets = [
+    // {
+    //   name: "ZEE5 Business",
+    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token4-rJgVrC4ZKpXxrJCNc4fUufEvGeSlRl.jpeg",
+    //   description: "Featured coverage of RRL's award-winning achievements in real estate",
+    // },
+    // {
+    //   name: "Multiple International Outlets",
+    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token2-agM5EwaEeqJv2glMoBTPDLVxczDH3B.jpeg",
+    //   description: "Coverage across US World Today, Daily Hunt, Indo-Asian News Service, and more",
+    // },
+    // {
+    //   name: "The Print",
+    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-lNU4TqNDvpQhVpKy6LYfNmWQ6KP4UZ.jpeg",
+    //   description: "In-depth coverage of the 5th Global Real Estate Brand Awards 2023",
+    // },
+    // {
+    //   name: "British Columbia Times",
+    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token1-LtctPGKlJ54DeYjMfknXCMBTaxglJv.jpeg",
+    //   description: "International recognition of RRL's remarkable achievements",
+    // },
+    // {
+    //   name: "London Channel News",
+    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token3-8TEGbwM0sMobG9OpTWtl0ODNH4VBij.jpeg",
+    //   description: "Global media coverage highlighting RRL's industry leadership",
+    // },
+    // {
+    //   name: "World News Network",
+    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token6-0aTqnZLkY2wKtVR86VOJYszKP4InKp.jpeg",
+    //   description: "Comprehensive coverage of distinguished honorees in real estate",
+    // },
     {
       name: "ZEE5 Business",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token4-rJgVrC4ZKpXxrJCNc4fUufEvGeSlRl.jpeg",
+      image: "",
       description: "Featured coverage of RRL's award-winning achievements in real estate",
     },
     {
       name: "Multiple International Outlets",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token2-agM5EwaEeqJv2glMoBTPDLVxczDH3B.jpeg",
+      image: "",
       description: "Coverage across US World Today, Daily Hunt, Indo-Asian News Service, and more",
     },
     {
       name: "The Print",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-lNU4TqNDvpQhVpKy6LYfNmWQ6KP4UZ.jpeg",
+      image: "",
       description: "In-depth coverage of the 5th Global Real Estate Brand Awards 2023",
     },
     {
       name: "British Columbia Times",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token1-LtctPGKlJ54DeYjMfknXCMBTaxglJv.jpeg",
+      image: "",
       description: "International recognition of RRL's remarkable achievements",
     },
     {
       name: "London Channel News",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token3-8TEGbwM0sMobG9OpTWtl0ODNH4VBij.jpeg",
+      image: "",
       description: "Global media coverage highlighting RRL's industry leadership",
     },
     {
       name: "World News Network",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token6-0aTqnZLkY2wKtVR86VOJYszKP4InKp.jpeg",
+      image: "",
       description: "Comprehensive coverage of distinguished honorees in real estate",
     },
   ]
@@ -602,7 +632,8 @@ function MediaCoverage() {
         <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
           <div className="overflow-hidden rounded-2xl bg-gray-900/50 border border-gold-800 shadow-lg">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-qDHHyNYjDinRiMkHs0aLMdWqIsg1A3.jpeg"
+              // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-qDHHyNYjDinRiMkHs0aLMdWqIsg1A3.jpeg"
+              src=""
               alt="ThePrint Media Coverage"
               width={500}
               height={300}
@@ -617,7 +648,8 @@ function MediaCoverage() {
           </div>
           <div className="overflow-hidden rounded-2xl bg-gray-900/50 border border-gold-800 shadow-lg">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media-a2nth21OR71xLxlXXXOwOeVuSveGXL.png"
+              // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media-a2nth21OR71xLxlXXXOwOeVuSveGXL.png"
+              src=""
               alt="Times of India Media Coverage"
               width={500}
               height={300}
@@ -788,7 +820,8 @@ function LegacyAchievements() {
           </div>
           <div className="relative rounded-3xl bg-black/30 border border-gold-800 p-4 sm:p-6 shadow-2xl">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Award1-NuACJEgdde3nzeEta7nJjCLE0v4k7w.jpeg"
+              // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Award1-NuACJEgdde3nzeEta7nJjCLE0v4k7w.jpeg"
+              src=""
               alt="RRL Awards Ceremony"
               width={600}
               height={400}
@@ -848,7 +881,8 @@ function LegacyAchievements() {
           </div>
           <div className="relative rounded-3xl bg-black/30 border border-gold-800 p-4 sm:p-6 shadow-2xl md:order-2 order-1">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Award1-NuACJEgdde3nzeEta7nJjCLE0v4k7w.jpeg"
+              // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Award1-NuACJEgdde3nzeEta7nJjCLE0v4k7w.jpeg"
+              src=""
               alt="Times Real Estate Icons Award 2025"
               width={600}
               height={400}
@@ -868,7 +902,8 @@ function LegacyAchievements() {
           <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
             <div className="overflow-hidden rounded-2xl bg-gray-900/50 border border-gold-800 shadow-lg">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-qDHHyNYjDinRiMkHs0aLMdWqIsg1A3.jpeg"
+                // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-qDHHyNYjDinRiMkHs0aLMdWqIsg1A3.jpeg"
+                src=""
                 alt="ThePrint Media Coverage"
                 width={500}
                 height={300}
@@ -883,7 +918,8 @@ function LegacyAchievements() {
             </div>
             <div className="overflow-hidden rounded-2xl bg-gray-900/50 border border-gold-800 shadow-lg">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media-a2nth21OR71xLxlXXXOwOeVuSveGXL.png"
+                // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media-a2nth21OR71xLxlXXXOwOeVuSveGXL.png"
+                src=""
                 alt="Times of India Media Coverage"
                 width={500}
                 height={300}
