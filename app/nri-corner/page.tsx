@@ -651,7 +651,7 @@ export default function NRICornerPage() {
             className="text-5xl md:text-8xl font-playfair font-bold mb-8 leading-tight text-white drop-shadow-2xl"
           >
             Invest in Your <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300">Homeland</span>
+            <span className="text-[#d9a406]">Homeland</span>
           </motion.h1>
 
           <motion.p 

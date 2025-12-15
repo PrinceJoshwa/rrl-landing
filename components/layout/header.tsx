@@ -35,6 +35,7 @@
 //     ],
 //   },
 //   { name: "Awards", href: "/awards" },
+//   { name: "Careers", href: "/careers" }, // <--- ADDED CAREERS LINK
 //   { name: "Contact", href: "/contact" },
 // ]
 
@@ -113,6 +114,7 @@
 
 //     setLoading(true)
 //     try {
+//       // ✅ Send data to Formspree
 //       const res = await fetch("https://formspree.io/f/xgvnpbwo", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
@@ -471,7 +473,8 @@ const navigation = [
     ],
   },
   { name: "Awards", href: "/awards" },
-  { name: "Careers", href: "/careers" }, // <--- ADDED CAREERS LINK
+  { name: "Careers", href: "/careers" },
+  { name: "NRI Corner", href: "/nri-corner" },
   { name: "Contact", href: "/contact" },
 ]
 
