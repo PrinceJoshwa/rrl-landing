@@ -2919,7 +2919,8 @@ export default function Home() {
             >
               <img
                 // src="/palm-altezze/palm-altezze (18).jpeg"
-                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572041/WhatsApp_Image_2025-12-01_at_10.21.07_AM_1_yag3h7.jpg"
+                // src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572041/WhatsApp_Image_2025-12-01_at_10.21.07_AM_1_yag3h7.jpg"
+                src=""
                 alt="RRL Palm Altezze Building"
                 className="w-full h-full object-cover rounded-2xl shadow-2xl"
               />
@@ -3131,7 +3132,8 @@ export default function Home() {
               variants={scaleVariants}
             >
                <img 
-                 src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572047/WhatsApp_Image_2025-12-01_at_10.21.07_AM_tzwvjj.jpg" 
+                //  src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572047/WhatsApp_Image_2025-12-01_at_10.21.07_AM_tzwvjj.jpg"
+                 src=""
                  alt="RRL Palm Altezze Healthy Living" 
                  className="w-full h-full object-contain rounded-2xl shadow-2xl"
                />
@@ -3159,7 +3161,8 @@ export default function Home() {
                transition={{ duration: 0.8 }}
             >
               <img 
-                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572041/WhatsApp_Image_2025-12-01_at_10.21.07_AM_1_yag3h7.jpg" 
+                // src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572041/WhatsApp_Image_2025-12-01_at_10.21.07_AM_1_yag3h7.jpg" 
+                src="" 
                 alt="Luxurious 3 BHK Flat" 
                 className="rounded-3xl shadow-2xl w-full object-contain h-[600px]"
               />
@@ -3228,47 +3231,89 @@ export default function Home() {
 
   // ========== ORIGINAL AMENITIES SECTION ==========
   const AmenitiesSection = () => {
+    // const amenities = [
+    //   { name: "Reception Hall", image: "/palm-altezze/palm-altezze (1).jpeg" },
+    //   { name: "Lounge Area", image: "/palm-altezze/palm-altezze (2).jpeg" },
+    //   { name: "Lounge / Seating Area", image: "/palm-altezze/palm-altezze (3).jpeg" },
+    //   { name: "Kids Play Area Indoor", image: "/palm-altezze/palm-altezze (4).jpeg" },
+    //   { name: "Library / Reading Lounge", image: "/palm-altezze/palm-altezze (5).jpeg" },
+    //   { name: "Kids Creche / Play School", image: "/palm-altezze/palm-altezze (6).jpeg" },
+    //   { name: "Well-equipped Gymnasium", image: "/palm-altezze/palm-altezze (7).jpeg" },
+    //   { name: "Reception Desk", image: "/palm-altezze/palm-altezze (8).jpeg" },
+    //   { name: "Billiards / Pool Table", image: "/palm-altezze/palm-altezze (9).jpeg" },
+    //   { name: "Mini Theatre", image: "/palm-altezze/palm-altezze (10).jpeg" },
+    //   { name: "Gymnasium", image: "/palm-altezze/palm-altezze (11).jpeg" },
+    //   { name: "Party Hall", image: "/palm-altezze/palm-altezze (12).jpeg" },
+    //   { name: "Clubhouse Exterior", image: "/palm-altezze/palm-altezze (13).jpeg" },
+    //   { name: "Clubhouse Rooftop", image: "/palm-altezze/palm-altezze (14).jpeg" },
+    //   { name: "Vertical Garden / Green Wall", image: "/palm-altezze/palm-altezze (15).jpeg" },
+    //   { name: "Squash Court", image: "/palm-altezze/palm-altezze (16).jpeg" },
+    //   { name: "Swimming Pool", image: "/palm-altezze/palm-altezze (17).jpeg" },
+    //   { name: "High-rise Apartment Building", image: "/palm-altezze/palm-altezze (18).jpeg" },
+    //   { name: "Jacuzzi", image: "/palm-altezze/palm-altezze (19).jpeg" },
+    //   { name: "Building Exterior View", image: "/palm-altezze/palm-altezze (20).jpeg" },
+    //   { name: "Building Facade / Balconies", image: "/palm-altezze/palm-altezze (21).jpeg" },
+    //   { name: "Landscaped Walkway", image: "/palm-altezze/palm-altezze (22).jpeg" },
+    //   { name: "Paved Pathway", image: "/palm-altezze/palm-altezze (23).jpeg" },
+    //   { name: "Jogging Track", image: "/palm-altezze/palm-altezze (24).jpeg" },
+    //   { name: "Landscaped Garden", image: "/palm-altezze/palm-altezze (25).jpeg" },
+    //   { name: "Landscaped Garden with Seating", image: "/palm-altezze/palm-altezze (26).jpeg" },
+    //   { name: "Amphitheatre", image: "/palm-altezze/palm-altezze (27).jpeg" },
+    //   { name: "Central Garden / Seating Area", image: "/palm-altezze/palm-altezze (28).jpeg" },
+    //   { name: "Children Play Area", image: "/palm-altezze/palm-altezze (29).jpeg" },
+    //   { name: "Children Play Area", image: "/palm-altezze/palm-altezze (30).jpeg" },
+    //   { name: "Park and Play Area", image: "/palm-altezze/palm-altezze (31).jpeg" },
+    //   { name: "Landscaped Lawn", image: "/palm-altezze/palm-altezze (32).jpeg" },
+    //   { name: "Swimming Pool View", image: "/palm-altezze/palm-altezze (33).jpeg" },
+    //   { name: "Multipurpose Court", image: "/palm-altezze/palm-altezze (34).jpeg" },
+    //   { name: "Rooftop Soccer Pitch", image: "/palm-altezze/palm-altezze (35).jpeg" },
+    //   { name: "Aerial View of Complex", image: "/palm-altezze/palm-altezze (36).jpeg" },
+    //   { name: "Aerial View of Tower", image: "/palm-altezze/palm-altezze (37).jpeg" },
+    //   { name: "Paved Pathway", image: "/palm-altezze/palm-altezze (23).jpeg" },
+    //   { name: "Park and Play Area", image: "/palm-altezze/palm-altezze (31).jpeg" },
+    //   { name: "Paved Pathway", image: "/palm-altezze/palm-altezze (23).jpeg" },
+    // ]
     const amenities = [
-      { name: "Reception Hall", image: "/palm-altezze/palm-altezze (1).jpeg" },
-      { name: "Lounge Area", image: "/palm-altezze/palm-altezze (2).jpeg" },
-      { name: "Lounge / Seating Area", image: "/palm-altezze/palm-altezze (3).jpeg" },
-      { name: "Kids Play Area Indoor", image: "/palm-altezze/palm-altezze (4).jpeg" },
-      { name: "Library / Reading Lounge", image: "/palm-altezze/palm-altezze (5).jpeg" },
-      { name: "Kids Creche / Play School", image: "/palm-altezze/palm-altezze (6).jpeg" },
-      { name: "Well-equipped Gymnasium", image: "/palm-altezze/palm-altezze (7).jpeg" },
-      { name: "Reception Desk", image: "/palm-altezze/palm-altezze (8).jpeg" },
-      { name: "Billiards / Pool Table", image: "/palm-altezze/palm-altezze (9).jpeg" },
-      { name: "Mini Theatre", image: "/palm-altezze/palm-altezze (10).jpeg" },
-      { name: "Gymnasium", image: "/palm-altezze/palm-altezze (11).jpeg" },
-      { name: "Party Hall", image: "/palm-altezze/palm-altezze (12).jpeg" },
-      { name: "Clubhouse Exterior", image: "/palm-altezze/palm-altezze (13).jpeg" },
-      { name: "Clubhouse Rooftop", image: "/palm-altezze/palm-altezze (14).jpeg" },
-      { name: "Vertical Garden / Green Wall", image: "/palm-altezze/palm-altezze (15).jpeg" },
-      { name: "Squash Court", image: "/palm-altezze/palm-altezze (16).jpeg" },
-      { name: "Swimming Pool", image: "/palm-altezze/palm-altezze (17).jpeg" },
-      { name: "High-rise Apartment Building", image: "/palm-altezze/palm-altezze (18).jpeg" },
-      { name: "Jacuzzi", image: "/palm-altezze/palm-altezze (19).jpeg" },
-      { name: "Building Exterior View", image: "/palm-altezze/palm-altezze (20).jpeg" },
-      { name: "Building Facade / Balconies", image: "/palm-altezze/palm-altezze (21).jpeg" },
-      { name: "Landscaped Walkway", image: "/palm-altezze/palm-altezze (22).jpeg" },
-      { name: "Paved Pathway", image: "/palm-altezze/palm-altezze (23).jpeg" },
-      { name: "Jogging Track", image: "/palm-altezze/palm-altezze (24).jpeg" },
-      { name: "Landscaped Garden", image: "/palm-altezze/palm-altezze (25).jpeg" },
-      { name: "Landscaped Garden with Seating", image: "/palm-altezze/palm-altezze (26).jpeg" },
-      { name: "Amphitheatre", image: "/palm-altezze/palm-altezze (27).jpeg" },
-      { name: "Central Garden / Seating Area", image: "/palm-altezze/palm-altezze (28).jpeg" },
-      { name: "Children Play Area", image: "/palm-altezze/palm-altezze (29).jpeg" },
-      { name: "Children Play Area", image: "/palm-altezze/palm-altezze (30).jpeg" },
-      { name: "Park and Play Area", image: "/palm-altezze/palm-altezze (31).jpeg" },
-      { name: "Landscaped Lawn", image: "/palm-altezze/palm-altezze (32).jpeg" },
-      { name: "Swimming Pool View", image: "/palm-altezze/palm-altezze (33).jpeg" },
-      { name: "Multipurpose Court", image: "/palm-altezze/palm-altezze (34).jpeg" },
-      { name: "Rooftop Soccer Pitch", image: "/palm-altezze/palm-altezze (35).jpeg" },
-      { name: "Aerial View of Complex", image: "/palm-altezze/palm-altezze (36).jpeg" },
-      { name: "Aerial View of Tower", image: "/palm-altezze/palm-altezze (37).jpeg" },
-      { name: "Paved Pathway", image: "/palm-altezze/palm-altezze (23).jpeg" },
-      { name: "Park and Play Area", image: "/palm-altezze/palm-altezze (31).jpeg" },
-      { name: "Paved Pathway", image: "/palm-altezze/palm-altezze (23).jpeg" },
+      { name: "Reception Hall", image: "/placeholder.svg" },
+      { name: "Lounge Area", image: "/placeholder.svg" },
+      { name: "Lounge / Seating Area", image: "/placeholder.svg" },
+      { name: "Kids Play Area Indoor", image: "/placeholder.svg" },
+      { name: "Library / Reading Lounge", image: "/placeholder.svg" },
+      { name: "Kids Creche / Play School", image: "/placeholder.svg" },
+      { name: "Well-equipped Gymnasium", image: "/placeholder.svg" },
+      { name: "Reception Desk", image: "/placeholder.svg" },
+      { name: "Billiards / Pool Table", image: "/placeholder.svg" },
+      { name: "Mini Theatre", image: "/placeholder.svg" },
+      { name: "Gymnasium", image: "/placeholder.svg" },
+      { name: "Party Hall", image: "/placeholder.svg" },
+      { name: "Clubhouse Exterior", image: "/placeholder.svg" },
+      { name: "Clubhouse Rooftop", image: "/placeholder.svg" },
+      { name: "Vertical Garden / Green Wall", image: "/placeholder.svg" },
+      { name: "Squash Court", image: "/placeholder.svg" },
+      { name: "Swimming Pool", image: "/placeholder.svg" },
+      { name: "High-rise Apartment Building", image: "/placeholder.svg" },
+      { name: "Jacuzzi", image: "/placeholder.svg" },
+      { name: "Building Exterior View", image: "/placeholder.svg" },
+      { name: "Building Facade / Balconies", image: "/placeholder.svg" },
+      { name: "Landscaped Walkway", image: "/placeholder.svg" },
+      { name: "Paved Pathway", image: "/placeholder.svg" },
+      { name: "Jogging Track", image: "/placeholder.svg" },
+      { name: "Landscaped Garden", image: "/placeholder.svg" },
+      { name: "Landscaped Garden with Seating", image: "/placeholder.svg" },
+      { name: "Amphitheatre", image: "/placeholder.svg" },
+      { name: "Central Garden / Seating Area", image: "/placeholder.svg" },
+      { name: "Children Play Area", image: "/placeholder.svg" },
+      { name: "Children Play Area", image: "/placeholder.svg" },
+      { name: "Park and Play Area", image: "/placeholder.svg" },
+      { name: "Landscaped Lawn", image: "/placeholder.svg" },
+      { name: "Swimming Pool View", image: "/placeholder.svg" },
+      { name: "Multipurpose Court", image: "/placeholder.svg" },
+      { name: "Rooftop Soccer Pitch", image: "/placeholder.svg" },
+      { name: "Aerial View of Complex", image: "/placeholder.svg" },
+      { name: "Aerial View of Tower", image: "/placeholder.svg" },
+      { name: "Paved Pathway", image: "/placeholder.svg" },
+      { name: "Park and Play Area", image: "/placeholder.svg" },
+      { name: "Paved Pathway", image: "/placeholder.svg" },
     ]
 
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
