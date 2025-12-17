@@ -7547,7 +7547,12 @@ import {
   Zap,
   CalendarClock,
   Clock,
-  MessageCircle, // Added for WhatsApp
+  MessageCircle,
+  Key,
+  Briefcase,
+  TrendingUp,
+  Globe,
+  Handshake, // Added for WhatsApp
 } from "lucide-react"
 
 // ========== 1. HERO COMPONENT ==========
@@ -7943,80 +7948,86 @@ function HorizontalBrochureForm() {
   )
 }
 
-// ========== 2. AWARDS SECTION ==========
-function AwardsSection() {
+
+// ========== AWARDS SECTION (Restored & Corrected) ==========
+const AwardsSection = () => {
   return (
-    <motion.section
-      className="py-20 bg-black text-white relative"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
-    >
-      <div className="absolute inset-0 bg-grid-white/[0.05]" />
-      <div className="container mx-auto px-4 relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            className="space-y-8"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold">
-              Times Real Estate Icon Awards, 2025
-            </h1>
-            <p className="text-lg text-gray-400 leading-relaxed">
-              RRL Groups has been honored with the prestigious award for Builder of the Year in
+    <section className="py-24 bg-black text-white relative border-t border-[#333]">
+      {/* Background Grid Effect */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+      
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Content */}
+          <div className="space-y-10">
+            <div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+                Times Real Estate <br/><span className="text-[#d9a406]">Icon Awards, 2025</span>
+                </h2>
+                <div className="w-24 h-1.5 bg-[#d9a406] rounded-full"></div>
+            </div>
+            
+            <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
+              RRL Groups has been honored with the prestigious award for <span className="text-white font-semibold">Builder of the Year</span> in
               the Mid-Segment Housing category by the Times Real Estate ICON Awards, 2025.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               {[
                 ["Builder of the Year 2025", "Mid-segment housing category by Times Real Estate"],
                 ["Global Real Estate Brand Awards 2023", "Winner in Affordability category"],
                 ["Excellence in Amenities Premium", "Mid-Segment Homes 2024"],
               ].map(([title, desc], i) => (
-                <div key={i} className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-gold-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Star className="h-3 w-3 text-black" />
+                <div key={i} className="flex items-start space-x-4 group p-4 rounded-xl border border-transparent hover:border-[#d9a406]/30 hover:bg-[#111] transition-all duration-300">
+                  <div className="w-10 h-10 bg-[#d9a406]/10 border border-[#d9a406] rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#d9a406] transition-colors duration-300">
+                    <Star className="h-5 w-5 text-[#d9a406] group-hover:text-black" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">{title}</h3>
+                    <h3 className="font-bold text-white text-xl mb-1">{title}</h3>
                     <p className="text-gray-500 text-sm">{desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="pt-4">
+            {/* Buttons Area - Partner Link Included */}
+            <div className="flex flex-col sm:flex-row gap-6 pt-4">
               <Link href="/awards">
-                <Button className="rounded-full px-8 py-3 bg-transparent border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-black transition-all duration-300">
+                <Button className="rounded-full px-8 py-7 bg-transparent border-2 border-[#d9a406] text-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300 font-bold text-lg w-full sm:w-auto">
                   View All Awards
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+
+              <Link href="/channel-partner">
+                <Button className="rounded-full px-8 py-7 bg-[#d9a406] text-black hover:bg-white border-2 border-[#d9a406] hover:border-white transition-all duration-300 font-bold text-lg w-full sm:w-auto">
+                  <Handshake className="mr-3 h-6 w-6" />
+                  Partner With Us
                 </Button>
               </Link>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <Image
-              src="/awardhome.jpeg"
+          {/* Right Image */}
+          <div className="relative">
+            <div className="absolute -inset-4 bg-[#d9a406]/20 rounded-3xl blur-2xl"></div>
+            {/* Replace src with your actual award image */}
+            <img 
+              src="/palm-altezze/awardhome.jpeg" 
               alt="RRL Awards Ceremony 2025"
-              width={600}
-              height={400}
-              className="rounded-lg w-full h-auto shadow-2xl shadow-gold-900/50"
+              className="relative rounded-3xl w-full h-auto shadow-2xl border border-[#333] z-10"
             />
-          </motion.div>
+            
+            {/* Floating Badge */}
+            {/* <div className="absolute -bottom-8 -left-8 bg-black border border-[#d9a406] p-8 rounded-2xl shadow-2xl z-20 hidden lg:block">
+                <p className="text-[#d9a406] font-bold text-5xl mb-1">2025</p>
+                <p className="text-white text-sm uppercase tracking-[0.2em] font-bold">Icon Awards</p>
+            </div> */}
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }
 
@@ -8105,6 +8116,13 @@ function Leadership() {
             </div>
           </motion.div>
         </div>
+        <div className="text-center mt-12">
+            <Link href="/about">
+                <Button variant="outline" className="bg-[#D9A406] border-gold-500 text-black hover:bg-gold-500 hover:text-white rounded-full px-8 py-6">
+                    About us
+                </Button>
+            </Link>
+        </div>
       </div>
     </motion.section>
   )
@@ -8124,20 +8142,20 @@ function Properties() {
       name: "RRL Palm Altezze", 
       location: "Varthur, Bangalore", 
       type: "Luxury Apartment",
-      status: "JUST LAUNCHED", 
+      status: "Booking Open", 
       image: "/justlaunch.png", 
       bedrooms: "2, 3 BHK",
-      devSize: "2 Acres", // Updated
+      devSize: "1 acre 38 Guntas", // Updated
       totalUnits: "115 Units", // Updated
-      timeline: "Possession: 2028",
+      timeline: "Possession: 2027",
       timelineSub: "Next Handover Phase"
     },
         { 
       id: "nc-216", // NEW PROJECT
       name: "NC 216", 
       location: "Bangalore", 
-      type: "Premium Apartment", 
-      status: "Booking Open Soon", 
+      type: "Mid size Apartment", 
+      status: "EOI is Open", 
       image: "/LookProject2.jpeg", // Placeholder image 
       bedrooms: "2, 3 BHK",
       devSize: "2.01 Acres", 
@@ -8149,13 +8167,13 @@ function Properties() {
       id: "palacio", 
       name: "RRL Palacio", 
       location: "Medahalli, Bangalore", 
-      type: "Apartment",
+      type: "Upper Mid-Size Project",
       status: "READY TO MOVE", 
       image: "/LookProject2.jpeg", 
       bedrooms: "2, 3 BHK",
       devSize: "1.5 Acres",
       totalUnits: "103 Units", // Updated
-      timeline: "Early possession granted", // Updated
+      timeline: "Early possession", // Updated
       timelineSub: null
     },
     { 
@@ -8178,8 +8196,8 @@ function Properties() {
       id: "towers", 
       name: "RRL Towers", 
       location: "Sarjapur", // Updated
-      type: "Commercial Complex", // Updated
-      status: "READY TO MOVE", 
+      type: "Commercial", // Updated
+      status: "COMPLETED", 
       image: "/Tower.jpeg", 
       bedrooms: null, // Hidden
       devSize: null, // Hidden
@@ -8191,7 +8209,7 @@ function Properties() {
       id: "complex", 
       name: "RRL Complex", 
       location: "Attibele Sarjapur Road", // Updated
-      type: "Retail & Office",
+      type: "Commercial",
       status: "COMPLETED", 
       image: "/complex.jpg", 
       bedrooms: null, // Hidden
@@ -8391,6 +8409,170 @@ function Properties() {
   )
 }
 
+const JourneySection = () => {
+  // Exact 5 points from the "RRL Milestones" box in the image
+  const milestones = [
+    {
+      year: "Recognition",
+      title: "Award Winning Developers",
+      description: "Recognized for excellence in construction quality and architectural innovation.",
+      icon: Trophy,
+    },
+    {
+      year: "Delivery",
+      title: "Early Possessions",
+      description: "Successfully completed 2 projects and offered possession ahead of schedule.",
+      icon: Key,
+    },
+    {
+      year: "Expertise",
+      title: "High-Rise & Premium",
+      description: "Accommodates high-rise premium projects and mid-size luxury homes with A1 quality.",
+      icon: Building2,
+    },
+    {
+      year: "Innovation",
+      title: "Pioneer in Commercial",
+      description: "Leading the way in landmark commercial projects.",
+      icon: Briefcase,
+    },
+    {
+      year: "Growth",
+      title: "200% Appreciation",
+      description: "Our completed projects have seen a massive 200% capital appreciation in just 2 years.",
+      icon: TrendingUp,
+    },
+  ]
+
+  return (
+    <section className="py-24 bg-black relative overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#d9a406]/5 via-black to-black"></div>
+
+      <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
+        
+        {/* Header */}
+        <div className="text-center mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-serif font-bold text-white mb-4"
+          >
+            Discover Our <span className="text-[#d9a406]">Journey</span>
+          </motion.h2>
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: 100 }}
+            viewport={{ once: true }}
+            className="h-1 bg-[#d9a406] mx-auto rounded-full"
+          />
+        </div>
+
+        {/* TIMELINE CONTAINER */}
+        <div className="relative">
+          {/* Central Line (Desktop) */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#333] -translate-x-1/2 md:translate-x-0">
+            <motion.div 
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="w-full bg-[#d9a406] origin-top"
+            />
+          </div>
+
+          <div className="space-y-12">
+            {milestones.map((item, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={`flex flex-col md:flex-row items-center gap-8 ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Content Side */}
+                <div className="w-full md:w-1/2 pl-12 md:pl-0">
+                  <div className={`p-6 rounded-2xl border border-[#d9a406]/30 bg-[#111] hover:border-[#d9a406] transition-all duration-300 group relative hover:shadow-[0_0_30px_rgba(217,164,6,0.15)] ${
+                    index % 2 === 0 ? "md:text-left md:mr-12" : "md:text-right md:ml-12"
+                  }`}>
+                    {/* Arrow pointing to center */}
+                    <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-[#111] border-t border-r border-[#d9a406]/30 group-hover:border-[#d9a406] rotate-45 transition-colors ${
+                       index % 2 === 0 ? "-right-2.5 border-l-0 border-b-0" : "-left-2.5 border-t-0 border-r-0 border-b border-l"
+                    }`}></div>
+
+                    <div className={`flex items-center gap-4 mb-3 ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}>
+                      <div className="p-3 bg-[#d9a406]/10 rounded-lg text-[#d9a406]">
+                        <item.icon className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <span className="block text-sm text-[#d9a406] font-bold tracking-widest uppercase">{item.year}</span>
+                        <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                      </div>
+                    </div>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Center Dot */}
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 flex items-center justify-center">
+                  <div className="w-4 h-4 rounded-full bg-black border-2 border-[#d9a406] relative z-10">
+                    <div className="absolute inset-0 bg-[#d9a406] rounded-full animate-ping opacity-75"></div>
+                  </div>
+                </div>
+
+                {/* Empty Side for Layout Balance */}
+                <div className="w-full md:w-1/2 hidden md:block"></div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* NRI CLIENTS BANNER (From Bottom Box in Image) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mt-24"
+        >
+          <div className="relative rounded-2xl overflow-hidden border border-[#d9a406]/50 bg-gradient-to-r from-[#1a1a1a] to-black p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 group">
+            
+            {/* Background Glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#d9a406] rounded-full filter blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+
+            <div className="flex items-start gap-6 relative z-10">
+              <div className="p-4 bg-[#d9a406] rounded-full shadow-[0_0_20px_rgba(217,164,6,0.4)]">
+                <Globe className="w-8 h-8 text-black" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-3xl font-bold text-white">Global Trust</h3>
+                <p className="text-xl text-[#d9a406] font-semibold">5% of our clients are NRIs</p>
+                <p className="text-gray-400 max-w-md">
+                  Across all completed projects, we are the preferred choice for international investors.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative z-10">
+              <Button 
+                className="bg-transparent border-2 border-[#d9a406] text-[#d9a406] hover:bg-[#d9a406] hover:text-black px-8 py-6 text-lg font-bold transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(217,164,6,0.4)]"
+                onClick={() => window.location.href = '/nri-corner'} 
+              >
+                Explore Milestone <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
+  )
+}
 // ========== 5. CLIENT GALLERY ==========
 function HappyClientsGallery() {
   const clientImages = [
@@ -9302,12 +9484,13 @@ export default function HomePage() {
       <Hero />
       <Properties />
       <HappyClientsGallery />
-      <Stats />
+      <JourneySection />
+      {/* <Stats /> */}
       <Testimonials />
       <AwardsSection />
       <Leadership />
       {/* <PartnersSection /> */}
-      <FAQSection />
+      {/* <FAQSection /> */}
       <ChannelPartnerCTA />
       <CallToAction />
     </>

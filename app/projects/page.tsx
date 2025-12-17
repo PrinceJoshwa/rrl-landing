@@ -325,13 +325,13 @@ const projects = [
     name: "RRL Palm Altezze", 
     location: "Varthur, Bangalore", 
     type: "Premium Apartment", 
-    status: "JUST LAUNCHED", 
+    status: "Open For Booking", 
     image: "/LookProject1.jpeg", 
     href: "/projects/palm-altezze",
-    acres: "2 Acres",
+    acres: "1 acre 38 Guntas",
     units: "115 Units",
     config: "2, 3 BHK",
-    possession: "Possession: 2028"
+    possession: "Possession: 2027"
   },
   { 
     name: "RRL Code Name - NC 216", 
