@@ -677,7 +677,7 @@ function SiteVisitAction({ isMobile = false }) {
       {/* 2. CALL BUTTON (Black & Gold Theme) */}
       <Button
         variant="outline"
-        className="rounded-full w-12 h-12 p-0 bg-black border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-black transition-all shadow-md shrink-0"
+        className="rounded-full w-12 h-12 p-0 bg-black border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-white transition-all shadow-md shrink-0"
         onClick={() => window.location.href = `tel:${CONTACT_NUMBER}`}
       >
         <Phone className="h-5 w-5" />
@@ -686,7 +686,7 @@ function SiteVisitAction({ isMobile = false }) {
       {/* 3. WHATSAPP BUTTON (Black & Gold Theme) */}
       <Button
         variant="outline"
-        className="rounded-full w-12 h-12 p-0 bg-black border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-black transition-all shadow-md shrink-0"
+        className="rounded-full w-12 h-12 p-0 bg-black border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-white transition-all shadow-md shrink-0"
         onClick={() => window.open(`https://wa.me/${CONTACT_NUMBER.replace('+', '')}`, "_blank")}
       >
         <WhatsAppIcon className="h-6 w-6" />
