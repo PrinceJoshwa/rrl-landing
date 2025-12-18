@@ -600,13 +600,13 @@ import Image from "next/image"
 
 // --- Image Assets ---
 const lifeAtRRLImages = [
-  // "/awardhome.jpeg",
-  // "/awardhome1.jpeg",
-  "/LookProject2.jpeg", 
-  "/LookProject4.jpeg", 
-  "/LookProject5.jpeg", 
-  "/LookProject11.jpeg", 
-  "/LookProject3.jpeg",
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0011_nssvkw.jpg",
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0010_q2r24l.jpg",
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057539/IMG-20251218-WA0018_nuy29a.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057532/IMG-20251218-WA0007_bhqie0.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057527/IMG-20251218-WA0012_v8llfl.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057525/IMG-20251218-WA0008_mnbwk5.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0020_xcy5dw.jpg",
 ];
 
 // Exact Roles from Screenshot

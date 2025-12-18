@@ -7719,7 +7719,7 @@ function PalmAltezzeBanner() {
        {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/justlaunch.png"
+          src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png"
           alt="Palm Altezze Background"
           fill
           className="object-cover opacity-30"
@@ -7795,7 +7795,8 @@ function PalmAltezzeBanner() {
           <div className="lg:w-1/2 w-full">
             <div className="relative w-full h-[500px] lg:h-[150vh] rounded-2xl overflow-hidden border border-gold-500/30 shadow-2xl">
               <Image
-                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764569945/palm-altezze_20_mkplh3.jpg"
+                // src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764569945/palm-altezze_20_mkplh3.jpg"
+                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766052290/generated-image_54_byqmbp.png"
                 alt="Palm Altezze Interior"
                 fill
                 className="object-cover lg:object-fill lg:object-top"
@@ -8014,7 +8015,7 @@ const AwardsSection = () => {
             <div className="absolute -inset-4 bg-[#d9a406]/20 rounded-3xl blur-2xl"></div>
             {/* Replace src with your actual award image */}
             <img 
-              src="/palm-altezze/awardhome.jpeg" 
+              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055536/awardhome_wvhw2f.jpg" 
               alt="RRL Awards Ceremony 2025"
               className="relative rounded-3xl w-full h-auto shadow-2xl border border-[#333] z-10"
             />
@@ -8143,7 +8144,7 @@ function Properties() {
       location: "Varthur, Bangalore", 
       type: "Luxury Apartment",
       status: "Booking Open", 
-      image: "/justlaunch.png", 
+      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051629/RRL_Palm_Altezze_ijbyta.png", 
       bedrooms: "2, 3 BHK",
       devSize: "1 acre 38 Guntas", // Updated
       totalUnits: "115 Units", // Updated
@@ -8156,7 +8157,7 @@ function Properties() {
       location: "Bangalore", 
       type: "Mid size Apartment", 
       status: "EOI is Open", 
-      image: "/LookProject2.jpeg", // Placeholder image 
+      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051622/NC_216_i8ehf8.png", // Placeholder image 
       bedrooms: "2, 3 BHK",
       devSize: "2.01 Acres", 
       totalUnits: "216 Units",
@@ -8169,7 +8170,7 @@ function Properties() {
       location: "Medahalli, Bangalore", 
       type: "Upper Mid-Size Project",
       status: "READY TO MOVE", 
-      image: "/LookProject2.jpeg", 
+      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png", 
       bedrooms: "2, 3 BHK",
       devSize: "1.5 Acres",
       totalUnits: "103 Units", // Updated
@@ -8182,7 +8183,7 @@ function Properties() {
       location: "Sarjapur, Bangalore", 
       type: "Premium Apartment", 
       status: "COMPLETED", 
-      image: "/LookProject5.jpeg", 
+      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png", 
       bedrooms: "2, 3 BHK",
       devSize: "1.5 Acres", // Updated
       totalUnits: "148 Units", // Updated
@@ -8198,7 +8199,7 @@ function Properties() {
       location: "Sarjapur", // Updated
       type: "Commercial", // Updated
       status: "COMPLETED", 
-      image: "/Tower.jpeg", 
+      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Towers_k9ksfq.png", 
       bedrooms: null, // Hidden
       devSize: null, // Hidden
       totalUnits: null, // Hidden
@@ -8211,7 +8212,7 @@ function Properties() {
       location: "Attibele Sarjapur Road", // Updated
       type: "Commercial",
       status: "COMPLETED", 
-      image: "/complex.jpg", 
+      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Complex_cogjaw.png", 
       bedrooms: null, // Hidden
       devSize: null, // Hidden
       totalUnits: null, // Hidden
@@ -8267,7 +8268,7 @@ function Properties() {
                   src={property.image || "/placeholder.svg"}
                   alt={property.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-fill transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 
@@ -8670,6 +8671,58 @@ function HappyClientsGallery() {
     </section>
   )
 }
+
+function LifeAtRRLGallery() {
+  const lifeAtRRLImages = [
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0011_nssvkw.jpg",
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0010_q2r24l.jpg",
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057539/IMG-20251218-WA0018_nuy29a.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057532/IMG-20251218-WA0007_bhqie0.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057527/IMG-20251218-WA0012_v8llfl.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057525/IMG-20251218-WA0008_mnbwk5.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0020_xcy5dw.jpg",
+];
+return (
+<section className="py-24 bg-[#111] border-y border-gold-900/30 overflow-hidden relative">
+        <div className="container mx-auto px-4 mb-12 text-center relative z-10">
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-2 text-white">
+              Life at <span className="text-gold-500">RRL</span>
+            </h2>
+            <p className="text-xl text-gold-400/80 uppercase tracking-widest font-medium">Team Outing Gallery</p>
+          </motion.div>
+        </div>
+
+        {/* Infinite Marquee */}
+        <div className="relative flex w-full overflow-hidden group">
+          <div className="absolute left-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-r from-[#111] to-transparent" />
+          <div className="absolute right-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-l from-[#111] to-transparent" />
+          
+          <motion.div 
+            className="flex gap-6 whitespace-nowrap"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+          >
+            {/* Double list for seamless loop */}
+            {[...lifeAtRRLImages, ...lifeAtRRLImages].map((src, i) => (
+              <div key={i} className="relative w-[300px] h-[400px] md:w-[400px] md:h-[500px] rounded-3xl overflow-hidden flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 border border-white/5 hover:border-gold-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(217,164,6,0.3)]">
+                <Image 
+                  src={src} 
+                  alt="Life at RRL" 
+                  fill 
+                  className="object-cover" 
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+      )
+    }
 
 // ========== STATS COMPONENT (RESTORED) ==========
 function Stats() {
@@ -9488,6 +9541,7 @@ export default function HomePage() {
       {/* <Stats /> */}
       <Testimonials />
       <AwardsSection />
+      <LifeAtRRLGallery />
       <Leadership />
       {/* <PartnersSection /> */}
       {/* <FAQSection /> */}

@@ -4007,140 +4007,158 @@ export default function Home() {
     return <span>{separator ? count.toLocaleString() : count}{suffix}</span>
   }
 
-  // ========== HERO SECTION ==========
   const HeroSection = () => {
-    const [heroFormData, setHeroFormData] = useState({ name: "", email: "", phone: "" })
+  // 1. LOGIC PRESERVED
+  const [heroFormData, setHeroFormData] = useState({ name: "", email: "", phone: "" })
 
-    const handleHeroChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setHeroFormData({ ...heroFormData, [e.target.name]: e.target.value })
-    }
-
-    const onHeroSubmit = async (e: React.FormEvent) => {
-      e.preventDefault()
-      const success = await handleFormSubmit(heroFormData)
-      if (success) setHeroFormData({ name: "", email: "", phone: "" })
-    }
-
-    return (
-      <section className="relative w-full min-h-screen bg-black overflow-hidden pt-24 pb-12 flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#111] to-black opacity-90 z-0" />
-        <motion.div
-          className="absolute top-0 right-0 w-96 h-96 bg-[#d9a406] rounded-full opacity-10 blur-[100px]"
-          animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
-          transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
-        />
-
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* LEFT CONTENT */}
-            <motion.div className="space-y-8" initial="hidden" animate="visible" variants={containerVariants}>
-              <motion.div
-                className="inline-flex items-center gap-2 bg-[#d9a406]/10 text-[#d9a406] px-4 py-2 rounded-full text-sm font-semibold border border-[#d9a406]/50"
-                variants={itemVariants}
-              >
-                <motion.span
-                  className="w-2 h-2 bg-[#d9a406] rounded-full"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                />
-                Possession: Mid 2027
-              </motion.div>
-
-              <motion.div className="space-y-4" variants={itemVariants}>
-                <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-                  A Lifestyle That <br /><span className="text-[#d9a406]">Stands Tall</span>
-                </h1>
-                <p className="text-xl md:text-2xl text-gray-300">
-                  Premium 2 & 3 BHK Apartments in Varthur. <br />
-                  <span className="text-sm opacity-60 font-normal">RERA: PRM/KA/RERA/1251/308/PR/141025/008167</span>
-                </p>
-              </motion.div>
-
-              {/* === STATS GRID === */}
-              <motion.div 
-                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 border-t border-white/10 pt-8" 
-                variants={containerVariants}
-              >
-                <motion.div variants={itemVariants} className="space-y-1">
-                  <p className="text-3xl font-bold text-[#d9a406]">
-                    <AnimatedCounter end={50} suffix="%" />
-                  </p>
-                  <p className="text-xs text-gray-400 uppercase tracking-wide">UDS Share</p>
-                </motion.div>
-
-                <motion.div variants={itemVariants} className="space-y-1">
-                  <p className="text-3xl font-bold text-[#d9a406]">
-                    <AnimatedCounter end={92} suffix="%" />
-                  </p>
-                  <p className="text-xs text-gray-400 uppercase tracking-wide">Open Space</p>
-                </motion.div>
-
-                <motion.div variants={itemVariants} className="space-y-1">
-                  <p className="text-3xl font-bold text-[#d9a406]">
-                    <AnimatedCounter end={70} suffix="%" />
-                  </p>
-                  <p className="text-xs text-gray-400 uppercase tracking-wide">Carpet Area</p>
-                </motion.div>
-
-                <motion.div variants={itemVariants} className="space-y-1 relative">
-                  <p className="text-3xl font-bold text-[#d9a406] flex items-center">
-                    <AnimatedCounter start={10} end={5} duration={3000} />
-                  </p>
-                  <p className="text-xs text-white font-bold uppercase tracking-wide">Units / Floor</p>
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#d9a406] rounded-full animate-ping opacity-75"></span>
-                </motion.div>
-
-                <motion.div variants={itemVariants} className="space-y-1">
-                  <p className="text-3xl font-bold text-[#d9a406]">
-                    <AnimatedCounter end={16000} separator={true} />
-                  </p>
-                  <p className="text-xs text-gray-400 uppercase tracking-wide">Sq.ft Clubhouse</p>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-
-            {/* RIGHT CONTENT: Enquiry Form */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-full max-w-md mx-auto lg:ml-auto"
-            >
-              <Card className="p-8 bg-white shadow-2xl rounded-2xl border-t-4 border-[#d9a406]">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-black mb-2">Enquire Now</h3>
-                  <p className="text-gray-500 text-sm">Register to avail pre-launch benefits & priority site visit.</p>
-                </div>
-                <form onSubmit={onHeroSubmit} className="space-y-4">
-                  <input 
-                    type="text" name="name" value={heroFormData.name} onChange={handleHeroChange} placeholder="Your Name" required 
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
-                  />
-                  <input 
-                    type="tel" name="phone" value={heroFormData.phone} onChange={handleHeroChange} placeholder="Mobile Number" required 
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
-                  />
-                  <input 
-                    type="email" name="email" value={heroFormData.email} onChange={handleHeroChange} placeholder="Email Address" required 
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
-                  />
-                  <Button type="submit" size="lg" className="w-full bg-black hover:bg-[#333] text-[#d9a406] font-bold py-6 text-lg shadow-lg hover:shadow-xl transition-all border border-[#d9a406]">
-                    Get Instant Call Back
-                  </Button>
-                  <p className="text-xs text-gray-400 text-center mt-4">
-                    By submitting, you agree to our privacy policy.
-                  </p>
-                </form>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-        <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2" animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
-          <ChevronDown className="w-6 h-6 text-[#d9a406]" />
-        </motion.div>
-      </section>
-    )
+  const handleHeroChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setHeroFormData({ ...heroFormData, [e.target.name]: e.target.value })
   }
+
+  const onHeroSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const success = await handleFormSubmit(heroFormData) // Preserved external handler
+    if (success) setHeroFormData({ name: "", email: "", phone: "" })
+  }
+
+  return (
+    <section className="relative w-full min-h-screen bg-black overflow-hidden pt-24 pb-12 flex items-center">
+      
+      {/* 2. NEW BACKGROUND IMAGE ADDED HERE */}
+      <div className="absolute inset-0 z-0">
+          <img 
+              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png" 
+              alt="Luxury Exterior" 
+              className="w-full h-full object-cover"
+          />
+          {/* Dark overlay to ensure text remains readable */}
+          <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      {/* 3. ORIGINAL GRADIENT & BLOB PRESERVED */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#111] to-black opacity-80 z-0 mix-blend-overlay" />
+      
+      <motion.div
+        className="absolute top-0 right-0 w-96 h-96 bg-[#d9a406] rounded-full opacity-10 blur-[100px] z-0"
+        animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
+        transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
+      />
+
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* LEFT CONTENT */}
+          <motion.div className="space-y-8" initial="hidden" animate="visible" variants={containerVariants}>
+            <motion.div
+              className="inline-flex items-center gap-2 bg-[#d9a406]/10 text-[#d9a406] px-4 py-2 rounded-full text-sm font-semibold border border-[#d9a406]/50"
+              variants={itemVariants}
+            >
+              <motion.span
+                className="w-2 h-2 bg-[#d9a406] rounded-full"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              />
+              Possession: Mid 2027
+            </motion.div>
+
+            <motion.div className="space-y-4" variants={itemVariants}>
+              {/* Added drop-shadow for better readability over image */}
+              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight drop-shadow-xl">
+                A Lifestyle That <br /><span className="text-[#d9a406]">Stands Tall</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-200 drop-shadow-md">
+                Premium 2 & 3 BHK Apartments in Varthur. <br />
+                <span className="text-sm opacity-80 font-normal">RERA: PRM/KA/RERA/1251/308/PR/141025/008167</span>
+              </p>
+            </motion.div>
+
+            {/* === STATS GRID PRESERVED === */}
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 border-t border-white/20 pt-8" 
+              variants={containerVariants}
+            >
+              <motion.div variants={itemVariants} className="space-y-1">
+                <p className="text-3xl font-bold text-[#d9a406]">
+                  <AnimatedCounter end={50} suffix="%" />
+                </p>
+                <p className="text-xs text-gray-300 uppercase tracking-wide">UDS Share</p>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="space-y-1">
+                <p className="text-3xl font-bold text-[#d9a406]">
+                  <AnimatedCounter end={92} suffix="%" />
+                </p>
+                <p className="text-xs text-gray-300 uppercase tracking-wide">Open Space</p>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="space-y-1">
+                <p className="text-3xl font-bold text-[#d9a406]">
+                  <AnimatedCounter end={70} suffix="%" />
+                </p>
+                <p className="text-xs text-gray-300 uppercase tracking-wide">Carpet Area</p>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="space-y-1 relative">
+                <p className="text-3xl font-bold text-[#d9a406] flex items-center">
+                  <AnimatedCounter start={10} end={5} duration={3000} />
+                </p>
+                <p className="text-xs text-white font-bold uppercase tracking-wide">Units / Floor</p>
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#d9a406] rounded-full animate-ping opacity-75"></span>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="space-y-1">
+                <p className="text-3xl font-bold text-[#d9a406]">
+                  <AnimatedCounter end={16000} separator={true} />
+                </p>
+                <p className="text-xs text-gray-300 uppercase tracking-wide">Sq.ft Clubhouse</p>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT CONTENT: Enquiry Form */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-full max-w-md mx-auto lg:ml-auto"
+          >
+            {/* Added backdrop-blur to make form pop against the image */}
+            <Card className="p-8 bg-white/95 backdrop-blur-sm shadow-2xl rounded-2xl border-t-4 border-[#d9a406]">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-black mb-2">Enquire Now</h3>
+                <p className="text-gray-500 text-sm">Register to avail pre-launch benefits & priority site visit.</p>
+              </div>
+              <form onSubmit={onHeroSubmit} className="space-y-4">
+                <input 
+                  type="text" name="name" value={heroFormData.name} onChange={handleHeroChange} placeholder="Your Name" required 
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
+                />
+                <input 
+                  type="tel" name="phone" value={heroFormData.phone} onChange={handleHeroChange} placeholder="Mobile Number" required 
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
+                />
+                <input 
+                  type="email" name="email" value={heroFormData.email} onChange={handleHeroChange} placeholder="Email Address" required 
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
+                />
+                <Button type="submit" size="lg" className="w-full bg-black hover:bg-[#333] text-[#d9a406] font-bold py-6 text-lg shadow-lg hover:shadow-xl transition-all border border-[#d9a406]">
+                  Get Instant Call Back
+                </Button>
+                <p className="text-xs text-gray-400 text-center mt-4">
+                  By submitting, you agree to our privacy policy.
+                </p>
+              </form>
+            </Card>
+          </motion.div>
+        </div>
+      </div>
+      
+      <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20" animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
+        <ChevronDown className="w-6 h-6 text-[#d9a406]" />
+      </motion.div>
+    </section>
+  )
+}
 
   // ========== TOWER SHOWCASE SECTION ==========
   const TowerShowcaseSection = () => (
@@ -4156,9 +4174,9 @@ export default function Home() {
           >
              <div className="absolute inset-0 bg-[#d9a406] rounded-2xl transform -rotate-2 opacity-20"></div>
              <img 
-               src="/palm-altezze/palm-altezze (18).jpeg" 
+               src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051905/Copy_of_PALM_ALTEZZE_1.1_vtrxar.png" 
                alt="RRL Palm Altezze Tower Elevation" 
-               className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-4 border-white" 
+               className="relative w-full h-full object-fill rounded-2xl shadow-2xl border-4 border-white" 
              />
              <div className="absolute bottom-8 right-8 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-[#d9a406]">
                <p className="text-sm text-gray-500 font-bold uppercase">Structure</p>
@@ -4274,9 +4292,9 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all z-10"></div>
                 {/* Map Image */}
                 <img 
-                  src="/palm-altezze/map.jpg" 
+                  src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051892/RRl_website_banners_1536_x_752_px_14_n60kft.png" 
                   alt="Location Map of Varthur Road" 
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                  className="w-full h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute bottom-4 left-4 z-20 bg-black/90 border border-[#d9a406] px-4 py-2 rounded-lg">
                    <p className="text-[#d9a406] text-xs font-bold uppercase tracking-wider">Prime Location</p>
@@ -4435,7 +4453,7 @@ const Specifications = () => {
           <div className="relative h-full min-h-[600px] w-full hidden lg:block">
              <div className="absolute inset-0 bg-[#d9a406]/5 rounded-t-full"></div>
              <img 
-               src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764569743/RRL-palm-altezze-banner2_rpgppt.jpg" 
+               src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766052207/generated-image_54_pzy69n.png" 
                alt="Premium Apartment Interior" 
                className="w-full h-full object-cover rounded-t-full shadow-2xl"
              />
@@ -4586,7 +4604,7 @@ At RRL Palm Altezze, we combine high-tech Mivan Engineering with eco-friendly So
                 
                 <motion.div initial={{opacity: 0, scale: 0.9}} whileInView={{opacity: 1, scale: 1}} viewport={{once: true}} className="relative">
                    <div className="absolute inset-0 bg-[#d9a406] rounded-2xl transform rotate-3 opacity-30"></div>
-                   <img src="/palm-altezze/palm-altezze (20).jpeg" alt="RRL Palm Altezze Architecture" className="relative rounded-2xl shadow-2xl border-4 border-white/10 w-full object-cover" />
+                   <img src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051902/PALM_ALTEZZE_2_ok_aysmb2.png" alt="RRL Palm Altezze Architecture" className="relative rounded-2xl shadow-2xl border-4 border-white/10 w-full object-cover" />
                 </motion.div>
              </div>
           </div>
@@ -4595,84 +4613,102 @@ At RRL Palm Altezze, we combine high-tech Mivan Engineering with eco-friendly So
   }
 
   // ========== VR SHOWCASE SECTION ==========
-  const VRShowcaseSection = () => {
-    return (
-      <section className="py-20 bg-black border-t border-[#333]">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Visualize Your <br/><span className="text-[#d9a406]">Home Virtually</span>
-              </h2>
-              <div className="w-16 h-1 bg-[#d9a406] rounded-full"></div>
-              <p className="text-xl text-gray-400">The Next Era of Interior Design.</p>
-              <Button size="lg" className="bg-[#d9a406] text-black hover:bg-white font-bold gap-2">
-                <Glasses className="w-5 h-5" /> Book a VR Session Today
-              </Button>
-            </motion.div>
+const VRShowcaseSection = () => {
+  return (
+    <section className="py-20 bg-black border-t border-[#333]">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Content */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              Visualize Your <br/><span className="text-[#d9a406]">Home Virtually</span>
+            </h2>
+            <div className="w-16 h-1 bg-[#d9a406] rounded-full"></div>
+            <p className="text-xl text-gray-400">The Next Era of Interior Design.</p>
+            <Button size="lg" className="bg-[#d9a406] text-black hover:bg-white font-bold gap-2">
+              <Glasses className="w-5 h-5" /> Book a VR Session Today
+            </Button>
+          </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative h-[450px] w-full rounded-2xl overflow-hidden border border-[#333]"
-            >
-               <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
-               <div className="w-full h-full bg-[#111] flex items-center justify-center group">
-                  <Glasses className="w-32 h-32 text-[#333] group-hover:text-[#d9a406] transition-colors duration-500" />
-               </div>
-            </motion.div>
-          </div>
+          {/* Right Image Section */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative h-[450px] w-full rounded-2xl overflow-hidden border border-[#333]"
+          >
+             {/* Gradient Overlay - Optional: makes the image fade into the black background */}
+             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+             
+             {/* Replace src below with your actual image path */}
+             <img 
+               src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766053327/WhatsApp_Image_2025-12-17_at_5.18.31_PM_kzyhgo.jpg" 
+               alt="VR Interior Showcase" 
+               className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
+             />
+          </motion.div>
+
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
+}
 
   // ========== SOLAR POWER SECTION ==========
   const SolarPowerSection = () => {
-    return (
-      <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-[#001f3f]">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-             <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative h-[400px] w-full rounded-2xl overflow-hidden border border-[#d9a406]/30 shadow-[0_0_50px_rgba(217,164,6,0.1)]"
-            >
-               <div className="w-full h-full bg-[#000] flex items-center justify-center relative">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-full bg-blue-500/10 blur-3xl"></div>
-                  <Sun className="w-32 h-32 text-[#d9a406] animate-pulse" />
-               </div>
-            </motion.div>
+  return (
+    <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-[#001f3f]">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Side - Image Replacement */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative h-[400px] w-full rounded-2xl overflow-hidden border border-[#d9a406]/30 shadow-[0_0_50px_rgba(217,164,6,0.1)]"
+          >
+            {/* Overlay to ensure the image blends well with the dark theme */}
+            <div className="absolute inset-0 bg-black/20 z-10 mix-blend-overlay"></div>
+            
+            {/* Replace src with your actual solar panel/energy image */}
+            <img 
+              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766053329/Power_Up_With_Solar_3_awiroe.png" 
+              alt="Solar Power Integration" 
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                 <Sun className="w-8 h-8 text-[#d9a406]" />
-                 <span className="text-[#d9a406] font-bold tracking-widest uppercase text-sm">Sustainability</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Power Up <br/> With <span className="text-[#d9a406]">Solar</span>
-              </h2>
-              <p className="text-lg text-blue-100/80 leading-relaxed">
-                Solar lights for common areas — reducing your current bill every month.
-              </p>
-            </motion.div>
-          </div>
+          {/* Right Side - Content */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="flex items-center gap-3 mb-2">
+               <Sun className="w-8 h-8 text-[#d9a406] animate-spin-slow" /> {/* Added slow spin animation for effect */}
+               <span className="text-[#d9a406] font-bold tracking-widest uppercase text-sm">Sustainability</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              Power Up <br/> With <span className="text-[#d9a406]">Solar</span>
+            </h2>
+            <p className="text-lg text-blue-100/80 leading-relaxed">
+              Solar lights for common areas — reducing your current bill every month.
+            </p>
+          </motion.div>
+          
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
+}
 
   // ========== USP SECTION ==========
   const USPSection = () => {
@@ -4752,7 +4788,7 @@ At RRL Palm Altezze, we combine high-tech Mivan Engineering with eco-friendly So
             </div>
           </motion.div>
           <motion.div className="hidden lg:block relative h-full" initial="hidden" animate="visible" variants={scaleVariants}>
-            <img src="/palm-altezze/palm-altezze (24).jpeg" alt="RRL Palm Altezze Healthy Living" className="w-full h-full object-contain rounded-2xl shadow-2xl border border-[#d9a406]/20" />
+            <img src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572047/WhatsApp_Image_2025-12-01_at_10.21.07_AM_tzwvjj.jpg" alt="RRL Palm Altezze Healthy Living" className="w-full h-full object-contain rounded-2xl shadow-2xl border border-[#d9a406]/20" />
           </motion.div>
         </div>
       </div>
@@ -4938,7 +4974,7 @@ const projects = [
     location: "Medahalli, Bangalore", 
     type: "Luxury Apartment", 
     status: "READY TO MOVE", 
-    image: "/LookProject2.jpeg",
+    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png",
     href: "/projects/palacio",
     acres: "1.5 Acres",
     units: "103 Units",
@@ -4950,7 +4986,7 @@ const projects = [
     location: "Sarjapur, Bangalore", 
     type: "Premium Apartment", 
     status: "Completed", 
-    image: "/LookProject5.jpeg",
+    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png",
     href: "/projects/nature-woods",
     acres: "1.5 Acres",
     units: "148 Units",
@@ -4979,7 +5015,7 @@ return (
                         src={project.image || "/placeholder.svg"} 
                         alt={project.name} 
                         layout="fill" 
-                        objectFit="cover" 
+                        objectFit="fill" 
                         className="group-hover:scale-105 transition-transform duration-500" 
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />

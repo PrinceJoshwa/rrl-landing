@@ -326,7 +326,7 @@ const projects = [
     location: "Varthur, Bangalore", 
     type: "Premium Apartment", 
     status: "Open For Booking", 
-    image: "/LookProject1.jpeg", 
+    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051629/RRL_Palm_Altezze_ijbyta.png", 
     href: "/projects/palm-altezze",
     acres: "1 acre 38 Guntas",
     units: "115 Units",
@@ -338,7 +338,7 @@ const projects = [
     location: "Sarjapur, Bangalore", 
     type: "Premium Apartment", 
     status: "BOOKING OPEN SOON", 
-    image: "/Sequoia.jpg", 
+    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051622/NC_216_i8ehf8.png", 
     href: "/projects/sequoia", 
     acres: "2.01 Acres",
     units: "216 Units",
@@ -350,7 +350,7 @@ const projects = [
     location: "Medahalli, Bangalore", 
     type: "Luxury Apartment", 
     status: "READY TO MOVE", 
-    image: "/LookProject2.jpeg",
+    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png",
     href: "/projects/palacio",
     acres: "1.5 Acres",
     units: "103 Units",
@@ -362,7 +362,7 @@ const projects = [
     location: "Sarjapur, Bangalore", 
     type: "Premium Apartment", 
     status: "Completed", 
-    image: "/LookProject5.jpeg",
+    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png",
     href: "/projects/nature-woods",
     acres: "1.5 Acres",
     units: "148 Units",
@@ -374,7 +374,7 @@ const projects = [
     location: "Sarjapur", 
     type: "Commercial Complex", 
     status: "OPERATIONAL", 
-    image: "/Tower.jpeg",
+    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Towers_k9ksfq.png",
     href: "/projects/towers",
     acres: null,
     units: null,
@@ -386,7 +386,7 @@ const projects = [
     location: "Attibele Sarjapur Road", 
     type: "Commercial Project", 
     status: "COMPLETED", 
-    image: "/complex.jpg", 
+    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Complex_cogjaw.png", 
     href: "/projects/oasis", 
     acres: null,
     units: null,
@@ -449,10 +449,10 @@ export default function ProjectsPage() {
             >
               <div className="relative h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden border border-gold-500/30 shadow-2xl">
                 <Image 
-                  src="/LookProject1.jpeg" 
+                  src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png" 
                   alt="Palm Altezze Premium View"
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="fill"
                   className="hover:scale-105 transition-transform duration-700"
                 />
                 {/* Overlay Badge */}
@@ -553,7 +553,7 @@ export default function ProjectsPage() {
                         src={project.image || "/placeholder.svg"} 
                         alt={project.name} 
                         layout="fill" 
-                        objectFit="cover" 
+                        objectFit="fill" 
                         className="group-hover:scale-105 transition-transform duration-500" 
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
