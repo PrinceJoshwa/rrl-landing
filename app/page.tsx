@@ -7555,6 +7555,37 @@ import {
   Handshake, // Added for WhatsApp
 } from "lucide-react"
 
+const HeroImageBanner = () => {
+  return (
+    <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
+      <motion.div 
+        initial={{ scale: 1.1, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+        className="w-full h-full relative"
+      >
+        {/* The Image */}
+        <img 
+          src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766066354/RRl_website_banners_1536_x_752_px_16_mhjq0v.png" 
+          alt="RRL Hero Banner" 
+          className="w-full h-full object-fill"
+        />
+        
+        {/* Gradient Overlay for style */}
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div> */}
+        
+        {/* Optional Text Overlay */}
+        <div className="absolute bottom-10 left-0 w-full text-center z-10">
+          {/* <p className="text-[#d9a406] uppercase tracking-[0.2em] text-sm md:text-base font-semibold bg-black/50 inline-block px-4 py-2 rounded-full backdrop-blur-md border border-[#d9a406]/30">
+            Excellence in Construction
+          </p> */}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
 // ========== 1. HERO COMPONENT ==========
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -9534,6 +9565,7 @@ function CallToAction() {
 export default function HomePage() {
   return (
     <>
+      <HeroImageBanner />
       <Hero />
       <Properties />
       <HappyClientsGallery />

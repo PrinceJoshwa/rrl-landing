@@ -4007,158 +4007,218 @@ export default function Home() {
     return <span>{separator ? count.toLocaleString() : count}{suffix}</span>
   }
 
-  const HeroSection = () => {
-  // 1. LOGIC PRESERVED
-  const [heroFormData, setHeroFormData] = useState({ name: "", email: "", phone: "" })
 
-  const handleHeroChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setHeroFormData({ ...heroFormData, [e.target.name]: e.target.value })
-  }
+const HeroImageBanner = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const onHeroSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const success = await handleFormSubmit(heroFormData) // Preserved external handler
-    if (success) setHeroFormData({ name: "", email: "", phone: "" })
-  }
+  // Define your 2 images here
+  const images = [
+    {
+      id: 1,
+      src: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png",
+      alt: "RRL Hero Banner 1"
+    },
+    {
+      id: 2,
+      // REPLACE this URL with your second image
+      src: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051901/ok_5_jrfjhm.png", 
+      alt: "RRL Hero Banner 2"
+    },
+    {
+      id: 3,
+      // REPLACE this URL with your second image
+      src: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051905/Copy_of_PALM_ALTEZZE_1.1_vtrxar.png", 
+      alt: "RRL Hero Banner 3"
+    }
+  ];
+
+  // Automatic slideshow logic (changes every 5 seconds)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length]);
 
   return (
-    <section className="relative w-full min-h-screen bg-black overflow-hidden pt-24 pb-12 flex items-center">
+    <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
       
-      {/* 2. NEW BACKGROUND IMAGE ADDED HERE */}
-      <div className="absolute inset-0 z-0">
+      {/* Animation Container */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide} // Key change triggers animation
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 w-full h-full"
+        >
+          {/* The Image */}
           <img 
-              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png" 
-              alt="Luxury Exterior" 
-              className="w-full h-full object-cover"
+            src={images[currentSlide].src} 
+            alt={images[currentSlide].alt} 
+            className="w-full h-full object-fill" 
           />
-          {/* Dark overlay to ensure text remains readable */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          
+          {/* Optional Gradient Overlay (kept commented as per your code) */}
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div> */}
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Navigation Dots (Optional but recommended for carousels) */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              currentSlide === index 
+                ? "bg-[#d9a406] w-8" // Active dot is Gold and wider
+                : "bg-white/50 w-2 hover:bg-white" // Inactive dots
+            }`}
+          />
+        ))}
       </div>
 
-      {/* 3. ORIGINAL GRADIENT & BLOB PRESERVED */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#111] to-black opacity-80 z-0 mix-blend-overlay" />
-      
-      <motion.div
-        className="absolute top-0 right-0 w-96 h-96 bg-[#d9a406] rounded-full opacity-10 blur-[100px] z-0"
-        animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
-        transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
-      />
-
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* LEFT CONTENT */}
-          <motion.div className="space-y-8" initial="hidden" animate="visible" variants={containerVariants}>
-            <motion.div
-              className="inline-flex items-center gap-2 bg-[#d9a406]/10 text-[#d9a406] px-4 py-2 rounded-full text-sm font-semibold border border-[#d9a406]/50"
-              variants={itemVariants}
-            >
-              <motion.span
-                className="w-2 h-2 bg-[#d9a406] rounded-full"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              />
-              Possession: Mid 2027
-            </motion.div>
-
-            <motion.div className="space-y-4" variants={itemVariants}>
-              {/* Added drop-shadow for better readability over image */}
-              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight drop-shadow-xl">
-                A Lifestyle That <br /><span className="text-[#d9a406]">Stands Tall</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-200 drop-shadow-md">
-                Premium 2 & 3 BHK Apartments in Varthur. <br />
-                <span className="text-sm opacity-80 font-normal">RERA: PRM/KA/RERA/1251/308/PR/141025/008167</span>
-              </p>
-            </motion.div>
-
-            {/* === STATS GRID PRESERVED === */}
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 border-t border-white/20 pt-8" 
-              variants={containerVariants}
-            >
-              <motion.div variants={itemVariants} className="space-y-1">
-                <p className="text-3xl font-bold text-[#d9a406]">
-                  <AnimatedCounter end={50} suffix="%" />
-                </p>
-                <p className="text-xs text-gray-300 uppercase tracking-wide">UDS Share</p>
-              </motion.div>
-
-              <motion.div variants={itemVariants} className="space-y-1">
-                <p className="text-3xl font-bold text-[#d9a406]">
-                  <AnimatedCounter end={92} suffix="%" />
-                </p>
-                <p className="text-xs text-gray-300 uppercase tracking-wide">Open Space</p>
-              </motion.div>
-
-              <motion.div variants={itemVariants} className="space-y-1">
-                <p className="text-3xl font-bold text-[#d9a406]">
-                  <AnimatedCounter end={70} suffix="%" />
-                </p>
-                <p className="text-xs text-gray-300 uppercase tracking-wide">Carpet Area</p>
-              </motion.div>
-
-              <motion.div variants={itemVariants} className="space-y-1 relative">
-                <p className="text-3xl font-bold text-[#d9a406] flex items-center">
-                  <AnimatedCounter start={10} end={5} duration={3000} />
-                </p>
-                <p className="text-xs text-white font-bold uppercase tracking-wide">Units / Floor</p>
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#d9a406] rounded-full animate-ping opacity-75"></span>
-              </motion.div>
-
-              <motion.div variants={itemVariants} className="space-y-1">
-                <p className="text-3xl font-bold text-[#d9a406]">
-                  <AnimatedCounter end={16000} separator={true} />
-                </p>
-                <p className="text-xs text-gray-300 uppercase tracking-wide">Sq.ft Clubhouse</p>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-
-          {/* RIGHT CONTENT: Enquiry Form */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-full max-w-md mx-auto lg:ml-auto"
-          >
-            {/* Added backdrop-blur to make form pop against the image */}
-            <Card className="p-8 bg-white/95 backdrop-blur-sm shadow-2xl rounded-2xl border-t-4 border-[#d9a406]">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-black mb-2">Enquire Now</h3>
-                <p className="text-gray-500 text-sm">Register to avail pre-launch benefits & priority site visit.</p>
-              </div>
-              <form onSubmit={onHeroSubmit} className="space-y-4">
-                <input 
-                  type="text" name="name" value={heroFormData.name} onChange={handleHeroChange} placeholder="Your Name" required 
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
-                />
-                <input 
-                  type="tel" name="phone" value={heroFormData.phone} onChange={handleHeroChange} placeholder="Mobile Number" required 
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
-                />
-                <input 
-                  type="email" name="email" value={heroFormData.email} onChange={handleHeroChange} placeholder="Email Address" required 
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
-                />
-                <Button type="submit" size="lg" className="w-full bg-black hover:bg-[#333] text-[#d9a406] font-bold py-6 text-lg shadow-lg hover:shadow-xl transition-all border border-[#d9a406]">
-                  Get Instant Call Back
-                </Button>
-                <p className="text-xs text-gray-400 text-center mt-4">
-                  By submitting, you agree to our privacy policy.
-                </p>
-              </form>
-            </Card>
-          </motion.div>
-        </div>
-      </div>
-      
-      <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20" animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
-        <ChevronDown className="w-6 h-6 text-[#d9a406]" />
-      </motion.div>
     </section>
-  )
-}
+  );
+};
+
+  // ========== HERO SECTION ==========
+  const HeroSection = () => {
+    const [heroFormData, setHeroFormData] = useState({ name: "", email: "", phone: "" })
+
+    const handleHeroChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setHeroFormData({ ...heroFormData, [e.target.name]: e.target.value })
+    }
+
+    const onHeroSubmit = async (e: React.FormEvent) => {
+      e.preventDefault()
+      const success = await handleFormSubmit(heroFormData)
+      if (success) setHeroFormData({ name: "", email: "", phone: "" })
+    }
+
+    return (
+      <section className="relative w-full min-h-screen bg-black overflow-hidden pt-24 pb-12 flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#111] to-black opacity-90 z-0" />
+        <motion.div
+          className="absolute top-0 right-0 w-96 h-96 bg-[#d9a406] rounded-full opacity-10 blur-[100px]"
+          animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
+          transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
+        />
+
+        <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* LEFT CONTENT */}
+            <motion.div className="space-y-8" initial="hidden" animate="visible" variants={containerVariants}>
+              <motion.div
+                className="inline-flex items-center gap-2 bg-[#d9a406]/10 text-[#d9a406] px-4 py-2 rounded-full text-sm font-semibold border border-[#d9a406]/50"
+                variants={itemVariants}
+              >
+                <motion.span
+                  className="w-2 h-2 bg-[#d9a406] rounded-full"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                />
+                Possession: Mid 2027
+              </motion.div>
+
+              <motion.div className="space-y-4" variants={itemVariants}>
+                <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+                  A Lifestyle That <br /><span className="text-[#d9a406]">Stands Tall</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-gray-300">
+                  Premium 2 & 3 BHK Apartments in Varthur. <br />
+                  <span className="text-sm opacity-60 font-normal">RERA: PRM/KA/RERA/1251/308/PR/141025/008167</span>
+                </p>
+              </motion.div>
+
+              {/* === STATS GRID === */}
+              <motion.div 
+                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 border-t border-white/10 pt-8" 
+                variants={containerVariants}
+              >
+                <motion.div variants={itemVariants} className="space-y-1">
+                  <p className="text-3xl font-bold text-[#d9a406]">
+                    <AnimatedCounter end={50} suffix="%" />
+                  </p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wide">UDS Share</p>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="space-y-1">
+                  <p className="text-3xl font-bold text-[#d9a406]">
+                    <AnimatedCounter end={92} suffix="%" />
+                  </p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wide">Open Space</p>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="space-y-1">
+                  <p className="text-3xl font-bold text-[#d9a406]">
+                    <AnimatedCounter end={70} suffix="%" />
+                  </p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wide">Carpet Area</p>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="space-y-1 relative">
+                  <p className="text-3xl font-bold text-[#d9a406] flex items-center">
+                    <AnimatedCounter start={10} end={5} duration={3000} />
+                  </p>
+                  <p className="text-xs text-white font-bold uppercase tracking-wide">Units / Floor</p>
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#d9a406] rounded-full animate-ping opacity-75"></span>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="space-y-1">
+                  <p className="text-3xl font-bold text-[#d9a406]">
+                    <AnimatedCounter end={16000} separator={true} />
+                  </p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wide">Sq.ft Clubhouse</p>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+
+            {/* RIGHT CONTENT: Enquiry Form */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="w-full max-w-md mx-auto lg:ml-auto"
+            >
+              <Card className="p-8 bg-white shadow-2xl rounded-2xl border-t-4 border-[#d9a406]">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-black mb-2">Enquire Now</h3>
+                  <p className="text-gray-500 text-sm">Register to avail pre-launch benefits & priority site visit.</p>
+                </div>
+                <form onSubmit={onHeroSubmit} className="space-y-4">
+                  <input 
+                    type="text" name="name" value={heroFormData.name} onChange={handleHeroChange} placeholder="Your Name" required 
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
+                  />
+                  <input 
+                    type="tel" name="phone" value={heroFormData.phone} onChange={handleHeroChange} placeholder="Mobile Number" required 
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
+                  />
+                  <input 
+                    type="email" name="email" value={heroFormData.email} onChange={handleHeroChange} placeholder="Email Address" required 
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d9a406] transition-all text-gray-800"
+                  />
+                  <Button type="submit" size="lg" className="w-full bg-black hover:bg-[#333] text-[#d9a406] font-bold py-6 text-lg shadow-lg hover:shadow-xl transition-all border border-[#d9a406]">
+                    Get Instant Call Back
+                  </Button>
+                  <p className="text-xs text-gray-400 text-center mt-4">
+                    By submitting, you agree to our privacy policy.
+                  </p>
+                </form>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+        <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2" animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
+          <ChevronDown className="w-6 h-6 text-[#d9a406]" />
+        </motion.div>
+      </section>
+    )
+  }
 
   // ========== TOWER SHOWCASE SECTION ==========
   const TowerShowcaseSection = () => (
@@ -4174,7 +4234,7 @@ export default function Home() {
           >
              <div className="absolute inset-0 bg-[#d9a406] rounded-2xl transform -rotate-2 opacity-20"></div>
              <img 
-               src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051905/Copy_of_PALM_ALTEZZE_1.1_vtrxar.png" 
+               src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572041/WhatsApp_Image_2025-12-01_at_10.21.07_AM_1_yag3h7.jpg" 
                alt="RRL Palm Altezze Tower Elevation" 
                className="relative w-full h-full object-fill rounded-2xl shadow-2xl border-4 border-white" 
              />
@@ -4209,104 +4269,112 @@ export default function Home() {
   )
   // ========== NEW: CONNECTIVITY SECTION (Black & Gold) ==========
   const Connectivity = () => {
-    return (
-      <section className="py-20 bg-black">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-             
-             {/* Left: Content Blocks */}
-             <div className="space-y-8">
-                <div>
-                  <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
-                    Quick Access to <br/> <span className="text-[#d9a406]">Varthur Road</span>
-                  </h2>
-                  <p className="text-gray-400 text-lg leading-relaxed">
-                    Palm Altezze benefits from low traffic volumes on Varthur Road. 
-                    The community enjoys easy accessibility, with three roads seamlessly connecting to the main road in minutes.
-                  </p>
-                </div>
+  return (
+    <section className="py-20 bg-black">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Left: Content Blocks (PRESERVED) */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
+                  Quick Access to <br/> <span className="text-[#d9a406]">Varthur Road</span>
+                </h2>
+                <p className="text-gray-400 text-lg leading-relaxed">
+                  Palm Altezze benefits from low traffic volumes on Varthur Road. 
+                  The community enjoys easy accessibility, with three roads seamlessly connecting to the main road in minutes.
+                </p>
+              </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Block 1: Public Transport */}
-                    <div className="bg-[#111] p-6 rounded-2xl border border-[#d9a406]/30 hover:border-[#d9a406] transition-colors group">
-                       <div className="flex items-center gap-3 mb-4 border-b border-[#333] pb-3">
-                          <Train className="w-6 h-6 text-[#d9a406]" />
-                          <h3 className="font-bold text-lg text-white group-hover:text-[#d9a406] transition-colors">Transport</h3>
-                       </div>
-                       <ul className="space-y-2 text-sm text-gray-400">
-                          <li>• Purple Line Metro</li>
-                          <li>• Carmelaram Station</li>
-                          <li>• BMTC / Ola / Uber</li>
-                          <li>• SH-35 Connectivity</li>
-                       </ul>
-                    </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {/* Block 1: Public Transport */}
+                  <div className="bg-[#111] p-6 rounded-2xl border border-[#d9a406]/30 hover:border-[#d9a406] transition-colors group">
+                     <div className="flex items-center gap-3 mb-4 border-b border-[#333] pb-3">
+                        <Train className="w-6 h-6 text-[#d9a406]" />
+                        <h3 className="font-bold text-lg text-white group-hover:text-[#d9a406] transition-colors">Transport</h3>
+                     </div>
+                     <ul className="space-y-2 text-sm text-gray-400">
+                        <li>• Purple Line Metro</li>
+                        <li>• Carmelaram Station</li>
+                        <li>• BMTC / Ola / Uber</li>
+                        <li>• SH-35 Connectivity</li>
+                     </ul>
+                  </div>
 
-                    {/* Block 2: Schools */}
-                    <div className="bg-[#111] p-6 rounded-2xl border border-[#d9a406]/30 hover:border-[#d9a406] transition-colors group">
-                       <div className="flex items-center gap-3 mb-4 border-b border-[#333] pb-3">
-                          <BookOpen className="w-6 h-6 text-[#d9a406]" />
-                          <h3 className="font-bold text-lg text-white group-hover:text-[#d9a406] transition-colors">Schools</h3>
-                       </div>
-                       <ul className="space-y-1 text-xs text-gray-400 leading-relaxed">
-                          <li>• Vasishta & Vagdevi Vilas</li>
-                          <li>• The Foundation School</li>
-                          <li>• Orchids International</li>
-                          <li>• VIBGYOR High School</li>
-                          <li>• The Prodigies Int.</li>
-                       </ul>
-                    </div>
+                  {/* Block 2: Schools */}
+                  <div className="bg-[#111] p-6 rounded-2xl border border-[#d9a406]/30 hover:border-[#d9a406] transition-colors group">
+                     <div className="flex items-center gap-3 mb-4 border-b border-[#333] pb-3">
+                        <BookOpen className="w-6 h-6 text-[#d9a406]" />
+                        <h3 className="font-bold text-lg text-white group-hover:text-[#d9a406] transition-colors">Schools</h3>
+                     </div>
+                     <ul className="space-y-1 text-xs text-gray-400 leading-relaxed">
+                        <li>• Vasishta & Vagdevi Vilas</li>
+                        <li>• The Foundation School</li>
+                        <li>• Orchids International</li>
+                        <li>• VIBGYOR High School</li>
+                        <li>• The Prodigies Int.</li>
+                     </ul>
+                  </div>
 
-                    {/* Block 3: Malls */}
-                    <div className="bg-[#111] p-6 rounded-2xl border border-[#d9a406]/30 hover:border-[#d9a406] transition-colors group">
-                       <div className="flex items-center gap-3 mb-4 border-b border-[#333] pb-3">
-                          <ShoppingCart className="w-6 h-6 text-[#d9a406]" />
-                          <h3 className="font-bold text-lg text-white group-hover:text-[#d9a406] transition-colors">Malls</h3>
-                       </div>
-                       <ul className="space-y-2 text-sm text-gray-400">
-                          <li>• Phoenix Marketcity</li>
-                          <li>• Virginia Mall</li>
-                          <li>• Park Square Mall</li>
-                          <li>• Inorbit Mall</li>
-                       </ul>
-                    </div>
+                  {/* Block 3: Malls */}
+                  <div className="bg-[#111] p-6 rounded-2xl border border-[#d9a406]/30 hover:border-[#d9a406] transition-colors group">
+                     <div className="flex items-center gap-3 mb-4 border-b border-[#333] pb-3">
+                        <ShoppingCart className="w-6 h-6 text-[#d9a406]" />
+                        <h3 className="font-bold text-lg text-white group-hover:text-[#d9a406] transition-colors">Malls</h3>
+                     </div>
+                     <ul className="space-y-2 text-sm text-gray-400">
+                        <li>• Phoenix Marketcity</li>
+                        <li>• Virginia Mall</li>
+                        <li>• Park Square Mall</li>
+                        <li>• Inorbit Mall</li>
+                     </ul>
+                  </div>
 
-                    {/* Block 4: Hospitals */}
-                    <div className="bg-[#111] p-6 rounded-2xl border border-[#d9a406]/30 hover:border-[#d9a406] transition-colors group">
-                       <div className="flex items-center gap-3 mb-4 border-b border-[#333] pb-3">
-                          <Hospital className="w-6 h-6 text-[#d9a406]" />
-                          <h3 className="font-bold text-lg text-white group-hover:text-[#d9a406] transition-colors">Hospitals</h3>
-                       </div>
-                       <ul className="space-y-1 text-xs text-gray-400 leading-relaxed">
-                          <li>• Manipal Hospital</li>
-                          <li>• City Hospital</li>
-                          <li>• Sahasra Hospitals</li>
-                          <li>• Cloudnine Hospital</li>
-                          <li>• The Eye Foundation</li>
-                       </ul>
-                    </div>
-                </div>
-             </div>
+                  {/* Block 4: Hospitals */}
+                  <div className="bg-[#111] p-6 rounded-2xl border border-[#d9a406]/30 hover:border-[#d9a406] transition-colors group">
+                     <div className="flex items-center gap-3 mb-4 border-b border-[#333] pb-3">
+                        <Hospital className="w-6 h-6 text-[#d9a406]" />
+                        <h3 className="font-bold text-lg text-white group-hover:text-[#d9a406] transition-colors">Hospitals</h3>
+                     </div>
+                     <ul className="space-y-1 text-xs text-gray-400 leading-relaxed">
+                        <li>• Manipal Hospital</li>
+                        <li>• City Hospital</li>
+                        <li>• Sahasra Hospitals</li>
+                        <li>• Cloudnine Hospital</li>
+                        <li>• The Eye Foundation</li>
+                     </ul>
+                  </div>
+              </div>
+            </div>
 
-             {/* Right: Map */}
-             <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden border border-[#333] bg-[#111] flex items-center justify-center group">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all z-10"></div>
-                {/* Map Image */}
-                <img 
-                  src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051892/RRl_website_banners_1536_x_752_px_14_n60kft.png" 
-                  alt="Location Map of Varthur Road" 
-                  className="w-full h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity"
-                />
-                <div className="absolute bottom-4 left-4 z-20 bg-black/90 border border-[#d9a406] px-4 py-2 rounded-lg">
+            {/* Right: Map Integration (UPDATED) */}
+            <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden border border-[#333] bg-[#111] flex items-center justify-center group">
+               {/* Interactive Google Map Iframe */}
+               <iframe 
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.003926597793!2d77.7477!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11f9f9f9f9f9%3A0x1!2sVarthur%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                 width="100%" 
+                 height="100%" 
+                 style={{ border: 0 }} 
+                 allowFullScreen={true} 
+                 loading="lazy" 
+                 referrerPolicy="no-referrer-when-downgrade"
+                 title="Google Map Varthur Location"
+                 // Added grayscale filter by default, removes on hover for color
+                 className="absolute inset-0 w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out opacity-80 group-hover:opacity-100"
+               ></iframe>
+
+               {/* Overlay Badge (Preserved) */}
+               <div className="absolute bottom-4 left-4 z-20 bg-black/90 border border-[#d9a406] px-4 py-2 rounded-lg pointer-events-none">
                    <p className="text-[#d9a406] text-xs font-bold uppercase tracking-wider">Prime Location</p>
                    <p className="text-white text-sm font-bold">Varthur, Bangalore</p>
-                </div>
-             </div>
+               </div>
+            </div>
 
-          </div>
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
+}
 
   // ========== NEW: BROCHURE CTA SECTION (Black & Gold) ==========
   const BrochureCTASection = () => {
@@ -4788,7 +4856,7 @@ const VRShowcaseSection = () => {
             </div>
           </motion.div>
           <motion.div className="hidden lg:block relative h-full" initial="hidden" animate="visible" variants={scaleVariants}>
-            <img src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572047/WhatsApp_Image_2025-12-01_at_10.21.07_AM_tzwvjj.jpg" alt="RRL Palm Altezze Healthy Living" className="w-full h-full object-contain rounded-2xl shadow-2xl border border-[#d9a406]/20" />
+            <img src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766067404/Step_Into_Healthy_Living_1_d6jaxp.png" alt="RRL Palm Altezze Healthy Living" className="w-full h-full object-contain rounded-2xl shadow-2xl border border-[#d9a406]/20" />
           </motion.div>
         </div>
       </div>
@@ -5608,6 +5676,7 @@ return (
 
   return (
     <main className="w-full bg-black min-h-screen text-gray-200">
+      <HeroImageBanner />
       <HeroSection />
       <TowerShowcaseSection />
       <ProjectGlanceSection />

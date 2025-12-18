@@ -632,8 +632,8 @@ function MediaCoverage() {
         <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
           <div className="overflow-hidden rounded-2xl bg-gray-900/50 border border-gold-800 shadow-lg">
             <Image
-              // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-qDHHyNYjDinRiMkHs0aLMdWqIsg1A3.jpeg"
-              src=""
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-qDHHyNYjDinRiMkHs0aLMdWqIsg1A3.jpeg"
+              // src=""
               alt="ThePrint Media Coverage"
               width={500}
               height={300}
@@ -648,8 +648,8 @@ function MediaCoverage() {
           </div>
           <div className="overflow-hidden rounded-2xl bg-gray-900/50 border border-gold-800 shadow-lg">
             <Image
-              // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media-a2nth21OR71xLxlXXXOwOeVuSveGXL.png"
-              src=""
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media-a2nth21OR71xLxlXXXOwOeVuSveGXL.png"
+              // src=""
               alt="Times of India Media Coverage"
               width={500}
               height={300}
@@ -820,8 +820,8 @@ function LegacyAchievements() {
           </div>
           <div className="relative rounded-3xl bg-black/30 border border-gold-800 p-4 sm:p-6 shadow-2xl">
             <Image
-              // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Award1-NuACJEgdde3nzeEta7nJjCLE0v4k7w.jpeg"
-              src=""
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Award1-NuACJEgdde3nzeEta7nJjCLE0v4k7w.jpeg"
+              // src=""
               alt="RRL Awards Ceremony"
               width={600}
               height={400}
@@ -881,8 +881,8 @@ function LegacyAchievements() {
           </div>
           <div className="relative rounded-3xl bg-black/30 border border-gold-800 p-4 sm:p-6 shadow-2xl md:order-2 order-1">
             <Image
-              // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Award1-NuACJEgdde3nzeEta7nJjCLE0v4k7w.jpeg"
-              src=""
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Award1-NuACJEgdde3nzeEta7nJjCLE0v4k7w.jpeg"
+              // src=""
               alt="Times Real Estate Icons Award 2025"
               width={600}
               height={400}
@@ -902,8 +902,8 @@ function LegacyAchievements() {
           <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
             <div className="overflow-hidden rounded-2xl bg-gray-900/50 border border-gold-800 shadow-lg">
               <Image
-                // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-qDHHyNYjDinRiMkHs0aLMdWqIsg1A3.jpeg"
-                src=""
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-qDHHyNYjDinRiMkHs0aLMdWqIsg1A3.jpeg"
+                // src=""
                 alt="ThePrint Media Coverage"
                 width={500}
                 height={300}
@@ -918,8 +918,8 @@ function LegacyAchievements() {
             </div>
             <div className="overflow-hidden rounded-2xl bg-gray-900/50 border border-gold-800 shadow-lg">
               <Image
-                // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media-a2nth21OR71xLxlXXXOwOeVuSveGXL.png"
-                src=""
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/media-a2nth21OR71xLxlXXXOwOeVuSveGXL.png"
+                // src=""
                 alt="Times of India Media Coverage"
                 width={500}
                 height={300}

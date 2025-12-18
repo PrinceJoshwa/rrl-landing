@@ -888,149 +888,165 @@ export default function NatureWoodsPage() {
     setIsModalOpen(false)
   }
 
+  const HeroImageBanner = () => {
+    return (
+      <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
+        <motion.div 
+          initial={{ scale: 1.1, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true }}
+          className="w-full h-full relative"
+        >
+          {/* The Image */}
+          <img 
+            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055907/RRl_website_banners_1536_x_752_px_6_liyalp.png" 
+            alt="RRL Hero Banner" 
+            className="w-full h-full object-fill"
+          />
+          
+          {/* Gradient Overlay for style */}
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div> */}
+          
+          {/* Optional Text Overlay */}
+          <div className="absolute bottom-10 left-0 w-full text-center z-10">
+            {/* <p className="text-[#d9a406] uppercase tracking-[0.2em] text-sm md:text-base font-semibold bg-black/50 inline-block px-4 py-2 rounded-full backdrop-blur-md border border-[#d9a406]/30">
+              Excellence in Construction
+            </p> */}
+          </div>
+        </motion.div>
+      </section>
+    );
+  };
+  
   // ========== HERO SECTION ==========
-const HeroSection = () => (
-  <section className="relative w-full min-h-screen bg-black overflow-hidden flex items-center pt-24 pb-12">
-    
-    {/* --- 1. NEW BACKGROUND IMAGE START --- */}
-    <div className="absolute inset-0 z-0">
-       {/* Replace src with your actual building image */}
-       <img 
-         src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055907/RRl_website_banners_1536_x_752_px_6_liyalp.png" 
-         alt="RRL Nature Woods" 
-         className="w-full h-full object-cover"
-       />
-       {/* Dark Overlay: Ensures white text pops against the photo */}
-       <div className="absolute inset-0 bg-black/60"></div>
-    </div>
-    {/* --- BACKGROUND IMAGE END --- */}
+  const HeroSection = () => (
+    <section className="relative w-full min-h-screen bg-black overflow-hidden flex items-center pt-24 pb-12">
+      {/* Background Abstract: Gold and Black */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#d9a406]/20 via-black to-black opacity-60"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Content */}
+          <motion.div 
+            initial="hidden" 
+            animate="visible" 
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeIn} className="flex flex-wrap gap-4 mb-6">
+               <Badge variant="outline" className="text-[#d9a406] border-[#d9a406] px-4 py-1 text-sm uppercase tracking-widest bg-[#d9a406]/10 backdrop-blur-md">
+                  Ready To Move In
+               </Badge>
+               <Badge variant="outline" className="text-white border-white/30 px-4 py-1 text-sm uppercase tracking-widest bg-white/5 backdrop-blur-md">
+                  RERA Approved
+               </Badge>
+            </motion.div>
 
-    {/* Original Background Abstract: Gold and Black (Preserved for the gold tint effect) */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#d9a406]/20 via-black/50 to-black/80 opacity-60 z-0"></div>
-    
-    {/* (Replaced the placeholder.svg line with the real image block above) */}
-    
-    <div className="container mx-auto px-4 relative z-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
-        {/* Left Content */}
-        <motion.div 
-          initial="hidden" 
-          animate="visible" 
-          variants={staggerContainer}
-        >
-          <motion.div variants={fadeIn} className="flex flex-wrap gap-4 mb-6">
-             <Badge variant="outline" className="text-[#d9a406] border-[#d9a406] px-4 py-1 text-sm uppercase tracking-widest bg-[#d9a406]/10 backdrop-blur-md">
-               Ready To Move In
-             </Badge>
-             <Badge variant="outline" className="text-white border-white/30 px-4 py-1 text-sm uppercase tracking-widest bg-white/5 backdrop-blur-md">
-               RERA Approved
-             </Badge>
+            <motion.h1 variants={fadeIn} className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
+              RRL <br/> 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d9a406] to-[#fcd34d]">Nature Woods</span>
+            </motion.h1>
+
+            <motion.p variants={fadeIn} className="text-xl text-gray-400 max-w-xl mb-6 leading-relaxed border-l-4 border-[#d9a406] pl-6 italic">
+              "Where Nature Meets Luxury." <br/>
+              1, 2 & 3 BHK Luxury Apartments fully furnished with world-class amenities.
+            </motion.p>
+
+            <motion.div variants={fadeIn} className="flex flex-wrap gap-4 mb-10 text-sm font-medium text-gray-300">
+              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#d9a406]"/> 140 Units</span>
+              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#d9a406]"/> B+G+7 Floors</span>
+              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#d9a406]"/> Thindlu, Bangalore</span>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                className="bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg px-8 h-14 rounded-none skew-x-[-10deg] transition-all hover:scale-105"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <span className="skew-x-[10deg] flex items-center gap-2">
+                  Download Brochure <ArrowRight className="w-5 h-5"/>
+                </span>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-[#d9a406] text-[#d9a406] hover:bg-[#d9a406]/10 font-bold text-lg px-8 h-14 rounded-none skew-x-[-10deg] transition-all"
+              >
+                <span className="skew-x-[10deg] flex items-center gap-2">
+                  <Phone className="w-5 h-5" /> +91 73378 16996
+                </span>
+              </Button>
+            </motion.div>
           </motion.div>
 
-          <motion.h1 variants={fadeIn} className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 drop-shadow-2xl">
-            RRL <br/> 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d9a406] to-[#fcd34d]">Nature Woods</span>
-          </motion.h1>
-
-          <motion.p variants={fadeIn} className="text-xl text-gray-200 max-w-xl mb-6 leading-relaxed border-l-4 border-[#d9a406] pl-6 italic drop-shadow-md">
-            "Where Nature Meets Luxury." <br/>
-            1, 2 & 3 BHK Luxury Apartments fully furnished with world-class amenities.
-          </motion.p>
-
-          <motion.div variants={fadeIn} className="flex flex-wrap gap-4 mb-10 text-sm font-medium text-gray-200">
-            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#d9a406]"/> 140 Units</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#d9a406]"/> B+G+7 Floors</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#d9a406]"/> Thindlu, Bangalore</span>
+          {/* Right Contact Form */}
+          <motion.div 
+             initial={{ opacity: 0, x: 50 }}
+             animate={{ opacity: 1, x: 0 }}
+             transition={{ duration: 0.8, delay: 0.2 }}
+             className="w-full max-w-md mx-auto lg:ml-auto"
+          >
+             <Card className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d9a406] to-transparent"></div>
+                <div className="mb-6">
+                   <h3 className="text-2xl font-bold text-white">Enquire Now</h3>
+                   <p className="text-gray-400 text-sm mt-1">Get exclusive floor plans & pricing.</p>
+                </div>
+                
+                <form onSubmit={handleFormSubmit} className="space-y-5">
+                   <div className="relative">
+                      <User className="absolute left-3 top-3.5 w-5 h-5 text-gray-500" />
+                      <input 
+                        type="text" 
+                        placeholder="Your Name" 
+                        className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-600 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all"
+                        required
+                      />
+                   </div>
+                   <div className="relative">
+                      <Smartphone className="absolute left-3 top-3.5 w-5 h-5 text-gray-500" />
+                      <input 
+                        type="tel" 
+                        placeholder="Phone Number" 
+                        className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-600 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all"
+                        required
+                      />
+                   </div>
+                   <div className="relative">
+                      <Mail className="absolute left-3 top-3.5 w-5 h-5 text-gray-500" />
+                      <input 
+                        type="email" 
+                        placeholder="Email Address" 
+                        className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-600 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all"
+                        required
+                      />
+                   </div>
+                   
+                   <Button className="w-full bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg h-12 shadow-[0_0_20px_rgba(217,164,6,0.2)] hover:shadow-[0_0_30px_rgba(217,164,6,0.4)] transition-all">
+                      Get Call Back
+                   </Button>
+                   
+                   <p className="text-xs text-center text-gray-500 mt-4">
+                      By submitting, you agree to our privacy policy.
+                   </p>
+                </form>
+             </Card>
           </motion.div>
-
-          <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              className="bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg px-8 h-14 rounded-none skew-x-[-10deg] transition-all hover:scale-105"
-              onClick={() => setIsModalOpen(true)}
-            >
-              <span className="skew-x-[10deg] flex items-center gap-2">
-                Download Brochure <ArrowRight className="w-5 h-5"/>
-              </span>
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-[#d9a406] text-[#d9a406] hover:bg-[#d9a406]/10 font-bold text-lg px-8 h-14 rounded-none skew-x-[-10deg] transition-all bg-black/40 backdrop-blur-sm"
-            >
-              <span className="skew-x-[10deg] flex items-center gap-2">
-                <Phone className="w-5 h-5" /> +91 73378 16996
-              </span>
-            </Button>
-          </motion.div>
-        </motion.div>
-
-        {/* Right Contact Form */}
-        <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full max-w-md mx-auto lg:ml-auto"
-        >
-            <Card className="bg-black/60 backdrop-blur-xl border border-white/10 p-8 shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d9a406] to-transparent"></div>
-               <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-white">Enquire Now</h3>
-                  <p className="text-gray-300 text-sm mt-1">Get exclusive floor plans & pricing.</p>
-               </div>
-               
-               <form onSubmit={handleFormSubmit} className="space-y-5">
-                  <div className="relative">
-                    <User className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" />
-                    <input 
-                      type="text" 
-                      placeholder="Your Name" 
-                      className="w-full bg-black/50 border border-white/20 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-500 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <Smartphone className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" />
-                    <input 
-                      type="tel" 
-                      placeholder="Phone Number" 
-                      className="w-full bg-black/50 border border-white/20 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-500 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all"
-                      required
-                    />
-                  </div>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" />
-                    <input 
-                      type="email" 
-                      placeholder="Email Address" 
-                      className="w-full bg-black/50 border border-white/20 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-500 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all"
-                      required
-                    />
-                  </div>
-                  
-                  <Button className="w-full bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg h-12 shadow-[0_0_20px_rgba(217,164,6,0.2)] hover:shadow-[0_0_30px_rgba(217,164,6,0.4)] transition-all">
-                    Get Call Back
-                  </Button>
-                  
-                  <p className="text-xs text-center text-gray-500 mt-4">
-                    By submitting, you agree to our privacy policy.
-                  </p>
-               </form>
-            </Card>
-        </motion.div>
+        </div>
       </div>
-    </div>
 
-    <motion.div 
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#d9a406]/80"
-      animate={{ y: [0, 10, 0] }}
-      transition={{ duration: 2, repeat: Infinity }}
-    >
-      <ChevronDown className="w-10 h-10" />
-    </motion.div>
-  </section>
-)
+      <motion.div 
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#d9a406]/50"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <ChevronDown className="w-10 h-10" />
+      </motion.div>
+    </section>
+  )
 
   // ========== KEY HIGHLIGHTS ==========
   const HighlightsSection = () => (
@@ -1499,7 +1515,7 @@ const HeroSection = () => (
             </button>
          </div>
       </nav>
-
+      <HeroImageBanner />
       <HeroSection />
       <HighlightsSection />
       <AmenitiesSection />
