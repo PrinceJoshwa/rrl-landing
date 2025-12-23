@@ -4606,14 +4606,15 @@ function HappyClientsGallery() {
     "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560193/20250801_121200_sorava.jpg",
     "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560094/WhatsApp_Image_2025-11-29_at_20.11.09_qb0dfy.jpg",
     "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560079/WhatsApp_Image_2025-11-29_at_20.11.07_uwd8ac.jpg",
-    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560033/20250805_115305_qoouj2.jpg"
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560033/20250805_115305_qoouj2.jpg",
   ]
 
   return (
     <section className="py-24 bg-neutral-50 overflow-hidden relative">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]" />
 
+      {/* Header */}
       <div className="container mx-auto px-4 mb-16 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -4621,7 +4622,7 @@ function HappyClientsGallery() {
           transition={{ duration: 0.5 }}
         >
           <div className="inline-block px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-600 text-sm font-bold uppercase tracking-wider mb-6">
-             Client Stories
+            Client Stories
           </div>
           <h2 className="mb-6 text-4xl font-bold text-black font-playfair lg:text-5xl">
             Smiles We've <span className="text-gold-500">Created</span>
@@ -4632,38 +4633,25 @@ function HappyClientsGallery() {
         </motion.div>
       </div>
 
-      {/* Infinite Scroll Container */}
+      {/* Scroll Wrapper */}
       <div className="relative w-full overflow-hidden py-10">
-        {/* Gradient Fade Masks */}
-        <div className="absolute left-0 top-0 z-20 h-full w-24 bg-gradient-to-r from-neutral-50 to-transparent" />
-        <div className="absolute right-0 top-0 z-20 h-full w-24 bg-gradient-to-l from-neutral-50 to-transparent" />
+        {/* Edge Fade */}
+        <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-16 bg-gradient-to-r from-neutral-50 to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-16 bg-gradient-to-l from-neutral-50 to-transparent" />
 
-        {/* CSS Animation Style for Pausing */}
-        <style jsx>{`
-          @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-scroll {
-            animation: scroll 40s linear infinite;
-            width: fit-content;
-            display: flex;
-          }
-          .animate-scroll:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
-
-        <div className="animate-scroll gap-4 md:gap-8 pl-4 md:pl-8">
-          {/* Duplicate list for seamless looping */}
+        {/* Scroll Row */}
+        <div className="animate-scroll gap-4 sm:gap-6 md:gap-8 pl-4 sm:pl-6 md:pl-8">
           {[...clientImages, ...clientImages, ...clientImages].map((img, i) => (
-            <div 
-                key={i} 
-                className="group relative h-[320px] w-[240px] md:h-[400px] md:w-[300px] flex-shrink-0 cursor-pointer"
+            <div
+              key={i}
+              className="group relative
+                h-[240px] w-[180px]
+                sm:h-[280px] sm:w-[200px]
+                md:h-[360px] md:w-[260px]
+                lg:h-[400px] lg:w-[300px]
+                flex-shrink-0 cursor-pointer"
             >
-              {/* Card Container */}
               <div className="h-full w-full overflow-hidden rounded-3xl bg-white shadow-xl transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl border border-gray-100 group-hover:border-gold-500/50">
-                
                 {/* Image */}
                 <div className="relative h-full w-full">
                   <Image
@@ -4673,17 +4661,21 @@ function HappyClientsGallery() {
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     unoptimized
                   />
-                  
+
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
-                  
-                  {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 w-full p-6 translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
-                     <div className="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                        <div className="h-0.5 w-6 bg-gold-400"></div>
-                        <span className="text-gold-400 text-xs font-bold uppercase tracking-wider">Handover</span>
-                     </div>
-                     <h3 className="text-2xl font-bold text-white font-playfair">RRL Family</h3>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-300" />
+
+                  {/* Text */}
+                  <div className="absolute bottom-0 left-0 w-full p-4 sm:p-5 md:p-6 translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
+                    <div className="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                      <div className="h-0.5 w-6 bg-gold-400" />
+                      <span className="text-gold-400 text-xs font-bold uppercase tracking-wider">
+                        Handover
+                      </span>
+                    </div>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-playfair">
+                      RRL Family
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -4695,57 +4687,80 @@ function HappyClientsGallery() {
   )
 }
 
+
 function LifeAtRRLGallery() {
   const lifeAtRRLImages = [
-  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0011_nssvkw.jpg",
-  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0010_q2r24l.jpg",
-  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057539/IMG-20251218-WA0018_nuy29a.jpg", 
-  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057532/IMG-20251218-WA0007_bhqie0.jpg", 
-  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057527/IMG-20251218-WA0012_v8llfl.jpg", 
-  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057525/IMG-20251218-WA0008_mnbwk5.jpg", 
-  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0020_xcy5dw.jpg",
-];
-return (
-<section className="py-24 bg-[#111] border-y border-gold-900/30 overflow-hidden relative">
-        <div className="container mx-auto px-4 mb-12 text-center relative z-10">
-          <motion.div
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-2 text-white">
-              Life at <span className="text-gold-500">RRL</span>
-            </h2>
-            <p className="text-xl text-gold-400/80 uppercase tracking-widest font-medium">Team Outing Gallery</p>
-          </motion.div>
-        </div>
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0011_nssvkw.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0010_q2r24l.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057539/IMG-20251218-WA0018_nuy29a.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057532/IMG-20251218-WA0007_bhqie0.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057527/IMG-20251218-WA0012_v8llfl.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057525/IMG-20251218-WA0008_mnbwk5.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0020_xcy5dw.jpg",
+  ]
 
-        {/* Infinite Marquee */}
-        <div className="relative flex w-full overflow-hidden group">
-          <div className="absolute left-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-r from-[#111] to-transparent" />
-          <div className="absolute right-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-l from-[#111] to-transparent" />
-          
-          <motion.div 
-            className="flex gap-6 whitespace-nowrap"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
-          >
-            {/* Double list for seamless loop */}
-            {[...lifeAtRRLImages, ...lifeAtRRLImages].map((src, i) => (
-              <div key={i} className="relative w-[300px] h-[400px] md:w-[400px] md:h-[500px] rounded-3xl overflow-hidden flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 border border-white/5 hover:border-gold-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(217,164,6,0.3)]">
-                <Image 
-                  src={src} 
-                  alt="Life at RRL" 
-                  fill 
-                  className="object-cover" 
-                />
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-      )
-    }
+  return (
+    <section className="py-24 bg-[#111] border-y border-gold-900/30 overflow-hidden relative">
+      
+      {/* Header */}
+      <div className="container mx-auto px-4 mb-12 text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-2 text-white">
+            Life at <span className="text-gold-500">RRL</span>
+          </h2>
+          <p className="text-sm sm:text-xl text-gold-400/80 uppercase tracking-widest font-medium">
+            Team Outing Gallery
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Infinite Marquee */}
+      <div className="relative flex w-full overflow-hidden group">
+        {/* Gradient masks */}
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 sm:w-24 md:w-48 bg-gradient-to-r from-[#111] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 sm:w-24 md:w-48 bg-gradient-to-l from-[#111] to-transparent" />
+
+        <motion.div
+          className="flex gap-4 sm:gap-6 whitespace-nowrap"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+        >
+          {[...lifeAtRRLImages, ...lifeAtRRLImages].map((src, i) => (
+            <div
+              key={i}
+              className="
+                relative flex-shrink-0 overflow-hidden rounded-3xl
+                w-[200px] h-[260px]
+                sm:w-[240px] sm:h-[320px]
+                md:w-[300px] md:h-[400px]
+                lg:w-[380px] lg:h-[480px]
+                grayscale hover:grayscale-0
+                transition-all duration-500
+                border border-white/5 hover:border-gold-500
+                hover:scale-[1.03]
+                hover:shadow-[0_0_30px_rgba(217,164,6,0.3)]
+              "
+            >
+              <Image
+                src={src}
+                alt="Life at RRL"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 200px, (max-width: 768px) 240px, (max-width: 1024px) 300px, 380px"
+                unoptimized
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
 
 // ========== STATS COMPONENT (RESTORED) ==========
 function Stats() {

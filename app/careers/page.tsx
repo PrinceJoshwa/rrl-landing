@@ -715,43 +715,62 @@ export default function CareersPage() {
 
       {/* ================= 2. LIFE AT RRL / TEAM OUTING ================= */}
       <section className="py-24 bg-[#111] border-y border-gold-900/30 overflow-hidden relative">
-        <div className="container mx-auto px-4 mb-12 text-center relative z-10">
-          <motion.div
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-2 text-white">
-              Life at <span className="text-gold-500">RRL</span>
-            </h2>
-            <p className="text-xl text-gold-400/80 uppercase tracking-widest font-medium">Team Outing Gallery</p>
-          </motion.div>
-        </div>
+  <div className="container mx-auto px-4 mb-12 text-center relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-2 text-white">
+        Life at <span className="text-gold-500">RRL</span>
+      </h2>
+      <p className="text-sm sm:text-xl text-gold-400/80 uppercase tracking-widest font-medium">
+        Team Outing Gallery
+      </p>
+    </motion.div>
+  </div>
 
-        {/* Infinite Marquee */}
-        <div className="relative flex w-full overflow-hidden group">
-          <div className="absolute left-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-r from-[#111] to-transparent" />
-          <div className="absolute right-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-l from-[#111] to-transparent" />
-          
-          <motion.div 
-            className="flex gap-6 whitespace-nowrap"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
-          >
-            {/* Double list for seamless loop */}
-            {[...lifeAtRRLImages, ...lifeAtRRLImages].map((src, i) => (
-              <div key={i} className="relative w-[300px] h-[400px] md:w-[400px] md:h-[500px] rounded-3xl overflow-hidden flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 border border-white/5 hover:border-gold-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(217,164,6,0.3)]">
-                <Image 
-                  src={src} 
-                  alt="Life at RRL" 
-                  fill 
-                  className="object-cover" 
-                />
-              </div>
-            ))}
-          </motion.div>
+  {/* Infinite Marquee */}
+  <div className="relative flex w-full overflow-hidden group">
+    {/* Gradient edges */}
+    <div className="absolute left-0 top-0 z-10 h-full w-16 sm:w-24 md:w-48 bg-gradient-to-r from-[#111] to-transparent" />
+    <div className="absolute right-0 top-0 z-10 h-full w-16 sm:w-24 md:w-48 bg-gradient-to-l from-[#111] to-transparent" />
+
+    <motion.div
+      className="flex gap-4 sm:gap-6 whitespace-nowrap"
+      animate={{ x: ["0%", "-50%"] }}
+      transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+    >
+      {[...lifeAtRRLImages, ...lifeAtRRLImages].map((src, i) => (
+        <div
+          key={i}
+          className="
+            relative flex-shrink-0 overflow-hidden rounded-3xl
+            w-[200px] h-[260px]
+            sm:w-[240px] sm:h-[320px]
+            md:w-[300px] md:h-[400px]
+            lg:w-[400px] lg:h-[500px]
+            grayscale hover:grayscale-0
+            transition-all duration-500
+            border border-white/5 hover:border-gold-500
+            hover:scale-[1.02]
+            hover:shadow-[0_0_30px_rgba(217,164,6,0.3)]
+          "
+        >
+          <Image
+            src={src}
+            alt="Life at RRL"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 200px, (max-width: 768px) 240px, (max-width: 1024px) 300px, 400px"
+            unoptimized
+          />
         </div>
-      </section>
+      ))}
+    </motion.div>
+  </div>
+</section>
+
 
       
       {/* ================= 3. OPEN ROLES & APPLICATION FORM ================= */}

@@ -58,6 +58,26 @@
   }
 }
 
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll-horizontal 40s linear infinite;
+  width: fit-content;
+  display: flex;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+
 /* Custom Styles */
 .bg-gold-100 { background-color: #fef9e7; }
 .bg-gold-300 { background-color: #f8c471; }
