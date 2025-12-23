@@ -13,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea"
 import Image from "next/image"
 import Link from "next/link"
+import { useForm, ValidationError } from '@formspree/react';
 
 // --- Animation Variants ---
 // Explicitly typing these as 'Variants' fixes the build error regarding "ease" types
@@ -37,6 +38,7 @@ const itemVar: Variants = {
 }
 
 export default function NRICornerPage() {
+  const [state, handleSubmit] = useForm("mvzpdloo");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -54,10 +56,10 @@ export default function NRICornerPage() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    alert("Request sent! Our NRI Desk will contact you shortly.")
-  }
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault()
+//     alert("Request sent! Our NRI Desk will contact you shortly.")
+//   }
 
   return (
     <div className="bg-black min-h-screen text-white overflow-hidden selection:bg-gold-500 selection:text-black">
@@ -167,40 +169,67 @@ export default function NRICornerPage() {
                     {/* Right Form */}
                     <div className="bg-neutral-900/80 backdrop-blur-xl p-8 rounded-[2rem] border border-neutral-800 shadow-2xl relative z-10">
                         <h3 className="text-2xl font-bold text-white mb-6">Inquiry Form</h3>
-                        <form onSubmit={handleSubmit} className="space-y-5">
-                            <Input 
-                                className="bg-black/50 border-neutral-700 h-14 text-white focus:border-gold-500 rounded-xl px-5 text-lg" 
-                                placeholder="Full Name"
-                                onChange={(e) => setFormData({...formData, name: e.target.value})}
-                            />
-                            <div className="grid grid-cols-2 gap-4">
+                        
+                        {/* 3. Success State Check */}
+                        {state.succeeded ? (
+                           <div className="flex flex-col items-center justify-center py-20 text-center animate-in fade-in zoom-in duration-500">
+                                <CheckCircle2 className="w-20 h-20 text-gold-500 mb-6" />
+                                <h3 className="text-2xl font-bold text-white mb-2">Request Sent!</h3>
+                                <p className="text-gray-400">Our NRI Desk will contact you shortly.</p>
+                           </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="space-y-5">
                                 <Input 
+                                    name="name" // Added Name
                                     className="bg-black/50 border-neutral-700 h-14 text-white focus:border-gold-500 rounded-xl px-5 text-lg" 
-                                    placeholder="Country"
-                                    onChange={(e) => setFormData({...formData, country: e.target.value})}
+                                    placeholder="Full Name"
+                                    required
+                                    onChange={(e) => setFormData({...formData, name: e.target.value})}
                                 />
-                                <Input 
-                                    className="bg-black/50 border-neutral-700 h-14 text-white focus:border-gold-500 rounded-xl px-5 text-lg" 
-                                    placeholder="Phone"
-                                    type="tel"
-                                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                                <div className="grid grid-cols-2 gap-4">
+                                    <Input 
+                                        name="country" // Added Name
+                                        className="bg-black/50 border-neutral-700 h-14 text-white focus:border-gold-500 rounded-xl px-5 text-lg" 
+                                        placeholder="Country"
+                                        required
+                                        onChange={(e) => setFormData({...formData, country: e.target.value})}
+                                    />
+                                    <Input 
+                                        name="phone" // Added Name
+                                        className="bg-black/50 border-neutral-700 h-14 text-white focus:border-gold-500 rounded-xl px-5 text-lg" 
+                                        placeholder="Phone"
+                                        type="tel"
+                                        required
+                                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                                    />
+                                </div>
+                                <div>
+                                    <Input 
+                                        name="email" // Added Name
+                                        className="bg-black/50 border-neutral-700 h-14 text-white focus:border-gold-500 rounded-xl px-5 text-lg" 
+                                        placeholder="Email Address"
+                                        type="email"
+                                        required
+                                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                    />
+                                    <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm mt-1" />
+                                </div>
+                                <Textarea 
+                                    name="message" // Added Name
+                                    className="bg-black/50 border-neutral-700 min-h-[120px] text-white focus:border-gold-500 rounded-xl px-5 py-4 text-lg resize-none" 
+                                    placeholder="How can we help you?"
+                                    onChange={(e) => setFormData({...formData, message: e.target.value})}
                                 />
-                            </div>
-                            <Input 
-                                className="bg-black/50 border-neutral-700 h-14 text-white focus:border-gold-500 rounded-xl px-5 text-lg" 
-                                placeholder="Email Address"
-                                type="email"
-                                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                            />
-                            <Textarea 
-                                className="bg-black/50 border-neutral-700 min-h-[120px] text-white focus:border-gold-500 rounded-xl px-5 py-4 text-lg resize-none" 
-                                placeholder="How can we help you?"
-                                onChange={(e) => setFormData({...formData, message: e.target.value})}
-                            />
-                            <Button className="w-full bg-gold-500 hover:bg-gold-600 text-black font-bold h-14 text-lg rounded-xl mt-4 transition-all hover:scale-[1.02] shadow-lg">
-                                Submit Inquiry <ArrowRight className="ml-2 w-5 h-5" />
-                            </Button>
-                        </form>
+                                <Button 
+                                    type="submit" 
+                                    disabled={state.submitting}
+                                    className="w-full bg-gold-500 hover:bg-gold-600 text-black font-bold h-14 text-lg rounded-xl mt-4 transition-all hover:scale-[1.02] shadow-lg"
+                                >
+                                    {state.submitting ? "Sending..." : "Submit Inquiry"} 
+                                    {!state.submitting && <ArrowRight className="ml-2 w-5 h-5" />}
+                                </Button>
+                            </form>
+                        )}
                     </div>
 
                 </div>

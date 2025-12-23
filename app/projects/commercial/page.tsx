@@ -1,218 +1,7 @@
-// // "use client"
-
-// // import { motion } from "framer-motion"
-// // import Image from "next/image"
-// // import { MapPin, Phone, Check, Building2, Calendar, Award } from 'lucide-react'
-// // import { Button } from "@/components/ui/button"
-// // import Link from "next/link"
-
-// // // --- Data Aggregation ---
-// // const commercialProjects = [
-// //   {
-// //     id: "rrl-towers",
-// //     name: "RRL Towers",
-// //     subtitle: "Commercial Space for Rent in Sarjapur Attibele",
-// //     status: "Commercial Space Open for Rent",
-// //     image: "/Tower.jpeg",
-// //     description: "RRL Builders and Developers presents prime Commercial Space for Rent in RRL Towers. This was the first commercial tower started by RRL Groups in 1996 and later renovated in the year 2016.",
-// //     location: {
-// //       address: "RRL Towers, 4th Floor, Sampige Jala, Sarjapur - Attibele Rd, Bengaluru, Karnataka 562125",
-// //       contact: "+91-7337816996",
-// //     },
-// //     features: [
-// //       "Rental space from Government Offices to SMEs",
-// //       "Houses the Sub Registrar Office",
-// //       "RRL Corporate Office Location",
-// //       "Home to Usagi Upahar, Advocates, and Offices",
-// //     ],
-// //     advantages: [
-// //       "Located on the premium Sarjapur-Marathahalli housing belt.",
-// //       "Well connected to industrial hubs in Sarjapur & Bommanahalli.",
-// //       "High rental demand due to proximity to IT hubs.",
-// //       "27% rental growth observed year-on-year in this locality.",
-// //       "Close to Columbia Asia and Dr. Levine Memorial hospitals."
-// //     ]
-// //   },
-// //   {
-// //     id: "rrl-complex",
-// //     name: "RRL Complex",
-// //     subtitle: "Commercial Space for Rent in Bidaraguppa",
-// //     status: "Operational",
-// //     image: "/complex.jpg",
-// //     description: "RRL Builders and Developers presents RRL Complex, our 18th Commercial Building. Constructed and maintained by RRL Group itself, offering commodious space for diverse businesses.",
-// //     location: {
-// //       address: "SY NO - 269, BIDURGUPPA VILLAGE, bus-stop, RRL COMPLEX, Sarjapur Attibele Rd, Bengaluru, Karnataka 562125",
-// //       contact: "+91-7337816996",
-// //     },
-// //     features: [
-// //       "Located in Bidaraguppa, Sarjapur Attibele Road",
-// //       "Covers businesses from Mayura Bakery to Fashion Fitness",
-// //       "Ample parking space and walking areas",
-// //       "Pet-friendly space provided for visitors",
-// //     ],
-// //     advantages: [
-// //       "Affordable locality situated in the southern part of Bangalore South.",
-// //       "Rated 5/5 for connectivity and 4/5 for safety by residents.",
-// //       "Direct access to Electronic City via NH-44.",
-// //       "Proximity to tourist spots like Huskur Kere and Lake Island.",
-// //       "Upcoming Satellite Town Ring Road offering easy access to Magadi."
-// //     ]
-// //   }
-// // ]
-
-// // export default function CommercialPage() {
-// //   return (
-// //     <div className="min-h-screen bg-white">
-// //       {/* --- Page Hero --- */}
-// //       <section className="relative py-24 bg-black overflow-hidden">
-// //         <div className="absolute inset-0 bg-grid-white/[0.05]"></div>
-// //         <div className="container mx-auto px-4 relative z-10 text-center">
-// //           <motion.div
-// //             initial={{ opacity: 0, y: 20 }}
-// //             animate={{ opacity: 1, y: 0 }}
-// //             transition={{ duration: 0.8 }}
-// //           >
-// //             <span className="text-gold-500 font-semibold tracking-wider uppercase text-sm">RRL Groups</span>
-// //             <h1 className="text-4xl md:text-5xl font-playfair font-bold text-white mt-4 mb-6">
-// //               Commercial Projects
-// //             </h1>
-// //             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-// //               Prime commercial spaces designed for growth, located in the heart of Bangalore's most thriving business corridors.
-// //             </p>
-// //           </motion.div>
-// //         </div>
-// //       </section>
-
-// //       {/* --- Projects List --- */}
-// //       <section className="py-20">
-// //         <div className="container mx-auto px-4 space-y-32">
-// //           {commercialProjects.map((project, index) => (
-// //             <motion.div 
-// //               key={project.id}
-// //               initial={{ opacity: 0, y: 50 }}
-// //               whileInView={{ opacity: 1, y: 0 }}
-// //               viewport={{ once: true, amount: 0.2 }}
-// //               transition={{ duration: 0.6 }}
-// //               className={`grid lg:grid-cols-2 gap-12 items-start ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}
-// //             >
-              
-// //               {/* Image Section */}
-// //               <div className={`relative h-[500px] rounded-2xl overflow-hidden shadow-2xl group ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-// //                 <Image
-// //                   src={project.image}
-// //                   alt={project.name}
-// //                   fill
-// //                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-// //                 />
-// //                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-// //                 <div className="absolute bottom-6 left-6 right-6">
-// //                   <div className="inline-flex items-center space-x-2 bg-gold-500 text-black px-3 py-1 rounded-full text-xs font-bold mb-3">
-// //                     <Building2 className="h-3 w-3" />
-// //                     <span>{project.status}</span>
-// //                   </div>
-// //                   <h3 className="text-white text-2xl font-bold font-playfair">{project.name}</h3>
-// //                 </div>
-// //               </div>
-
-// //               {/* Content Section */}
-// //               <div className="space-y-8">
-// //                 <div>
-// //                   <h2 className="text-4xl font-playfair font-bold text-slate-900 mb-2">{project.name}</h2>
-// //                   <p className="text-gold-600 font-medium text-lg mb-4">{project.subtitle}</p>
-// //                   <p className="text-slate-600 leading-relaxed text-lg">
-// //                     {project.description}
-// //                   </p>
-// //                 </div>
-
-// //                 {/* Key Features Grid */}
-// //                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-// //                   <h4 className="font-bold text-slate-900 mb-4 flex items-center">
-// //                     <Award className="h-4 w-4 text-gold-600 mr-2" />
-// //                     Key Highlights
-// //                   </h4>
-// //                   <ul className="grid sm:grid-cols-2 gap-3">
-// //                     {project.features.map((feature, idx) => (
-// //                       <li key={idx} className="flex items-start text-sm text-slate-700">
-// //                         <Check className="h-4 w-4 text-gold-500 mr-2 mt-0.5 flex-shrink-0" />
-// //                         <span>{feature}</span>
-// //                       </li>
-// //                     ))}
-// //                   </ul>
-// //                 </div>
-
-// //                 {/* Business Advantages (Simplified) */}
-// //                 <div>
-// //                   <h4 className="font-bold text-slate-900 mb-4">Why Choose this Location?</h4>
-// //                   <ul className="space-y-3">
-// //                     {project.advantages.slice(0, 4).map((advantage, idx) => ( // Showing top 4 advantages
-// //                       <li key={idx} className="flex items-start text-slate-600 text-sm">
-// //                         <span className="h-1.5 w-1.5 rounded-full bg-slate-400 mr-3 mt-1.5 flex-shrink-0"></span>
-// //                         {advantage}
-// //                       </li>
-// //                     ))}
-// //                   </ul>
-// //                 </div>
-
-// //                 {/* Location & Contact Block */}
-// //                 <div className="pt-6 border-t border-slate-200">
-// //                   <div className="flex flex-col sm:flex-row gap-6">
-// //                     <div className="flex-1">
-// //                       <div className="flex items-start space-x-3 mb-2">
-// //                         <MapPin className="h-5 w-5 text-gold-600 mt-0.5 flex-shrink-0" />
-// //                         <div>
-// //                           <p className="text-sm font-bold text-slate-900">Address</p>
-// //                           <p className="text-sm text-slate-600 mt-1">{project.location.address}</p>
-// //                         </div>
-// //                       </div>
-// //                     </div>
-// //                     <div className="flex-1">
-// //                       <div className="flex items-start space-x-3">
-// //                         <Phone className="h-5 w-5 text-gold-600 mt-0.5 flex-shrink-0" />
-// //                         <div>
-// //                           <p className="text-sm font-bold text-slate-900">Leasing Contact</p>
-// //                           <p className="text-sm text-slate-600 mt-1">{project.location.contact}</p>
-// //                         </div>
-// //                       </div>
-// //                     </div>
-// //                   </div>
-                  
-// //                   <div className="mt-8">
-// //                      <Link href="/contact">
-// //                         <Button className="w-full sm:w-auto bg-black text-white hover:bg-gold-600 hover:text-black transition-colors">
-// //                             Enquire for {project.name}
-// //                         </Button>
-// //                      </Link>
-// //                   </div>
-// //                 </div>
-
-// //               </div>
-// //             </motion.div>
-// //           ))}
-// //         </div>
-// //       </section>
-
-// //       {/* --- Footer Call to Action --- */}
-// //       <section className="bg-slate-900 py-16 text-center">
-// //         <div className="container mx-auto px-4">
-// //           <h2 className="text-3xl font-playfair font-bold text-white mb-6">Looking for Space for Your Business?</h2>
-// //           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-// //             Join the successful community of businesses at RRL properties. Contact us today for a site visit and detailed floor plans.
-// //           </p>
-// //           <Link href="/contact">
-// //             <Button size="lg" className="bg-gold-500 text-black hover:bg-white font-bold px-8 rounded-full">
-// //               Contact Sales Team
-// //             </Button>
-// //           </Link>
-// //         </div>
-// //       </section>
-// //     </div>
-// //   )
-// // }
-
 // "use client"
 
 // import React, { useState } from "react"
-// import { motion, AnimatePresence } from "framer-motion"
+// import { motion, AnimatePresence, Variants } from "framer-motion"
 // import { 
 //   Building2, MapPin, Phone, CheckCircle2, ArrowRight, 
 //   Menu, X, Smartphone, User, Mail, Star, ShieldCheck, Zap
@@ -272,12 +61,13 @@
 // ]
 
 // // --- Animations ---
-// const fadeIn = {
+// // Fixed: Added 'Variants' type annotation to solve the build error
+// const fadeIn: Variants = {
 //   hidden: { opacity: 0, y: 30 },
 //   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 // }
 
-// const staggerContainer = {
+// const staggerContainer: Variants = {
 //   hidden: { opacity: 0 },
 //   visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 // }
@@ -473,7 +263,7 @@
 //             <Button 
 //                size="lg" 
 //                className="bg-black text-white hover:bg-gray-900 font-bold px-10 py-6 text-lg rounded-full"
-//                onClick={() => handleEnquiry("Footer CTA")}
+//                onClick={() => handleEnquiry("Property")}
 //             >
 //                Contact Sales Team
 //             </Button>
@@ -547,8 +337,13 @@ import React, { useState } from "react"
 import { motion, AnimatePresence, Variants } from "framer-motion"
 import { 
   Building2, MapPin, Phone, CheckCircle2, ArrowRight, 
-  Menu, X, Smartphone, User, Mail, Star, ShieldCheck, Zap
+  Menu, X, Smartphone, User, Mail, Star, ShieldCheck, Zap,
+  Loader2, // Added for loading state
+  CheckCircle // Added for success state
 } from "lucide-react"
+
+// 1. Import Formspree
+import { useForm, ValidationError } from '@formspree/react';
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -604,7 +399,6 @@ const projects = [
 ]
 
 // --- Animations ---
-// Fixed: Added 'Variants' type annotation to solve the build error
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
@@ -619,15 +413,13 @@ export default function CommercialPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
 
+  // 2. Formspree Configuration
+  // REPLACE "YOUR_FORMSPREE_FORM_ID" with your actual Form ID
+  const [state, handleSubmit] = useForm("xqezwved");
+
   const handleEnquiry = (projectName: string) => {
     setSelectedProject(projectName)
     setIsModalOpen(true)
-  }
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    alert("Thank you! We will connect with you shortly.")
-    setIsModalOpen(false)
   }
 
   return (
@@ -837,34 +629,76 @@ export default function CommercialPage() {
                 <X className="w-6 h-6" />
               </button>
               
-              <div className="text-center mb-8">
-                 <h3 className="text-2xl font-bold text-white mb-2">Enquire about <span className="text-[#d9a406]">{selectedProject}</span></h3>
-                 <p className="text-gray-400 text-sm">Fill the details below to get a callback.</p>
-              </div>
+              {state.succeeded ? (
+                <div className="flex flex-col items-center justify-center py-6 text-center animate-in fade-in zoom-in duration-500">
+                  <CheckCircle className="w-16 h-16 text-[#d9a406] mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-2">Request Sent!</h3>
+                  <p className="text-gray-400 mb-6">We will get back to you shortly regarding {selectedProject}.</p>
+                  <Button onClick={() => setIsModalOpen(false)} variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black">Close</Button>
+                </div>
+              ) : (
+                <>
+                  <div className="text-center mb-8">
+                     <h3 className="text-2xl font-bold text-white mb-2">Enquire about <span className="text-[#d9a406]">{selectedProject}</span></h3>
+                     <p className="text-gray-400 text-sm">Fill the details below to get a callback.</p>
+                  </div>
 
-              <form onSubmit={handleFormSubmit} className="space-y-4">
-                <div className="space-y-2">
-                   <div className="relative">
-                      <User className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                      <input type="text" placeholder="Your Name" className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" required />
-                   </div>
-                </div>
-                <div className="space-y-2">
-                   <div className="relative">
-                      <Smartphone className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                      <input type="tel" placeholder="Phone Number" className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" required />
-                   </div>
-                </div>
-                <div className="space-y-2">
-                   <div className="relative">
-                      <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                      <input type="email" placeholder="Email Address" className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" required />
-                   </div>
-                </div>
-                <Button className="w-full bg-[#d9a406] text-black font-bold text-lg h-12 hover:bg-[#b08505] mt-4">
-                  Submit Enquiry
-                </Button>
-              </form>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <input type="hidden" name="project" value={selectedProject || "General Enquiry"} />
+                    
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <User className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="name" // Added Name
+                            type="text" 
+                            placeholder="Your Name" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                            required 
+                          />
+                       </div>
+                    </div>
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <Smartphone className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="phone" // Added Name
+                            type="tel" 
+                            placeholder="Phone Number" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                            required 
+                          />
+                       </div>
+                    </div>
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="email" // Added Name
+                            type="email" 
+                            placeholder="Email Address" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                            required 
+                          />
+                          <ValidationError prefix="Email" field="email" errors={state.errors} />
+                       </div>
+                    </div>
+                    <Button 
+                      type="submit" 
+                      disabled={state.submitting} 
+                      className="w-full bg-[#d9a406] text-black font-bold text-lg h-12 hover:bg-[#b08505] mt-4"
+                    >
+                      {state.submitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...
+                        </>
+                      ) : (
+                        "Submit Enquiry"
+                      )}
+                    </Button>
+                  </form>
+                </>
+              )}
             </motion.div>
           </motion.div>
         )}
