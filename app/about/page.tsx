@@ -745,7 +745,7 @@ function AboutHero() {
                 Pioneers of Affordable Luxury in Bangalore
               </h1>
 
-              <p className="text-lg text-gray-400 leading-relaxed">
+              <p className="text-lg text-gray-200 leading-relaxed">
                 Since 1996, RRL Builders and Developers has been a trailblazer in real estate. As the winners of the Global Real Estate Brand, 2023, we are committed to helping you find your dream home with a focus on affordability.
               </p>
             </div>
@@ -757,28 +757,28 @@ function AboutHero() {
                   <Award className="h-5 w-5 text-gold-400" />
                   <span className="font-semibold">Since 1996</span>
                 </div>
-                <p className="text-sm text-gray-500">We are serving Global Legacy from 1996</p>
+                <p className="text-sm text-gray-300">We are serving Global Legacy from 1996</p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <Target className="h-5 w-5 text-gold-400" />
                   <span className="font-semibold">Awarded</span>
                 </div>
-                <p className="text-sm text-gray-500">Property Award of the year - Affordable, 2023</p>
+                <p className="text-sm text-gray-300">Property Award of the year - Affordable, 2023</p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <Users className="h-5 w-5 text-gold-400" />
                   <span className="font-semibold">Core Values</span>
                 </div>
-                <p className="text-sm text-gray-500">Transparency, Innovation, and Quality</p>
+                <p className="text-sm text-gray-300">Transparency, Innovation, and Quality</p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <Building className="h-5 w-5 text-gold-400" />
                   <span className="font-semibold">Goal</span>
                 </div>
-                <p className="text-sm text-gray-500">Making Homeownership a Reality for Many</p>
+                <p className="text-sm text-gray-300">Making Homeownership a Reality for Many</p>
               </div>
             </div>
           </motion.div>
