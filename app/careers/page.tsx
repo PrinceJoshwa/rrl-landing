@@ -585,605 +585,330 @@
 // // }
 
 
-// "use client"
-
-// import { useState, useRef } from "react"
-// import { motion, useScroll, useTransform } from "framer-motion"
-// import { Upload, Briefcase, Users, Heart, ArrowRight, Send, MapPin, Sparkles, Building2, CheckCircle2 } from "lucide-react"
-// import { Button } from "@/components/ui/button"
-// import { Input } from "@/components/ui/input"
-// import { Textarea } from "@/components/ui/textarea"
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-// import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-// import { Label } from "@/components/ui/label"
-// import Image from "next/image"
-
-// // --- Image Assets ---
-// const lifeAtRRLImages = [
-//   "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0011_nssvkw.jpg",
-//   "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0010_q2r24l.jpg",
-//   "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057539/IMG-20251218-WA0018_nuy29a.jpg", 
-//   "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057532/IMG-20251218-WA0007_bhqie0.jpg", 
-//   "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057527/IMG-20251218-WA0012_v8llfl.jpg", 
-//   "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057525/IMG-20251218-WA0008_mnbwk5.jpg", 
-//   "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0020_xcy5dw.jpg",
-// ];
-
-// // Exact Roles from Screenshot
-// const openRoles = [
-//   { title: "Sales Executive", type: "Full Time", location: "Bangalore", exp: "1-3 Years" },
-//   { title: "Marketing Manager", type: "Full Time", location: "Bangalore", exp: "3-5 Years" },
-//   { title: "Site Engineer", type: "Full Time", location: "Sarjapur", exp: "2-4 Years" },
-//   { title: "Site Supervisor", type: "Full Time", location: "Varthur", exp: "2+ Years" },
-// ]
-
-// export default function CareersPage() {
-//   const [formData, setFormData] = useState({
-//     name: "",
-//     email: "",
-//     phone: "",
-//     experienceLevel: "fresher", // Default value
-//     role: "",
-//     intro: "",
-//   })
-
-//   // Parallax Scroll Logic
-//   const ref = useRef(null);
-//   const { scrollYProgress } = useScroll({
-//     target: ref,
-//     offset: ["start start", "end start"],
-//   });
-//   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-//   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
-//   const handleSubmit = (e: React.FormEvent) => {
-//     e.preventDefault()
-//     // Integrate Formspree or backend logic here
-//     console.log("Form Data:", formData)
-//     alert("Application Submitted Successfully!")
-//   }
-
-//   return (
-//     <div className="bg-black min-h-screen text-white overflow-hidden">
-      
-//       {/* ================= 1. HERO SECTION ================= */}
-//       <section ref={ref} className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-//         {/* Background Image with Parallax */}
-//         <motion.div 
-//           style={{ y: backgroundY }}
-//           className="absolute inset-0 z-0"
-//         >
-//           <Image 
-//             src="/LookProject1.jpeg" // Ensure this image path is correct
-//             alt="RRL Careers Background"
-//             fill
-//             className="object-cover opacity-50 scale-110" 
-//             priority
-//           />
-//           {/* darker gradient overlay for text readability */}
-//           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
-//         </motion.div>
-
-//         {/* Hero Content */}
-//         <motion.div 
-//           style={{ y: textY }}
-//           className="relative z-10 text-center px-4 max-w-5xl mt-10"
-//         >
-//           {/* Pill Badge */}
-//           <motion.div
-//             initial={{ opacity: 0, scale: 0.9 }}
-//             animate={{ opacity: 1, scale: 1 }}
-//             transition={{ duration: 0.8 }}
-//             className="inline-flex items-center space-x-2 border border-gold-500/50 bg-black/50 backdrop-blur-md px-6 py-2 rounded-full mb-8"
-//           >
-//             <Sparkles className="w-4 h-4 text-gold-500" />
-//             <span className="text-white text-sm font-semibold uppercase tracking-widest">We Are Hiring</span>
-//           </motion.div>
-
-//           {/* Main Title - FIXED VISIBILITY */}
-//           <motion.h1 
-//             initial={{ opacity: 0, y: 50 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8, delay: 0.2 }}
-//             className="text-6xl md:text-8xl font-playfair font-bold mb-6 leading-tight text-white"
-//           >
-//             Career at <span className="text-gold-500">RRL</span>
-//           </motion.h1>
-
-//           <motion.p 
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             transition={{ duration: 0.8, delay: 0.4 }}
-//             className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto font-light"
-//           >
-//             Join our team and help build the future of Bangalore's skyline.
-//           </motion.p>
-//         </motion.div>
-
-//         {/* Scroll Mouse Indicator */}
-//         <motion.div 
-//           initial={{ opacity: 0 }} 
-//           animate={{ opacity: 1, y: [0, 10, 0] }} 
-//           transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-//           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
-//         >
-//           <div className="w-6 h-10 border-2 border-gold-500/50 rounded-full flex justify-center p-1">
-//             <div className="w-1 h-2 bg-gold-500 rounded-full" />
-//           </div>
-//         </motion.div>
-//       </section>
-
-//       {/* ================= 2. LIFE AT RRL / TEAM OUTING ================= */}
-//       <section className="py-24 bg-[#111] border-y border-gold-900/30 overflow-hidden relative">
-//         <div className="container mx-auto px-4 mb-12 text-center relative z-10">
-//           <motion.div
-//              initial={{ opacity: 0, y: 20 }}
-//              whileInView={{ opacity: 1, y: 0 }}
-//              viewport={{ once: true }}
-//           >
-//             <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-2 text-white">
-//               Life at <span className="text-gold-500">RRL</span>
-//             </h2>
-//             <p className="text-xl text-gold-400/80 uppercase tracking-widest font-medium">Team Outing Gallery</p>
-//           </motion.div>
-//         </div>
-
-//         {/* Infinite Marquee */}
-//         <div className="relative flex w-full overflow-hidden group">
-//           <div className="absolute left-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-r from-[#111] to-transparent" />
-//           <div className="absolute right-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-l from-[#111] to-transparent" />
-          
-//           <motion.div 
-//             className="flex gap-6 whitespace-nowrap"
-//             animate={{ x: ["0%", "-50%"] }}
-//             transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
-//           >
-//             {/* Double list for seamless loop */}
-//             {[...lifeAtRRLImages, ...lifeAtRRLImages].map((src, i) => (
-//               <div key={i} className="relative w-[300px] h-[400px] md:w-[400px] md:h-[500px] rounded-3xl overflow-hidden flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 border border-white/5 hover:border-gold-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(217,164,6,0.3)]">
-//                 <Image 
-//                   src={src} 
-//                   alt="Life at RRL" 
-//                   fill 
-//                   className="object-cover" 
-//                 />
-//               </div>
-//             ))}
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       {/* ================= 4. CSR SECTION (Exact Content from Screenshot) ================= */}
-//       <section className="py-24 bg-white text-black relative">
-//          <div className="container mx-auto px-4 relative z-10">
-//             {/* Header Text */}
-//             <div className="text-center mb-16 max-w-5xl mx-auto">
-//                 <div className="inline-flex items-center space-x-2 rounded-full bg-gold-100 px-4 py-2 text-gold-700 mb-6">
-//                     <Heart className="h-4 w-4 fill-gold-500 text-gold-500" />
-//                     <span className="text-sm font-bold uppercase">Community Impact</span>
-//                 </div>
-//                 <h2 className="text-4xl md:text-5xl font-playfair font-bold text-black mb-8">
-//                     Corporate Social Responsibility (CSR)
-//                 </h2>
-//                 <p className="text-gray-600 text-lg leading-relaxed">
-//                     RRL Builders and Developers, recognized as trusted builders in Bangalore and a leading name in Sarjapur, actively contributes to social harmony and community welfare through meaningful Corporate Social Responsibility (CSR) initiatives. These efforts reflect our commitment to building not just homes, but stronger communities rooted in trust and unity.
-//                 </p>
-//             </div>
-
-//             {/* 3 Column Grid */}
-//             <div className="grid md:grid-cols-3 gap-8">
-//                 {/* Card 1 */}
-//                 <motion.div 
-//                     initial={{ opacity: 0, y: 30 }}
-//                     whileInView={{ opacity: 1, y: 0 }}
-//                     viewport={{ once: true }}
-//                     className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-//                 >
-//                     <div className="w-14 h-14 bg-gold-500 rounded-2xl flex items-center justify-center mb-6 text-black shadow-lg">
-//                         <Users className="w-7 h-7" />
-//                     </div>
-//                     <h3 className="text-xl font-bold font-playfair mb-4">Community Events for Harmony</h3>
-//                     <p className="text-gray-600 text-sm leading-relaxed">
-//                         RRL Builders and Developers regularly host community events that foster inclusivity, cultural exchange, and social harmony. These gatherings bring together residents, local leaders, and stakeholders, promoting a sense of belonging and collective well-being.
-//                     </p>
-//                 </motion.div>
-
-//                 {/* Card 2 */}
-//                 <motion.div 
-//                     initial={{ opacity: 0, y: 30 }}
-//                     whileInView={{ opacity: 1, y: 0 }}
-//                     viewport={{ once: true }}
-//                     transition={{ delay: 0.1 }}
-//                     className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-//                 >
-//                     <div className="w-14 h-14 bg-gold-500 rounded-2xl flex items-center justify-center mb-6 text-black shadow-lg">
-//                         <Building2 className="w-7 h-7" />
-//                     </div>
-//                     <h3 className="text-xl font-bold font-playfair mb-4">Temple Donations & Social Impact</h3>
-//                     <p className="text-gray-600 text-sm leading-relaxed">
-//                         As part of our CSR activities, we support temple renovations and donations, recognizing temples as vital centers of community life. These contributions help preserve heritage, promote spiritual well-being, and uplift local economies.
-//                     </p>
-//                 </motion.div>
-
-//                 {/* Card 3 */}
-//                 <motion.div 
-//                     initial={{ opacity: 0, y: 30 }}
-//                     whileInView={{ opacity: 1, y: 0 }}
-//                     viewport={{ once: true }}
-//                     transition={{ delay: 0.2 }}
-//                     className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-//                 >
-//                     <div className="w-14 h-14 bg-gold-500 rounded-2xl flex items-center justify-center mb-6 text-black shadow-lg">
-//                         <CheckCircle2 className="w-7 h-7" />
-//                     </div>
-//                     <h3 className="text-xl font-bold font-playfair mb-4">Commitment to Trusted Development</h3>
-//                     <p className="text-gray-600 text-sm leading-relaxed">
-//                         By integrating CSR into our core values, RRL ensures that every project reflects not just architectural excellence, but also social responsibility. Our initiatives are designed to build trust with investors and buyers, demonstrating we are builders of a better society.
-//                     </p>
-//                 </motion.div>
-//             </div>
-//          </div>
-//       </section>
-//       {/* ================= 3. OPEN ROLES & APPLICATION FORM ================= */}
-//       <section className="py-24 bg-black relative">
-//         {/* Background Glow */}
-//         <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-gold-500/10 blur-[120px] rounded-full pointer-events-none" />
-
-//         <div className="container mx-auto px-4 relative z-10">
-//           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            
-//             {/* LEFT COLUMN: Open Roles List */}
-//             <div>
-//               <div className="mb-10">
-//                   <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">Open <span className="text-gold-500">Roles</span></h2>
-//                   <p className="text-gray-400 text-lg">Find your place in our growing team.</p>
-//               </div>
-              
-//               <div className="space-y-5">
-//                 {openRoles.map((role, i) => (
-//                   <motion.div
-//                     key={i}
-//                     initial={{ opacity: 0, x: -20 }}
-//                     whileInView={{ opacity: 1, x: 0 }}
-//                     viewport={{ once: true }}
-//                     transition={{ delay: i * 0.1 }}
-//                     className="group bg-neutral-900/50 border border-neutral-800 p-6 rounded-2xl hover:border-gold-500 hover:bg-neutral-900 transition-all duration-300 cursor-pointer"
-//                   >
-//                     <div className="flex justify-between items-center">
-//                       <div>
-//                         <h3 className="text-xl font-bold text-white group-hover:text-gold-400 transition-colors mb-2">{role.title}</h3>
-//                         <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-//                           <span className="flex items-center"><Briefcase className="w-4 h-4 mr-1.5 text-gold-600" /> {role.type}</span>
-//                           <span className="flex items-center"><MapPin className="w-4 h-4 mr-1.5 text-gold-600" /> {role.location}</span>
-//                         </div>
-//                       </div>
-//                       <div className="h-12 w-12 rounded-full bg-black border border-neutral-700 flex items-center justify-center group-hover:bg-gold-500 group-hover:border-gold-500 group-hover:text-black transition-all">
-//                         <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-//                       </div>
-//                     </div>
-//                   </motion.div>
-//                 ))}
-//               </div>
-//             </div>
-
-//             {/* RIGHT COLUMN: Application Form (Matches Figma Screenshot) */}
-//             <motion.div
-//               initial={{ opacity: 0, scale: 0.95 }}
-//               whileInView={{ opacity: 1, scale: 1 }}
-//               viewport={{ once: true }}
-//               className="bg-gold-500 rounded-[2rem] p-8 md:p-10 shadow-2xl relative overflow-hidden text-black"
-//             >
-//               <h3 className="text-3xl font-bold font-playfair mb-2 relative z-10">Job Application Form</h3>
-//               <p className="text-black/80 mb-8 relative z-10 font-medium">Fill in your details to apply.</p>
-
-//               <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
-//                 {/* Name */}
-//                 <div className="space-y-1.5">
-//                     <label className="text-xs font-bold uppercase tracking-wider text-black/70">Name</label>
-//                     <Input 
-//                       className="bg-white/90 border-none h-12 focus:ring-2 focus:ring-black/20 text-black placeholder:text-gray-500 rounded-xl"
-//                       placeholder="Your Full Name"
-//                       required
-//                       onChange={(e) => setFormData({...formData, name: e.target.value})}
-//                     />
-//                 </div>
-
-//                 {/* Email */}
-//                 <div className="space-y-1.5">
-//                     <label className="text-xs font-bold uppercase tracking-wider text-black/70">Email</label>
-//                     <Input 
-//                       type="email"
-//                       className="bg-white/90 border-none h-12 focus:ring-2 focus:ring-black/20 text-black placeholder:text-gray-500 rounded-xl"
-//                       placeholder="you@example.com"
-//                       required
-//                       onChange={(e) => setFormData({...formData, email: e.target.value})}
-//                     />
-//                 </div>
-
-//                 {/* Phone */}
-//                 <div className="space-y-1.5">
-//                     <label className="text-xs font-bold uppercase tracking-wider text-black/70">Phone Number</label>
-//                     <Input 
-//                       type="tel"
-//                       className="bg-white/90 border-none h-12 focus:ring-2 focus:ring-black/20 text-black placeholder:text-gray-500 rounded-xl"
-//                       placeholder="+91 98765 43210"
-//                       required
-//                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
-//                     />
-//                 </div>
-
-//                 {/* Fresher or Experienced (Radio Buttons per Screenshot) */}
-//                 <div className="space-y-2 py-1">
-//                     <label className="text-xs font-bold uppercase tracking-wider text-black/70 block">Are you?</label>
-//                     <RadioGroup 
-//                         defaultValue="fresher" 
-//                         className="flex space-x-6"
-//                         onValueChange={(val) => setFormData({...formData, experienceLevel: val})}
-//                     >
-//                         <div className="flex items-center space-x-2">
-//                             <RadioGroupItem value="fresher" id="fresher" className="border-black text-black" />
-//                             <Label htmlFor="fresher" className="text-black font-semibold cursor-pointer">Fresher</Label>
-//                         </div>
-//                         <div className="flex items-center space-x-2">
-//                             <RadioGroupItem value="experienced" id="experienced" className="border-black text-black" />
-//                             <Label htmlFor="experienced" className="text-black font-semibold cursor-pointer">Experienced</Label>
-//                         </div>
-//                     </RadioGroup>
-//                 </div>
-
-//                 {/* Role Selection */}
-//                 <div className="space-y-1.5">
-//                   <label className="text-xs font-bold uppercase tracking-wider text-black/70">Which role are you applying for?</label>
-//                   <Select onValueChange={(val) => setFormData({...formData, role: val})}>
-//                     <SelectTrigger className="bg-white/90 border-none h-12 text-black focus:ring-2 focus:ring-black/20 rounded-xl">
-//                       <SelectValue placeholder="Select a role" />
-//                     </SelectTrigger>
-//                     <SelectContent>
-//                       {openRoles.map((role) => (
-//                         <SelectItem key={role.title} value={role.title}>{role.title}</SelectItem>
-//                       ))}
-//                       <SelectItem value="other">Other</SelectItem>
-//                     </SelectContent>
-//                   </Select>
-//                 </div>
-
-//                 {/* Introduction */}
-//                 <div className="space-y-1.5">
-//                   <label className="text-xs font-bold uppercase tracking-wider text-black/70">Introduce Yourself</label>
-//                   <Textarea 
-//                     className="bg-white/90 border-none min-h-[100px] focus:ring-2 focus:ring-black/20 text-black placeholder:text-gray-500 rounded-xl resize-none"
-//                     placeholder="Briefly tell us about yourself..."
-//                     onChange={(e) => setFormData({...formData, intro: e.target.value})}
-//                   />
-//                 </div>
-
-//                 {/* Attach CV Button */}
-//                 <div className="pt-2">
-//                   <label className="flex items-center justify-center w-full h-14 px-4 transition bg-black/5 border-2 border-black/10 border-dashed rounded-xl appearance-none cursor-pointer hover:bg-black/10 hover:border-black/30">
-//                     <span className="flex items-center space-x-2">
-//                       <Upload className="w-5 h-5 text-black/60" />
-//                       <span className="font-medium text-black/70">Attach CV</span>
-//                     </span>
-//                     <input type="file" name="file_upload" className="hidden" />
-//                   </label>
-//                 </div>
-
-//                 {/* Submit Button */}
-//                 <Button className="w-full bg-black hover:bg-neutral-800 text-white font-bold h-14 text-lg rounded-xl mt-4 shadow-lg transition-transform hover:scale-[1.02]">
-//                   Submit Application <Send className="ml-2 w-5 h-5" />
-//                 </Button>
-//               </form>
-//             </motion.div>
-//           </div>
-//         </div>
-//       </section>
-
-//     </div>
-//   )
-// }
-
 "use client"
 
-import { useRef } from "react"
+import { useState, useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { Heart, Users, Building2, CheckCircle2, Sprout, HandHeart, Sparkles } from "lucide-react"
+import { Upload, Briefcase, Users, Heart, ArrowRight, Send, MapPin, Sparkles, Building2, CheckCircle2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Label } from "@/components/ui/label"
 import Image from "next/image"
 
-export default function CSRPage() {
-  const ref = useRef(null)
+// --- Image Assets ---
+const lifeAtRRLImages = [
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0011_nssvkw.jpg",
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0010_q2r24l.jpg",
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057539/IMG-20251218-WA0018_nuy29a.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057532/IMG-20251218-WA0007_bhqie0.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057527/IMG-20251218-WA0012_v8llfl.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057525/IMG-20251218-WA0008_mnbwk5.jpg", 
+  "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0020_xcy5dw.jpg",
+];
+
+// Exact Roles from Screenshot
+const openRoles = [
+  { title: "Sales Executive", type: "Full Time", location: "Bangalore", exp: "1-3 Years" },
+  { title: "Marketing Manager", type: "Full Time", location: "Bangalore", exp: "3-5 Years" },
+  { title: "Site Engineer", type: "Full Time", location: "Sarjapur", exp: "2-4 Years" },
+  { title: "Site Supervisor", type: "Full Time", location: "Varthur", exp: "2+ Years" },
+]
+
+export default function CareersPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    experienceLevel: "fresher", // Default value
+    role: "",
+    intro: "",
+  })
+
+  // Parallax Scroll Logic
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
-  })
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Integrate Formspree or backend logic here
+    console.log("Form Data:", formData)
+    alert("Application Submitted Successfully!")
+  }
 
   return (
     <div className="bg-black min-h-screen text-white overflow-hidden">
       
-      {/* 1. HERO SECTION */}
-      <section ref={ref} className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <motion.div style={{ y: backgroundY }} className="absolute inset-0 z-0">
-          {/* Use a community/event related image here */}
+      {/* ================= 1. HERO SECTION ================= */}
+      <section ref={ref} className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Parallax */}
+        <motion.div 
+          style={{ y: backgroundY }}
+          className="absolute inset-0 z-0"
+        >
           <Image 
-            src="/LookProject5.jpeg" 
-            alt="CSR Background"
+            src="/LookProject1.jpeg" // Ensure this image path is correct
+            alt="RRL Careers Background"
             fill
-            className="object-cover opacity-50"
+            className="object-cover opacity-50 scale-110" 
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black" />
+          {/* darker gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
         </motion.div>
 
-        <motion.div style={{ y: textY }} className="relative z-10 text-center px-4 max-w-4xl">
+        {/* Hero Content */}
+        <motion.div 
+          style={{ y: textY }}
+          className="relative z-10 text-center px-4 max-w-5xl mt-10"
+        >
+          {/* Pill Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center space-x-2 border border-gold-500/50 bg-gold-500/10 backdrop-blur-md px-6 py-2 rounded-full mb-8"
+            className="inline-flex items-center space-x-2 border border-gold-500/50 bg-black/50 backdrop-blur-md px-6 py-2 rounded-full mb-8"
           >
-            <Heart className="w-4 h-4 text-gold-500" />
-            <span className="text-gold-200 text-sm font-semibold uppercase tracking-widest">Community First</span>
+            <Sparkles className="w-4 h-4 text-gold-500" />
+            <span className="text-white text-sm font-semibold uppercase tracking-widest">We Are Hiring</span>
           </motion.div>
 
+          {/* Main Title - FIXED VISIBILITY */}
           <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-playfair font-bold mb-6"
+            className="text-6xl md:text-8xl font-playfair font-bold mb-6 leading-tight text-white"
           >
-            Building <span className="text-gold-500">Communities</span>, <br /> Not Just Homes.
+            Career at <span className="text-gold-500">RRL</span>
           </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto font-light"
+          >
+            Join our team and help build the future of Bangalore's skyline.
+          </motion.p>
+        </motion.div>
+
+        {/* Scroll Mouse Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1, y: [0, 10, 0] }} 
+          transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
+        >
+          <div className="w-6 h-10 border-2 border-gold-500/50 rounded-full flex justify-center p-1">
+            <div className="w-1 h-2 bg-gold-500 rounded-full" />
+          </div>
         </motion.div>
       </section>
 
-      {/* 2. MISSION STATEMENT */}
-      <section className="py-20 bg-white text-black relative">
-        <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-playfair font-bold mb-8">
-                    Our Social <span className="text-gold-600">Commitment</span>
-                </h2>
-                <p className="text-xl text-gray-600 leading-relaxed font-light">
-                    RRL Builders and Developers, recognized as trusted builders in Bangalore and a leading name in Sarjapur, actively contributes to social harmony and community welfare. Our CSR initiatives reflect our deep commitment to building stronger communities rooted in trust, unity, and heritage.
-                </p>
-            </div>
-
-            {/* 3 PILLARS GRID */}
-            <div className="grid md:grid-cols-3 gap-8">
-                {/* Pillar 1 */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl hover:border-gold-200 transition-all duration-300"
-                >
-                    <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mb-6 text-gold-600">
-                        <Users className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-2xl font-bold font-playfair mb-4">Community Harmony</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                        We regularly host community events that foster inclusivity and cultural exchange. These gatherings bring together residents and local leaders to promote a sense of belonging.
-                    </p>
-                </motion.div>
-
-                {/* Pillar 2 */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl hover:border-gold-200 transition-all duration-300"
-                >
-                    <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mb-6 text-gold-600">
-                        <Building2 className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-2xl font-bold font-playfair mb-4">Heritage Preservation</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                        We support temple renovations and donations, recognizing them as vital centers of life. These contributions help preserve heritage and uplift local economies.
-                    </p>
-                </motion.div>
-
-                {/* Pillar 3 */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl hover:border-gold-200 transition-all duration-300"
-                >
-                    <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mb-6 text-gold-600">
-                        <CheckCircle2 className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-2xl font-bold font-playfair mb-4">Trusted Development</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                        Every project reflects not just architectural excellence, but social responsibility. We demonstrate to our investors that we are builders of a better society.
-                    </p>
-                </motion.div>
-            </div>
-        </div>
-      </section>
-
-      {/* 3. IMPACT STATISTICS / HIGHLIGHTS */}
-      <section className="py-20 bg-neutral-900 border-y border-gold-900/30">
-        <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-                {[
-                    { icon: Sprout, label: "Eco Initiatives", value: "100+" },
-                    { icon: HandHeart, label: "Community Events", value: "50+" },
-                    { icon: Building2, label: "Temples Supported", value: "12+" },
-                    { icon: Users, label: "Lives Impacted", value: "5000+" },
-                ].map((stat, index) => (
-                    <motion.div 
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className="p-6"
-                    >
-                        <stat.icon className="w-10 h-10 text-gold-500 mx-auto mb-4" />
-                        <h4 className="text-4xl font-bold text-white mb-2">{stat.value}</h4>
-                        <p className="text-gray-400 uppercase tracking-wider text-sm">{stat.label}</p>
-                    </motion.div>
-                ))}
-            </div>
-        </div>
-      </section>
-
-      {/* 4. GALLERY SECTION */}
-      <section className="py-24 bg-black">
-        <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-playfair font-bold text-center mb-12">
-                Moments of <span className="text-gold-500">Giving Back</span>
+      {/* ================= 2. LIFE AT RRL / TEAM OUTING ================= */}
+      <section className="py-24 bg-[#111] border-y border-gold-900/30 overflow-hidden relative">
+        <div className="container mx-auto px-4 mb-12 text-center relative z-10">
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-2 text-white">
+              Life at <span className="text-gold-500">RRL</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-[600px] md:h-[500px]">
-                {/* Large Main Image */}
-                <div className="md:col-span-2 relative rounded-2xl overflow-hidden group border border-neutral-800">
-                    <Image 
-                        src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0011_nssvkw.jpg" 
-                        alt="Community Event"
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
-                        <p className="text-white font-bold text-xl">Local Temple Renovation</p>
-                    </div>
-                </div>
-                
-                {/* Side Stack */}
-                <div className="flex flex-col gap-6">
-                    <div className="relative flex-1 rounded-2xl overflow-hidden group border border-neutral-800">
-                        <Image 
-                            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057539/IMG-20251218-WA0018_nuy29a.jpg" 
-                            alt="CSR Activity"
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                    </div>
-                    <div className="relative flex-1 rounded-2xl overflow-hidden group border border-neutral-800">
-                         <Image 
-                            src="/LookProject5.jpeg" 
-                            alt="Community Gathering"
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                    </div>
-                </div>
-            </div>
+            <p className="text-xl text-gold-400/80 uppercase tracking-widest font-medium">Team Outing Gallery</p>
+          </motion.div>
+        </div>
+
+        {/* Infinite Marquee */}
+        <div className="relative flex w-full overflow-hidden group">
+          <div className="absolute left-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-r from-[#111] to-transparent" />
+          <div className="absolute right-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-l from-[#111] to-transparent" />
+          
+          <motion.div 
+            className="flex gap-6 whitespace-nowrap"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+          >
+            {/* Double list for seamless loop */}
+            {[...lifeAtRRLImages, ...lifeAtRRLImages].map((src, i) => (
+              <div key={i} className="relative w-[300px] h-[400px] md:w-[400px] md:h-[500px] rounded-3xl overflow-hidden flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 border border-white/5 hover:border-gold-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(217,164,6,0.3)]">
+                <Image 
+                  src={src} 
+                  alt="Life at RRL" 
+                  fill 
+                  className="object-cover" 
+                />
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* 5. CTA */}
-      <section className="py-20 bg-gold-500 text-black text-center">
-        <div className="container mx-auto px-4">
-            <Sparkles className="w-12 h-12 mx-auto mb-6 text-black/50" />
-            <h2 className="text-4xl font-playfair font-bold mb-6">Partner in Our Journey</h2>
-            <p className="text-xl max-w-2xl mx-auto mb-8 font-medium opacity-80">
-                Join us in creating spaces that not only shelter families but also nurture the communities around them.
-            </p>
+      
+      {/* ================= 3. OPEN ROLES & APPLICATION FORM ================= */}
+      <section className="py-24 bg-black relative">
+        {/* Background Glow */}
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-gold-500/10 blur-[120px] rounded-full pointer-events-none" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            
+            {/* LEFT COLUMN: Open Roles List */}
+            <div>
+              <div className="mb-10">
+                  <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">Open <span className="text-gold-500">Roles</span></h2>
+                  <p className="text-gray-400 text-lg">Find your place in our growing team.</p>
+              </div>
+              
+              <div className="space-y-5">
+                {openRoles.map((role, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="group bg-neutral-900/50 border border-neutral-800 p-6 rounded-2xl hover:border-gold-500 hover:bg-neutral-900 transition-all duration-300 cursor-pointer"
+                  >
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <h3 className="text-xl font-bold text-white group-hover:text-gold-400 transition-colors mb-2">{role.title}</h3>
+                        <div className="flex flex-wrap gap-4 text-sm text-gray-400">
+                          <span className="flex items-center"><Briefcase className="w-4 h-4 mr-1.5 text-gold-600" /> {role.type}</span>
+                          <span className="flex items-center"><MapPin className="w-4 h-4 mr-1.5 text-gold-600" /> {role.location}</span>
+                        </div>
+                      </div>
+                      <div className="h-12 w-12 rounded-full bg-black border border-neutral-700 flex items-center justify-center group-hover:bg-gold-500 group-hover:border-gold-500 group-hover:text-black transition-all">
+                        <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN: Application Form (Matches Figma Screenshot) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-gold-500 rounded-[2rem] p-8 md:p-10 shadow-2xl relative overflow-hidden text-black"
+            >
+              <h3 className="text-3xl font-bold font-playfair mb-2 relative z-10">Job Application Form</h3>
+              <p className="text-black/80 mb-8 relative z-10 font-medium">Fill in your details to apply.</p>
+
+              <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+                {/* Name */}
+                <div className="space-y-1.5">
+                    <label className="text-xs font-bold uppercase tracking-wider text-black/70">Name</label>
+                    <Input 
+                      className="bg-white/90 border-none h-12 focus:ring-2 focus:ring-black/20 text-black placeholder:text-gray-500 rounded-xl"
+                      placeholder="Your Full Name"
+                      required
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    />
+                </div>
+
+                {/* Email */}
+                <div className="space-y-1.5">
+                    <label className="text-xs font-bold uppercase tracking-wider text-black/70">Email</label>
+                    <Input 
+                      type="email"
+                      className="bg-white/90 border-none h-12 focus:ring-2 focus:ring-black/20 text-black placeholder:text-gray-500 rounded-xl"
+                      placeholder="you@example.com"
+                      required
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    />
+                </div>
+
+                {/* Phone */}
+                <div className="space-y-1.5">
+                    <label className="text-xs font-bold uppercase tracking-wider text-black/70">Phone Number</label>
+                    <Input 
+                      type="tel"
+                      className="bg-white/90 border-none h-12 focus:ring-2 focus:ring-black/20 text-black placeholder:text-gray-500 rounded-xl"
+                      placeholder="+91 98765 43210"
+                      required
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    />
+                </div>
+
+                {/* Fresher or Experienced (Radio Buttons per Screenshot) */}
+                <div className="space-y-2 py-1">
+                    <label className="text-xs font-bold uppercase tracking-wider text-black/70 block">Are you?</label>
+                    <RadioGroup 
+                        defaultValue="fresher" 
+                        className="flex space-x-6"
+                        onValueChange={(val) => setFormData({...formData, experienceLevel: val})}
+                    >
+                        <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="fresher" id="fresher" className="border-black text-black" />
+                            <Label htmlFor="fresher" className="text-black font-semibold cursor-pointer">Fresher</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="experienced" id="experienced" className="border-black text-black" />
+                            <Label htmlFor="experienced" className="text-black font-semibold cursor-pointer">Experienced</Label>
+                        </div>
+                    </RadioGroup>
+                </div>
+
+                {/* Role Selection */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold uppercase tracking-wider text-black/70">Which role are you applying for?</label>
+                  <Select onValueChange={(val) => setFormData({...formData, role: val})}>
+                    <SelectTrigger className="bg-white/90 border-none h-12 text-black focus:ring-2 focus:ring-black/20 rounded-xl">
+                      <SelectValue placeholder="Select a role" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {openRoles.map((role) => (
+                        <SelectItem key={role.title} value={role.title}>{role.title}</SelectItem>
+                      ))}
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Introduction */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold uppercase tracking-wider text-black/70">Introduce Yourself</label>
+                  <Textarea 
+                    className="bg-white/90 border-none min-h-[100px] focus:ring-2 focus:ring-black/20 text-black placeholder:text-gray-500 rounded-xl resize-none"
+                    placeholder="Briefly tell us about yourself..."
+                    onChange={(e) => setFormData({...formData, intro: e.target.value})}
+                  />
+                </div>
+
+                {/* Attach CV Button */}
+                <div className="pt-2">
+                  <label className="flex items-center justify-center w-full h-14 px-4 transition bg-black/5 border-2 border-black/10 border-dashed rounded-xl appearance-none cursor-pointer hover:bg-black/10 hover:border-black/30">
+                    <span className="flex items-center space-x-2">
+                      <Upload className="w-5 h-5 text-black/60" />
+                      <span className="font-medium text-black/70">Attach CV</span>
+                    </span>
+                    <input type="file" name="file_upload" className="hidden" />
+                  </label>
+                </div>
+
+                {/* Submit Button */}
+                <Button className="w-full bg-black hover:bg-neutral-800 text-white font-bold h-14 text-lg rounded-xl mt-4 shadow-lg transition-transform hover:scale-[1.02]">
+                  Submit Application <Send className="ml-2 w-5 h-5" />
+                </Button>
+              </form>
+            </motion.div>
+          </div>
         </div>
       </section>
+
     </div>
   )
 }
+

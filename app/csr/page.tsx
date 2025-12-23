@@ -177,14 +177,14 @@ export default function CSRPage() {
                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                     </div>
-                    <div className="relative flex-1 rounded-2xl overflow-hidden group border border-neutral-800">
+                    {/* <div className="relative flex-1 rounded-2xl overflow-hidden group border border-neutral-800">
                          <Image 
                             src="/LookProject5.jpeg" 
                             alt="Community Gathering"
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
