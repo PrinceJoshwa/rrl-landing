@@ -45,7 +45,7 @@ export default function WalkinPage() {
 
     try {
       // Replace with your actual Formspree Form ID
-      const res = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+      const res = await fetch("https://formspree.io/f/xaqwanga", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
