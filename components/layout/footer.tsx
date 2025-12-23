@@ -104,7 +104,7 @@
 // }
 
 import Link from "next/link"
-import { Facebook, Linkedin, Mail, Phone, MapPin, Award, ArrowRight } from "lucide-react"
+import { Facebook, Linkedin, Mail, Phone, MapPin, Award, ArrowRight, Instagram } from "lucide-react"
 import Image from "next/image"
 
 // Links for the footer columns
@@ -145,7 +145,7 @@ export function Footer() {
               <Image src="/logo.png" alt="RRL Group Logo" width={150} height={50} />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Pioneers of affordable luxury since 1996. We help you find your dream home.
+              Uncompromising quality in every square foot, designed for families who seek a lifestyle that goes Beyond Home.
             </p>
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-start space-x-3">
@@ -170,6 +170,9 @@ export function Footer() {
               </Link>
               <Link href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gold-500 text-white hover:text-black transition-colors">
                 <Linkedin className="h-5 w-5" />
+              </Link>
+              <Link href="https://www.instagram.com/rrl_builders/" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gold-500 text-white hover:text-black transition-colors">
+                <Instagram className="h-5 w-5" />
               </Link>
             </div>
           </div>
