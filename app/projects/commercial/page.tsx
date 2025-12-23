@@ -806,7 +806,7 @@ export default function CommercialPage() {
             <Button 
                size="lg" 
                className="bg-black text-white hover:bg-gray-900 font-bold px-10 py-6 text-lg rounded-full"
-               onClick={() => handleEnquiry("Footer CTA")}
+               onClick={() => handleEnquiry("Property")}
             >
                Contact Sales Team
             </Button>
