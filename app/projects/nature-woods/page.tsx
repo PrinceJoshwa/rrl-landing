@@ -2166,53 +2166,67 @@ export default function NatureWoodsPage() {
     )
   }
 
-  // ========== LOCATION SECTION ==========
   const LocationSection = () => (
-    <section className="py-24 bg-[#0a0a0a]">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <Badge className="bg-[#d9a406] text-black mb-4 hover:bg-[#d9a406]">Prime Location</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Connected to <span className="text-[#d9a406]">Everything</span>
-            </h2>
-            <p className="text-gray-400 mb-8 text-lg">
-              Strategically located at Thindlu, near Sarjapura Bus Stop. Enjoy easy accessibility to Wipro SEZ, Electronic City, and top international schools.
-            </p>
+  <section className="py-24 bg-[#0a0a0a]">
+    <div className="container mx-auto px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Left Content */}
+        <div>
+          <Badge className="bg-[#d9a406] text-black mb-4 hover:bg-[#d9a406]">Prime Location</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Connected to <span className="text-[#d9a406]">Everything</span>
+          </h2>
+          <p className="text-gray-400 mb-8 text-lg">
+            Strategically located at Thindlu, near Sarjapura Bus Stop. Enjoy easy accessibility to Wipro SEZ, Electronic City, and top international schools.
+          </p>
 
-            <div className="space-y-8">
-               <div className="border-l-2 border-[#333] pl-6 relative">
-                 <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#d9a406] rounded-full"></div>
-                 <h4 className="text-white font-bold text-lg mb-2">Tech Hubs</h4>
-                 <p className="text-gray-500">Wipro SEZ, RMZ SEZ 2, Cisco, Intel, JP Morgan, Eco Space.</p>
-               </div>
-               <div className="border-l-2 border-[#333] pl-6 relative">
-                 <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#222] border-2 border-[#d9a406] rounded-full"></div>
-                 <h4 className="text-white font-bold text-lg mb-2">Schools</h4>
-                 <p className="text-gray-500">Greenwood High, Indus Intl, TISB, GEAR Innovative, Delhi Public School.</p>
-               </div>
-               <div className="border-l-2 border-[#333] pl-6 relative">
-                 <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#222] border-2 border-[#d9a406] rounded-full"></div>
-                 <h4 className="text-white font-bold text-lg mb-2">Essentials</h4>
-                 <p className="text-gray-500">D-Mart, Decathlon, Sarjapura Market, Krupanidhi College.</p>
-               </div>
-            </div>
-          </div>
-          
-          <div className="relative">
-             <div className="bg-[#111] border border-white/10 p-2 rounded-xl">
-               {/* Map Placeholder */}
-               <div className="w-full h-[500px] bg-[#000] rounded-lg flex items-center justify-center flex-col gap-4 overflow-hidden relative">
-                   <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] opacity-50 bg-cover bg-center"></div>
-                   <MapPin className="w-16 h-16 text-[#d9a406] animate-bounce relative z-10" />
-                   <p className="text-gray-300 relative z-10 font-bold bg-black/50 px-4 py-2 rounded">Thindlu, Bangalore</p>
-               </div>
+          <div className="space-y-8">
+             <div className="border-l-2 border-[#333] pl-6 relative">
+               <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#d9a406] rounded-full"></div>
+               <h4 className="text-white font-bold text-lg mb-2">Tech Hubs</h4>
+               <p className="text-gray-500">Wipro SEZ, RMZ SEZ 2, Cisco, Intel, JP Morgan, Eco Space.</p>
+             </div>
+             <div className="border-l-2 border-[#333] pl-6 relative">
+               <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#222] border-2 border-[#d9a406] rounded-full"></div>
+               <h4 className="text-white font-bold text-lg mb-2">Schools</h4>
+               <p className="text-gray-500">Greenwood High, Indus Intl, TISB, GEAR Innovative, Delhi Public School.</p>
+             </div>
+             <div className="border-l-2 border-[#333] pl-6 relative">
+               <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#222] border-2 border-[#d9a406] rounded-full"></div>
+               <h4 className="text-white font-bold text-lg mb-2">Essentials</h4>
+               <p className="text-gray-500">D-Mart, Decathlon, Sarjapura Market, Krupanidhi College.</p>
              </div>
           </div>
         </div>
+        
+        {/* Right Map Section */}
+        <div className="relative">
+           <div className="bg-[#111] border border-white/10 p-2 rounded-xl">
+             <div className="w-full h-[500px] bg-[#000] rounded-lg overflow-hidden relative">
+                {/* Google Map Embed for Thindlu */}
+                <iframe 
+                  src="https://maps.google.com/maps?q=Thindlu+Sarjapura+Bangalore&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0"
+                ></iframe>
+                
+                {/* Overlay Label */}
+                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg border-l-4 border-[#d9a406] pointer-events-none shadow-lg">
+                  <p className="text-[#d9a406] text-xs font-bold uppercase tracking-wider">Location</p>
+                  <p className="text-black text-sm font-bold">Thindlu, Bangalore</p>
+                </div>
+             </div>
+           </div>
+        </div>
       </div>
-    </section>
-  )
+    </div>
+  </section>
+)
 
   // ========== FOOTER / CTA ==========
   const FooterSection = () => (

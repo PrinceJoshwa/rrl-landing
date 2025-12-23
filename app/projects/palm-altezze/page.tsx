@@ -8596,7 +8596,7 @@ export default function Home() {
                 Visualize Your <br/><span className="text-[#d9a406]">Home Virtually</span>
               </h2>
               <div className="w-16 h-1 bg-[#d9a406] rounded-full"></div>
-              <p className="text-xl text-gray-400">The Next Era of Interior Design.</p>
+              <p className="text-xl text-gray-400">Experience living in your next home</p>
               <Button size="lg" className="bg-[#d9a406] text-black hover:bg-white font-bold gap-2">
                 <Glasses className="w-5 h-5" /> Book a VR Session Today
               </Button>
@@ -8613,7 +8613,7 @@ export default function Home() {
                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
                
                <img 
-                 src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766053327/WhatsApp_Image_2025-12-17_at_5.18.31_PM_kzyhgo.jpg" 
+                 src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766481026/Visualize_Your_Home_Virtually_1_qusxhs.png" 
                  alt="VR Interior Showcase" 
                  className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
                />
@@ -8727,37 +8727,74 @@ export default function Home() {
   }
 
   // ========== HEALTHY LIVING SECTION ==========
-  const HealthyLivingSection = () => (
-    <section className="py-24 bg-[#0a0a0a] overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div className="max-w-xl" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-            <h2 className="text-5xl md:text-6xl font-serif text-white mb-6 leading-tight">Step Into <br /><span className="text-[#d9a406]">Healthy Living</span></h2>
-            <div className="border-l-4 border-[#d9a406] pl-6 mb-12">
-              <p className="text-gray-300 font-bold uppercase tracking-wide text-sm leading-relaxed">AT RRL PALM ALTEZZE, YOU DON'T JUST GET A <br />HOME — YOU GET A LIFESTYLE.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-10">
-              <div className="flex flex-col items-start gap-4 group">
-                <div className="w-16 h-16 rounded-full bg-[#d9a406]/10 flex items-center justify-center group-hover:bg-[#d9a406] transition-colors duration-300 border border-[#d9a406]/30">
-                  <Wind className="w-8 h-8 text-[#d9a406] group-hover:text-black transition-colors duration-300" />
-                </div>
-                <p className="font-bold text-white text-sm max-w-[150px] leading-tight uppercase">FRESH AIR & <br />GREEN SURROUNDINGS</p>
+const HealthyLivingSection = () => (
+  <section className="py-16 sm:py-20 md:py-24 bg-[#0a0a0a] overflow-hidden">
+    <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        {/* LEFT CONTENT */}
+        <motion.div
+          className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif text-white mb-6 leading-tight">
+            Step Into <br />
+            <span className="text-[#d9a406]">Healthy Living</span>
+          </h2>
+
+          <div className="border-l-4 lg:border-l-4 border-[#d9a406] pl-4 lg:pl-6 mb-8 lg:mb-12 mx-auto lg:mx-0 max-w-md">
+            <p className="text-gray-300 font-bold uppercase tracking-wide text-xs sm:text-sm leading-relaxed">
+              AT RRL PALM ALTEZZE, YOU DON'T JUST GET A HOME —
+              YOU GET A LIFESTYLE.
+            </p>
+          </div>
+
+          {/* ICON FEATURES */}
+          <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 justify-center lg:justify-start">
+            
+            <div className="flex flex-col items-center lg:items-start gap-4 group text-center lg:text-left">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#d9a406]/10 flex items-center justify-center group-hover:bg-[#d9a406] transition-colors duration-300 border border-[#d9a406]/30">
+                <Wind className="w-7 h-7 sm:w-8 sm:h-8 text-[#d9a406] group-hover:text-black transition-colors duration-300" />
               </div>
-              <div className="flex flex-col items-start gap-4 group">
-                <div className="w-16 h-16 rounded-full bg-[#d9a406]/10 flex items-center justify-center group-hover:bg-[#d9a406] transition-colors duration-300 border border-[#d9a406]/30">
-                  <Footprints className="w-8 h-8 text-[#d9a406] group-hover:text-black transition-colors duration-300" />
-                </div>
-                <p className="font-bold text-white text-sm max-w-[150px] leading-tight uppercase">SAFE, WELL-LIT <br />TRACK FOR ALL AGES</p>
-              </div>
+              <p className="font-bold text-white text-xs sm:text-sm max-w-[150px] leading-tight uppercase">
+                FRESH AIR & <br />GREEN SURROUNDINGS
+              </p>
             </div>
-          </motion.div>
-          <motion.div className="hidden lg:block relative h-full" initial="hidden" animate="visible" variants={scaleVariants}>
-            <img src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766067404/Step_Into_Healthy_Living_1_d6jaxp.png" alt="RRL Palm Altezze Healthy Living" className="w-full h-full object-contain rounded-2xl shadow-2xl border border-[#d9a406]/20" />
-          </motion.div>
-        </div>
+
+            <div className="flex flex-col items-center lg:items-start gap-4 group text-center lg:text-left">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#d9a406]/10 flex items-center justify-center group-hover:bg-[#d9a406] transition-colors duration-300 border border-[#d9a406]/30">
+                <Footprints className="w-7 h-7 sm:w-8 sm:h-8 text-[#d9a406] group-hover:text-black transition-colors duration-300" />
+              </div>
+              <p className="font-bold text-white text-xs sm:text-sm max-w-[150px] leading-tight uppercase">
+                SAFE, WELL-LIT <br />TRACK FOR ALL AGES
+              </p>
+            </div>
+
+          </div>
+        </motion.div>
+
+        {/* RIGHT IMAGE (DESKTOP ONLY – unchanged) */}
+        <motion.div
+          className="hidden lg:block relative h-full"
+          initial="hidden"
+          animate="visible"
+          variants={scaleVariants}
+        >
+          <img
+            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766067404/Step_Into_Healthy_Living_1_d6jaxp.png"
+            alt="RRL Palm Altezze Healthy Living"
+            className="w-full h-full object-contain rounded-2xl shadow-2xl border border-[#d9a406]/20"
+          />
+        </motion.div>
+
       </div>
-    </section>
-  )
+    </div>
+  </section>
+)
+
 
   const Journey = () => {
     const milestones = [
@@ -8924,250 +8961,287 @@ export default function Home() {
   }
 
   const CompleteProject = () => {
-    const WhatsAppIcon = ({ className }: { className?: string }) => (
-      <svg viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-      </svg>
-    )
+  const WhatsAppIcon = ({ className }: { className?: string }) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+    </svg>
+  )
 
-    const projects = [
-      { 
-        name: "RRL Palacio", 
-        location: "Medahalli, Bangalore", 
-        type: "Luxury Apartment", 
-        status: "READY TO MOVE", 
-        image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png",
-        href: "/projects/palacio",
-        acres: "1.5 Acres",
-        units: "103 Units",
-        config: "2, 3 BHK",
-        possession: "Early possession granted"
-      },
-      { 
-        name: "RRL Nature Woods", 
-        location: "Sarjapur, Bangalore", 
-        type: "Premium Apartment", 
-        status: "Completed", 
-        image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png",
-        href: "/projects/nature-woods",
-        acres: "1.5 Acres",
-        units: "148 Units",
-        config: "2, 3 BHK",
-        possession: "Early possession granted"
-      },
-    ];
+  const projects = [
+    {
+      name: "RRL Palacio",
+      location: "Medahalli, Bangalore",
+      type: "Luxury Apartment",
+      status: "READY TO MOVE",
+      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png",
+      href: "/projects/palacio",
+      acres: "1.5 Acres",
+      units: "103 Units",
+      config: "2, 3 BHK",
+      possession: "Early possession granted",
+    },
+    {
+      name: "RRL Nature Woods",
+      location: "Sarjapur, Bangalore",
+      type: "Premium Apartment",
+      status: "Completed",
+      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png",
+      href: "/projects/nature-woods",
+      acres: "1.5 Acres",
+      units: "148 Units",
+      config: "2, 3 BHK",
+      possession: "Early possession granted",
+    },
+  ]
 
-    return (
-        <section className="py-20 bg-light-gold">
-          <h1 className="text-[#d9a406] font-serif mb-12 text-5xl font-bold text-center">Successfully Completed Projects</h1>
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {projects.map((project, index) => (
-                <motion.div 
-                  key={index} 
-                  className="group cursor-pointer h-full"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+  return (
+    <section className="py-20 bg-light-gold">
+      <h1 className="text-[#d9a406] font-serif mb-12 text-5xl font-bold text-center">
+        Successfully Completed Projects
+      </h1>
+
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className="group h-full"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col border border-gray-100 hover:shadow-2xl transition-all">
+
+                {/* IMAGE (FIXED HEIGHT USING ASPECT RATIO) */}
+                <Link
+                  href={project.href}
+                  className="relative aspect-[16/9] w-full overflow-hidden"
                 >
-                  <div className="block h-full relative">
-                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-100 hover:border-gold-500/50">
-                      {/* Link Wrap for Image */}
-                      <Link href={project.href} className="relative h-64 block overflow-hidden">
-                        <Image 
-                          src={project.image || "/placeholder.svg"} 
-                          alt={project.name} 
-                          layout="fill" 
-                          objectFit="fill" 
-                          className="group-hover:scale-105 transition-transform duration-500" 
-                        />
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                        <div className="absolute top-4 left-4">
-                           <span className="bg-black/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide border border-gold-500">
-                              {project.status}
-                           </span>
-                        </div>
-                      </Link>
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    priority={index === 0}
+                    className="object-fill group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/20" />
 
-                      {/* Content Section */}
-                      <div className="p-6 flex flex-col flex-grow">
-                        <div className="mb-4">
-                             <p className="text-xs text-gold-600 font-bold uppercase tracking-wider mb-1">{project.type}</p>
-                             <Link href={project.href}>
-                               <h3 className="text-xl font-bold text-black group-hover:text-gold-600 transition-colors">{project.name}</h3>
-                             </Link>
-                        </div>
-                        
-                        {/* --- POSSESSION TIMELINE --- */}
-                        <div className="mb-6 p-3 bg-gold-500/10 rounded-lg border border-gold-500/20">
-                          <div className="flex items-start gap-2">
-                             <CalendarClock className="h-4 w-4 text-gold-600 mt-0.5 shrink-0" />
-                             <div>
-                                <p className="text-sm font-bold text-gray-900">{project.possession}</p>
-                             </div>
-                          </div>
-                        </div>
+                  <span className="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide border border-gold-500">
+                    {project.status}
+                  </span>
+                </Link>
 
-                        {/* Details Grid */}
-                        <div className="grid grid-cols-2 gap-4 mb-6 border-t border-b border-gray-100 py-4">
-                          <div className="flex flex-col">
-                              <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
-                                  <MapPin className="h-3 w-3 mr-1" /> Location
-                              </div>
-                              <span className="text-sm font-medium text-black truncate" title={project.location}>{project.location}</span>
-                          </div>
+                {/* CONTENT */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <p className="text-xs text-gold-600 font-bold uppercase tracking-wider mb-1">
+                    {project.type}
+                  </p>
 
-                          {project.config && (
-                              <div className="flex flex-col">
-                                  <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
-                                      <House className ="h-3 w-3 mr-1" /> Config
-                                  </div>
-                                  <span className="text-sm font-medium text-black">{project.config}</span>
-                              </div>
-                          )}
+                  <Link href={project.href}>
+                    <h3 className="text-xl font-bold text-black hover:text-gold-600 transition-colors">
+                      {project.name}
+                    </h3>
+                  </Link>
 
-                          {project.acres && (
-                              <div className="flex flex-col">
-                                  <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
-                                      <Maximize className="h-3 w-3 mr-1" /> Area
-                                  </div>
-                                  <span className="text-sm font-medium text-black">{project.acres}</span>
-                              </div>
-                          )}
+                  {/* POSSESSION */}
+                  <div className="mt-4 mb-6 p-3 bg-gold-500/10 rounded-lg border border-gold-500/20">
+                    <p className="text-sm font-bold text-gray-900">
+                      {project.possession}
+                    </p>
+                  </div>
 
-                          {project.units && (
-                              <div className="flex flex-col">
-                                  <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
-                                      <Target className="h-3 w-3 mr-1" /> Total Units
-                                  </div>
-                                  <span className="text-sm font-medium text-black">{project.units}</span>
-                              </div>
-                          )}
-                        </div>
+                  {/* DETAILS */}
+                  <div className="grid grid-cols-2 gap-4 border-t border-b border-gray-100 py-4 mb-6">
+                    <div>
+                      <p className="text-xs uppercase text-gray-500">Location</p>
+                      <p className="text-sm font-medium text-black">
+                        {project.location}
+                      </p>
+                    </div>
 
-                        <div className="mt-auto flex gap-2">
-                           <a 
-                             href="https://wa.me/918494966966"
-                             target="_blank"
-                             rel="noreferrer"
-                             className="flex-none flex items-center justify-center h-10 w-10 rounded-lg border border-gray-300 text-green-600 hover:bg-green-600 hover:border-green-600 hover:text-white transition-all bg-white shadow-sm"
-                             title="Chat on WhatsApp"
-                           >
-                              <WhatsAppIcon className="h-5 w-5" />
-                           </a>
+                    <div>
+                      <p className="text-xs uppercase text-gray-500">Config</p>
+                      <p className="text-sm font-medium text-black">
+                        {project.config}
+                      </p>
+                    </div>
 
-                           <a 
-                             href="tel:+918494966966"
-                             className="flex-none flex items-center justify-center h-10 w-10 rounded-lg border border-gray-300 text-gray-600 hover:bg-black hover:border-black hover:text-white transition-all bg-white shadow-sm"
-                             title="Call Us"
-                           >
-                              <Phone className="h-4 w-4" />
-                           </a>
+                    <div>
+                      <p className="text-xs uppercase text-gray-500">Area</p>
+                      <p className="text-sm font-medium text-black">
+                        {project.acres}
+                      </p>
+                    </div>
 
-                          <Link href={project.href} className="flex-1">
-                              <button className="w-full h-10 bg-black text-white rounded-lg font-semibold text-sm flex items-center justify-center gap-2 group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">
-                                  Details
-                                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                              </button>
-                          </Link>
-                        </div>
-                      </div>
+                    <div>
+                      <p className="text-xs uppercase text-gray-500">Units</p>
+                      <p className="text-sm font-medium text-black">
+                        {project.units}
+                      </p>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-    )
-  }
+
+                  {/* ACTIONS */}
+                  <div className="mt-auto flex gap-2">
+                    <a
+                      href="https://wa.me/918494966966"
+                      target="_blank"
+                      className="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-300 text-green-600 hover:bg-green-600 hover:text-white transition-all"
+                    >
+                      <WhatsAppIcon className="h-5 w-5" />
+                    </a>
+
+                    <a
+                      href="tel:+918494966966"
+                      className="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-300 hover:bg-black hover:text-white transition-all"
+                    >
+                      <Phone className="h-4 w-4" />
+                    </a>
+
+                    <Link href={project.href} className="flex-1">
+                      <button className="w-full h-10 bg-black text-white rounded-lg font-semibold text-sm flex items-center justify-center gap-2 hover:bg-gold-500 transition-all">
+                        Details →
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 
   // ========== DETAILED AMENITIES ==========
-  const AmenitiesSection = () => {
-    const AmenityPill = ({ icon: Icon, label }: { icon: any, label: string }) => (
-        <div className="flex items-center gap-4 bg-[#111] border border-[#333] p-4 rounded-xl hover:border-[#d9a406] transition-colors group cursor-default">
-            <div className="w-2 h-2 rounded-full bg-[#d9a406] group-hover:scale-150 transition-transform"></div>
-            {Icon && <Icon className="w-5 h-5 text-gray-400 group-hover:text-[#d9a406] transition-colors" />}
-            <span className="text-gray-300 font-medium group-hover:text-white transition-colors">{label}</span>
-        </div>
-    )
+const AmenitiesSection = () => {
+  const AmenityPill = ({ icon: Icon, label }: { icon: any; label: string }) => (
+    <div className="flex items-center gap-3 sm:gap-4 bg-[#111] border border-[#333] p-3 sm:p-4 rounded-xl hover:border-[#d9a406] transition-colors group cursor-default">
+      <div className="w-2 h-2 rounded-full bg-[#d9a406] group-hover:scale-150 transition-transform shrink-0" />
+      {Icon && (
+        <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-[#d9a406] transition-colors shrink-0" />
+      )}
+      <span className="text-gray-300 text-sm sm:text-base font-medium group-hover:text-white transition-colors">
+        {label}
+      </span>
+    </div>
+  )
 
-    const Activity = ({ className }: { className?: string }) => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-    )
+  const Activity = ({ className }: { className?: string }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+    </svg>
+  )
 
-    return (
-      <section className="py-20 bg-[#0a0a0a]">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <motion.div className="text-center mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">30+ World-Class Amenities</h2>
-            <p className="text-xl text-gray-400">A 16,000 Sq.ft Clubhouse where leisure meets lifestyle.</p>
-          </motion.div>
+  return (
+    <section className="py-16 sm:py-20 bg-[#0a0a0a]">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
 
-          <Tabs defaultValue="clubhouse" className="w-full">
-            <div className="flex justify-center mb-12">
-                <TabsList className="bg-[#222] p-1 rounded-full border border-[#333]">
-                  <TabsTrigger 
-                    value="clubhouse" 
-                    className="rounded-full px-8 py-3 data-[state=active]:bg-[#d9a406] data-[state=active]:text-black text-gray-400 transition-all font-semibold"
-                  >
-                    Clubhouse (16,000 Sft)
-                  </TabsTrigger>
-                  <TabsTrigger 
-                    value="outdoor" 
-                    className="rounded-full px-8 py-3 data-[state=active]:bg-[#d9a406] data-[state=active]:text-black text-gray-400 transition-all font-semibold"
-                  >
-                    Outdoor & Recreational
-                  </TabsTrigger>
-                </TabsList>
+        {/* Header */}
+        <motion.div
+          className="text-center mb-10 sm:mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
+            30+ World-Class Amenities
+          </h2>
+          <p className="text-base sm:text-xl text-gray-400">
+            A 16,000 Sq.ft Clubhouse where leisure meets lifestyle.
+          </p>
+        </motion.div>
+
+        {/* TABS — NOT TOUCHED */}
+        <Tabs defaultValue="clubhouse" className="w-full">
+
+          <div className="flex justify-center mb-8 sm:mb-12">
+            <TabsList className="bg-[#222] p-1 rounded-full border border-[#333]">
+              <TabsTrigger
+                value="clubhouse"
+                className="rounded-full px-5 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base data-[state=active]:bg-[#d9a406] data-[state=active]:text-black text-gray-400 font-semibold"
+              >
+                Clubhouse (16,000 Sft)
+              </TabsTrigger>
+
+              <TabsTrigger
+                value="outdoor"
+                className="rounded-full px-5 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base data-[state=active]:bg-[#d9a406] data-[state=active]:text-black text-gray-400 font-semibold"
+              >
+                Outdoor & Recreational
+              </TabsTrigger>
+            </TabsList>
+          </div>
+
+          {/* Clubhouse */}
+          <TabsContent value="clubhouse">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+              <AmenityPill icon={LayoutDashboard} label="Reception Hall" />
+              <AmenityPill icon={BookOpen} label="Reading Lounge" />
+              <AmenityPill icon={Gamepad2} label="Indoor Games" />
+              <AmenityPill icon={Users} label="Kids Play Area" />
+              <AmenityPill icon={Leaf} label="Meditation Hall" />
+              <AmenityPill icon={Coffee} label="Lounge Area" />
+              <AmenityPill icon={Music} label="Party Hall" />
+              <AmenityPill icon={Utensils} label="Dining Area" />
+              <AmenityPill icon={Dumbbell} label="Ultra Gym" />
+              <AmenityPill icon={Wind} label="Steam & Sauna" />
+              <AmenityPill icon={Footprints} label="Cardio Room" />
+              <AmenityPill icon={MonitorPlay} label="Mini Theatre" />
+              <AmenityPill icon={Table2} label="Billiards Table" />
+              <AmenityPill icon={Table2} label="Table Tennis" />
+              <AmenityPill icon={Users} label="Association Room" />
+              <AmenityPill icon={Tv} label="Guest Rooms" />
             </div>
+          </TabsContent>
 
-            <TabsContent value="clubhouse">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                 <AmenityPill icon={LayoutDashboard} label="Reception Hall" />
-                 <AmenityPill icon={BookOpen} label="Reading Lounge" />
-                 <AmenityPill icon={Gamepad2} label="Indoor Games" />
-                 <AmenityPill icon={Users} label="Kids Play Area" />
-                 <AmenityPill icon={Leaf} label="Meditation Hall" />
-                 <AmenityPill icon={Coffee} label="Lounge Area" />
-                 <AmenityPill icon={Music} label="Party Hall" />
-                 <AmenityPill icon={Utensils} label="Dining Area" />
-                 <AmenityPill icon={Dumbbell} label="Ultra Gym" />
-                 <AmenityPill icon={Wind} label="Steam & Sauna" />
-                 <AmenityPill icon={Footprints} label="Cardio Room" />
-                 <AmenityPill icon={MonitorPlay} label="Mini Theatre" />
-                 <AmenityPill icon={Table2} label="Billiards Table" />
-                 <AmenityPill icon={Table2} label="Table Tennis" />
-                 <AmenityPill icon={Users} label="Association Room" />
-                 <AmenityPill icon={Tv} label="Guest Rooms" />
-              </div>
-            </TabsContent>
+          {/* Outdoor */}
+          <TabsContent value="outdoor">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+              <AmenityPill icon={Waves} label="Swimming Pool" />
+              <AmenityPill icon={Waves} label="Kids Pool" />
+              <AmenityPill icon={Waves} label="Jacuzzi" />
+              <AmenityPill icon={LayoutDashboard} label="Multipurpose Court" />
+              <AmenityPill icon={Activity} label="Cricket Pitch" />
+              <AmenityPill icon={Activity} label="Basketball Court" />
+              <AmenityPill icon={Activity} label="Throwball Court" />
+              <AmenityPill icon={Footprints} label="Skating Rink" />
+              <AmenityPill icon={Footprints} label="Jogging Track" />
+              <AmenityPill icon={Landmark} label="Amphitheatre" />
+              <AmenityPill icon={Flower2} label="Butterfly Garden" />
+              <AmenityPill icon={Users} label="Senior Seating" />
+              <AmenityPill icon={Waves} label="Fountain" />
+              <AmenityPill icon={Trees} label="Planting Deck" />
+              <AmenityPill icon={LayoutDashboard} label="Chess Pawn" />
+              <AmenityPill icon={Footprints} label="Hopscotch" />
+            </div>
+          </TabsContent>
 
-            <TabsContent value="outdoor">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                 <AmenityPill icon={Waves} label="Swimming Pool" />
-                 <AmenityPill icon={Waves} label="Kids Pool" />
-                 <AmenityPill icon={Waves} label="Jacuzzi" />
-                 <AmenityPill icon={LayoutDashboard} label="Multipurpose Court" />
-                 <AmenityPill icon={Activity} label="Cricket Pitch" />
-                 <AmenityPill icon={Activity} label="Basketball Court" />
-                 <AmenityPill icon={Activity} label="Throwball Court" />
-                 <AmenityPill icon={Footprints} label="Skating Rink" />
-                 <AmenityPill icon={Footprints} label="Jogging Track" />
-                 <AmenityPill icon={Landmark} label="Amphitheatre" />
-                 <AmenityPill icon={Flower2} label="Butterfly Garden" />
-                 <AmenityPill icon={Users} label="Senior Seating" />
-                 <AmenityPill icon={Waves} label="Fountain" />
-                 <AmenityPill icon={Trees} label="Planting Deck" />
-                 <AmenityPill icon={LayoutDashboard} label="Chess Pawn" />
-                 <AmenityPill icon={Footprints} label="Hopscotch" />
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
-    )
-  }
+        </Tabs>
+      </div>
+    </section>
+  )
+}
+
 
   // ========== FLOOR PLANS SECTION (UPDATED WITH LOCK/UNLOCK LOGIC) ==========
   const FloorPlansSection = () => {
@@ -9345,78 +9419,190 @@ export default function Home() {
 
   // ========== REVIEWS SECTION ==========
   const ReviewsSection = () => {
-    const reviews = [
+    // --- TESTIMONIAL DATA ---
+    const testimonialData = [
       {
-        name: "Santosh Kumar",
-        date: "May 16, 2024",
-        stars: 5,
-        text: "M1 Terra Alegria is a lovely villa project. The M1 Team Sales Team was very friendly and professional, making my visits enjoyable."
+        type: "text",
+        name: "Rita Chauhan",
+        role: "Happy Home Buyer",
+        location: "Sarjapur, Bengaluru",
+        rating: 5,
+        testimonial: "I invested in the current building which is located in Sarjapur in Bengaluru. The builder of this apartment Mr. Ram and Mr. Lakshman are a very nice person who accommodated my requests each and every time, there is a great transparency in his business.",
       },
       {
-        name: "Brijesh Kumar",
-        date: "April 15, 2024",
-        stars: 5,
-        text: "Project construction quality is really good and sales team behaviour is very friendly and cooperative."
+        type: "text",
+        name: "Rajesh Kumar",
+        role: "Happy Home Buyer",
+        location: "Varthur, Bengaluru",
+        rating: 5,
+        testimonial: "Exceptional service and quality construction. The team at RRL Builders is professional and delivers on their promises. The amenities and location of RRL Palm Altezze exceeded my expectations.",
       },
       {
-        name: "Dharani G",
-        date: "April 14, 2024",
-        stars: 5,
-        text: "Ahh lovely place, peaceful and happy ambience to live there as family."
+        type: "video",
+        name: "VideoTestimonial1",
+        videoUrl: "https://www.youtube.com/embed/VPPeIBhPXSc?autoplay=0&mute=0&loop=1&playlist=VPPeIBhPXSc&controls=1",
       },
       {
-        name: "Thanish Kumar A",
-        date: "February 3, 2024",
-        stars: 5,
-        text: "Nice."
-      }
+        type: "text",
+        name: "Priya Sharma",
+        role: "Happy Home Buyer",
+        location: "Medahalli, Bengaluru",
+        rating: 5,
+        testimonial: "RRL Palacio has been a dream come true for our family. The construction quality is top-notch, and the customer service throughout the buying process was excellent. The location is perfect with great connectivity.",
+      },
+      {
+        type: "text",
+        name: "Suman Narayan",
+        role: "Happy Home Buyer",
+        location: "Bengaluru",
+        rating: 5,
+        testimonial: "Excellent! Nice workmanship, got interiors done in lesser time than I thought. It's quick, nice and neat. Even budget friendly too. I highly recommend RRL for interior designing.",
+      },
+      {
+        type: "video",
+        name: "VideoTestimonial2",
+        videoUrl: "https://www.youtube.com/embed/-IcK_Ac0dVQ?autoplay=0&mute=0&loop=1&playlist=-IcK_Ac0dVQ&controls=1",
+      },
+      {
+        type: "text",
+        name: "Subhash S",
+        role: "Happy Home Buyer",
+        location: "Bengaluru",
+        rating: 5,
+        testimonial: "Nice place to get your design in mind to make live, highly recommend for designing your dream office and home.",
+      },
+      {
+        type: "text",
+        name: "Neelima Maryam",
+        role: "Happy Home Buyer",
+        location: "Bengaluru",
+        rating: 5,
+        testimonial: "Very happy with the designs and budget.",
+      },
+      {
+        type: "text",
+        name: "Attili Nikhil",
+        role: "Happy Home Buyer",
+        location: "Bengaluru",
+        rating: 5,
+        testimonial: "Had a great experience with RRL. They execute what we tell them. I highly recommend their 3D designs. They respond to us with great patience and even their price is very reasonable.",
+      },
     ]
 
+    // --- GOOGLE ICON SVG ---
+    const GoogleIcon = () => (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+      </svg>
+    )
+
     return (
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-             <div className="text-center md:text-left mb-6 md:mb-0">
-                <h2 className="text-4xl font-serif text-black">Google Reviews</h2>
-                <div className="flex items-center gap-2 mt-2 justify-center md:justify-start">
-                   <div className="flex text-[#d9a406]">
-                      {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-current" />)}
-                   </div>
-                   <span className="text-gray-500 text-sm">4.9 Average Rating</span>
-                </div>
-             </div>
-             <Button variant="outline" className="border-black text-black hover:bg-black hover:text-[#d9a406]">Write a Review</Button>
+      <section className="py-24 relative bg-gray-50 overflow-hidden">
+        {/* Background Image Overlay */}
+        <div className="absolute inset-0 z-0 pointer-events-none mix-blend-multiply"
+          style={{
+            // Ensure image_0.png is in your /public folder
+            backgroundImage: `url('https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766479785/CLIENTS_BACKGROUND_1_sfkdst.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+
+        {/* Content Container (z-10 to sit above background) */}
+        <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+          {/* Centered Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-serif text-white font-bold">Client Testimonials</h2>
+            <div className="flex items-center gap-3 mt-4 justify-center">
+              <div className="flex items-center gap-1 bg-white border border-gray-200 px-3 py-1 rounded-full shadow-sm">
+                <GoogleIcon />
+                <span className="font-bold text-gray-700 text-sm">Google Reviews</span>
+              </div>
+              <div className="flex gap-1">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  // Using fill-[#FFB400] for solid gold stars
+                  <Star key={i} className="w-5 h-5 text-[#FFB400] fill-[#FFB400]" />
+                ))}
+              </div>
+              <span className="text-gray-600 text-sm font-medium">5.0 Average</span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-             {reviews.map((review, i) => (
-                <div key={i} className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex flex-col justify-between min-h-[250px]">
-                   <div>
-                      <div className="flex justify-between items-start mb-4">
-                         <div className="flex text-[#FFB400] gap-0.5">
-                            {[...Array(review.stars)].map((_, si) => <Star key={si} className="w-4 h-4 fill-current" />)}
-                         </div>
-                         <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-sm border">
-                            <span className="font-bold text-blue-600 text-lg">G</span>
-                         </div>
+          {/* Testimonials Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonialData.map((item, index) => (
+              <div key={index} className="h-full">
+                {item.type === "video" ? (
+                  // --- Video Card (Wrapped to look like Text Card) ---
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-md border border-white/50 hover:shadow-xl hover:border-[#d9a406]/30 transition-all duration-300 h-full flex flex-col"
+                  >
+                    <div className="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-black relative flex-grow min-h-[200px]">
+                      <iframe
+                        src={item.videoUrl}
+                        title={item.name}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full absolute inset-0"
+                      ></iframe>
+                    </div>
+                    {/* Optional: Footer for consistency */}
+                    <div className="pt-4 border-t border-gray-100 flex justify-between items-center mt-4">
+                      <span className="text-xs font-semibold text-[#d9a406] bg-[#d9a406]/10 px-3 py-1 rounded-full">
+                        Happy Home Buyer
+                      </span>
+                    </div>
+                  </motion.div>
+                ) : (
+                  // --- Text Card ---
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    // Added backdrop-blur for better contrast against bg image
+                    className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-md border border-white/50 hover:shadow-xl hover:border-[#d9a406]/30 transition-all duration-300 h-full flex flex-col"
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        {/* Initials Avatar */}
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#333] to-[#555] flex items-center justify-center text-white font-bold text-sm shadow-sm">
+                          {item.name ? item.name.charAt(0) : "U"}
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-black text-sm">{item.name}</h4>
+                          <p className="text-xs text-gray-500">{item.location}</p>
+                        </div>
                       </div>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-4">
-                         "{review.text}"
+                      <GoogleIcon />
+                    </div>
+
+                    <div className="mb-4 flex-grow">
+                      <div className="flex gap-0.5 mb-2">
+                        {[...Array(item.rating || 5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 text-[#FFB400] fill-[#FFB400]" />
+                        ))}
+                      </div>
+                      <p className="text-gray-700 text-sm leading-relaxed italic relative z-10">
+                        "{item.testimonial}"
                       </p>
-                   </div>
-                   <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-50">
-                      <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
-                         <div className="w-full h-full bg-[#333] flex items-center justify-center text-white font-bold text-xs">
-                            {review.name.charAt(0)}
-                         </div>
-                      </div>
-                      <div>
-                         <p className="font-bold text-black text-sm">{review.name}</p>
-                         <p className="text-xs text-gray-400">{review.date}</p>
-                      </div>
-                   </div>
-                </div>
-             ))}
+                    </div>
+
+                    <div className="pt-4 border-t border-gray-100 flex justify-between items-center mt-auto">
+                      <span className="text-xs font-semibold text-[#d9a406] bg-[#d9a406]/10 px-3 py-1 rounded-full">
+                        {item.role}
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -9491,40 +9677,192 @@ export default function Home() {
     </section>
   )
 
-  // ========== FAQs & AWARDS ==========
-  const FAQsSection = () => {
-    const faqs = [
-      { q: "What is the total area?", a: "1.38 acres with 92% open space." },
-      { q: "How many units?", a: "115 exclusive units with 5 units per floor." },
-      { q: "Possession Date?", a: "Mid 2027." },
-    ]
-    return (
-      <section className="py-20 bg-[#050505]">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-4xl font-bold text-[#d9a406] mb-12 text-center">FAQ</h2>
-          <div className="space-y-4">
-            {faqs.map((f, i) => (
-              <Card key={i} className="p-6 bg-[#111] border border-[#333]">
-                <h3 className="text-white font-bold mb-2">{f.q}</h3>
-                <p className="text-gray-400">{f.a}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
+// ========== FAQS SECTION (UPDATED COLOR PALETTE) ==========
+const FAQsSection = () => {
+  const faqs = [
+    {
+      category: "General",
+      questions: [
+        {
+          q: "What is the total area of RRL Palm Altezze?",
+          a: "RRL Palm Altezze is built on 1.38 acres of land with 92% open space, featuring 1 tower with B+G+23 floors.",
+        },
+        {
+          q: "How many units are there per floor?",
+          a: "Each floor has 5 units, offering a mix of 2 BHK and 3 BHK apartments with varying configurations.",
+        },
+        {
+          q: "What is the price range?",
+          a: "Prices start from ₹1 Crore onwards for 2 & 3 BHK premium apartments.",
+        },
+      ],
+    },
+    {
+      category: "Amenities",
+      questions: [
+        {
+          q: "How many amenities are available?",
+          a: "RRL Palm Altezze features 30+ world-class amenities including swimming pool, gym, yoga deck, sports courts, and much more.",
+        },
+        {
+          q: "Is there a clubhouse?",
+          a: "Yes, there is a 16,000 sq.ft clubhouse with multiple facilities spread across ground, 1st, and 2nd floors.",
+        },
+        {
+          q: "Are there facilities for children?",
+          a: "Yes, we have indoor and outdoor children's play areas, kids' pool, and various recreational facilities.",
+        },
+      ],
+    },
+    {
+      category: "Construction & Specifications",
+      questions: [
+        {
+          q: "What construction technology is used?",
+          a: "We use Mivan construction technology with RCC framed structure designed as per IS codes for earthquake resistance.",
+        },
+        {
+          q: "What is the power backup arrangement?",
+          a: "100% generator backup is provided for each flat, lifts, motor, and common area lighting.",
+        },
+        {
+          q: "What are the flooring specifications?",
+          a: "Vitrified tiles (2'x4') for living, dining, kitchen & bedrooms, and anti-skid tiles for balconies.",
+        },
+      ],
+    },
+    {
+      category: "Location & Connectivity",
+      questions: [
+        {
+          q: "How is the connectivity to Whitefield?",
+          a: "Located along State Highway 35, which directly connects to Whitefield, Brookfield, and other major areas.",
+        },
+        {
+          q: "Is there metro connectivity?",
+          a: "Yes, Nallurahalli Metro Station is nearby, providing easy access to the Purple Line.",
+        },
+        {
+          q: "What schools and hospitals are nearby?",
+          a: "Multiple schools including Chrysalis High, Delhi Public School, and hospitals like Manipal Hospital are within proximity.",
+        },
+      ],
+    },
+    {
+      category: "Payment & Possession",
+      questions: [
+        {
+          q: "What is the payment plan?",
+          a: "Pay only 5% now with no pre-EMI till possession. Flexible payment plans available.",
+        },
+        {
+          q: "When is the expected possession?",
+          a: "Possession is expected as per the project timeline. Contact our sales team for specific details.",
+        },
+        {
+          q: "Are there any hidden charges?",
+          a: "No hidden charges. All costs are transparent and clearly mentioned in the agreement.",
+        },
+      ],
+    },
+  ]
+
+  const [openQuestions, setOpenQuestions] = useState<Record<number, number | null>>({})
+
+  const toggleQuestion = (sectionIndex: number, qIndex: number) => {
+    setOpenQuestions((prev) => ({
+      ...prev,
+      [sectionIndex]: prev[sectionIndex] === qIndex ? null : qIndex,
+    }))
   }
 
-  const AwardsSection = () => {
-    return (
-      <section className="py-20 bg-black border-t border-[#333]">
-        <div className="container mx-auto px-4 text-center">
-           <h2 className="text-4xl font-bold text-[#d9a406] mb-8">Awards & Recognition</h2>
-           <p className="text-gray-400">Awarded for Premium Architecture & Sustainable Development.</p>
+  return (
+    <section className="py-20 bg-[#000000]">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#d9a406] mb-4 text-balance">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+            Find answers to common questions about RRL Palm Altezze
+          </p>
         </div>
-      </section>
-    )
-  }
+
+        {/* Accordion */}
+        <div className="space-y-12">
+          {faqs.map((section, sectionIndex) => (
+            <div key={sectionIndex}>
+              <h3 className="text-2xl font-bold text-[#d9a406] mb-6 pb-4 border-b-2 border-[#d9a406] text-center">
+                {section.category}
+              </h3>
+
+              <div className="space-y-4">
+                {section.questions.map((item, qIndex) => {
+                  const isOpen = openQuestions[sectionIndex] === qIndex
+
+                  return (
+                    <Card
+                      key={qIndex}
+                      onClick={() => toggleQuestion(sectionIndex, qIndex)}
+                      className={`p-4 border-0 bg-white shadow-md hover:shadow-xl transition-shadow cursor-pointer overflow-hidden ${
+                        isOpen ? "bg-gradient-to-r from-[#fff7d6] to-white" : ""
+                      }`}
+                    >
+                      <div className="flex justify-between items-center gap-4">
+                        <h4 className="font-bold text-base sm:text-lg text-[#d9a406]">
+                          {item.q}
+                        </h4>
+                        <motion.div
+                          animate={{ rotate: isOpen ? 45 : 0 }}
+                          className="text-2xl font-bold text-[#d9a406]"
+                        >
+                          +
+                        </motion.div>
+                      </div>
+
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="mt-2 pl-4"
+                          >
+                            <p className="text-gray-700 leading-relaxed">
+                              {item.a}
+                            </p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </Card>
+                  )
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 bg-gradient-to-r from-[#d9a406] to-[#b89305] rounded-2xl p-8 md:p-12 text-center text-black shadow-xl">
+          <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
+          <p className="text-lg mb-6 opacity-90">
+            Our sales team is ready to help you with any queries
+          </p>
+          <a
+            href="tel:+918494966966"
+            className="inline-block bg-black text-[#d9a406] font-bold px-8 py-3 rounded-lg hover:bg-[#111] transition-colors"
+          >
+            Call: 84 94 966 966
+          </a>
+        </div>
+
+      </div>
+    </section>
+  )
+}
 
   // ========== CONTACT ==========
   const ContactSection = ({ onSubmit }: { onSubmit: (data: FormData) => Promise<boolean> }) => {
@@ -9608,10 +9946,10 @@ export default function Home() {
       <SolarPowerSection />
       <USPSection />
       <HealthyLivingSection />
+      <FloorPlansSection />
       <AmenitiesSection />
       {/* <SpecificationsSection /> */}
       <Specifications />
-      <FloorPlansSection />
       {/* <MidPageCtaSection onSubmit={handleFormSubmit} /> */}
       <BrochureCTASection />
       <ReviewsSection />

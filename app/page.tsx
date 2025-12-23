@@ -4935,95 +4935,73 @@ function Testimonials() {
     },
   }
 
-  return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
-        
-        {/* Header */}
+return (
+    <section className="relative py-24 overflow-hidden">
+      {/* BACKGROUND IMAGE */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766479785/CLIENTS_BACKGROUND_1_sfkdst.png"
+          alt="Clients background"
+          className="w-full h-full object-fill"
+        />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
+
+      <div className="container mx-auto px-4">
+        {/* HEADER */}
         <div className="mb-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="mb-4 text-4xl font-bold font-playfair text-black lg:text-5xl">
-              Hear From Our <span className="text-gold-500">Clients</span>
-            </h2>
-            <p className="mx-auto max-w-2xl text-xl text-gray-600 font-light">
-              Real stories from families who found their dream home with RRL.
-            </p>
-          </motion.div>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            Hear From Our <span className="text-[#d9a406]">Clients</span>
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
+            Real stories from families who found their dream home with RRL.
+          </p>
         </div>
 
-        {/* Grid Layout */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {testimonialData.map((item, index) => {
-            if (item.type === "video") {
-              return (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ y: -8, scale: 1.01 }}
-                  className="rounded-3xl overflow-hidden shadow-xl bg-black border-2 border-gray-100 h-full min-h-[320px] relative group"
-                >
-                  <iframe
-                    src={item.videoUrl}
-                    title={item.name}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </motion.div>
-              )
-            } else {
-              return (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ y: -8 }}
-                  className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 flex flex-col h-full relative transition-shadow hover:shadow-2xl hover:border-gold-200"
-                >
-                  {/* Quote Icon Background */}
-                  <Quote className="absolute top-6 right-6 h-12 w-12 text-gold-500/10 rotate-12" />
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonialData.map((item, index) =>
+            item.type === "video" ? (
+              <div
+                key={index}
+                className="rounded-3xl overflow-hidden shadow-xl border border-white/10 bg-black
+                           aspect-video md:aspect-[4/3] lg:aspect-[4/3]"
+              >
+                <iframe
+                  src={item.videoUrl}
+                  title={item.name}
+                  className="w-full h-full"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <div
+                key={index}
+                className="bg-white rounded-3xl p-6 md:p-8 shadow-xl
+                           flex flex-col h-full"
+              >
+                {/* STARS */}
+                <div className="flex mb-4">
+                  {[...Array(item.rating)].map((_, i) => (
+                    <span key={i} className="text-[#d9a406]">★</span>
+                  ))}
+                </div>
 
-                  {/* Rating */}
-                  <div className="flex space-x-1 mb-6">
-                    {[...Array(item.rating || 5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-gold-500 text-gold-500" />
-                    ))}
-                  </div>
+                {/* TEXT */}
+                <p className="text-gray-700 italic text-sm md:text-base leading-relaxed mb-6">
+                  “{item.testimonial}”
+                </p>
 
-                  {/* Testimonial Text */}
-                  <div className="mb-8 flex-grow">
-                    <p className="text-gray-700 leading-relaxed italic relative z-10">
-                      "{item.testimonial}"
-                    </p>
-                  </div>
-
-                  {/* User Details */}
-                  <div className="mt-auto border-t border-gray-100 pt-6">
-                    <h4 className="font-bold text-xl text-black mb-1">{item.name}</h4>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gold-600 font-semibold">{item.role}</span>
-                      {item.location && (
-                        <div className="flex items-center text-gray-400">
-                          <MapPin className="h-3 w-3 mr-1" />
-                          <span className="truncate max-w-[120px]">{item.location}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              )
-            }
-          })}
-        </motion.div>
+                {/* FOOTER */}
+                <div className="mt-auto border-t pt-4">
+                  <h4 className="font-bold text-black">{item.name}</h4>
+                  <p className="text-[#d9a406] text-sm font-semibold">{item.role}</p>
+                  <p className="text-gray-400 text-xs">{item.location}</p>
+                </div>
+              </div>
+            )
+          )}
+        </div>
       </div>
     </section>
   )

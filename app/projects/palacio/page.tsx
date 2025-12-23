@@ -1508,6 +1508,7 @@ const LocationSection = () => (
   <section className="py-24 bg-[#0a0a0a]">
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Left Content */}
         <div>
           <Badge className="bg-[#d9a406] text-black mb-4 hover:bg-[#d9a406]">Prime Location</Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Connected to <span className="text-[#d9a406]">Everything</span></h2>
@@ -1527,11 +1528,28 @@ const LocationSection = () => (
              </div>
           </div>
         </div>
+
+        {/* Right Map Section */}
         <div className="relative">
            <div className="bg-[#111] border border-white/10 p-2 rounded-xl">
-             <div className="w-full h-[500px] bg-[#000] rounded-lg flex items-center justify-center flex-col gap-4">
-                <MapPin className="w-16 h-16 text-[#d9a406] animate-bounce" />
-                <p className="text-gray-500">Map View Placeholder</p>
+             <div className="w-full h-[500px] bg-[#000] rounded-lg overflow-hidden relative">
+                {/* Google Map Embed - Full Color */}
+                <iframe 
+                  src="https://maps.google.com/maps?q=Sarjapur+Road,Bengaluru&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0"
+                ></iframe>
+                
+                {/* Overlay Label */}
+                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg border-l-4 border-[#d9a406] pointer-events-none shadow-lg">
+                  <p className="text-[#d9a406] text-xs font-bold uppercase tracking-wider">Location</p>
+                  <p className="text-black text-sm font-bold">Sarjapura Road, Bengaluru</p>
+                </div>
              </div>
            </div>
         </div>
@@ -1548,12 +1566,12 @@ const FooterSection = ({ onOpenModal }: { onOpenModal: () => void }) => (
           <p className="text-gray-400 mb-8">Download the brochure to see the complete floor plans, legal approvals, and pricing details.</p>
           <Button size="lg" className="bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-xl px-10 py-8 rounded-full shadow-[0_0_30px_rgba(217,164,6,0.3)] hover:shadow-[0_0_50px_rgba(217,164,6,0.5)] transition-all" onClick={onOpenModal}>Enquire Now</Button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12 text-left">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12 text-left">
           <div><h3 className="text-2xl font-bold text-white mb-4">RRL <span className="text-[#d9a406]">Palacio</span></h3><p className="text-gray-500 text-sm">PRM/KA/RERA/1251/308/ PR/220424/006827</p></div>
           <div><h4 className="text-white font-bold mb-4">Quick Links</h4><ul className="space-y-2 text-gray-500 text-sm"><li>Home</li><li>Floor Plans</li><li>Amenities</li></ul></div>
           <div><h4 className="text-white font-bold mb-4">Contact</h4><p className="text-gray-500 text-sm mb-2">Near Electronic City, Bangalore</p><p className="text-gray-500 text-sm">+91 99999 99999</p></div>
         </div>
-        <div className="mt-12 text-center text-gray-700 text-xs">© 2024 RRL Palacio. All rights reserved. Disclaimer: Images are for representation purpose only.</div>
+        <div className="mt-12 text-center text-gray-700 text-xs">© 2024 RRL Palacio. All rights reserved. Disclaimer: Images are for representation purpose only.</div> */}
      </div>
   </footer>
 )

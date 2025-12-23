@@ -110,10 +110,11 @@ import Image from "next/image"
 // Links for the footer columns
 const projectLinks = [
   { name: "RRL Palacio", href: "/projects/palacio" },
-  { name: "RRL Sequoia", href: "/projects/sequoia" },
+  // { name: "RRL Sequoia", href: "/projects/sequoia" },
   { name: "RRL Palm Altezze", href: "/projects/palm-altezze" },
   { name: "RRL Nature Woods", href: "/projects/nature-woods" },
-  { name: "RRL Towers", href: "/projects/towers" },
+  // { name: "RRL Towers", href: "/projects/towers" },
+  { name: "RRL Commercial", href: "/projects/commercial" },
 ]
 
 const companyLinks = [
