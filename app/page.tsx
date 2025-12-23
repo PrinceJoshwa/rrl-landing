@@ -3646,12 +3646,12 @@ function Hero() {
 
                 <div className="space-y-4 text-lg leading-relaxed text-gray-300">
                   <p>
-                    As award-winning developers, RRL is committed to delivering modern luxury apartments with
-                    uncompromising quality. Our proven track record of four successfully delivered projects ensures
-                    early possession.
+                  RRL Builders & Developers is redefining modern luxury. We don't just build apartments; we craft high-quality lifestyles through innovation and a decade of expertise.
+With 4 successfully delivered projects, we prioritise precision to ensure early possession for our homeowners
+Residents and home buyers experience uncompromising quality in every detail, from premium finishes to future-ready amenities.
                   </p>
                   <p>
-                    Our projects are strategically located in Bangalore's most promising growth zones:{" "}
+                    Our properties are perfectly positioned in Bangalore’s high-value zones:{" "}
                     <span className="text-gold-400 font-semibold">Sarjapura, Varthur, and Chikkatirupati.</span>
                   </p>
                 </div>
