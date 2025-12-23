@@ -163,7 +163,7 @@ export default function CSRPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent">
-                        <p className="text-white font-bold text-xl">Local Temple Renovation</p>
+                        {/* <p className="text-white font-bold text-xl">Local Temple Renovation</p> */}
                     </div>
                 </div>
                 
