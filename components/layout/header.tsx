@@ -474,6 +474,7 @@ const navigation = [
   },
   { name: "Awards", href: "/awards" },
   { name: "Careers", href: "/careers" },
+  { name: "CSR", href: "/csr" },
   { name: "NRI Corner", href: "/nri-corner" },
   { name: "Contact", href: "/contact" },
 ]
