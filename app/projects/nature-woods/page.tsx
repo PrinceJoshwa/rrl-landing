@@ -2498,26 +2498,35 @@ export default function NatureWoodsPage() {
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
   }
 
-  const HeroImageBanner = () => {
-    return (
-      <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
-        <motion.div 
-          initial={{ scale: 1.1, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          viewport={{ once: true }}
-          className="w-full h-full relative"
-        >
-          {/* The Image */}
-          <img 
-            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055907/RRl_website_banners_1536_x_752_px_6_liyalp.png" 
-            alt="RRL Hero Banner" 
-            className="w-full h-full object-fill"
+ const HeroImageBanner = () => {
+  return (
+    <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
+      <motion.div
+        initial={{ scale: 1.1, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative w-full h-full"
+      >
+        <picture className="block w-full h-full">
+          {/* ✅ Mobile Image */}
+          <source
+            media="(max-width: 768px)"
+            srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573105/14_mgc3eg.png"
           />
-        </motion.div>
-      </section>
-    );
-  };
+
+          {/* ✅ Desktop Image */}
+          <img
+            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766055907/RRl_website_banners_1536_x_752_px_6_liyalp.png"
+            alt="RRL Hero Banner"
+            loading="eager"
+            className="w-full h-full object-cover"
+          />
+        </picture>
+      </motion.div>
+    </section>
+  );
+};
   
   // ========== HERO SECTION ==========
   const HeroSection = () => {

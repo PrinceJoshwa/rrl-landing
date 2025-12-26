@@ -10164,54 +10164,82 @@ export default function Home() {
   }
 
   const HeroImageBanner = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const images = [
-      { id: 1, src: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png", alt: "RRL Hero Banner 1" },
-      { id: 2, src: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051901/ok_5_jrfjhm.png", alt: "RRL Hero Banner 2" },
-      { id: 3, src: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051905/Copy_of_PALM_ALTEZZE_1.1_vtrxar.png", alt: "RRL Hero Banner 3" }
-    ];
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-    useEffect(() => {
-      const timer = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % images.length);
-      }, 5000);
-      return () => clearInterval(timer);
-    }, [images.length]);
+  const images = [
+    {
+      id: 1,
+      desktop: "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png",
+      mobile: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573094/HOME_HERO_1_1_cfr11i.png",
+      alt: "RRL Hero Banner 1",
+    },
+    {
+      id: 2,
+      desktop: "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051901/ok_5_jrfjhm.png",
+      mobile: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573097/ok_iirjrl.png",
+      alt: "RRL Hero Banner 2",
+    },
+    {
+      id: 3,
+      desktop: "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051905/Copy_of_PALM_ALTEZZE_1.1_vtrxar.png",
+      mobile: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573082/PALM_ALTEZZE_1.1_1_mv2lcx.png",
+      alt: "RRL Hero Banner 3",
+    },
+  ];
 
-    return (
-      <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            className="absolute inset-0 w-full h-full"
-          >
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <picture className="block w-full h-full">
+            {/* ✅ Mobile Image */}
+            <source
+              media="(max-width: 768px)"
+              srcSet={images[currentSlide].mobile}
+            />
+
+            {/* ✅ Desktop Image */}
             <img
-              src={images[currentSlide].src}
+              src={images[currentSlide].desktop}
               alt={images[currentSlide].alt}
+              loading="eager"
               className="w-full h-full object-fill"
             />
-          </motion.div>
-        </AnimatePresence>
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                currentSlide === index
-                  ? "bg-[#d9a406] w-8"
-                  : "bg-white/50 w-2 hover:bg-white"
-              }`}
-            />
-          ))}
-        </div>
-      </section>
-    );
-  };
+          </picture>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Dots */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              currentSlide === index
+                ? "bg-[#d9a406] w-8"
+                : "bg-white/50 w-2 hover:bg-white"
+            }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
 
   // ========== HERO SECTION ==========
   const HeroSection = () => {
@@ -10484,21 +10512,32 @@ export default function Home() {
             </motion.div>
 
             {/* Right Image Section */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative h-[450px] w-full rounded-2xl overflow-hidden border border-[#333]"
-            >
-               {/* Gradient Overlay */}
-               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
-               
-               <img 
-                 src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766481026/Visualize_Your_Home_Virtually_1_qusxhs.png" 
-                 alt="VR Interior Showcase" 
-                 className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
-               />
-            </motion.div>
+<motion.div 
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  className="relative h-[320px] md:h-[450px] w-full rounded-2xl overflow-hidden border border-[#333]"
+>
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
+
+  <picture className="block w-full h-full">
+    {/* ✅ Mobile Image */}
+    <source
+      media="(max-width: 768px)"
+      srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/Visualize_Your_Home_Virtually_2_noletb.png"
+    />
+
+    {/* ✅ Desktop Image */}
+    <img 
+      src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1600,f_auto,q_auto/v1766481026/Visualize_Your_Home_Virtually_1_qusxhs.png"
+      alt="VR Interior Showcase"
+      loading="lazy"
+      className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
+    />
+  </picture>
+</motion.div>
+
 
           </div>
         </div>
@@ -10513,22 +10552,33 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            {/* Left Side - Image Replacement */}
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative h-[400px] w-full rounded-2xl overflow-hidden border border-[#d9a406]/30 shadow-[0_0_50px_rgba(217,164,6,0.1)]"
-            >
-              {/* Overlay to ensure the image blends well with the dark theme */}
-              <div className="absolute inset-0 bg-black/20 z-10 mix-blend-overlay"></div>
-              
-              <img 
-                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766053329/Power_Up_With_Solar_3_awiroe.png" 
-                alt="Solar Power Integration" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </motion.div>
+            {/* Left Side - Image */}
+<motion.div 
+  initial={{ opacity: 0, x: -50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden border border-[#d9a406]/30 shadow-[0_0_50px_rgba(217,164,6,0.1)]"
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/20 z-10 mix-blend-overlay" />
+
+  <picture className="block w-full h-full">
+    {/* ✅ Mobile Image */}
+    <source
+      media="(max-width: 768px)"
+      srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/Power_Up_With_Solar_1_v2epb4.png"
+    />
+
+    {/* ✅ Desktop Image */}
+    <img 
+      src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1600,f_auto,q_auto/v1766053329/Power_Up_With_Solar_3_awiroe.png"
+      alt="Solar Power Integration"
+      loading="lazy"
+      className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
+    />
+  </picture>
+</motion.div>
+
 
             {/* Right Side - Content */}
             <motion.div 
@@ -10816,7 +10866,7 @@ const HealthyLivingSection = () => (
             {/* CENTER IMAGE */}
             <div className="relative h-full min-h-[600px] w-full hidden lg:block">
               <div className="absolute inset-0 bg-[#d9a406]/5 rounded-t-full"></div>
-              <img src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766052207/generated-image_54_pzy69n.png" alt="Premium Apartment Interior" className="w-full h-full object-cover rounded-t-full shadow-2xl" />
+              <img src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766052207/generated-image_54_pzy69n.png" alt="Premium Apartment Interior" className="w-full h-full object-fill rounded-t-full shadow-2xl" />
             </div>
 
             {/* RIGHT COLUMN */}
