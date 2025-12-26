@@ -720,18 +720,18 @@ import { motion } from "framer-motion"
 function AboutHero() {
   return (
     <motion.section 
-      className="py-20 bg-black text-white"
+      className="relative overflow-hidden py-20 bg-black text-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div className="absolute inset-0 bg-grid-white/[0.05]"></div>
+      {/* <div className="absolute inset-0 bg-grid-white/[0.05]"></div> */}
       <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div 
             className="space-y-8"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
@@ -1051,6 +1051,7 @@ function Timeline() {
                   <motion.div 
                     className={`p-6 rounded-lg shadow-lg text-center md:text-left ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'} bg-white`}
                     initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                    // initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                   >
@@ -1073,11 +1074,11 @@ function Timeline() {
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <AboutHero />
       <Leadership />
       <Values />
       <Timeline />
-    </>
+    </div>
   )
 }

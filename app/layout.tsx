@@ -291,6 +291,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        
         {/* Google Tag Manager (head) */}
         <Script id="gtm-head" strategy="afterInteractive">
           {`
