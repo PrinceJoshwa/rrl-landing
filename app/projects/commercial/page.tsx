@@ -868,35 +868,42 @@ export default function CommercialPage() {
             >
               
               {/* Image Side */}
-              <motion.div 
-                variants={fadeIn}
-                className={`relative h-[500px] rounded-2xl overflow-hidden group border border-white/10 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}
-              >
-                <div className="absolute inset-0 bg-gray-800 animate-pulse" /> {/* Placeholder while loading */}
-                
-                {/* --- MOBILE IMAGE (Visible on small screens) --- */}
-                <img 
-                  src={project.mobileImage || project.image} 
-                  alt={project.name}
-                  className="block md:hidden w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-                />
+              <motion.div
+  variants={fadeIn}
+  className={`
+    relative overflow-hidden group border border-white/10 rounded-2xl
+    aspect-[4/3] md:aspect-auto
+    md:h-[500px]
+    ${index % 2 === 1 ? "lg:col-start-2" : ""}
+  `}
+>
+  <div className="absolute inset-0 bg-gray-800 animate-pulse" />
 
-                {/* --- DESKTOP IMAGE (Visible on medium screens and up) --- */}
-                <img 
-                  src={project.image} 
-                  alt={project.name}
-                  className="hidden md:block w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-                />
+  {/* ✅ Mobile image */}
+  <img
+    src={project.mobileImage || project.image}
+    alt={project.name}
+    className="block md:hidden w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+  />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                
-                {/* Floating Status Badge */}
-                <div className="absolute top-6 left-6">
-                   <div className="bg-black/60 backdrop-blur-md border border-[#d9a406]/50 text-[#d9a406] px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2">
-                      <Star className="w-4 h-4 fill-[#d9a406]" /> {project.status}
-                   </div>
-                </div>
-              </motion.div>
+  {/* ✅ Desktop image */}
+  <img
+    src={project.image}
+    alt={project.name}
+    className="hidden md:block w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+  />
+
+  {/* Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+  {/* Status Badge */}
+  <div className="absolute top-6 left-6">
+    <div className="bg-black/60 backdrop-blur-md border border-[#d9a406]/50 text-[#d9a406] px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2">
+      <Star className="w-4 h-4 fill-[#d9a406]" /> {project.status}
+    </div>
+  </div>
+</motion.div>
+
 
               {/* Content Side */}
               <motion.div variants={fadeIn} className="space-y-8">

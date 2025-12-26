@@ -57,46 +57,43 @@ import {
 
 const HeroImageBanner = () => {
   return (
-    <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
-      <motion.div
-        initial={{ scale: 1.1, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="relative w-full h-full"
-      >
-        {/* Responsive Image */}
-        <picture className="block w-full h-full">
-          {/* Mobile Image */}
-          <source
-            media="(max-width: 768px)"
-            srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_768,f_auto,q_auto/v1766066354/RRl_website_banners_1536_x_752_px_16_mhjq0v.png"
+    <section className="relative w-full bg-black border-y border-[#333] overflow-hidden">
+      
+      {/* ===== MOBILE HERO (400 × 300) ===== */}
+      <div className="block md:hidden">
+        <div className="relative w-full aspect-[4/3] overflow-hidden">
+          <img
+            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573101/17_iqgron.png"
+            alt="RRL Hero Banner Mobile"
+            loading="eager"
+            className="w-full h-full object-contain"
           />
+        </div>
+      </div>
 
-          {/* Desktop Image */}
+      {/* ===== DESKTOP HERO (UNCHANGED) ===== */}
+      <div className="hidden md:block h-[60vh] lg:h-[80vh]">
+        <motion.div
+          initial={{ scale: 1.1, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative w-full h-full overflow-hidden"
+        >
           <img
             src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766066354/RRl_website_banners_1536_x_752_px_16_mhjq0v.png"
-            alt="RRL Hero Banner"
+            alt="RRL Hero Banner Desktop"
             loading="eager"
             className="w-full h-full object-fill"
           />
-        </picture>
+        </motion.div>
+      </div>
 
-        {/* Optional Gradient Overlay */}
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" /> */}
-
-        {/* Optional Text Overlay */}
-        {/* 
-        <div className="absolute bottom-10 left-0 w-full text-center z-10">
-          <p className="text-[#d9a406] uppercase tracking-widest text-sm md:text-base font-semibold bg-black/50 inline-block px-4 py-2 rounded-full backdrop-blur-md border border-[#d9a406]/30">
-            Excellence in Construction
-          </p>
-        </div> 
-        */}
-      </motion.div>
     </section>
-  );
-};
+  )
+}
+
+
 
 // ========== 1. HERO COMPONENT ==========
 function Hero() {
@@ -344,30 +341,44 @@ function PalmAltezzeBanner() {
 
           {/* Right Side: Tall Image */}
           <div className="lg:w-1/2 w-full">
-            <div className="relative w-full h-[500px] lg:h-[150vh] rounded-2xl overflow-hidden border border-gold-500/30 shadow-2xl">
-              {/* Mobile Tall Image */}
-              <Image
-                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_768,c_scale/v1766052290/generated-image_54_byqmbp.png"
-                alt="Palm Altezze Interior"
-                fill
-                className="block md:hidden object-cover"
-                sizes="100vw"
-              />
-              {/* Desktop Tall Image */}
-              <Image
-                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766052290/generated-image_54_byqmbp.png"
-                alt="Palm Altezze Interior"
-                fill
-                className="hidden md:block object-cover lg:object-fill lg:object-top"
-                sizes="50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10 z-10">
-                {/* <p className="text-gold-400 text-sm font-bold uppercase">Artist Impression</p> */}
-                <p className="text-white font-playfair text-lg">High-rise apartment</p>
-              </div>
-            </div>
-          </div>
+  <div
+    className="
+      relative w-full rounded-2xl overflow-hidden
+      border border-gold-500/30 shadow-2xl
+      aspect-[348/729] md:aspect-auto
+      md:h-[500px] lg:h-[150vh]
+    "
+  >
+    {/* Mobile Tall Image (348 × 729) */}
+    <Image
+      src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766052290/generated-image_54_byqmbp.png"
+      alt="Palm Altezze Interior"
+      fill
+      className="block md:hidden object-cover"
+      sizes="100vw"
+    />
+
+    {/* Desktop Tall Image */}
+    <Image
+      src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766052290/generated-image_54_byqmbp.png"
+      alt="Palm Altezze Interior"
+      fill
+      className="hidden md:block object-cover lg:object-fill lg:object-top"
+      sizes="50vw"
+    />
+
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+    {/* Caption */}
+    <div className="absolute bottom-8 left-8 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10 z-10">
+      <p className="text-white font-playfair text-lg">
+        High-rise apartment
+      </p>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </section>
@@ -730,7 +741,7 @@ function Properties() {
       type: "Luxury Apartment",
       status: "Booking Open",
       image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051629/RRL_Palm_Altezze_ijbyta.png",
-      mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572122/RRL_Palm_Altezze_1_jx3n1n.png",
+      mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051629/RRL_Palm_Altezze_ijbyta.png",
       bedrooms: "2, 3 BHK",
       devSize: "1 acre 38 Guntas", // Updated
       totalUnits: "115 Units", // Updated
@@ -854,14 +865,22 @@ function Properties() {
               className="group relative flex flex-col lg:flex-row overflow-hidden rounded-2xl bg-neutral-900 border border-gold-900/50 shadow-xl transition-all hover:border-gold-500/50 hover:shadow-gold-900/20"
             >
               {/* LEFT: Image Section (55% width on desktop) - Responsive */}
-              <div className="relative h-64 lg:h-auto lg:w-[55%] shrink-0 overflow-hidden">
+              <div
+  className="
+    relative shrink-0 overflow-hidden
+    aspect-[366/256] md:aspect-auto
+    md:h-64 lg:h-auto lg:w-[55%]
+  "
+>
+
                 {/* Mobile Image */}
                 <Image
-                  src={property.mobileImage || property.image || "/placeholder.svg"}
-                  alt={property.name}
-                  fill
-                  className="block md:hidden object-fill transition-transform duration-700 group-hover:scale-110"
-                />
+  src={property.mobileImage || property.image || "/placeholder.svg"}
+  alt={property.name}
+  fill
+  className="block md:hidden object-fill transition-transform duration-700 group-hover:scale-105"
+/>
+
                 {/* Desktop Image */}
                 <Image
                   src={property.image || "/placeholder.svg"}

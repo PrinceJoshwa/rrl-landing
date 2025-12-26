@@ -79,32 +79,40 @@ const staggerContainer = {
 
 const HeroImageBanner = () => {
   return (
-    <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
-      <motion.div
-        initial={{ scale: 1.1, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="relative w-full h-full"
-      >
-        <picture className="block w-full h-full">
-          {/* ✅ Mobile Image */}
-          <source
-            media="(max-width: 768px)"
-            srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573095/ok_3_hnfu1m.png"
+    <section className="relative w-full bg-black border-y border-[#333] overflow-hidden">
+      
+      {/* MOBILE HERO (400 × 300) */}
+      <div className="block md:hidden">
+        <div className="relative w-full aspect-[4/3] overflow-hidden">
+          <img
+            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573095/ok_3_hnfu1m.png"
+            alt="RRL Hero Banner Mobile"
+            className="w-full h-full object-contain"
+            loading="eager"
           />
+        </div>
+      </div>
 
-          {/* ✅ Desktop Image */}
+      {/* DESKTOP HERO (UNCHANGED) */}
+      <div className="hidden md:block h-[60vh] md:h-[80vh]">
+        <motion.div
+          initial={{ scale: 1.1, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative w-full h-full"
+        >
           <img
             src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766056600/HOME_HERO_2_ahmbpj.png"
-            alt="RRL Hero Banner"
+            alt="RRL Hero Banner Desktop"
             loading="eager"
             className="w-full h-full object-fill"
           />
-        </picture>
-      </motion.div>
+        </motion.div>
+      </div>
+
     </section>
-  );
+  )
 };
 const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
   // Integrate Formspree for Hero Form

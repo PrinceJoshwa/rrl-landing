@@ -2498,35 +2498,44 @@ export default function NatureWoodsPage() {
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
   }
 
- const HeroImageBanner = () => {
+const HeroImageBanner = () => {
   return (
-    <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
-      <motion.div
-        initial={{ scale: 1.1, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="relative w-full h-full"
-      >
-        <picture className="block w-full h-full">
-          {/* ✅ Mobile Image */}
-          <source
-            media="(max-width: 768px)"
-            srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573105/14_mgc3eg.png"
+    <section className="relative w-full bg-black border-y border-[#333] overflow-hidden">
+      
+      {/* ===== MOBILE HERO (400 × 300) ===== */}
+      <div className="block md:hidden">
+        <div className="relative w-full aspect-[4/3] overflow-hidden">
+          <img
+            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573105/14_mgc3eg.png"
+            alt="RRL Hero Banner Mobile"
+            loading="eager"
+            className="w-full h-full object-contain"
           />
+        </div>
+      </div>
 
-          {/* ✅ Desktop Image */}
+      {/* ===== DESKTOP HERO (UNCHANGED DESIGN) ===== */}
+      <div className="hidden md:block h-[60vh] lg:h-[80vh]">
+        <motion.div
+          initial={{ scale: 1.1, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative w-full h-full overflow-hidden"
+        >
           <img
             src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766055907/RRl_website_banners_1536_x_752_px_6_liyalp.png"
-            alt="RRL Hero Banner"
+            alt="RRL Hero Banner Desktop"
             loading="eager"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-fill"
           />
-        </picture>
-      </motion.div>
+        </motion.div>
+      </div>
+
     </section>
-  );
-};
+  )
+}
+
   
   // ========== HERO SECTION ==========
   const HeroSection = () => {

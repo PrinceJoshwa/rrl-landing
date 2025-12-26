@@ -10169,20 +10169,26 @@ export default function Home() {
   const images = [
     {
       id: 1,
-      desktop: "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png",
-      mobile: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573094/HOME_HERO_1_1_cfr11i.png",
+      desktop:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png",
+      mobile:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573094/HOME_HERO_1_1_cfr11i.png",
       alt: "RRL Hero Banner 1",
     },
     {
       id: 2,
-      desktop: "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051901/ok_5_jrfjhm.png",
-      mobile: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573097/ok_iirjrl.png",
+      desktop:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051901/ok_5_jrfjhm.png",
+      mobile:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573097/ok_iirjrl.png",
       alt: "RRL Hero Banner 2",
     },
     {
       id: 3,
-      desktop: "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051905/Copy_of_PALM_ALTEZZE_1.1_vtrxar.png",
-      mobile: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573082/PALM_ALTEZZE_1.1_1_mv2lcx.png",
+      desktop:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051905/Copy_of_PALM_ALTEZZE_1.1_vtrxar.png",
+      mobile:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573084/PALM_ALTEZZE_2_ok_1_heb9zi.png",
       alt: "RRL Hero Banner 3",
     },
   ];
@@ -10195,51 +10201,79 @@ export default function Home() {
   }, [images.length]);
 
   return (
-    <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden bg-black border-y border-[#333]">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="absolute inset-0 w-full h-full"
-        >
-          <picture className="block w-full h-full">
-            {/* ✅ Mobile Image */}
-            <source
-              media="(max-width: 768px)"
-              srcSet={images[currentSlide].mobile}
+    <section className="relative w-full bg-black border-y border-[#333] overflow-hidden">
+      
+      {/* ================= MOBILE SLIDER (400 × 300) ================= */}
+      <div className="block md:hidden">
+        <div className="relative w-full aspect-[4/3] overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentSlide}
+              src={images[currentSlide].mobile}
+              alt={images[currentSlide].alt}
+              initial={{ opacity: 0, scale: 1.03 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="absolute inset-0 w-full h-full object-contain"
             />
+          </AnimatePresence>
 
-            {/* ✅ Desktop Image */}
-            <img
+          {/* Dots (Mobile) */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2 rounded-full transition-all ${
+                  currentSlide === index
+                    ? "bg-[#d9a406] w-6"
+                    : "bg-white/50 w-2"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ================= DESKTOP SLIDER (UNCHANGED) ================= */}
+      <div className="hidden md:block h-[60vh] lg:h-[80vh]">
+        <div className="relative w-full h-full">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentSlide}
               src={images[currentSlide].desktop}
               alt={images[currentSlide].alt}
-              loading="eager"
-              className="w-full h-full object-fill"
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="absolute inset-0 w-full h-full object-fill"
             />
-          </picture>
-        </motion.div>
-      </AnimatePresence>
+          </AnimatePresence>
 
-      {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              currentSlide === index
-                ? "bg-[#d9a406] w-8"
-                : "bg-white/50 w-2 hover:bg-white"
-            }`}
-          />
-        ))}
+          {/* Dots (Desktop) */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentSlide === index
+                    ? "bg-[#d9a406] w-8"
+                    : "bg-white/50 w-2 hover:bg-white"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
+
     </section>
   );
 };
+
+
 
   // ========== HERO SECTION ==========
   const HeroSection = () => {
@@ -10375,51 +10409,66 @@ export default function Home() {
 
   // ========== TOWER SHOWCASE SECTION ==========
   const TowerShowcaseSection = () => (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative h-[500px] w-full"
-          >
-            <div className="absolute inset-0 bg-[#d9a406] rounded-2xl transform -rotate-2 opacity-20"></div>
-            <img
-              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572041/WhatsApp_Image_2025-12-01_at_10.21.07_AM_1_yag3h7.jpg"
-              alt="RRL Palm Altezze Tower Elevation"
-              className="relative w-full h-full object-fill rounded-2xl shadow-2xl border-4 border-white"
-            />
-            <div className="absolute bottom-8 right-8 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-[#d9a406]">
-              <p className="text-sm text-gray-500 font-bold uppercase">Structure</p>
-              <p className="text-xl font-bold text-[#d9a406]">23 Floors</p>
-            </div>
-          </motion.div>
+  <section className="py-20 bg-white">
+    <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        {/* IMAGE SIDE */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="
+            relative w-full
+            aspect-[4/3] md:aspect-auto
+            md:h-[500px]
+          "
+        >
+          <div className="absolute inset-0 bg-[#d9a406] rounded-2xl transform -rotate-2 opacity-20"></div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight">
-              An Iconic <br/><span className="text-[#d9a406]">Landmark</span>
-            </h2>
-            <div className="w-20 h-1 bg-[#d9a406] rounded-full"></div>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Rising majesitcally above Varthur, Palm Altezze is more than just a residence; it's a statement of prestige.
-            </p>
-            <div className="pt-6">
-                <Button size="lg" className="bg-black hover:bg-[#333] text-[#d9a406] gap-2 border border-[#d9a406]" onClick={() => setIsModalOpen(true)}>
-                    <Download className="w-4 h-4" /> Download Brochure
-                </Button>
-            </div>
-          </motion.div>
-        </div>
+          <img
+            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572041/WhatsApp_Image_2025-12-01_at_10.21.07_AM_1_yag3h7.jpg"
+            alt="RRL Palm Altezze Tower Elevation"
+            className="relative w-full h-full object-fill rounded-2xl shadow-2xl border-4 border-white"
+          />
+
+          <div className="absolute bottom-8 right-8 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-[#d9a406]">
+            <p className="text-sm text-gray-500 font-bold uppercase">Structure</p>
+            <p className="text-xl font-bold text-[#d9a406]">23 Floors</p>
+          </div>
+        </motion.div>
+
+        {/* CONTENT SIDE — UNCHANGED */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight">
+            An Iconic <br />
+            <span className="text-[#d9a406]">Landmark</span>
+          </h2>
+          <div className="w-20 h-1 bg-[#d9a406] rounded-full"></div>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Rising majestically above Varthur, Palm Altezze is more than just a residence; it's a statement of prestige.
+          </p>
+          <div className="pt-6">
+            <Button
+              size="lg"
+              className="bg-black hover:bg-[#333] text-[#d9a406] gap-2 border border-[#d9a406]"
+              onClick={() => setIsModalOpen(true)}
+            >
+              <Download className="w-4 h-4" /> Download Brochure
+            </Button>
+          </div>
+        </motion.div>
+
       </div>
-    </section>
-  )
+    </div>
+  </section>
+)
 
   // ========== PROJECT AT A GLANCE ==========
   const ProjectGlanceSection = () => {
@@ -10489,121 +10538,134 @@ export default function Home() {
 
   // ========== VR SHOWCASE SECTION ==========
   const VRShowcaseSection = () => {
-    return (
-      <section className="py-20 bg-black border-t border-[#333]">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Left Content */}
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Visualize Your <br/><span className="text-[#d9a406]">Home Virtually</span>
-              </h2>
-              <div className="w-16 h-1 bg-[#d9a406] rounded-full"></div>
-              <p className="text-xl text-gray-400">Experience living in your next home</p>
-              <Button size="lg" className="bg-[#d9a406] text-black hover:bg-white font-bold gap-2">
-                <Glasses className="w-5 h-5" /> Book a VR Session Today
-              </Button>
-            </motion.div>
+  return (
+    <section className="py-20 bg-black border-t border-[#333]">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Content */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              Visualize Your <br/>
+              <span className="text-[#d9a406]">Home Virtually</span>
+            </h2>
+            <div className="w-16 h-1 bg-[#d9a406] rounded-full"></div>
+            <p className="text-xl text-gray-400">
+              Experience living in your next home
+            </p>
+            <Button size="lg" className="bg-[#d9a406] text-black hover:bg-white font-bold gap-2">
+              <Glasses className="w-5 h-5" /> Book a VR Session Today
+            </Button>
+          </motion.div>
 
-            {/* Right Image Section */}
-<motion.div 
-  initial={{ opacity: 0, scale: 0.9 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  viewport={{ once: true }}
-  className="relative h-[320px] md:h-[450px] w-full rounded-2xl overflow-hidden border border-[#333]"
->
-  {/* Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
+          {/* Right Image Section — FIXED FOR 584×500 */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="
+              relative w-full rounded-2xl overflow-hidden border border-[#333]
+              aspect-[584/500] md:aspect-auto
+              md:h-[450px]
+            "
+          >
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
 
-  <picture className="block w-full h-full">
-    {/* ✅ Mobile Image */}
-    <source
-      media="(max-width: 768px)"
-      srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/Visualize_Your_Home_Virtually_2_noletb.png"
-    />
+            <picture className="block w-full h-full">
+              {/* Mobile Image (584 × 500) */}
+              <source
+                media="(max-width: 768px)"
+                srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/Visualize_Your_Home_Virtually_2_noletb.png"
+              />
 
-    {/* ✅ Desktop Image */}
-    <img 
-      src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1600,f_auto,q_auto/v1766481026/Visualize_Your_Home_Virtually_1_qusxhs.png"
-      alt="VR Interior Showcase"
-      loading="lazy"
-      className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
-    />
-  </picture>
-</motion.div>
+              {/* Desktop Image */}
+              <img 
+                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1600,f_auto,q_auto/v1766481026/Visualize_Your_Home_Virtually_1_qusxhs.png"
+                alt="VR Interior Showcase"
+                loading="lazy"
+                className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
+              />
+            </picture>
+          </motion.div>
 
-
-          </div>
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
+}
 
-  // ========== SOLAR POWER SECTION ==========
-  const SolarPowerSection = () => {
-    return (
-      <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-[#001f3f]">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Left Side - Image */}
-<motion.div 
-  initial={{ opacity: 0, x: -50 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true }}
-  className="relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden border border-[#d9a406]/30 shadow-[0_0_50px_rgba(217,164,6,0.1)]"
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/20 z-10 mix-blend-overlay" />
+// ========== SOLAR POWER SECTION ==========
+const SolarPowerSection = () => {
+  return (
+    <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-[#001f3f]">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Side - Image */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="
+              relative w-full rounded-2xl overflow-hidden
+              border border-[#d9a406]/30
+              shadow-[0_0_50px_rgba(217,164,6,0.1)]
+              aspect-[584/500] md:aspect-auto
+              md:h-[400px]
+            "
+          >
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/20 z-10 mix-blend-overlay" />
 
-  <picture className="block w-full h-full">
-    {/* ✅ Mobile Image */}
-    <source
-      media="(max-width: 768px)"
-      srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/Power_Up_With_Solar_1_v2epb4.png"
-    />
+            <picture className="block w-full h-full">
+              {/* Mobile Image (584 × 500) */}
+              <source
+                media="(max-width: 768px)"
+                srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/Power_Up_With_Solar_1_v2epb4.png"
+              />
 
-    {/* ✅ Desktop Image */}
-    <img 
-      src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1600,f_auto,q_auto/v1766053329/Power_Up_With_Solar_3_awiroe.png"
-      alt="Solar Power Integration"
-      loading="lazy"
-      className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
-    />
-  </picture>
-</motion.div>
+              {/* Desktop Image */}
+              <img 
+                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1600,f_auto,q_auto/v1766053329/Power_Up_With_Solar_3_awiroe.png"
+                alt="Solar Power Integration"
+                loading="lazy"
+                className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
+              />
+            </picture>
+          </motion.div>
 
-
-            {/* Right Side - Content */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                 <Sun className="w-8 h-8 text-[#d9a406] animate-spin-slow" />
-                 <span className="text-[#d9a406] font-bold tracking-widest uppercase text-sm">Sustainability</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Power Up <br/> With <span className="text-[#d9a406]">Solar</span>
-              </h2>
-              <p className="text-lg text-blue-100/80 leading-relaxed">
-                Solar lights for common areas — reducing your current bill every month.
-              </p>
-            </motion.div>
-            
-          </div>
+          {/* Right Side - Content (UNCHANGED) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <Sun className="w-8 h-8 text-[#d9a406] animate-spin-slow" />
+              <span className="text-[#d9a406] font-bold tracking-widest uppercase text-sm">
+                Sustainability
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              Power Up <br /> With <span className="text-[#d9a406]">Solar</span>
+            </h2>
+            <p className="text-lg text-blue-100/80 leading-relaxed">
+              Solar lights for common areas — reducing your current bill every month.
+            </p>
+          </motion.div>
+          
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
+}
 
   // ========== USP SECTION ==========
   const USPSection = () => {
@@ -10676,7 +10738,7 @@ const HealthyLivingSection = () => (
             <span className="text-[#d9a406]">Healthy Living</span>
           </h2>
 
-          <div className="border-l-4 lg:border-l-4 border-[#d9a406] pl-4 lg:pl-6 mb-8 lg:mb-12 mx-auto lg:mx-0 max-w-md">
+          <div className="border-l-4 border-[#d9a406] pl-4 lg:pl-6 mb-8 lg:mb-12 mx-auto lg:mx-0 max-w-md">
             <p className="text-gray-300 font-bold uppercase tracking-wide text-xs sm:text-sm leading-relaxed">
               AT RRL PALM ALTEZZE, YOU DON'T JUST GET A HOME —
               YOU GET A LIFESTYLE.
@@ -10707,7 +10769,19 @@ const HealthyLivingSection = () => (
           </div>
         </motion.div>
 
-        {/* RIGHT IMAGE (DESKTOP ONLY – unchanged) */}
+        {/* ===== MOBILE IMAGE (336 × 448) ===== */}
+        <div className="block lg:hidden">
+          <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl border border-[#d9a406]/20">
+            <img
+              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766764089/Step_Into_Healthy_Living_3_pgupae.png"
+              alt="RRL Palm Altezze Healthy Living Mobile"
+              className="w-full h-full object-contain"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        {/* ===== DESKTOP IMAGE (UNCHANGED) ===== */}
         <motion.div
           className="hidden lg:block relative h-full"
           initial="hidden"
@@ -10725,6 +10799,7 @@ const HealthyLivingSection = () => (
     </div>
   </section>
 )
+
 
   // ========== DETAILED AMENITIES ==========
   const AmenitiesSection = () => {
@@ -11076,36 +11151,47 @@ const HealthyLivingSection = () => (
 
   // ========== BROCHURE CTA SECTION ==========
   const BrochureCTASection = () => {
-    return (
-      <section className="py-12 bg-black">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="relative rounded-2xl overflow-hidden h-[400px] group border border-[#d9a406]/30">
-            {/* Background Image */}
-            <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764563668/RRL-palm-altezze-banner2_wcqmvh.webp')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-            {/* Dark Overlay for readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40"></div>
-            {/* Content */}
-            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-8 space-y-8">
-              <h2 className="text-3xl md:text-5xl font-serif tracking-wider text-white">
-                GET COST SHEET & BROCHURE
-              </h2>
-              <div className="w-24 h-1 bg-[#d9a406] rounded-full"></div>
-              <p className="text-gray-300 max-w-2xl text-lg font-light">
-                Click Below To Download Brochure of Palm Altezze & Register for Special Offers.
-              </p>
-              {/* Button: Gold Background, Black Text */}
-              <Button
-                onClick={() => setIsModalOpen(true)}
-                className="bg-[#d9a406] hover:bg-white text-black px-12 py-6 text-lg rounded-sm font-bold uppercase tracking-wider transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(217,164,6,0.4)]"
-              >
-                Download Now
-              </Button>
-            </div>
+  return (
+    <section className="py-12 bg-black">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div
+          className="
+            relative rounded-2xl overflow-hidden group
+            border border-[#d9a406]/30
+            h-[360px] md:h-[400px]
+          "
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764563668/RRL-palm-altezze-banner2_wcqmvh.webp')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40"></div>
+
+          {/* Content */}
+          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 md:px-8 space-y-6">
+            <h2 className="text-2xl md:text-5xl font-serif tracking-wider text-white">
+              GET COST SHEET & BROCHURE
+            </h2>
+
+            <div className="w-20 md:w-24 h-1 bg-[#d9a406] rounded-full"></div>
+
+            <p className="text-gray-300 max-w-xl text-sm md:text-lg font-light">
+              Click Below To Download Brochure of Palm Altezze & Register for Special Offers.
+            </p>
+
+            <Button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-[#d9a406] hover:bg-white text-black px-10 md:px-12 py-5 md:py-6 text-sm md:text-lg rounded-sm font-bold uppercase tracking-wider transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(217,164,6,0.4)]"
+            >
+              Download Now
+            </Button>
           </div>
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
+}
+
 
   // ========== REVIEWS SECTION ==========
   const ReviewsSection = () => {
@@ -11713,54 +11799,181 @@ const FAQsSection = () => {
     )
   }
 
-  // ========== COMPLETE PROJECT SECTION ==========
-  const CompleteProject = () => {
-    const WhatsAppIcon = ({ className }: { className?: string }) => (
-      <svg viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    )
+// ========== COMPLETE PROJECT SECTION ==========
+const CompleteProject = () => {
+  const WhatsAppIcon = ({ className }: { className?: string }) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+    </svg>
+  )
 
-    const projects = [
-      { name: "RRL Palacio", location: "Medahalli, Bangalore", type: "Luxury Apartment", status: "READY TO MOVE", image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png", href: "/projects/palacio", acres: "1.5 Acres", units: "103 Units", config: "2, 3 BHK", possession: "Early possession granted" },
-      { name: "RRL Nature Woods", location: "Sarjapur, Bangalore", type: "Premium Apartment", status: "Completed", image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png", href: "/projects/nature-woods", acres: "1.5 Acres", units: "148 Units", config: "2, 3 BHK", possession: "Early possession granted" },
-    ];
+  const projects = [
+    {
+      name: "RRL Palacio",
+      location: "Medahalli, Bangalore",
+      type: "Luxury Apartment",
+      status: "READY TO MOVE",
+      image:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png",
+      mobileImage:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572120/RRL_Palacio_1_isuusa.png",
+      href: "/projects/palacio",
+      acres: "1.5 Acres",
+      units: "103 Units",
+      config: "2, 3 BHK",
+      possession: "Early possession granted",
+    },
+    {
+      name: "RRL Nature Woods",
+      location: "Sarjapur, Bangalore",
+      type: "Premium Apartment",
+      status: "Completed",
+      image:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png",
+      mobileImage:
+        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572121/RRL_Nature_Woods_1_f1rqnv.png",
+      href: "/projects/nature-woods",
+      acres: "1.5 Acres",
+      units: "148 Units",
+      config: "2, 3 BHK",
+      possession: "Early possession granted",
+    },
+  ]
 
-    return (
-      <section className="py-20 bg-light-gold">
-        <h1 className="text-[#d9a406] font-serif mb-12 text-5xl font-bold text-center">Successfully Completed Projects</h1>
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <motion.div key={index} className="group h-full" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}>
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col border border-gray-100 hover:shadow-2xl transition-all">
-                  <Link href={project.href} className="relative aspect-[16/9] w-full overflow-hidden">
-                    <Image src={project.image} alt={project.name} fill priority={index === 0} className="object-fill group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-black/20" />
-                    <span className="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide border border-gold-500">{project.status}</span>
+  return (
+    <section className="py-20 bg-light-gold">
+      <h1 className="text-[#d9a406] font-serif mb-12 text-5xl font-bold text-center">
+        Successfully Completed Projects
+      </h1>
+
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className="group h-full"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col border border-gray-100 hover:shadow-2xl transition-all">
+                
+                {/* IMAGE SECTION */}
+                <Link
+                  href={project.href}
+                  className="
+                    relative w-full overflow-hidden
+                    aspect-[366/256] md:aspect-[16/9]
+                  "
+                >
+                  {/* Mobile Image */}
+                  <Image
+                    src={project.mobileImage}
+                    alt={project.name}
+                    fill
+                    className="block md:hidden object-fill group-hover:scale-105 transition-transform duration-500"
+                  />
+
+                  {/* Desktop Image */}
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    priority={index === 0}
+                    className="hidden md:block object-fill group-hover:scale-105 transition-transform duration-500"
+                  />
+
+                  <div className="absolute inset-0 bg-black/20" />
+
+                  <span className="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide border border-gold-500">
+                    {project.status}
+                  </span>
+                </Link>
+
+                {/* CONTENT */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <p className="text-xs text-gold-600 font-bold uppercase tracking-wider mb-1">
+                    {project.type}
+                  </p>
+
+                  <Link href={project.href}>
+                    <h3 className="text-xl font-bold text-black hover:text-gold-600 transition-colors">
+                      {project.name}
+                    </h3>
                   </Link>
-                  <div className="p-6 flex flex-col flex-grow">
-                    <p className="text-xs text-gold-600 font-bold uppercase tracking-wider mb-1">{project.type}</p>
-                    <Link href={project.href}><h3 className="text-xl font-bold text-black hover:text-gold-600 transition-colors">{project.name}</h3></Link>
-                    <div className="mt-4 mb-6 p-3 bg-gold-500/10 rounded-lg border border-gold-500/20"><p className="text-sm font-bold text-gray-900">{project.possession}</p></div>
-                    <div className="grid grid-cols-2 gap-4 border-t border-b border-gray-100 py-4 mb-6">
-                      <div><p className="text-xs uppercase text-gray-500">Location</p><p className="text-sm font-medium text-black">{project.location}</p></div>
-                      <div><p className="text-xs uppercase text-gray-500">Config</p><p className="text-sm font-medium text-black">{project.config}</p></div>
-                      <div><p className="text-xs uppercase text-gray-500">Area</p><p className="text-sm font-medium text-black">{project.acres}</p></div>
-                      <div><p className="text-xs uppercase text-gray-500">Units</p><p className="text-sm font-medium text-black">{project.units}</p></div>
+
+                  <div className="mt-4 mb-6 p-3 bg-gold-500/10 rounded-lg border border-gold-500/20">
+                    <p className="text-sm font-bold text-gray-900">
+                      {project.possession}
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4 border-t border-b border-gray-100 py-4 mb-6">
+                    <div>
+                      <p className="text-xs uppercase text-gray-500">Location</p>
+                      <p className="text-sm font-medium text-black">
+                        {project.location}
+                      </p>
                     </div>
-                    <div className="mt-auto flex gap-2">
-                      <a href="https://wa.me/918494966966" target="_blank" className="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-300 text-green-600 hover:bg-green-600 hover:text-white transition-all"><WhatsAppIcon className="h-5 w-5" /></a>
-                      <a href="tel:+918494966966" className="flex-none flex items-center justify-center h-10 w-10 rounded-lg border border-gray-300 text-gray-600 hover:bg-black hover:border-black hover:text-white transition-all bg-white shadow-sm" title="Call Us"><Phone className="h-4 w-4" /></a>
-                      <Link href={project.href} className="flex-1"><button className="w-full h-10 bg-black text-white rounded-lg font-semibold text-sm flex items-center justify-center gap-2 group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">Details<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></button></Link>
+                    <div>
+                      <p className="text-xs uppercase text-gray-500">Config</p>
+                      <p className="text-sm font-medium text-black">
+                        {project.config}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase text-gray-500">Area</p>
+                      <p className="text-sm font-medium text-black">
+                        {project.acres}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase text-gray-500">Units</p>
+                      <p className="text-sm font-medium text-black">
+                        {project.units}
+                      </p>
                     </div>
                   </div>
+
+                  <div className="mt-auto flex gap-2">
+                    <a
+                      href="https://wa.me/918494966966"
+                      target="_blank"
+                      className="h-10 w-10 flex items-center justify-center rounded-lg border border-gray-300 text-green-600 hover:bg-green-600 hover:text-white transition-all"
+                    >
+                      <WhatsAppIcon className="h-5 w-5" />
+                    </a>
+
+                    <a
+                      href="tel:+918494966966"
+                      className="flex-none flex items-center justify-center h-10 w-10 rounded-lg border border-gray-300 text-gray-600 hover:bg-black hover:border-black hover:text-white transition-all bg-white shadow-sm"
+                    >
+                      <Phone className="h-4 w-4" />
+                    </a>
+
+                    <Link href={project.href} className="flex-1">
+                      <button className="w-full h-10 bg-black text-white rounded-lg font-semibold text-sm flex items-center justify-center gap-2 group-hover:bg-gold-500 transition-all duration-300">
+                        Details
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
+}
+
 
   // ========== CONTACT ==========
   const ContactSection = ({ onSubmit }: { onSubmit: (data: FormData) => Promise<boolean> }) => {

@@ -686,145 +686,157 @@ export default function ProjectsPage() {
       </section>
 
       {/* --- PROJECTS GRID --- */}
-      <section className="py-20 bg-light-gold">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                className="group cursor-pointer h-full"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+      {/* --- PROJECTS GRID --- */}
+<section className="py-20 bg-light-gold">
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project, index) => (
+        <motion.div
+          key={index}
+          className="group cursor-pointer h-full"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+        >
+          <div className="block h-full relative">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-100 hover:border-gold-500/50">
+
+              {/* IMAGE SECTION (MOBILE 366×256 | DESKTOP UNCHANGED) */}
+              <Link
+                href={project.href}
+                className="
+                  relative block overflow-hidden
+                  aspect-[366/256] md:aspect-auto
+                  md:h-64
+                "
               >
-                <div className="block h-full relative">
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-100 hover:border-gold-500/50">
+                {/* Mobile Image */}
+                <Image
+                  src={project.mobileImage || project.image || "/placeholder.svg"}
+                  alt={project.name}
+                  fill
+                  className="block md:hidden object-contain group-hover:scale-105 transition-transform duration-500"
+                />
 
-                    {/* Link Wrap for Image - UPDATED FOR MOBILE/DESKTOP SPLIT */}
-                    <Link href={project.href} className="relative h-64 block overflow-hidden">
-                      
-                      {/* Mobile Grid Image (Visible md:hidden) */}
-                      <Image
-                        src={project.mobileImage || project.image || "/placeholder.svg"}
-                        alt={project.name}
-                        layout="fill"
-                        objectFit="fill"
-                        className="block md:hidden group-hover:scale-105 transition-transform duration-500"
-                      />
+                {/* Desktop Image */}
+                <Image
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.name}
+                  fill
+                  className="hidden md:block object-fill group-hover:scale-105 transition-transform duration-500"
+                />
 
-                      {/* Desktop Grid Image (Visible md:block) */}
-                      <Image
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.name}
-                        layout="fill"
-                        objectFit="fill"
-                        className="hidden md:block group-hover:scale-105 transition-transform duration-500"
-                      />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
 
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-black/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide border border-gold-500">
-                          {project.status}
-                        </span>
-                      </div>
-                    </Link>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-black/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide border border-gold-500">
+                    {project.status}
+                  </span>
+                </div>
+              </Link>
 
-                    {/* Content Section */}
-                    <div className="p-6 flex flex-col flex-grow">
-                      <div className="mb-4">
-                        <p className="text-xs text-gold-600 font-bold uppercase tracking-wider mb-1">{project.type}</p>
-                        <Link href={project.href}>
-                          <h3 className="text-xl font-bold text-black group-hover:text-gold-600 transition-colors">{project.name}</h3>
-                        </Link>
-                      </div>
+              {/* CONTENT SECTION */}
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="mb-4">
+                  <p className="text-xs text-gold-600 font-bold uppercase tracking-wider mb-1">
+                    {project.type}
+                  </p>
+                  <Link href={project.href}>
+                    <h3 className="text-xl font-bold text-black group-hover:text-gold-600 transition-colors">
+                      {project.name}
+                    </h3>
+                  </Link>
+                </div>
 
-                      {/* --- POSSESSION TIMELINE --- */}
-                      <div className="mb-6 p-3 bg-gold-500/10 rounded-lg border border-gold-500/20">
-                        <div className="flex items-start gap-2">
-                          <CalendarClock className="h-4 w-4 text-gold-600 mt-0.5 shrink-0" />
-                          <div>
-                            <p className="text-sm font-bold text-gray-900">{project.possession}</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Details Grid */}
-                      <div className="grid grid-cols-2 gap-4 mb-6 border-t border-b border-gray-100 py-4">
-                        <div className="flex flex-col">
-                          <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
-                            <MapPin className="h-3 w-3 mr-1" /> Location
-                          </div>
-                          <span className="text-sm font-medium text-black truncate" title={project.location}>{project.location}</span>
-                        </div>
-
-                        {/* Hide Config for Commercial if null */}
-                        {project.config && (
-                          <div className="flex flex-col">
-                            <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
-                              <Home className="h-3 w-3 mr-1" /> Config
-                            </div>
-                            <span className="text-sm font-medium text-black">{project.config}</span>
-                          </div>
-                        )}
-
-                        {/* Hide Acres for Commercial if null */}
-                        {project.acres && (
-                          <div className="flex flex-col">
-                            <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
-                              <Maximize className="h-3 w-3 mr-1" /> Area
-                            </div>
-                            <span className="text-sm font-medium text-black">{project.acres}</span>
-                          </div>
-                        )}
-
-                        {/* Hide Units for Commercial if null */}
-                        {project.units && (
-                          <div className="flex flex-col">
-                            <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
-                              <Target className="h-3 w-3 mr-1" /> Total Units
-                            </div>
-                            <span className="text-sm font-medium text-black">{project.units}</span>
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="mt-auto flex gap-2">
-                        {/* WhatsApp Button */}
-                        <a
-                          href="https://wa.me/918494966966"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex-none flex items-center justify-center h-10 w-10 rounded-lg border border-gray-300 text-green-600 hover:bg-green-600 hover:border-green-600 hover:text-white transition-all bg-white shadow-sm"
-                          title="Chat on WhatsApp"
-                        >
-                          <WhatsAppIcon className="h-5 w-5" />
-                        </a>
-
-                        {/* Call Button */}
-                        <a
-                          href="tel:+918494966966"
-                          className="flex-none flex items-center justify-center h-10 w-10 rounded-lg border border-gray-300 text-gray-600 hover:bg-black hover:border-black hover:text-white transition-all bg-white shadow-sm"
-                          title="Call Us"
-                        >
-                          <Phone className="h-4 w-4" />
-                        </a>
-
-                        {/* View Details Button */}
-                        <Link href={project.href} className="flex-1">
-                          <button className="w-full h-10 bg-black text-white rounded-lg font-semibold text-sm flex items-center justify-center gap-2 group-hover:bg-gold-500 group-hover:text-white transition-all duration-300">
-                            Details
-                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
+                {/* POSSESSION */}
+                <div className="mb-6 p-3 bg-gold-500/10 rounded-lg border border-gold-500/20">
+                  <div className="flex items-start gap-2">
+                    <CalendarClock className="h-4 w-4 text-gold-600 mt-0.5 shrink-0" />
+                    <p className="text-sm font-bold text-gray-900">
+                      {project.possession}
+                    </p>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+
+                {/* DETAILS GRID */}
+                <div className="grid grid-cols-2 gap-4 mb-6 border-t border-b border-gray-100 py-4">
+                  <div>
+                    <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
+                      <MapPin className="h-3 w-3 mr-1" /> Location
+                    </div>
+                    <span className="text-sm font-medium text-black truncate">
+                      {project.location}
+                    </span>
+                  </div>
+
+                  {project.config && (
+                    <div>
+                      <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
+                        <Home className="h-3 w-3 mr-1" /> Config
+                      </div>
+                      <span className="text-sm font-medium text-black">
+                        {project.config}
+                      </span>
+                    </div>
+                  )}
+
+                  {project.acres && (
+                    <div>
+                      <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
+                        <Maximize className="h-3 w-3 mr-1" /> Area
+                      </div>
+                      <span className="text-sm font-medium text-black">
+                        {project.acres}
+                      </span>
+                    </div>
+                  )}
+
+                  {project.units && (
+                    <div>
+                      <div className="flex items-center text-gray-500 text-xs uppercase tracking-wide mb-1">
+                        <Target className="h-3 w-3 mr-1" /> Total Units
+                      </div>
+                      <span className="text-sm font-medium text-black">
+                        {project.units}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* ACTIONS */}
+                <div className="mt-auto flex gap-2">
+                  <a
+                    href="https://wa.me/918494966966"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-none h-10 w-10 flex items-center justify-center rounded-lg border border-gray-300 text-green-600 hover:bg-green-600 hover:text-white transition-all"
+                  >
+                    <WhatsAppIcon className="h-5 w-5" />
+                  </a>
+
+                  <a
+                    href="tel:+918494966966"
+                    className="flex-none h-10 w-10 flex items-center justify-center rounded-lg border border-gray-300 text-gray-600 hover:bg-black hover:text-white transition-all"
+                  >
+                    <Phone className="h-4 w-4" />
+                  </a>
+
+                  <Link href={project.href} className="flex-1">
+                    <button className="w-full h-10 bg-black text-white rounded-lg font-semibold text-sm flex items-center justify-center gap-2 group-hover:bg-gold-500 transition-all duration-300">
+                      Details
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                  </Link>
+                </div>
+              </div>
+
+            </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Features Section */}
       <motion.section
