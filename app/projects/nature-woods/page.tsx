@@ -2506,7 +2506,7 @@ const HeroImageBanner = () => {
       <div className="block md:hidden">
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <img
-            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573105/14_mgc3eg.png"
+            src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/14.png?updatedAt=1766849914806"
             alt="RRL Hero Banner Mobile"
             loading="eager"
             className="w-full h-full object-contain"
@@ -2524,7 +2524,7 @@ const HeroImageBanner = () => {
           className="relative w-full h-full overflow-hidden"
         >
           <img
-            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766055907/RRl_website_banners_1536_x_752_px_6_liyalp.png"
+            src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/14.png"
             alt="RRL Hero Banner Desktop"
             loading="eager"
             className="w-full h-full object-fill"

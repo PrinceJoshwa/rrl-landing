@@ -744,7 +744,7 @@ const projects = [
     // DESKTOP IMAGE
     image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Towers_k9ksfq.png", 
     // MOBILE IMAGE (Update this path)
-    mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572119/RRL_Towers_1_vezxyt.png", 
+    mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Towers.png?updatedAt=1766849720451", 
     tags: ["Corporate Office", "Sub Registrar Office", "SMEs"],
     features: [
       "Located on the premium Sarjapur-Marathahalli belt",
@@ -766,7 +766,7 @@ const projects = [
     // DESKTOP IMAGE
     image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Complex_cogjaw.png", 
     // MOBILE IMAGE (Update this path)
-    mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572121/RRL_Complex_1_yrbmhw.png",
+    mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360",
     tags: ["Retail Hub", "Fitness Centers", "Ample Parking"],
     features: [
       "Strategic location on Sarjapur Attibele Road",

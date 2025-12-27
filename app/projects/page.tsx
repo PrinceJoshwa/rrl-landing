@@ -448,9 +448,9 @@ const projects = [
     type: "Premium Apartment",
     status: "Open For Booking",
     // Desktop Image
-    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051629/RRL_Palm_Altezze_ijbyta.png",
+    image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palm%20Altezze.png?updatedAt=1766849725863",
     // Mobile Image (Update this URL)
-    mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572122/RRL_Palm_Altezze_1_jx3n1n.png",
+    mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palm%20Altezze.png?updatedAt=1766849725863",
     href: "/projects/palm-altezze",
     acres: "1 acre 38 Guntas",
     units: "115 Units",
@@ -463,9 +463,9 @@ const projects = [
     type: "Premium Apartment",
     status: "BOOKING OPEN SOON",
     // Desktop Image
-    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051622/NC_216_i8ehf8.png",
+    image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503",
     // Mobile Image (Update this URL)
-    mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/NC_216_1_wp4uts.png",
+    mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503",
     href: "/projects/sequoia",
     acres: "2.01 Acres",
     units: "216 Units",
@@ -478,9 +478,9 @@ const projects = [
     type: "Luxury Apartment",
     status: "READY TO MOVE",
     // Desktop Image
-    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png",
+    image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
     // Mobile Image (Update this URL)
-    mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572120/RRL_Palacio_1_isuusa.png",
+    mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
     href: "/projects/palacio",
     acres: "1.5 Acres",
     units: "103 Units",
@@ -493,9 +493,9 @@ const projects = [
     type: "Premium Apartment",
     status: "Completed",
     // Desktop Image
-    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png",
+    image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Nature%20Woods.png?updatedAt=1766849724502",
     // Mobile Image (Update this URL)
-    mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572121/RRL_Nature_Woods_1_f1rqnv.png",
+    mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Nature%20Woods.png?updatedAt=1766849724502",
     href: "/projects/nature-woods",
     acres: "1.5 Acres",
     units: "148 Units",
@@ -508,9 +508,9 @@ const projects = [
     type: "Commercial Complex",
     status: "OPERATIONAL",
     // Desktop Image
-    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Towers_k9ksfq.png",
+    image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Towers.png?updatedAt=1766849720451",
     // Mobile Image (Update this URL)
-    mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572119/RRL_Towers_1_vezxyt.png",
+    mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Towers.png?updatedAt=1766849720451",
     href: "/projects/towers",
     acres: null,
     units: null,
@@ -523,9 +523,9 @@ const projects = [
     type: "Commercial Project",
     status: "COMPLETED",
     // Desktop Image
-    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Complex_cogjaw.png",
+    image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360",
     // Mobile Image (Update this URL)
-    mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572121/RRL_Complex_1_yrbmhw.png",
+    mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360",
     href: "/projects/oasis",
     acres: null,
     units: null,
@@ -548,8 +548,8 @@ const features = [
 export default function ProjectsPage() {
   
   // --- Define Main Banner Images Here ---
-  const heroDesktopImage = "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png";
-  const heroMobileImage = "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573094/HOME_HERO_1_1_cfr11i.png";
+  const heroDesktopImage = "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/HOME%20HERO%201.png?updatedAt=1766848463108";
+  const heroMobileImage = "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/HOME%20HERO%201.png?updatedAt=1766849907651";
 
   return (
     <>

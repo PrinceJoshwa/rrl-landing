@@ -10170,25 +10170,25 @@ export default function Home() {
     {
       id: 1,
       desktop:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051893/Copy_of_HOME_HERO_1_yqcpcn.png",
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/HOME%20HERO%201.png",
       mobile:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573094/HOME_HERO_1_1_cfr11i.png",
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/HOME%20HERO%201.png?updatedAt=1766849907651",
       alt: "RRL Hero Banner 1",
     },
     {
       id: 2,
       desktop:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051901/ok_5_jrfjhm.png",
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/ok.png",
       mobile:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573097/ok_iirjrl.png",
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/ok.png?updatedAt=1766849914416",
       alt: "RRL Hero Banner 2",
     },
     {
       id: 3,
       desktop:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1920,f_auto,q_auto/v1766051905/Copy_of_PALM_ALTEZZE_1.1_vtrxar.png",
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/PALM%20ALTEZZE%201.1.png",
       mobile:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573084/PALM_ALTEZZE_2_ok_1_heb9zi.png",
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/PALM%20ALTEZZE%201.1.png?updatedAt=1766849906858",
       alt: "RRL Hero Banner 3",
     },
   ];
@@ -10528,7 +10528,7 @@ export default function Home() {
                 
                 <motion.div initial={{opacity: 0, scale: 0.9}} whileInView={{opacity: 1, scale: 1}} viewport={{once: true}} className="relative">
                    <div className="absolute inset-0 bg-[#d9a406] rounded-2xl transform rotate-3 opacity-30"></div>
-                   <img src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051902/PALM_ALTEZZE_2_ok_aysmb2.png" alt="RRL Palm Altezze Architecture" className="relative rounded-2xl shadow-2xl border-4 border-white/10 w-full object-cover" />
+                   <img src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/PALM%20ALTEZZE%202%20ok.png" alt="RRL Palm Altezze Architecture" className="relative rounded-2xl shadow-2xl border-4 border-white/10 w-full object-cover" />
                 </motion.div>
              </div>
           </div>
@@ -10581,7 +10581,7 @@ export default function Home() {
               {/* Mobile Image (584 × 500) */}
               <source
                 media="(max-width: 768px)"
-                srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/Visualize_Your_Home_Virtually_2_noletb.png"
+                srcSet="https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/Visualize%20Your%20Home%20Virtually.png?updatedAt=1766849722950"
               />
 
               {/* Desktop Image */}
@@ -11819,9 +11819,9 @@ const CompleteProject = () => {
       type: "Luxury Apartment",
       status: "READY TO MOVE",
       image:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png",
+        "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
       mobileImage:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572120/RRL_Palacio_1_isuusa.png",
+        "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
       href: "/projects/palacio",
       acres: "1.5 Acres",
       units: "103 Units",
@@ -11834,9 +11834,9 @@ const CompleteProject = () => {
       type: "Premium Apartment",
       status: "Completed",
       image:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png",
+        "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Nature%20Woods.png?updatedAt=1766849724502",
       mobileImage:
-        "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572121/RRL_Nature_Woods_1_f1rqnv.png",
+        "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Nature%20Woods.png?updatedAt=1766849724502",
       href: "/projects/nature-woods",
       acres: "1.5 Acres",
       units: "148 Units",

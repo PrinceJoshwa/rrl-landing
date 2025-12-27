@@ -63,7 +63,7 @@ const HeroImageBanner = () => {
       <div className="block md:hidden">
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <img
-            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766573101/17_iqgron.png"
+            src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/21.png?updatedAt=1766849914341"
             alt="RRL Hero Banner Mobile"
             loading="eager"
             className="w-full h-full object-contain"
@@ -81,7 +81,7 @@ const HeroImageBanner = () => {
           className="relative w-full h-full overflow-hidden"
         >
           <img
-            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766066354/RRl_website_banners_1536_x_752_px_16_mhjq0v.png"
+            src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/18.png"
             alt="RRL Hero Banner Desktop"
             loading="eager"
             className="w-full h-full object-fill"
@@ -740,8 +740,8 @@ function Properties() {
       location: "Varthur, Bangalore",
       type: "Luxury Apartment",
       status: "Booking Open",
-      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051629/RRL_Palm_Altezze_ijbyta.png",
-      mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051629/RRL_Palm_Altezze_ijbyta.png",
+      image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palm%20Altezze.png?updatedAt=1766849725863",
+      mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palm%20Altezze.png?updatedAt=1766849725863",
       bedrooms: "2, 3 BHK",
       devSize: "1 acre 38 Guntas", // Updated
       totalUnits: "115 Units", // Updated
@@ -754,8 +754,8 @@ function Properties() {
       location: "Bangalore",
       type: "Mid size Apartment",
       status: "EOI is Open",
-      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051622/NC_216_i8ehf8.png", // Placeholder image 
-      mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/NC_216_1_wp4uts.png",
+      image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503", // Placeholder image 
+      mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503",
       bedrooms: "2, 3 BHK",
       devSize: "2.06 Acres",
       totalUnits: "216 Units",
@@ -768,8 +768,8 @@ function Properties() {
       location: "Medahalli, Bangalore",
       type: "Upper Mid-Size Apartment",
       status: "READY TO MOVE",
-      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Palacio_bi1kgl.png",
-      mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572120/RRL_Palacio_1_isuusa.png",
+      image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
+      mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
       bedrooms: "2, 3 BHK",
       devSize: "1.5 Acres",
       totalUnits: "103 Units", // Updated
@@ -782,8 +782,8 @@ function Properties() {
       location: "Sarjapur, Bangalore",
       type: "Premium Apartment",
       status: "COMPLETED",
-      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Nature_Woods_cd1hdu.png",
-      mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572121/RRL_Nature_Woods_1_f1rqnv.png",
+      image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Nature%20Woods.png?updatedAt=1766849724502",
+      mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Nature%20Woods.png?updatedAt=1766849724502",
       bedrooms: "2, 3 BHK",
       devSize: "1.5 Acres", // Updated
       totalUnits: "148 Units", // Updated
@@ -799,8 +799,8 @@ function Properties() {
       location: "Sarjapur", // Updated
       type: "Commercial", // Updated
       status: "COMPLETED",
-      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Towers_k9ksfq.png",
-      mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572119/RRL_Towers_1_vezxyt.png",
+      image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Towers.png?updatedAt=1766849720451",
+      mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Towers.png?updatedAt=1766849720451",
       bedrooms: null, // Hidden
       devSize: null, // Hidden
       totalUnits: null, // Hidden
@@ -813,8 +813,8 @@ function Properties() {
       location: "Attibele Sarjapur Road", // Updated
       type: "Commercial",
       status: "COMPLETED",
-      image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Complex_cogjaw.png",
-      mobileImage: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572121/RRL_Complex_1_yrbmhw.png",
+      image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360",
+      mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360",
       bedrooms: null, // Hidden
       devSize: null, // Hidden
       totalUnits: null, // Hidden
