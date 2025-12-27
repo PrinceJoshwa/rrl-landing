@@ -480,7 +480,7 @@ export default function NRICornerPage() {
                 </div>
             </div>
             <div className="md:w-1/2 relative h-[500px] w-full rounded-[2.5rem] overflow-hidden border border-gold-900 shadow-2xl">
-                 <Image src="/LookProject11.jpeg" alt="Legal Compliance" fill className="object-cover transition-transform hover:scale-105 duration-700" />
+                 {/* <Image src="/LookProject11.jpeg" alt="Legal Compliance" fill className="object-cover transition-transform hover:scale-105 duration-700" /> */}
                  <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-8">
                     <ShieldCheck className="w-20 h-20 text-gold-500 mb-4 drop-shadow-[0_0_15px_rgba(217,164,6,0.5)]" />
                     <h3 className="text-3xl font-bold text-white font-playfair">Your Investment is Safe</h3>
@@ -507,9 +507,9 @@ export default function NRICornerPage() {
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
                     {[
-                        { name: "RRL Palacio", loc: "Medahalli", img: "/LookProject2.jpeg", status: "Ready to Move" },
-                        { name: "RRL Palm Altezze", loc: "Varthur", img: "/justlaunch.png", status: "New Launch" },
-                        { name: "RRL Nature Woods", loc: "Sarjapur", img: "/LookProject5.jpeg", status: "Ready to Move" }
+                        { name: "RRL Palacio", loc: "Medahalli", img: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531", status: "Ready to Move" },
+                        { name: "RRL Palm Altezze", loc: "Varthur", img: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palm%20Altezze.png?updatedAt=1766849725863", status: "New Launch" },
+                        { name: "RRL Nature Woods", loc: "Sarjapur", img: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Nature%20Woods.png?updatedAt=1766849724502", status: "Ready to Move" }
                     ].map((proj, i) => (
                         <div key={i} className="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-neutral-800 cursor-pointer">
                             <Image src={proj.img} alt={proj.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -533,8 +533,8 @@ export default function NRICornerPage() {
                 </div>
                 <div className="grid md:grid-cols-2 gap-8">
                     {[
-                        { name: "RRL Towers", loc: "Sampige Jala", img: "/Tower.jpeg", type: "Office Space" },
-                        { name: "RRL Complex", loc: "South Bangalore", img: "/complex.jpg", type: "Retail & Office" }
+                        { name: "RRL Towers", loc: "Sampige Jala", img: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Towers.png?updatedAt=1766849720451", type: "Office Space" },
+                        { name: "RRL Complex", loc: "South Bangalore", img: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360", type: "Retail & Office" }
                     ].map((proj, i) => (
                         <div key={i} className="group relative rounded-3xl overflow-hidden aspect-video border border-neutral-800 cursor-pointer">
                             <Image src={proj.img} alt={proj.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />

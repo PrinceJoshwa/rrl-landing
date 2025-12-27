@@ -63,7 +63,7 @@ const HeroImageBanner = () => {
       <div className="block md:hidden">
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <img
-            src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/21.png?updatedAt=1766849914341"
+            src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)%20(1).png"
             alt="RRL Hero Banner Mobile"
             loading="eager"
             className="w-full h-full object-contain"

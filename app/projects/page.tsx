@@ -461,7 +461,7 @@ const projects = [
     name: "RRL Code Name - NC 216",
     location: "Sarjapur, Bangalore",
     type: "Premium Apartment",
-    status: "BOOKING OPEN SOON",
+    status: "Open for EOI",
     // Desktop Image
     image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503",
     // Mobile Image (Update this URL)
@@ -470,7 +470,7 @@ const projects = [
     acres: "2.01 Acres",
     units: "216 Units",
     config: "2, 3 BHK",
-    possession: "Booking Open Soon"
+    possession: "Open for EOI"
   },
   {
     name: "RRL Palacio",

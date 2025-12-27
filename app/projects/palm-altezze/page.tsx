@@ -10627,12 +10627,12 @@ const SolarPowerSection = () => {
               {/* Mobile Image (584 × 500) */}
               <source
                 media="(max-width: 768px)"
-                srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766572118/Power_Up_With_Solar_1_v2epb4.png"
+                srcSet="https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/Power.png?updatedAt=1766849830876"
               />
 
               {/* Desktop Image */}
               <img 
-                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1600,f_auto,q_auto/v1766053329/Power_Up_With_Solar_3_awiroe.png"
+                src="https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/Power.png?updatedAt=1766849830876"
                 alt="Solar Power Integration"
                 loading="lazy"
                 className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
