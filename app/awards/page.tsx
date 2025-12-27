@@ -430,7 +430,7 @@ function AwardsHero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <Image
-              src="/awardhome.jpeg"
+              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055536/awardhome_wvhw2f.jpg"
               alt="RRL Awards Ceremony 2025"
               width={600}
               height={400}
@@ -519,66 +519,66 @@ function AwardsList() {
 
 function MediaCoverage() {
   const mediaOutlets = [
-    // {
-    //   name: "ZEE5 Business",
-    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token4-rJgVrC4ZKpXxrJCNc4fUufEvGeSlRl.jpeg",
-    //   description: "Featured coverage of RRL's award-winning achievements in real estate",
-    // },
-    // {
-    //   name: "Multiple International Outlets",
-    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token2-agM5EwaEeqJv2glMoBTPDLVxczDH3B.jpeg",
-    //   description: "Coverage across US World Today, Daily Hunt, Indo-Asian News Service, and more",
-    // },
-    // {
-    //   name: "The Print",
-    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-lNU4TqNDvpQhVpKy6LYfNmWQ6KP4UZ.jpeg",
-    //   description: "In-depth coverage of the 5th Global Real Estate Brand Awards 2023",
-    // },
-    // {
-    //   name: "British Columbia Times",
-    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token1-LtctPGKlJ54DeYjMfknXCMBTaxglJv.jpeg",
-    //   description: "International recognition of RRL's remarkable achievements",
-    // },
-    // {
-    //   name: "London Channel News",
-    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token3-8TEGbwM0sMobG9OpTWtl0ODNH4VBij.jpeg",
-    //   description: "Global media coverage highlighting RRL's industry leadership",
-    // },
-    // {
-    //   name: "World News Network",
-    //   image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token6-0aTqnZLkY2wKtVR86VOJYszKP4InKp.jpeg",
-    //   description: "Comprehensive coverage of distinguished honorees in real estate",
-    // },
     {
       name: "ZEE5 Business",
-      image: "",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token4-rJgVrC4ZKpXxrJCNc4fUufEvGeSlRl.jpeg",
       description: "Featured coverage of RRL's award-winning achievements in real estate",
     },
     {
       name: "Multiple International Outlets",
-      image: "",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token2-agM5EwaEeqJv2glMoBTPDLVxczDH3B.jpeg",
       description: "Coverage across US World Today, Daily Hunt, Indo-Asian News Service, and more",
     },
     {
       name: "The Print",
-      image: "",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token5-lNU4TqNDvpQhVpKy6LYfNmWQ6KP4UZ.jpeg",
       description: "In-depth coverage of the 5th Global Real Estate Brand Awards 2023",
     },
     {
       name: "British Columbia Times",
-      image: "",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token1-LtctPGKlJ54DeYjMfknXCMBTaxglJv.jpeg",
       description: "International recognition of RRL's remarkable achievements",
     },
     {
       name: "London Channel News",
-      image: "",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token3-8TEGbwM0sMobG9OpTWtl0ODNH4VBij.jpeg",
       description: "Global media coverage highlighting RRL's industry leadership",
     },
     {
       name: "World News Network",
-      image: "",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Token6-0aTqnZLkY2wKtVR86VOJYszKP4InKp.jpeg",
       description: "Comprehensive coverage of distinguished honorees in real estate",
     },
+    // {
+    //   name: "ZEE5 Business",
+    //   image: "",
+    //   description: "Featured coverage of RRL's award-winning achievements in real estate",
+    // },
+    // {
+    //   name: "Multiple International Outlets",
+    //   image: "",
+    //   description: "Coverage across US World Today, Daily Hunt, Indo-Asian News Service, and more",
+    // },
+    // {
+    //   name: "The Print",
+    //   image: "",
+    //   description: "In-depth coverage of the 5th Global Real Estate Brand Awards 2023",
+    // },
+    // {
+    //   name: "British Columbia Times",
+    //   image: "",
+    //   description: "International recognition of RRL's remarkable achievements",
+    // },
+    // {
+    //   name: "London Channel News",
+    //   image: "",
+    //   description: "Global media coverage highlighting RRL's industry leadership",
+    // },
+    // {
+    //   name: "World News Network",
+    //   image: "",
+    //   description: "Comprehensive coverage of distinguished honorees in real estate",
+    // },
   ]
 
   return (
@@ -834,7 +834,7 @@ function LegacyAchievements() {
         <div className="mb-12 md:mb-20 grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="relative rounded-3xl bg-black/30 border border-gold-800 p-4 sm:p-6 shadow-2xl">
             <Image
-              src="/zee.jpeg"
+              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055741/zee_v9vmto.jpg"
               alt="5th Global Real Estate Brand Awards 2023"
               width={600}
               height={400}

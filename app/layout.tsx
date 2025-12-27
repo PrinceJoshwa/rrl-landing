@@ -242,6 +242,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import WhatsAppChat from "@/components/Whatsappchat";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -336,7 +337,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <Header />
         <main>{children}</main>
+        <WhatsAppChat />
         <Footer />
+        
       </body>
     </html>
   );
