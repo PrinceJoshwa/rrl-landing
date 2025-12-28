@@ -652,6 +652,7 @@ export default function ProjectsPage() {
                 <div className="relative group">
                   {/* Gradient Border Effect */}
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-gold-300 to-yellow-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                  <Link href="/channel-partners">
                   <button className="relative px-6 py-3.5 bg-black rounded-full leading-none flex items-center gap-3">
                     <span className="flex items-center justify-center bg-gold-500 rounded-full p-1">
                       <UserCheck className="w-4 h-4 text-black" />
@@ -661,6 +662,7 @@ export default function ProjectsPage() {
                       {/* <span className="text-gold-100 font-semibold text-sm">DesignHive Exclusive</span> */}
                     </div>
                   </button>
+                  </Link>
                 </div>
               </div>
 

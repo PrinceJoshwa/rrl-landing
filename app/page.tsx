@@ -5,7 +5,7 @@ import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { motion, Variants, useScroll, useTransform } from "framer-motion"
+import { motion, Variants, useScroll, useTransform, AnimatePresence} from "framer-motion"
 
 // UI Components
 import { Button } from "@/components/ui/button"
@@ -53,7 +53,10 @@ import {
   TrendingUp,
   Globe,
   Handshake, // Added for WhatsApp
+  X, User, Smartphone,
+  Loader2, CheckCircle
 } from "lucide-react"
+import { useForm, ValidationError } from '@formspree/react'
 
 const HeroImageBanner = () => {
   return (
@@ -98,7 +101,13 @@ const HeroImageBanner = () => {
 // ========== 1. HERO COMPONENT ==========
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(false)
+  // const [isVRModalOpen, setIsVRModalOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  // 1. State to control the popup
+  const [isVRModalOpen, setIsVRModalOpen] = useState(false)
+  
+  // 2. Formspree Hook (ID: xkgkyavn)
+  const [state, handleSubmit] = useForm("xkgkyavn");
 
   const slides = [
     {
@@ -175,26 +184,135 @@ function Hero() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col gap-4 sm:flex-row pt-4">
-                <Link href="/projects">
-                  <Button
-                    size="lg"
-                    className="group w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold text-black bg-gold-400 hover:bg-gold-500 transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)]"
-                  >
-                    Explore RRL Properties
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="group w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold text-gold-400 border-gold-400 hover:bg-gold-950 transition-all duration-300"
-                  >
-                    Book a Virtual Tour
-                  </Button>
-                </Link>
-              </div>
+{/* ========== THE BUTTONS ========== */}
+        <div className="flex flex-col gap-4 sm:flex-row pt-4 justify-center md:justify-start">
+            <Link href="/projects">
+              <Button
+                size="lg"
+                className="group w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold text-black bg-[#d9a406] hover:bg-[#b08505] transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)]"
+              >
+                Explore RRL Properties
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+
+            {/* This Button now opens the Modal */}
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setIsVRModalOpen(true)}
+              className="group w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold text-[#d9a406] border-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300"
+            >
+              Book a Virtual Tour
+            </Button>
+        </div>
+
+        {/* ========== THE POPUP FORM (Required) ========== */}
+      <AnimatePresence>
+        {isVRModalOpen && (
+          <motion.div 
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsVRModalOpen(false)}
+          >
+            <motion.div 
+              className="bg-[#111] border border-[#d9a406] p-8 rounded-2xl w-full max-w-md relative shadow-[0_0_50px_rgba(217,164,6,0.15)]"
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button 
+                onClick={() => setIsVRModalOpen(false)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              
+              {state.succeeded ? (
+                // Success Message
+                <div className="flex flex-col items-center justify-center py-6 text-center animate-in fade-in zoom-in duration-500">
+                  <CheckCircle className="w-16 h-16 text-[#d9a406] mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-2">Booking Confirmed!</h3>
+                  <p className="text-gray-400 mb-6">We'll contact you shortly to schedule your VR experience.</p>
+                  <Button onClick={() => setIsVRModalOpen(false)} variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black">Close</Button>
+                </div>
+              ) : (
+                // The Form
+                <>
+                  <div className="text-center mb-8">
+                     <h3 className="text-2xl font-bold text-white mb-2">
+                       Book <span className="text-[#d9a406]">VR Experience</span>
+                     </h3>
+                     <p className="text-gray-400 text-sm">Fill in your details to schedule a session.</p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <input type="hidden" name="subject" value="Hero Section - VR Booking" />
+                    
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <User className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="name" 
+                            type="text" 
+                            placeholder="Your Name" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                            required 
+                          />
+                       </div>
+                    </div>
+
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <Smartphone className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="phone" 
+                            type="tel" 
+                            placeholder="Phone Number" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                            required 
+                          />
+                       </div>
+                    </div>
+
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="email" 
+                            type="email" 
+                            placeholder="Email Address" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                            required 
+                          />
+                          <ValidationError prefix="Email" field="email" errors={state.errors} />
+                       </div>
+                    </div>
+
+                    <Button 
+                      type="submit" 
+                      disabled={state.submitting} 
+                      className="w-full bg-[#d9a406] text-black font-bold text-lg h-12 hover:bg-[#b08505] mt-4"
+                    >
+                      {state.submitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" /> Scheduling...
+                        </>
+                      ) : (
+                        "Confirm Booking"
+                      )}
+                    </Button>
+                  </form>
+                </>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
               {/* Trust Indicators */}
               <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-gray-800">
@@ -571,7 +689,7 @@ const AwardsSection = () => {
                 </Button>
               </Link>
 
-              <Link href="/channel-partner">
+              <Link href="/channel-partners">
                 <Button className="rounded-full px-8 py-7 bg-[#d9a406] text-black hover:bg-white border-2 border-[#d9a406] hover:border-white transition-all duration-300 font-bold text-lg w-full sm:w-auto">
                   <Handshake className="mr-3 h-6 w-6" />
                   Partner With Us

@@ -10042,10 +10042,15 @@ import {
   PaintRoller,
   ArrowUpFromLine,
   BatteryCharging,
-  Droplets
+  Droplets,
+  CheckCircle,
+  User,
+  Smartphone,
+  Calendar,
+  Loader2
 } from "lucide-react"
 import type React from "react"
-
+import { useForm, ValidationError } from '@formspree/react'
 // --- Shared Form Data Type ---
 type FormData = {
   name: string
@@ -10537,7 +10542,12 @@ export default function Home() {
   }
 
   // ========== VR SHOWCASE SECTION ==========
-  const VRShowcaseSection = () => {
+const VRShowcaseSection = () => {
+  const [isVRModalOpen, setIsVRModalOpen] = useState(false)
+  
+  // Formspree Integration (ID: xkgkyavn)
+  const [state, handleSubmit] = useForm("xkgkyavn");
+
   return (
     <section className="py-20 bg-black border-t border-[#333]">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
@@ -10556,14 +10566,18 @@ export default function Home() {
             </h2>
             <div className="w-16 h-1 bg-[#d9a406] rounded-full"></div>
             <p className="text-xl text-gray-400">
-              Experience living in your next home
+              Experience living in your next home before you buy. Book a session to explore our properties in immersive VR.
             </p>
-            <Button size="lg" className="bg-[#d9a406] text-black hover:bg-white font-bold gap-2">
+            <Button 
+              size="lg" 
+              className="bg-[#d9a406] text-black hover:bg-white font-bold gap-2"
+              onClick={() => setIsVRModalOpen(true)}
+            >
               <Glasses className="w-5 h-5" /> Book a VR Session Today
             </Button>
           </motion.div>
 
-          {/* Right Image Section — FIXED FOR 584×500 */}
+          {/* Right Image Section */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -10574,16 +10588,14 @@ export default function Home() {
               md:h-[450px]
             "
           >
-            {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
 
             <picture className="block w-full h-full">
-              {/* Mobile Image (584 × 500) */}
+              {/* Mobile Image */}
               <source
                 media="(max-width: 768px)"
                 srcSet="https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/Visualize%20Your%20Home%20Virtually.png?updatedAt=1766849722950"
               />
-
               {/* Desktop Image */}
               <img 
                 src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1600,f_auto,q_auto/v1766481026/Visualize_Your_Home_Virtually_1_qusxhs.png"
@@ -10593,13 +10605,134 @@ export default function Home() {
               />
             </picture>
           </motion.div>
-
         </div>
       </div>
+
+      {/* ========== VR BOOKING MODAL ========== */}
+      <AnimatePresence>
+        {isVRModalOpen && (
+          <motion.div 
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsVRModalOpen(false)}
+          >
+            <motion.div 
+              className="bg-[#111] border border-[#d9a406] p-8 rounded-2xl w-full max-w-md relative shadow-[0_0_50px_rgba(217,164,6,0.15)]"
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button 
+                onClick={() => setIsVRModalOpen(false)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              
+              {state.succeeded ? (
+                // Success State
+                <div className="flex flex-col items-center justify-center py-6 text-center animate-in fade-in zoom-in duration-500">
+                  <CheckCircle className="w-16 h-16 text-[#d9a406] mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-2">Booking Confirmed!</h3>
+                  <p className="text-gray-400 mb-6">We'll contact you shortly to schedule your VR experience.</p>
+                  <Button onClick={() => setIsVRModalOpen(false)} variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black">Close</Button>
+                </div>
+              ) : (
+                // Form State
+                <>
+                  <div className="text-center mb-8">
+                     <h3 className="text-2xl font-bold text-white mb-2">
+                       Book <span className="text-[#d9a406]">VR Experience</span>
+                     </h3>
+                     <p className="text-gray-400 text-sm">Fill in your details to schedule a session.</p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <input type="hidden" name="subject" value="New VR Session Booking" />
+                    
+                    {/* Name */}
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <User className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="name" 
+                            type="text" 
+                            placeholder="Your Name" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                            required 
+                          />
+                       </div>
+                    </div>
+
+                    {/* Phone */}
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <Smartphone className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="phone" 
+                            type="tel" 
+                            placeholder="Phone Number" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                            required 
+                          />
+                       </div>
+                    </div>
+
+                    {/* Email */}
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="email" 
+                            type="email" 
+                            placeholder="Email Address" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                            required 
+                          />
+                          <ValidationError prefix="Email" field="email" errors={state.errors} />
+                       </div>
+                    </div>
+
+                    {/* Preferred Date (Optional Text) */}
+                    <div className="space-y-2">
+                       <div className="relative">
+                          <Calendar className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+                          <input 
+                            name="preferred_date" 
+                            type="text" 
+                            placeholder="Preferred Date/Time (Optional)" 
+                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
+                          />
+                       </div>
+                    </div>
+
+                    <Button 
+                      type="submit" 
+                      disabled={state.submitting} 
+                      className="w-full bg-[#d9a406] text-black font-bold text-lg h-12 hover:bg-[#b08505] mt-4"
+                    >
+                      {state.submitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" /> Scheduling...
+                        </>
+                      ) : (
+                        "Confirm Booking"
+                      )}
+                    </Button>
+                  </form>
+                </>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
-
 // ========== SOLAR POWER SECTION ==========
 const SolarPowerSection = () => {
   return (

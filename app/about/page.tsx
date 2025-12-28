@@ -923,11 +923,11 @@ function Leadership() {
         </div>
 
         {/* CTA Section - ADDED FROM OLD FILE */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <Button className="bg-gold-500 text-black font-semibold px-8 py-4 rounded-full hover:bg-gold-600 hover:shadow-xl transition-all duration-300">
             Read About RRL Leadership
           </Button>
-        </div>
+        </div> */}
       </div>
     </motion.section>
   )
