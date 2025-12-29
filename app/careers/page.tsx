@@ -798,7 +798,7 @@ export default function CareersPage() {
       </section>
 
       {/* ================= 2. LIFE AT RRL / TEAM OUTING ================= */}
-      <section className="py-24 bg-[#111] border-y border-gold-900/30 overflow-hidden relative">
+      {/* <section className="py-24 bg-[#111] border-y border-gold-900/30 overflow-hidden relative">
         <div className="container mx-auto px-4 mb-12 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -814,9 +814,8 @@ export default function CareersPage() {
           </motion.div>
         </div>
 
-        {/* Infinite Marquee */}
         <div className="relative flex w-full overflow-hidden group">
-          {/* Gradient edges */}
+
           <div className="absolute left-0 top-0 z-10 h-full w-16 sm:w-24 md:w-48 bg-gradient-to-r from-[#111] to-transparent" />
           <div className="absolute right-0 top-0 z-10 h-full w-16 sm:w-24 md:w-48 bg-gradient-to-l from-[#111] to-transparent" />
 
@@ -853,7 +852,7 @@ export default function CareersPage() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       
       {/* ================= 3. OPEN ROLES & APPLICATION FORM ================= */}
