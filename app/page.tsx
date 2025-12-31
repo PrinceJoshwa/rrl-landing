@@ -84,7 +84,7 @@ const HeroImageBanner = () => {
           className="relative w-full h-full overflow-hidden"
         >
           <img
-            src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/18.png"
+            src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/RRl%20website%20banners%20(1536%20x%20752%20px)%20(19).png"
             alt="RRL Hero Banner Desktop"
             loading="eager"
             className="w-full h-full object-fill"
@@ -1422,7 +1422,7 @@ function LifeAtRRLGallery() {
           <h2 className="text-4xl md:text-6xl font-playfair font-bold mb-2 text-white">
             Life at <span className="text-gold-500">RRL</span>
           </h2>
-          <p className="text-sm sm:text-xl text-gold-400/80 uppercase tracking-widest font-medium">
+          <p className="text-sm sm:text-xl text-gold-400 uppercase tracking-widest font-medium">
             Team Outing Gallery
           </p>
         </motion.div>
@@ -1567,25 +1567,24 @@ function Stats() {
 }
 
 // ========== 6. TESTIMONIALS COMPONENT (UPDATED ROLES) ==========
+// ========== 6. TESTIMONIALS COMPONENT (COMBINED CONTENT - ORIGINAL UI) ==========
 function Testimonials() {
   const testimonialData = [
     {
       type: "text",
-      name: "Rita Chauhan",
+      name: "Anusha V",
       role: "Happy Home Buyer",
-      location: "Sarjapur, Bengaluru",
+      location: "RRL Palacio",
       rating: 5,
-      testimonial:
-        "I invested in the current building which is located in Sarjapur in Bengaluru. The builder of this apartment Mr. Ram and Mr. Lakshman are a very nice person who accommodated my requests each and every time, there is a great transparency in his business.",
+      testimonial: "After doing lot of research I purchased a flat in RRL Palacio. My kid loves the society! I like their gym, movie theater and rooftop pool.",
     },
     {
       type: "text",
-      name: "Rajesh Kumar",
+      name: "Rama Krishna Kanupuri",
       role: "Happy Home Buyer",
-      location: "Varthur, Bengaluru",
+      location: "RRL Nature Woods",
       rating: 5,
-      testimonial:
-        "Exceptional service and quality construction. The team at RRL Builders is professional and delivers on their promises. The amenities and location of RRL Palm Altezze exceeded my expectations.",
+      testimonial: "Best apartments with good amenities. Build quality is excellent. Ram and Lakshman are genuine, humble and have great knowledge in construction. Highly recommend for a visit!",
     },
     {
       type: "video",
@@ -1594,21 +1593,19 @@ function Testimonials() {
     },
     {
       type: "text",
-      name: "Priya Sharma",
+      name: "Kishore Babu",
       role: "Happy Home Buyer",
-      location: "Medahalli, Bengaluru",
+      location: "RRL Palm Altezze",
       rating: 5,
-      testimonial:
-        "RRL Palacio has been a dream come true for our family. The construction quality is top-notch, and the customer service throughout the buying process was excellent. The location is perfect with great connectivity.",
+      testimonial: "Structure quality is very good, very good atmosphere with all around Greenery and spacious balcony view. Great amenities like home theater, steam & sauna, gym, open barbeque facing swimming pool. Very impressed with CRECHE and Automation (Schneider make). Best choice for anyone!",
     },
     {
       type: "text",
-      name: "Suman Narayan",
+      name: "Samta Goyat",
       role: "Happy Home Buyer",
-      location: "Bengaluru",
+      location: "RRL Nature Woods",
       rating: 5,
-      testimonial:
-        "Excellent! Nice workmanship, got interiors done in lesser time than I thought. It's quick, nice and neat. Even budget friendly too. I highly recommend RRL for interior designing.",
+      testimonial: "Construction quality is top-notch. Peaceful location away from busy areas. Ram and Lakshman made the process smooth with no fake promises. Kavya and team is really hard working!",
     },
     {
       type: "video",
@@ -1617,60 +1614,39 @@ function Testimonials() {
     },
     {
       type: "text",
-      name: "Subhash S",
+      name: "Prabhakaran Surineni",
       role: "Happy Home Buyer",
-      location: "Bengaluru",
+      location: "RRL Palm Altezze",
       rating: 5,
-      testimonial:
-        "Nice place to get your design in mind to make live, highly recommend for designing your dream office and home.",
+      testimonial: "This location is rarely available at such a good price, especially including interiors. Construction quality is very good. Marketing Manager Kavya is very professional - always available to answer questions and treated us politely. RRL Builders deliver good quality with a great team!",
     },
     {
       type: "text",
-      name: "Neelima Maryam",
+      name: "Rahil R",
       role: "Happy Home Buyer",
-      location: "Bengaluru",
+      location: "RRL Palacio",
       rating: 5,
-      testimonial: "Very happy with the designs and budget.",
+      testimonial: "Spacious and well-designed apartments. Friendly staff, great amenities like clubhouse, gym, pool, and sports courts. Pet-friendly and perfect for families. Highly recommended!",
     },
     {
       type: "text",
-      name: "Attili Nikhil",
+      name: "Ravi Viswanathan",
       role: "Happy Home Buyer",
-      location: "Bengaluru",
+      location: "RRL Nature Woods",
       rating: 5,
-      testimonial:
-        "Had a great experience with RRL. They execute what we tell them. I highly recommend their 3D designs. They respond to us with great patience and even their price is very reasonable.",
+      testimonial: "One of the best apartments with good amenities in Bengaluru at a non-polluted area. Ram and Lakshmanan are friendly and polite. Worth investment!",
     },
   ]
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  }
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 50, damping: 15 }
-    },
-  }
 
   return (
     <section className="relative py-24 overflow-hidden">
       {/* BACKGROUND IMAGE - Responsive */}
       <div className="absolute inset-0 -z-10">
         <picture>
-          {/* Mobile Background */}
           <source
             media="(max-width: 768px)"
             srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_768,c_scale/v1766479785/CLIENTS_BACKGROUND_1_sfkdst.png"
           />
-          {/* Desktop Background */}
           <img
             src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766479785/CLIENTS_BACKGROUND_1_sfkdst.png"
             alt="Clients background"
@@ -1687,7 +1663,7 @@ function Testimonials() {
             Hear From Our <span className="text-[#d9a406]">Clients</span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
-            Real stories from families who found their dream home with RRL.
+            Real stories from families across Palacio, Palm Altezze & Nature Woods who found their dream home with RRL.
           </p>
         </div>
 

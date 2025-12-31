@@ -959,7 +959,7 @@ export default function NRICornerPage() {
                 <motion.div variants={itemVar} className="group bg-gradient-to-br from-neutral-900 to-black p-10 rounded-[2rem] border border-neutral-800 hover:border-gold-500/50 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/5 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-gold-500/10"></div>
                     <div className="w-14 h-14 bg-gold-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold-500 transition-colors duration-500">
-                        <Building2 className="w-7 h-7 text-gold-500 group-hover:text-black transition-colors" />
+                        <Building2 className="w-7 h-7 text-gold-500 group-hover:text-white transition-colors" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4 font-playfair">Company Overview</h3>
                     <p className="text-gray-400 leading-relaxed text-sm">
@@ -971,7 +971,7 @@ export default function NRICornerPage() {
                 <motion.div variants={itemVar} className="group bg-gradient-to-br from-neutral-900 to-black p-10 rounded-[2rem] border border-neutral-800 hover:border-gold-500/50 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/5 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-gold-500/10"></div>
                     <div className="w-14 h-14 bg-gold-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold-500 transition-colors duration-500">
-                        <Target className="w-7 h-7 text-gold-500 group-hover:text-black transition-colors" />
+                        <Target className="w-7 h-7 text-gold-500 group-hover:text-white transition-colors" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4 font-playfair">Vision & Mission</h3>
                     <div className="space-y-3">
@@ -984,7 +984,7 @@ export default function NRICornerPage() {
                 <motion.div variants={itemVar} className="group bg-gradient-to-br from-neutral-900 to-black p-10 rounded-[2rem] border border-neutral-800 hover:border-gold-500/50 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/5 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-gold-500/10"></div>
                     <div className="w-14 h-14 bg-gold-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold-500 transition-colors duration-500">
-                        <Users className="w-7 h-7 text-gold-500 group-hover:text-black transition-colors" />
+                        <Users className="w-7 h-7 text-gold-500 group-hover:text-white transition-colors" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4 font-playfair">Group of Companies</h3>
                     <p className="text-gray-400 leading-relaxed text-sm">
@@ -1097,7 +1097,7 @@ export default function NRICornerPage() {
                         className="relative z-10 bg-black p-8 rounded-3xl border border-neutral-800 text-center hover:border-gold-500 transition-all duration-300 group hover:-translate-y-2 shadow-xl"
                     >
                         <div className="w-16 h-16 bg-neutral-900 rounded-full flex items-center justify-center mb-6 mx-auto border border-gold-500/30 group-hover:bg-gold-500 group-hover:border-gold-500 transition-all duration-500">
-                            <step.icon className="w-8 h-8 text-gold-500 group-hover:text-black transition-colors" />
+                            <step.icon className="w-8 h-8 text-gold-500 group-hover:text-white transition-colors" />
                         </div>
                         <h4 className="text-xl font-bold text-white mb-3 font-playfair">{step.title}</h4>
                         <p className="text-sm text-gray-400 leading-relaxed">{step.text}</p>
