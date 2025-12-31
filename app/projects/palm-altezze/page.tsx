@@ -10175,26 +10175,10 @@ export default function Home() {
     {
       id: 1,
       desktop:
-        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/HOME%20HERO%201.png",
-      mobile:
-        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/HOME%20HERO%201.png?updatedAt=1766849907651",
-      alt: "RRL Hero Banner 1",
-    },
-    {
-      id: 2,
-      desktop:
         "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/ok.png",
       mobile:
         "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/ok.png?updatedAt=1766849914416",
-      alt: "RRL Hero Banner 2",
-    },
-    {
-      id: 3,
-      desktop:
-        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/PALM%20ALTEZZE%201.1.png",
-      mobile:
-        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/PALM%20ALTEZZE%201.1.png?updatedAt=1766849906858",
-      alt: "RRL Hero Banner 3",
+      alt: "RRL Palm Altezze Hero Banner",
     },
   ];
 
@@ -11146,7 +11130,7 @@ const HealthyLivingSection = () => (
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Masterfully <span className="text-[#d9a406]">Planned</span></h2>
-              <p className="text-gray-400 max-w-xl">103 Units | B+G+6 Floors | No Common Walls <br/>Choose from our range of 16 distinct unit layouts.</p>
+              <p className="text-gray-400 max-w-xl">103 Units | B+G+6 Floors <br/>Choose from our range of 16 distinct unit layouts.</p>
             </div>
             <div className="flex gap-2 bg-[#111] p-1 rounded-lg border border-white/10">
               {["all", "2BHK", "3BHK"].map((tab) => (
@@ -11332,19 +11316,19 @@ const HealthyLivingSection = () => (
     const testimonialData = [
       {
         type: "text",
-        name: "Rita Chauhan",
+        name: "Anusha V",
         role: "Happy Home Buyer",
-        location: "Sarjapur, Bengaluru",
+        location: "RRL Palacio",
         rating: 5,
-        testimonial: "I invested in the current building which is located in Sarjapur in Bengaluru. The builder of this apartment Mr. Ram and Mr. Lakshman are a very nice person who accommodated my requests each and every time, there is a great transparency in his business.",
+        testimonial: "After doing lot of research I purchased a flat in RRL Palacio. My kid loves the society! I like their gym, movie theater and rooftop pool.",
       },
       {
         type: "text",
-        name: "Rajesh Kumar",
+        name: "Rahil R",
         role: "Happy Home Buyer",
-        location: "Varthur, Bengaluru",
+        location: "RRL Palacio",
         rating: 5,
-        testimonial: "Exceptional service and quality construction. The team at RRL Builders is professional and delivers on their promises. The amenities and location of RRL Palm Altezze exceeded my expectations.",
+        testimonial: "Spacious and well-designed apartments. Friendly staff, great amenities like clubhouse, gym, pool, and sports courts. Pet-friendly and perfect for families. Highly recommended!",
       },
       {
         type: "video",
@@ -11353,19 +11337,19 @@ const HealthyLivingSection = () => (
       },
       {
         type: "text",
-        name: "Priya Sharma",
+        name: "Chaitanya Samprajan",
         role: "Happy Home Buyer",
-        location: "Medahalli, Bengaluru",
+        location: "RRL Palacio",
         rating: 5,
-        testimonial: "RRL Palacio has been a dream come true for our family. The construction quality is top-notch, and the customer service throughout the buying process was excellent. The location is perfect with great connectivity.",
+        testimonial: "Good builder & team. Value for money. Well planned & organised. Shout out to Kavya - she works tirelessly to accommodate customers. They won best amenities award!",
       },
       {
         type: "text",
-        name: "Suman Narayan",
+        name: "Nagarajan K",
         role: "Happy Home Buyer",
-        location: "Bengaluru",
+        location: "RRL Palacio",
         rating: 5,
-        testimonial: "Excellent! Nice workmanship, got interiors done in lesser time than I thought. It's quick, nice and neat. Even budget friendly too. I highly recommend RRL for interior designing.",
+        testimonial: "The marketing team was very supportive with documents and responded to all queries on time. Premium amenities at an affordable price point in this neighborhood.",
       },
       {
         type: "video",
@@ -11374,27 +11358,27 @@ const HealthyLivingSection = () => (
       },
       {
         type: "text",
-        name: "Subhash S",
+        name: "Kishore Babu",
         role: "Happy Home Buyer",
-        location: "Bengaluru",
+        location: "RRL Palm Altezze",
         rating: 5,
-        testimonial: "Nice place to get your design in mind to make live, highly recommend for designing your dream office and home.",
+        testimonial: "Structure quality is very good, very good atmosphere with all around Greenery and spacious balcony view. Great amenities like home theater, steam & sauna, gym, open barbeque facing swimming pool. Very impressed with CRECHE and Automation (Schneider make). Best choice for anyone!",
       },
       {
         type: "text",
-        name: "Neelima Maryam",
+        name: "Prabhakaran Surineni",
         role: "Happy Home Buyer",
-        location: "Bengaluru",
+        location: "RRL Palm Altezze",
         rating: 5,
-        testimonial: "Very happy with the designs and budget.",
+        testimonial: "This location is rarely available at such a good price, especially including interiors. Construction quality is very good. Marketing Manager Kavya is very professional - always available to answer questions and treated us politely. RRL Builders deliver good quality with a great team!",
       },
       {
         type: "text",
-        name: "Attili Nikhil",
+        name: "Sagar Mana",
         role: "Happy Home Buyer",
-        location: "Bengaluru",
+        location: "RRL Palm Altezze",
         rating: 5,
-        testimonial: "Had a great experience with RRL. They execute what we tell them. I highly recommend their 3D designs. They respond to us with great patience and even their price is very reasonable.",
+        testimonial: "Nice apartment, Premium flat with no common wall, future strategic location. Many new companies are setting up their offices, units, R&D Centers including manufacturing firms. Potential growth in this area!",
       },
     ]
 

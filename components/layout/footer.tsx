@@ -113,6 +113,7 @@ const projectLinks = [
   // { name: "RRL Sequoia", href: "/projects/sequoia" },
   { name: "RRL Palm Altezze", href: "/projects/palm-altezze" },
   { name: "RRL Nature Woods", href: "/projects/nature-woods" },
+  { name: "RRL NC-216", href: "/projects/nc-216" },
   // { name: "RRL Towers", href: "/projects/towers" },
   { name: "RRL Commercial", href: "/projects/commercial" },
 ]

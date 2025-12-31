@@ -203,32 +203,32 @@ const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
                     
                     <form onSubmit={handleSubmit} className="space-y-5">
                       <div className="relative">
-                          <User className="absolute left-3 top-3.5 w-5 h-5 text-gray-500" />
+                          <User className="absolute left-3 top-3.5 w-5 h-5 text-white" />
                           <input 
                             name="name" 
                             type="text" 
                             placeholder="Your Name" 
-                            className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-600 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all" 
+                            className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-white focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all" 
                             required
                           />
                       </div>
                       <div className="relative">
-                          <Smartphone className="absolute left-3 top-3.5 w-5 h-5 text-gray-500" />
+                          <Smartphone className="absolute left-3 top-3.5 w-5 h-5 text-white" />
                           <input 
                             name="phone" 
                             type="tel" 
                             placeholder="Phone Number" 
-                            className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-600 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all" 
+                            className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-white focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all" 
                             required
                           />
                       </div>
                       <div className="relative">
-                          <Mail className="absolute left-3 top-3.5 w-5 h-5 text-gray-500" />
+                          <Mail className="absolute left-3 top-3.5 w-5 h-5 text-white" />
                           <input 
                             name="email" 
                             type="email" 
                             placeholder="Email Address" 
-                            className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-600 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all" 
+                            className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-white focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all" 
                             required
                           />
                           <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -265,7 +265,7 @@ const HighlightsSection = () => (
           { icon: Star, title: "No Pre-EMI", desc: "Pay nothing until possession. Stress-free investment." },
           { icon: Award, title: "Early Bird Price", desc: "Launch prices will increase. Lock in the best rate now." },
           { icon: Zap, title: "High Growth", desc: "Located in a rapidly developing corridor of South Bangalore." },
-          { icon: ShieldCheck, title: "Premium Living", desc: "Top-tier 2 & 3 BHK units at affordable rates." }
+          { icon: ShieldCheck, title: "Affordable", desc: "Top-tier 2 & 3 BHK units at affordable rates." }
         ].map((item, idx) => (
           <motion.div key={idx} variants={fadeIn} className="group">
             <Card className="bg-black/50 border border-white/10 p-8 h-full hover:border-[#d9a406]/50 transition-colors duration-300 relative overflow-hidden">
@@ -312,6 +312,374 @@ const AmenitiesSection = () => {
                 <span className="text-gray-300 font-medium group-hover:text-white text-lg">{item.name}</span>
             </motion.div>
             ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ========== CONFIGURATIONS SECTION ==========
+const ConfigurationsSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
+  const [activeForm, setActiveForm] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState<Record<string, boolean>>({})
+
+  const handleUnlockSubmit = async (e: React.FormEvent<HTMLFormElement>, configType: string) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    const formData = new FormData(e.currentTarget)
+    formData.append("Interest", `NC 216 - ${configType} Configuration`)
+
+    try {
+      const response = await fetch("https://formspree.io/f/mkonkbkk", {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+
+      if (response.ok) {
+        setSubmitted(prev => ({ ...prev, [configType]: true }))
+        setActiveForm(null)
+      } else {
+        alert("There was an error submitting the form.")
+      }
+    } catch (error) {
+      alert("There was an error submitting the form.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const configurations = [
+    {
+      type: "3 BHK",
+      tag: "Coveted",
+      description: "Spacious living with premium finishes",
+      features: ["Spacious Site Plan", "Modern Kitchen", "3 Bathrooms"],
+      gradient: "from-[#d9a406]/20 via-transparent to-transparent",
+    },
+    {
+      type: "4 BHK",
+      tag: "Coveted",
+      description: "Ultimate luxury for discerning families",
+      features: ["Master Suite", "Private Study", "4 Bathrooms"],
+      gradient: "from-[#d9a406]/20 via-transparent to-transparent",
+    },
+  ]
+
+  return (
+    <section className="py-24 bg-black relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#d9a406]/10 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full border border-[#d9a406]/50 bg-[#d9a406]/10 text-[#d9a406] text-sm font-bold uppercase tracking-wider mb-6">
+              Premium Living
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+              <span className="text-[#d9a406]">Configurations</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Choose from our thoughtfully designed floor plans that maximize space and comfort
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Configuration Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {configurations.map((config, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.15 }}
+              className="group relative"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${config.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+              
+              <div className="relative bg-[#111] border border-white/10 rounded-3xl p-8 hover:border-[#d9a406]/50 transition-all duration-500 overflow-hidden">
+                {/* Decorative Corner */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#d9a406]/5 rounded-bl-full"></div>
+                
+                {/* Tag */}
+                <div className="inline-flex items-center gap-2 mb-6">
+                  <span className="px-3 py-1 rounded-full bg-[#d9a406] text-black text-xs font-bold uppercase tracking-wider">
+                    {config.tag}
+                  </span>
+                </div>
+
+                {/* Type */}
+                <h3 className="text-5xl md:text-6xl font-bold text-white mb-4 group-hover:text-[#d9a406] transition-colors duration-300">
+                  {config.type}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-400 mb-6">
+                  {config.description}
+                </p>
+
+                {/* Features */}
+                <ul className="space-y-3 mb-8">
+                  {config.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-300">
+                      <CheckCircle className="w-5 h-5 text-[#d9a406]" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA / Form Section */}
+                {submitted[config.type] ? (
+                  <div className="text-center py-4">
+                    <CheckCircle className="w-10 h-10 text-green-500 mx-auto mb-3" />
+                    <p className="text-white font-bold">Thank You!</p>
+                    <p className="text-gray-400 text-sm">We'll share pricing details shortly.</p>
+                  </div>
+                ) : activeForm === config.type ? (
+                  <form 
+                    onSubmit={(e) => handleUnlockSubmit(e, config.type)} 
+                    className="space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-300"
+                  >
+                    <div className="relative">
+                      <User className="absolute left-3 top-3 w-4 h-4 text-gray-500" />
+                      <input 
+                        name="name" 
+                        type="text" 
+                        placeholder="Your Name" 
+                        required
+                        className="w-full bg-black/50 border border-white/20 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder:text-white text-sm focus:border-[#d9a406] outline-none transition-colors"
+                      />
+                    </div>
+                    <div className="relative">
+                      <Smartphone className="absolute left-3 top-3 w-4 h-4 text-gray-500" />
+                      <input 
+                        name="phone" 
+                        type="tel" 
+                        placeholder="Phone Number" 
+                        required
+                        className="w-full bg-black/50 border border-white/20 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder:text-white text-sm focus:border-[#d9a406] outline-none transition-colors"
+                      />
+                    </div>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-3 w-4 h-4 text-gray-500" />
+                      <input 
+                        name="email" 
+                        type="email" 
+                        placeholder="Email Address" 
+                        required
+                        className="w-full bg-black/50 border border-white/20 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder:text-white text-sm focus:border-[#d9a406] outline-none transition-colors"
+                      />
+                    </div>
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setActiveForm(null)}
+                        className="flex-1 py-3 px-4 rounded-lg border border-white/20 text-white font-medium text-sm hover:bg-white/10 transition-colors"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="flex-1 py-3 px-4 rounded-lg bg-[#d9a406] text-black font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#b08505] transition-colors"
+                      >
+                        {isSubmitting ? (
+                          <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
+                        ) : (
+                          <>Get Price</>
+                        )}
+                      </button>
+                    </div>
+                  </form>
+                ) : (
+                  <button
+                    onClick={() => setActiveForm(config.type)}
+                    className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#d9a406] to-[#b08505] text-black font-bold text-lg flex items-center justify-center gap-3 group-hover:shadow-[0_0_30px_rgba(217,164,6,0.3)] transition-all duration-300 hover:scale-[1.02]"
+                  >
+                    Unlock Price
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <p className="text-gray-500 text-sm">
+            Submit your interest to receive detailed floor plans and exclusive pricing
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+// ========== PROJECT AT A GLANCE SECTION ==========
+const ProjectGlanceSection = () => {
+  // Animated Counter Component
+  const AnimatedCounter = ({ 
+    end, 
+    duration = 2000, 
+    suffix = "", 
+    prefix = "",
+    decimals = 0 
+  }: { 
+    end: number; 
+    duration?: number; 
+    suffix?: string; 
+    prefix?: string;
+    decimals?: number;
+  }) => {
+    const [count, setCount] = useState(0)
+    const [hasAnimated, setHasAnimated] = useState(false)
+    const ref = React.useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !hasAnimated) {
+            setHasAnimated(true)
+            let startTime: number | null = null
+            const step = (timestamp: number) => {
+              if (!startTime) startTime = timestamp
+              const progress = Math.min((timestamp - startTime) / duration, 1)
+              const current = progress * end
+              setCount(current)
+              if (progress < 1) {
+                window.requestAnimationFrame(step)
+              }
+            }
+            window.requestAnimationFrame(step)
+          }
+        },
+        { threshold: 0.5 }
+      )
+
+      if (ref.current) {
+        observer.observe(ref.current)
+      }
+
+      return () => observer.disconnect()
+    }, [end, duration, hasAnimated])
+
+    return (
+      <div ref={ref}>
+        <span>{prefix}{decimals > 0 ? count.toFixed(decimals) : Math.floor(count)}{suffix}</span>
+      </div>
+    )
+  }
+
+  const glanceStats = [
+    {
+      label: "Site Plan",
+      value: "Spacious",
+      subValue: "Layout",
+      isText: true,
+      icon: Building2,
+    },
+    {
+      label: "Configuration",
+      value: "2, 3 BHK",
+      isText: true,
+      icon: Maximize2,
+    },
+    {
+      label: "Land Size",
+      numValue: 2.06,
+      suffix: " Acres",
+      decimals: 2,
+      icon: MapPin,
+    },
+    {
+      label: "Total Units",
+      numValue: 216,
+      suffix: " Units",
+      icon: Building2,
+    },
+  ]
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-black to-[#0a0a0a] relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#d9a406]/5 via-transparent to-transparent"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Project At A <span className="text-[#d9a406]">Glance</span>
+            </h2>
+            <div className="w-24 h-1 bg-[#d9a406] mx-auto rounded-full"></div>
+          </motion.div>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+          {glanceStats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group"
+            >
+              <div className="relative bg-[#111] border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:border-[#d9a406]/50 transition-all duration-500 h-full">
+                {/* Icon */}
+                <div className="w-14 h-14 bg-[#d9a406]/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#d9a406]/20 transition-colors">
+                  <stat.icon className="w-7 h-7 text-[#d9a406]" />
+                </div>
+
+                {/* Value */}
+                <div className="text-3xl md:text-4xl font-bold text-[#d9a406] mb-2">
+                  {stat.isText ? (
+                    <>
+                      <span>{stat.value}</span>
+                      {stat.subValue && (
+                        <span className="block text-xl md:text-2xl text-white/80 mt-1">{stat.subValue}</span>
+                      )}
+                    </>
+                  ) : (
+                    <AnimatedCounter 
+                      end={stat.numValue || 0} 
+                      suffix={stat.suffix} 
+                      decimals={stat.decimals || 0}
+                    />
+                  )}
+                </div>
+
+                {/* Label */}
+                <p className="text-gray-400 text-sm uppercase tracking-wider font-medium">
+                  {stat.label}
+                </p>
+
+                {/* Hover Glow */}
+                <div className="absolute inset-0 rounded-2xl bg-[#d9a406]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -589,12 +957,14 @@ export default function Nc216Page() {
          </div>
       </nav>
 
-      <HeroImageBanner />
+      {/* <HeroImageBanner /> */}
       <HeroSection onOpenModal={() => setIsModalOpen(true)} />
       <HighlightsSection />
-      <AmenitiesSection />
+      {/* <AmenitiesSection /> */}
+      <ConfigurationsSection onOpenModal={() => setIsModalOpen(true)} />
+      <ProjectGlanceSection />
       {/* <FloorPlansSection /> */}
-      <LocationSection />
+      {/* <LocationSection /> */}
       <FooterSection onOpenModal={() => setIsModalOpen(true)} />
 
       {/* Global Enquiry Modal */}

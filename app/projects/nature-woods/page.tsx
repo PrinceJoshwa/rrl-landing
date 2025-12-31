@@ -3151,6 +3151,193 @@ const HeroImageBanner = () => {
   </section>
 )
 
+  // ========== REVIEWS SECTION ==========
+  const ReviewsSection = () => {
+    const testimonialData = [
+      {
+        type: "text",
+        name: "Rama Krishna Kanupuri",
+        role: "Happy Home Buyer",
+        location: "RRL Nature Woods",
+        rating: 5,
+        testimonial: "Best apartments with good amenities. Build quality is excellent. Ram and Lakshman are genuine, humble and have great knowledge in construction. Highly recommend for a visit!",
+      },
+      {
+        type: "text",
+        name: "Samta Goyat",
+        role: "Happy Home Buyer",
+        location: "RRL Nature Woods",
+        rating: 5,
+        testimonial: "Construction quality is top-notch. Peaceful location away from busy areas. Ram and Lakshman made the process smooth with no fake promises. Kavya and team is really hard working!",
+      },
+      {
+        type: "video",
+        name: "VideoTestimonial1",
+        videoUrl: "https://www.youtube.com/embed/VPPeIBhPXSc?autoplay=0&mute=0&loop=1&playlist=VPPeIBhPXSc&controls=1",
+      },
+      {
+        type: "text",
+        name: "Shyam Mohan",
+        role: "Happy Home Buyer",
+        location: "RRL Nature Woods",
+        rating: 5,
+        testimonial: "Staying here since May 2023. Good construction quality with excellent amenities - swimming pool, gym, indoor games, function hall and amphitheatre.",
+      },
+      {
+        type: "text",
+        name: "Ravi Viswanathan",
+        role: "Happy Home Buyer",
+        location: "RRL Nature Woods",
+        rating: 5,
+        testimonial: "One of the best apartments with good amenities in Bengaluru at a non-polluted area. Ram and Lakshmanan are friendly and polite. Worth investment!",
+      },
+      {
+        type: "video",
+        name: "VideoTestimonial2",
+        videoUrl: "https://www.youtube.com/embed/-IcK_Ac0dVQ?autoplay=0&mute=0&loop=1&playlist=-IcK_Ac0dVQ&controls=1",
+      },
+      {
+        type: "text",
+        name: "Chandrakalag",
+        role: "Happy Home Buyer",
+        location: "RRL Nature Woods",
+        rating: 5,
+        testimonial: "Great project with furnished flats. Manager Kavya explained everything clearly. Genuine, humble and decent conversation. One of the best apartments - worth investing!",
+      },
+      {
+        type: "text",
+        name: "iRReddy",
+        role: "Happy Home Buyer",
+        location: "RRL Nature Woods",
+        rating: 5,
+        testimonial: "Best part is the positive, peaceful location with nature surrounding it. Just 10 mins to Sarjapur main market. Top level maintenance, amenities and security systems!",
+      },
+      {
+        type: "text",
+        name: "Murali Dabbaru",
+        role: "Happy Home Buyer",
+        location: "RRL Nature Woods",
+        rating: 5,
+        testimonial: "Very smooth buying experience. Prime location, good connectivity, nice amenities, reasonable pricing. Genuine and honest management. Strongly recommended!",
+      },
+    ]
+
+    // --- GOOGLE ICON SVG ---
+    const GoogleIcon = () => (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+      </svg>
+    )
+
+    return (
+      <section className="py-24 relative bg-gray-50 overflow-hidden">
+        {/* Background Image Overlay */}
+        <div className="absolute inset-0 z-0 pointer-events-none mix-blend-multiply"
+          style={{
+            backgroundImage: `url('https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766479785/CLIENTS_BACKGROUND_1_sfkdst.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+
+        {/* Content Container */}
+        <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+          {/* Centered Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-serif text-white font-bold">Client Testimonials</h2>
+            <div className="flex items-center gap-3 mt-4 justify-center">
+              <div className="flex items-center gap-1 bg-white border border-gray-200 px-3 py-1 rounded-full shadow-sm">
+                <GoogleIcon />
+                <span className="font-bold text-gray-700 text-sm">Google Reviews</span>
+              </div>
+              <div className="flex gap-1">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <span key={i} className="text-[#FFB400] text-lg">★</span>
+                ))}
+              </div>
+              <span className="text-gray-600 text-sm font-medium">5.0 Average</span>
+            </div>
+          </div>
+
+          {/* Testimonials Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonialData.map((item, index) => (
+              <div key={index} className="h-full">
+                {item.type === "video" ? (
+                  // --- Video Card ---
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-md border border-white/50 hover:shadow-xl hover:border-[#d9a406]/30 transition-all duration-300 h-full flex flex-col"
+                  >
+                    <div className="rounded-xl overflow-hidden shadow-sm border border-gray-200 bg-black relative flex-grow min-h-[200px]">
+                      <iframe
+                        src={item.videoUrl}
+                        title={item.name}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full absolute inset-0"
+                      ></iframe>
+                    </div>
+                    <div className="pt-4 border-t border-gray-100 flex justify-between items-center mt-4">
+                      <span className="text-xs font-semibold text-[#d9a406] bg-[#d9a406]/10 px-3 py-1 rounded-full">
+                        Happy Home Buyer
+                      </span>
+                    </div>
+                  </motion.div>
+                ) : (
+                  // --- Text Card ---
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-md border border-white/50 hover:shadow-xl hover:border-[#d9a406]/30 transition-all duration-300 h-full flex flex-col"
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        {/* Initials Avatar */}
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#333] to-[#555] flex items-center justify-center text-white font-bold text-sm shadow-sm">
+                          {item.name ? item.name.charAt(0) : "U"}
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-black text-sm">{item.name}</h4>
+                          <p className="text-xs text-gray-500">{item.location}</p>
+                        </div>
+                      </div>
+                      <GoogleIcon />
+                    </div>
+
+                    <div className="mb-4 flex-grow">
+                      <div className="flex gap-0.5 mb-2">
+                        {[...Array(item.rating || 5)].map((_, i) => (
+                          <span key={i} className="text-[#FFB400] text-sm">★</span>
+                        ))}
+                      </div>
+                      <p className="text-gray-700 text-sm leading-relaxed italic relative z-10">
+                        "{item.testimonial}"
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-gray-100 flex justify-between items-center mt-auto">
+                      <span className="text-xs font-semibold text-[#d9a406] bg-[#d9a406]/10 px-3 py-1 rounded-full">
+                        {item.role}
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   // ========== FOOTER / CTA ==========
   const FooterSection = () => (
     <footer className="bg-black pt-24 pb-12 border-t border-white/10">
@@ -3303,6 +3490,7 @@ const HeroImageBanner = () => {
       <FloorPlansSection />
       <SpecsSection />
       <LocationSection />
+      <ReviewsSection />
       <FooterSection />
       <EnquiryModal />
     </main>
