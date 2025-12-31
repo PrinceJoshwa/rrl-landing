@@ -353,14 +353,14 @@ const ConfigurationsSection = ({ onOpenModal }: { onOpenModal: () => void }) => 
 
   const configurations = [
     {
-      type: "3 BHK",
+      type: "2 BHK",
       tag: "Coveted",
       description: "Spacious living with premium finishes",
       features: ["Spacious Site Plan", "Modern Kitchen", "3 Bathrooms"],
       gradient: "from-[#d9a406]/20 via-transparent to-transparent",
     },
     {
-      type: "4 BHK",
+      type: "3 BHK",
       tag: "Coveted",
       description: "Ultimate luxury for discerning families",
       features: ["Master Suite", "Private Study", "4 Bathrooms"],
