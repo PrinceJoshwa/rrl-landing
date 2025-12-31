@@ -1254,7 +1254,7 @@ export default function NRICornerPage() {
       {/* ================= 8. TESTIMONIALS (Google Reviews) ================= */}
       <section className="py-24 bg-neutral-950 border-t border-gold-900/30 overflow-hidden">
         <div className="container mx-auto px-4 text-center mb-12">
-            <h2 className="text-4xl font-playfair font-bold text-white mb-4">What People Say on <span className="text-gold-500">Google</span></h2>
+            <h2 className="text-4xl font-playfair font-bold text-white mb-4">Our happy clients</h2>
             <p className="text-gray-400">Authentic reviews from our happy homeowners.</p>
         </div>
         
