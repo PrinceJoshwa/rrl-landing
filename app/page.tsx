@@ -108,6 +108,8 @@ function Hero() {
   
   // 2. Formspree Hook (ID: xkgkyavn)
   const [state, handleSubmit] = useForm("xkgkyavn");
+  const router = useRouter()
+
 
   const slides = [
     {
@@ -125,13 +127,18 @@ function Hero() {
       badge: "Global Recognition",
     },
   ]
+useEffect(() => {
+  if (state.succeeded) {
+    const timer = setTimeout(() => {
+      setIsVRModalOpen(false)
+      window.location.href = "/vr-tour/index.html"
+    }, 1000)
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [slides.length])
+    return () => clearTimeout(timer)
+  }
+}, [state.succeeded])
+
+
 
   return (
     <>
@@ -238,7 +245,7 @@ function Hero() {
                   <CheckCircle className="w-16 h-16 text-[#d9a406] mb-4" />
                   <h3 className="text-2xl font-bold text-white mb-2">Booking Confirmed!</h3>
                   <p className="text-gray-400 mb-6">We'll contact you shortly to schedule your VR experience.</p>
-                  <Button onClick={() => setIsVRModalOpen(false)} variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black">Close</Button>
+                  <Button onClick={() => setIsVRModalOpen(false)} variant="outline" className="border-white/20 text-black hover:bg-white hover:text-black">Close</Button>
                 </div>
               ) : (
                 // The Form
@@ -912,7 +919,7 @@ function Properties() {
 
   const commercialProperties = [
     {
-      id: "towers",
+      id: "commercial",
       name: "RRL Towers",
       location: "Sarjapur", // Updated
       type: "Commercial", // Updated
@@ -926,7 +933,7 @@ function Properties() {
       timelineSub: "Ready for Fitouts"
     },
     {
-      id: "complex",
+      id: "commercial",
       name: "RRL Complex",
       location: "Attibele Sarjapur Road", // Updated
       type: "Commercial",

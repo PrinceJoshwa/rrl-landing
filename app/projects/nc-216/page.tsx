@@ -424,19 +424,19 @@ const ConfigurationsSection = ({ onOpenModal }: { onOpenModal: () => void }) => 
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 mb-6">
+                {/* <p className="text-gray-400 mb-6">
                   {config.description}
-                </p>
+                </p> */}
 
                 {/* Features */}
-                <ul className="space-y-3 mb-8">
+                {/* <ul className="space-y-3 mb-8">
                   {config.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-300">
                       <CheckCircle className="w-5 h-5 text-[#d9a406]" />
                       <span>{feature}</span>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
 
                 {/* CTA / Form Section */}
                 {submitted[config.type] ? (

@@ -764,7 +764,7 @@ const projects = [
     description: "Our 18th commercial milestone. A commodious complex designed to host diverse businesses ranging from retail outlets like Mayura Bakery to fitness centers.",
     status: "Completed",
     // DESKTOP IMAGE
-    image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766051626/RRL_Complex_cogjaw.png", 
+    image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360", 
     // MOBILE IMAGE (Update this path)
     mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360",
     tags: ["Retail Hub", "Fitness Centers", "Ample Parking"],
@@ -883,7 +883,7 @@ export default function CommercialPage() {
   <img
     src={project.mobileImage || project.image}
     alt={project.name}
-    className="block md:hidden w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+    className="block md:hidden w-full h-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
   />
 
   {/* ✅ Desktop image */}

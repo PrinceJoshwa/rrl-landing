@@ -511,7 +511,7 @@ const projects = [
     image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Towers.png?updatedAt=1766849720451",
     // Mobile Image (Update this URL)
     mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Towers.png?updatedAt=1766849720451",
-    href: "/projects/towers",
+    href: "/projects/commercial",
     acres: null,
     units: null,
     config: null,
@@ -526,7 +526,7 @@ const projects = [
     image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360",
     // Mobile Image (Update this URL)
     mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Complex.png?updatedAt=1766849724360",
-    href: "/projects/oasis",
+    href: "/projects/commercial",
     acres: null,
     units: null,
     config: null,

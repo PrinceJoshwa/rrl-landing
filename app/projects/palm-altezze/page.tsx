@@ -10051,6 +10051,7 @@ import {
 } from "lucide-react"
 import type React from "react"
 import { useForm, ValidationError } from '@formspree/react'
+
 // --- Shared Form Data Type ---
 type FormData = {
   name: string
@@ -10528,9 +10529,22 @@ export default function Home() {
   // ========== VR SHOWCASE SECTION ==========
 const VRShowcaseSection = () => {
   const [isVRModalOpen, setIsVRModalOpen] = useState(false)
-  
+    const router = useRouter()
   // Formspree Integration (ID: xkgkyavn)
   const [state, handleSubmit] = useForm("xkgkyavn");
+
+useEffect(() => {
+  if (state.succeeded) {
+    const timer = setTimeout(() => {
+      setIsVRModalOpen(false)
+      window.location.href = "/vr-tour/index.html"
+    }, 1000)
+
+    return () => clearTimeout(timer)
+  }
+}, [state.succeeded])
+
+
 
   return (
     <section className="py-20 bg-black border-t border-[#333]">
@@ -10623,7 +10637,7 @@ const VRShowcaseSection = () => {
                   <CheckCircle className="w-16 h-16 text-[#d9a406] mb-4" />
                   <h3 className="text-2xl font-bold text-white mb-2">Booking Confirmed!</h3>
                   <p className="text-gray-400 mb-6">We'll contact you shortly to schedule your VR experience.</p>
-                  <Button onClick={() => setIsVRModalOpen(false)} variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black">Close</Button>
+                  <Button onClick={() => setIsVRModalOpen(false)} variant="outline" className="border-white/20 text-black hover:bg-white hover:text-black">Close</Button>
                 </div>
               ) : (
                 // Form State
