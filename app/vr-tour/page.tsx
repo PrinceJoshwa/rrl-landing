@@ -3,7 +3,7 @@
 // // export default function VRTourPage() {
 // //   redirect("http://palmaltezze.s3-website-us-east-1.amazonaws.com/")
 // // }
-// "use client"
+"use client"
 
 import { useEffect } from "react"
 
