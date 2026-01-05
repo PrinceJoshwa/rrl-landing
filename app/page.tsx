@@ -131,13 +131,12 @@ useEffect(() => {
   if (state.succeeded) {
     const timer = setTimeout(() => {
       setIsVRModalOpen(false)
-      window.location.href = "/vr-tour/index.html"
-    }, 1000)
+      router.push("/vr-tour")
+    }, 1000) // small delay so success message is visible
 
     return () => clearTimeout(timer)
   }
-}, [state.succeeded])
-
+}, [state.succeeded, router])
 
 
   return (
