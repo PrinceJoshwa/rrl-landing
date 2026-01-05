@@ -26,7 +26,7 @@ export default function VRTourPage() {
   return (
     <div className="w-full h-screen bg-black">
       <iframe
-        src="http://palmaltezze.s3-website-us-east-1.amazonaws.com/"
+        src="https://palmaltezze.s3-website-us-east-1.amazonaws.com/"
         title="Palm Altezze VR Tour"
         className="w-full h-full border-0"
         allow="fullscreen; autoplay; xr-spatial-tracking"
