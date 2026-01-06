@@ -1,8 +1,8 @@
-import { redirect } from "next/navigation"
+// // import { redirect } from "next/navigation"
 
-export default function VRTourPage() {
-  redirect("http://palmaltezze.s3-website-us-east-1.amazonaws.com/")
-}
+// // export default function VRTourPage() {
+// //   redirect("http://palmaltezze.s3-website-us-east-1.amazonaws.com/")
+// // }
 // "use client"
 
 // import { useEffect } from "react"
@@ -20,17 +20,17 @@ export default function VRTourPage() {
 //   )
 // }
 
-// "use client"
+"use client"
 
-// export default function VRTourPage() {
-//   return (
-//     <div className="w-full h-screen bg-black">
-//       <iframe
-//         src="https://palmaltezze.s3-website-us-east-1.amazonaws.com/"
-//         title="Palm Altezze VR Tour"
-//         className="w-full h-full border-0"
-//         allow="fullscreen; autoplay; xr-spatial-tracking"
-//       />
-//     </div>
-//   )
-// }
+export default function VRTourPage() {
+  return (
+    <div className="w-full h-screen bg-black">
+      <iframe
+        src="https://rrlbuildersanddevelopers.com/rrlvtour/"
+        title="Palm Altezze VR Tour"
+        className="w-full h-full border-0"
+        allow="fullscreen; autoplay; xr-spatial-tracking"
+      />
+    </div>
+  )
+}

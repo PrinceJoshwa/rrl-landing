@@ -10537,7 +10537,7 @@ useEffect(() => {
   if (state.succeeded) {
     const timer = setTimeout(() => {
       setIsVRModalOpen(false)
-      window.location.href = "/vr-tour/index.html"
+      window.location.href = "/vr-tour"
     }, 1000)
 
     return () => clearTimeout(timer)
