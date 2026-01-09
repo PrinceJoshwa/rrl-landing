@@ -10181,6 +10181,22 @@ export default function Home() {
         "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/ok.png?updatedAt=1766849914416",
       alt: "RRL Palm Altezze Hero Banner",
     },
+    {
+      id: 2,
+      desktop:
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/HOME%20HERO%201.png?updatedAt=1766848463108",
+      mobile:
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/HOME%20HERO%201.png?updatedAt=1766849907651",
+      alt: "RRL Palm Altezze Hero Banner",
+    },
+    {
+      id: 3,
+      desktop:
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/PALM%20ALTEZZE%201.1.png?updatedAt=1766848553544",
+      mobile:
+        "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/PALM%20ALTEZZE%201.1.png?updatedAt=1766849906858",
+      alt: "RRL Palm Altezze Hero Banner",
+    },
   ];
 
   useEffect(() => {
@@ -10418,7 +10434,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[#d9a406] rounded-2xl transform -rotate-2 opacity-20"></div>
 
           <img
-            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764572041/WhatsApp_Image_2025-12-01_at_10.21.07_AM_1_yag3h7.jpg"
+            src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/WhatsApp%20Image%202025-12-01%20at%2010.21.07%20AM%20(1).jpeg"
             alt="RRL Palm Altezze Tower Elevation"
             className="relative w-full h-full object-fill rounded-2xl shadow-2xl border-4 border-white"
           />
@@ -10596,7 +10612,7 @@ useEffect(() => {
               />
               {/* Desktop Image */}
               <img 
-                src="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_1600,f_auto,q_auto/v1766481026/Visualize_Your_Home_Virtually_1_qusxhs.png"
+                src="https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/Visualize%20Your%20Home%20Virtually%202.png?updatedAt=1766849828982"
                 alt="VR Interior Showcase"
                 loading="lazy"
                 className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
@@ -10904,7 +10920,7 @@ const HealthyLivingSection = () => (
         <div className="block lg:hidden">
           <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl border border-[#d9a406]/20">
             <img
-              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766764089/Step_Into_Healthy_Living_3_pgupae.png"
+              src="https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/Step%20Into%20Healthy%20Living.png?updatedAt=1766849830763"
               alt="RRL Palm Altezze Healthy Living Mobile"
               className="w-full h-full object-contain"
               loading="lazy"
@@ -10920,7 +10936,7 @@ const HealthyLivingSection = () => (
           variants={scaleVariants}
         >
           <img
-            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766067404/Step_Into_Healthy_Living_1_d6jaxp.png"
+            src="https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/Step%20Into%20Healthy%20Living.png?updatedAt=1766849830763"
             alt="RRL Palm Altezze Healthy Living"
             className="w-full h-full object-contain rounded-2xl shadow-2xl border border-[#d9a406]/20"
           />
@@ -11072,7 +11088,7 @@ const HealthyLivingSection = () => (
             {/* CENTER IMAGE */}
             <div className="relative h-full min-h-[600px] w-full hidden lg:block">
               <div className="absolute inset-0 bg-[#d9a406]/5 rounded-t-full"></div>
-              <img src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766052207/generated-image_54_pzy69n.png" alt="Premium Apartment Interior" className="w-full h-full object-fill rounded-t-full shadow-2xl" />
+              <img src="https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/generated-image%20(54).png" alt="Premium Apartment Interior" className="w-full h-full object-fill rounded-t-full shadow-2xl" />
             </div>
 
             {/* RIGHT COLUMN */}
@@ -11293,7 +11309,7 @@ const HealthyLivingSection = () => (
           "
         >
           {/* Background Image */}
-          <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764563668/RRL-palm-altezze-banner2_wcqmvh.webp')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+          <div className="absolute inset-0 bg-[url('https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL-palm-altezze-banner2.webp')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
 
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40"></div>

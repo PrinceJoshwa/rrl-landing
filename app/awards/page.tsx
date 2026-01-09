@@ -430,7 +430,8 @@ function AwardsHero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <Image
-              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055536/awardhome_wvhw2f.jpg"
+              // src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055536/awardhome_wvhw2f.jpg"
+              src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome.jpeg"
               alt="RRL Awards Ceremony 2025"
               width={600}
               height={400}
@@ -834,7 +835,8 @@ function LegacyAchievements() {
         <div className="mb-12 md:mb-20 grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="relative rounded-3xl bg-black/30 border border-gold-800 p-4 sm:p-6 shadow-2xl">
             <Image
-              src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055741/zee_v9vmto.jpg"
+              // src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055741/zee_v9vmto.jpg"
+              src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/zee.jpeg"
               alt="5th Global Real Estate Brand Awards 2023"
               width={600}
               height={400}

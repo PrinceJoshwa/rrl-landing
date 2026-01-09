@@ -157,7 +157,7 @@ export default function CSRPage() {
                 {/* Large Main Image */}
                 <div className="md:col-span-2 relative rounded-2xl overflow-hidden group border border-neutral-800">
                     <Image 
-                        src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057521/IMG-20251218-WA0011_nssvkw.jpg" 
+                        src="https://ik.imagekit.io/j0xzq9pns/WhatsApp%20Image%202025-12-18%20at%203.42.24%20PM%20(1).jpeg?updatedAt=1767702799008" 
                         alt="Community Event"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -171,7 +171,7 @@ export default function CSRPage() {
                 <div className="flex flex-col gap-6">
                     <div className="relative flex-1 rounded-2xl overflow-hidden group border border-neutral-800">
                         <Image 
-                            src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766057539/IMG-20251218-WA0018_nuy29a.jpg" 
+                            src="https://ik.imagekit.io/j0xzq9pns/WhatsApp%20Image%202025-12-18%20at%203.42.25%20PM.jpeg?updatedAt=1767702779226" 
                             alt="CSR Activity"
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-700"
