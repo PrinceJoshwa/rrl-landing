@@ -248,51 +248,45 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "RRL Builders and Developers | Premium Builders in Bangalore",
+  metadataBase: new URL("https://www.rrlbuildersanddevelopers.com"),
+  title: {
+    default: "RRL Builders and Developers | Premium Builders in Bangalore",
+    template: "%s | RRL Builders and Developers",
+  },
   description:
-    "We are RRL Builders and Developers, part of RRL Group of Companies. We provide Premium Living at Affordable Prices in Bangalore Prime Locations. Check us out!",
+    "RRL Builders and Developers – Premium living at affordable prices in Bangalore. Award-winning real estate projects in Sarjapur, Varthur & more.",
   keywords: [
-    "rrl nature wood",
+    "RRL Builders and Developers",
+    "premium apartments bangalore",
+    "rrl nature woods",
     "upcoming apartments in sarjapur road",
     "new apartments for sale bangalore",
     "apartments in varthur",
-    "mall near me within 1.6 km",
     "apartments near me",
     "real estate projects near me",
-    "under construction apartments near me",
     "apartments in sarjapur road for sale",
     "top builders in bangalore",
-    "apartments for sale near me",
     "3 bhk flats for sale bangalore",
-    "real estate developers near me",
-    "nearby apartments",
-    "properties near me",
     "flats for sale bangalore",
     "sarjapur road apartments",
-    "flats at sarjapur",
     "apartment for sale in sarjapur",
     "flats for sale in varthur",
-    "sarjapur road",
     "house for sale in sarjapur road",
-    "villas in varthur",
-    "sarjapur flats",
-    "flats in varthur",
-    "house for sale in varthur",
-    "sarjapur flats for sale",
-    "property in sarjapur",
-    "flats in sarjapur",
-    "ready to move flats in sarjapur road",
-    "properties in sarjapur",
     "flats in sarjapur road bangalore",
-    "apartments in bangalore sarjapur road"
+    "apartments in bangalore sarjapur road",
   ],
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "RRL Builders and Developers",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        
+
         {/* Google Tag Manager (head) */}
         <Script id="gtm-head" strategy="afterInteractive">
           {`
@@ -339,7 +333,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <WhatsAppChat />
         <Footer />
-        
+
       </body>
     </html>
   );

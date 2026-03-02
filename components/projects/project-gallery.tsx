@@ -50,7 +50,7 @@ export function ProjectGallery({ projectName }: ProjectGalleryProps) {
   const [activeTab, setActiveTab] = useState<"brochure" | "floor-plan" | "address">("brochure")
   const currentProjectFloorPlan = floorPlanDetails[projectName]?.["floor-plan-1"] || {};
   const currentProjectAddress = addressDetails[projectName] || {};
-  const brochureUrl = projectName === "RRL Palacio" ? "/brochures/rrl-palacio-brochure.pdf" : projectName === "RRL Nature Woods" ? "/brochures/rrl-nature-woods-brochure.pdf" : undefined;
+  const brochureUrl = projectName === "RRL Palacio" ? "/Palacio.pdf" : projectName === "RRL Nature Woods" ? "/NatureWoods.pdf" : undefined;
 
 
   return (
