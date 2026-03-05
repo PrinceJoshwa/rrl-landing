@@ -9,9 +9,9 @@
 // // // const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
 // // // export const metadata: Metadata = {
-// // //   title: "RRL Builders & Developers - Award-Winning Real Estate in Bangalore",
+// // //   title: "Affordable Apartments & Flats for Sale in Sarjapur Road",
 // // //   description:
-// // //     "RRL Group - Pioneers of affordable luxury residential and commercial spaces in Bangalore since 1996. Times Real Estate Icon Awards 2025 winner.",
+// // //     "Explore modern apartments in Sarjapur Road with 1, 2 & 3 BHK options. Find the best flats for sale in Sarjapur Road near you with RRL Builders.",
 // // // }
 
 // // // export default function RootLayout({
