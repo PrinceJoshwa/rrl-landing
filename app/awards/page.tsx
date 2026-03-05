@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import AwardsPageClient from "./AwardsPageClient"
 
 export const metadata: Metadata = {
-  title: "Awards & Recognition | RRL Builders Bangalore",
+  title: "Award Winning Real Estate Projects Near Me | RRL Builders",
   description:
-    "RRL Builders and Developers – Times Real Estate Icon Awards 2025 winner (Builder of the Year), Global Real Estate Brand Awards 2023 winner. Recognized by ZEE5, The Print & more.",
+    "Discover award winning real estate projects near me by RRL Builders and Developers. Trusted name in quality homes, luxury living and modern construction.",
 }
 
 export default function AwardsPage() {
