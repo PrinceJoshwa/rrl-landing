@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import NatureWoodsPageClient from "./NatureWoodsPageClient"
 
 export const metadata: Metadata = {
-  title: "RRL Nature Woods | Luxury 1, 2 & 3 BHK Apartments in Thindlu, Bangalore",
+  title: "Nearby Apartment Sales in Bangalore | RRL Builders",
   description:
-    "RRL Nature Woods – Award-winning luxury apartments in Thindlu, Sarjapur Road, Bangalore. 140 units, B+G+7 Floors. Ready to move. Explore floor plans and pricing.",
+    "Discover apartment sales in Bangalore and nearby apartments with RRL Builders. Get modern, stylish, and spacious homes designed for comfort and luxury living.",
   keywords: [
     "RRL Nature Woods",
     "apartments in sarjapur road",
