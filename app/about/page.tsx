@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import AboutPageClient from "./AboutPageClient"
 
 export const metadata: Metadata = {
-  title: "About RRL Builders | Pioneers of Affordable Luxury Since 1996",
+  title: "Luxury Houses & Upcoming Apartments Near Me in Karnataka",
   description:
-    "Learn about RRL Builders and Developers – Founded in 1996, led by Mr. Ram Reddy & Mr. Lakshman Reddy. Winners of Global Real Estate Brand Awards 2023 & Times Real Estate Icon Awards 2025.",
+    "Discover stylish luxury houses and upcoming apartments near me in Karnataka. RRL Builders offers modern homes with comfort, convenience, and quality.",
 }
 
 export default function AboutPage() {
