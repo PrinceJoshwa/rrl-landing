@@ -4,7 +4,7 @@ import ProjectsPageClient from "./ProjectsPageClient"
 export const metadata: Metadata = {
   title: "Near Me 3 BHK Flat in Bangalore by RRL Builders",
   description:
-    "Explore RRL Group's award-winning real estate portfolio: RRL Palm Altezze (Varthur), RRL NC-216 (Sarjapur), RRL Palacio (Medahalli), RRL Nature Woods & Commercial Projects in Bangalore.",
+    "Explore spacious 3 BHK flats near me with RRL Builders. Get modern 3 BHK flat in Bangalore designed with comfort, style and premium living for families.",
 }
 
 export default function ProjectsPage() {
