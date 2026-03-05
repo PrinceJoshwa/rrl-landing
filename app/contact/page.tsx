@@ -4,7 +4,7 @@ import ContactPageClient from "./ContactPageClient"
 export const metadata: Metadata = {
   title: "Modern 2 BHK Flat in Bangalore by RRL Builders",
   description:
-    "Contact RRL Builders and Developers for inquiries about our premium residential projects in Bangalore. Call us at +91 84949 66966 or fill the form and our team will get back to you.",
+    "Find the perfect 2 BHK flat in Bangalore with RRL Builders. Explore modern flats in Bangalore designed for comfort, style and quality living worldwide.",
 }
 
 export default function ContactPage() {
