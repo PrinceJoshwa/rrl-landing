@@ -100,7 +100,8 @@
 // //             })(window,document,'script','dataLayer','GTM-PBHLRV77');
 // //           `}
 // //         </Script>
-
+// //          <meta name="google-site-verification" content="ciMgqXran8pfQupwhfS283PtHMzig6Ls2KfZhSkQZs4" />
+// //          <link rel="canonical" href="https://rrlbuildersanddevelopers.com/" />
 // //         {/* Google Analytics */}
 // //         <Script
 // //           src="https://www.googletagmanager.com/gtag/js?id=G-63XBJFEXLL"
