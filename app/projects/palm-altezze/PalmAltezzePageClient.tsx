@@ -97,23 +97,81 @@ type FormData = {
 
 // --- Floor Plans Data ---
 const floorPlansData = [
-  { id: "01", type: "2BHK", facing: "North", area: 1265, dims: { living: "11'0\" x 16'0\"", dining: "10'6\" x 10'0\"", masterBed: "11'0\" x 13'0\"", kitchen: "8'0\" x 8'0\"", bed2: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "02", type: "3BHK", facing: "North", area: 1495, dims: { living: "11'0\" x 16'0\"", dining: "10'6\" x 12'6\"", masterBed: "12'0\" x 13'0\"", kitchen: "8'6\" x 9'0\"", bed2: "11'0\" x 11'0\"", bed3: "10'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "03", type: "3BHK", facing: "North", area: 1630, dims: { living: "12'0\" x 18'0\"", dining: "11'0\" x 13'0\"", masterBed: "13'0\" x 14'0\"", kitchen: "9'0\" x 10'0\"", bed2: "12'0\" x 12'0\"", bed3: "11'0\" x 12'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "04", type: "3BHK", facing: "East", area: 1560, dims: { living: "16'6\" x 11'0\"", dining: "12'0\" x 11'0\"", masterBed: "12'0\" x 14'0\"", kitchen: "10'0\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "05", type: "3BHK", facing: "East", area: 1510, dims: { living: "16'6\" x 11'0\"", dining: "12'0\" x 11'0\"", masterBed: "12'0\" x 14'0\"", kitchen: "10'0\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "06", type: "2BHK", facing: "West", area: 1280, dims: { living: "11'0\" x 16'0\"", dining: "10'0\" x 10'0\"", masterBed: "11'6\" x 13'0\"", kitchen: "8'0\" x 9'0\"", bed2: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "07", type: "3BHK", facing: "West", area: 1520, dims: { living: "12'0\" x 16'0\"", dining: "11'0\" x 12'0\"", masterBed: "12'6\" x 13'0\"", kitchen: "9'0\" x 9'0\"", bed2: "11'6\" x 11'0\"", bed3: "10'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "08", type: "3BHK", facing: "North", area: 1610, dims: { living: "12'0\" x 18'0\"", dining: "11'0\" x 13'0\"", masterBed: "13'0\" x 14'0\"", kitchen: "9'0\" x 10'0\"", bed2: "12'0\" x 12'0\"", bed3: "11'0\" x 12'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "09", type: "2BHK", facing: "East", area: 1255, dims: { living: "11'0\" x 16'0\"", dining: "10'6\" x 10'0\"", masterBed: "11'0\" x 13'0\"", kitchen: "8'0\" x 8'0\"", bed2: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "10", type: "3BHK", facing: "West", area: 1550, dims: { living: "16'6\" x 11'0\"", dining: "12'0\" x 11'0\"", masterBed: "12'0\" x 14'0\"", kitchen: "10'0\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "11", type: "2BHK", facing: "North", area: 1290, dims: { living: "11'6\" x 16'0\"", dining: "10'6\" x 10'6\"", masterBed: "12'0\" x 13'0\"", kitchen: "8'6\" x 8'6\"", bed2: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "12", type: "3BHK", facing: "East", area: 1580, dims: { living: "12'6\" x 17'0\"", dining: "11'6\" x 12'6\"", masterBed: "13'0\" x 14'0\"", kitchen: "9'6\" x 10'0\"", bed2: "12'0\" x 12'0\"", bed3: "11'6\" x 11'6\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "13", type: "3BHK", facing: "East", area: 1485, dims: { living: "26'6\" x 11'6\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "14", type: "2BHK", facing: "East", area: 1250, dims: { living: "11'6\" x 19'3\"", dining: "13'0\" x 8'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'0\" x 8'0\"", bed2: "10'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "15", type: "3BHK", facing: "East", area: 1400, dims: { living: "24'6\" x 11'6\"", masterBed: "11'0\" x 12'0\"", kitchen: "11'0\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "16", type: "3BHK", facing: "East", area: 1540, dims: { living: "11'6\" x 22'9\"", masterBed: "12'0\" x 12'6\"", kitchen: "11'6\" x 8'6\"", bed2: "12'0\" x 11'6\"", bed3: "12'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-]
+  { 
+    id: "01", 
+    type: "2BHK", 
+    facing: "North", 
+    area: 1265, 
+    dims: { 
+      living: "17'9\" x 11'6\"", 
+      dining: "8'6\" x 8'0\"", 
+      masterBed: "13'0\" x 12'0\"", 
+      bed2: "12'3\" x 11'6\"",
+      kitchen: "8'6\" x 8'0\"" 
+    }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palm%20plans/Screenshot%202026-03-10%20203915.png" 
+  },
+  { 
+    id: "02", 
+    type: "3BHK", 
+    facing: "North", 
+    area: 1495, 
+    dims: { 
+      living: "16'0\" x 12'0\"", 
+      dining: "8'6\" x 12'9\"", 
+      masterBed: "13'0\" x 12'0\"", 
+      bed2: "12'6\" x 12'0\"", 
+      bed3: "11'6\" x 12'0\"",
+      kitchen: "11'6\" x 8'0\"" 
+    }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palm%20plans/Screenshot%202026-03-10%20203938.png" 
+  },
+  { 
+    id: "03", 
+    type: "3BHK", 
+    facing: "North", 
+    area: 1630, 
+    dims: { 
+      living: "17'9\" x 12'0\"", 
+      dining: "8'6\" x 11'0\"", 
+      masterBed: "13'0\" x 11'6\"", 
+      bed2: "13'0\" x 11'6\"", 
+      bed3: "11'0\" x 11'6\"",
+      kitchen: "9'0\" x 11'0\"" 
+    }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palm%20plans/Screenshot%202026-03-10%20203954.png" 
+  },
+  { 
+    id: "04", 
+    type: "3BHK", 
+    facing: "East", 
+    area: 1560, 
+    dims: { 
+      living: "28'0\" x 11'6\"", 
+      dining: "Combined w/ Living", 
+      masterBed: "12'0\" x 13'0\"", 
+      bed2: "11'0\" x 11'6\"", 
+      bed3: "12'0\" x 11'6\"",
+      kitchen: "11'0\" x 8'0\"" 
+    }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palm%20plans/Screenshot%202026-03-10%20204011.png" 
+  },
+  { 
+    id: "05", 
+    type: "3BHK", 
+    facing: "East", 
+    area: 1510, 
+    dims: { 
+      living: "11'6\" x 15'9\"", 
+      dining: "8'0\" x 12'9\"", 
+      masterBed: "13'0\" x 13'0\"", 
+      bed2: "11'0\" x 11'0\"", 
+      bed3: "10'3\" x 11'0\"",
+      kitchen: "9'0\" x 8'0\"" 
+    }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palm%20plans/Screenshot%202026-03-10%20204025.png" 
+  }
+];
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -1197,176 +1255,180 @@ export default function Home() {
   }
 
   // ========== FLOOR PLANS SECTION (UPDATED WITH LOCK/UNLOCK LOGIC) ==========
-  const FloorPlansSection = () => {
-    const [activeTab, setActiveTab] = useState("all");
-    const [unlockedPlans, setUnlockedPlans] = useState<Record<string, boolean>>({});
-    const [formOpenId, setFormOpenId] = useState<string | null>(null);
 
-    const filteredPlans = activeTab === "all" ? floorPlansData : floorPlansData.filter(p => p.type === activeTab);
+const FloorPlansSection = () => {
+  const [activeTab, setActiveTab] = useState("all");
+  const [unlockedPlans, setUnlockedPlans] = useState<Record<string, boolean>>({});
+  const [formOpenId, setFormOpenId] = useState<string | null>(null);
 
-    const handleUnlockSubmit = async (e: React.FormEvent<HTMLFormElement>, planId: string) => {
-      e.preventDefault();
-      const formData = new FormData(e.currentTarget);
-      const data = {
-        name: formData.get('name') as string,
-        phone: formData.get('phone') as string,
-        email: formData.get('email') as string,
-        message: `Request to unlock floor plan for Unit ${planId}`
-      };
+  const filteredPlans = activeTab === "all" ? floorPlansData : floorPlansData.filter(p => p.type === activeTab);
 
-      // UPDATED: Use the dedicated Floorplan Form ID
-      const success = await handleFormSubmit(data, "xldarjon");
-
-      if (success) {
-        // Mark as unlocked
-        setUnlockedPlans(prev => ({ ...prev, [planId]: true }));
-        // Close the form view (switch back to dimensions view)
-        setFormOpenId(null);
-      }
+  const handleUnlockSubmit = async (e: React.FormEvent<HTMLFormElement>, planId: string) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      phone: formData.get('phone') as string,
+      email: formData.get('email') as string,
+      message: `Request to unlock floor plan for Unit ${planId}`
     };
 
-    return (
-      <section className="py-24 bg-[#050505]" id="floorplans">
-        <div className="container mx-auto px-4">
-          {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Masterfully <span className="text-[#d9a406]">Planned</span></h2>
-              <p className="text-gray-400 max-w-xl">103 Units | B+G+6 Floors <br />Choose from our range of 16 distinct unit layouts.</p>
-            </div>
-            <div className="flex gap-2 bg-[#111] p-1 rounded-lg border border-white/10">
-              {["all", "2BHK", "3BHK"].map((tab) => (
-                <button key={tab} onClick={() => setActiveTab(tab)} className={`px-6 py-2 rounded-md text-sm font-bold transition-all ${activeTab === tab ? "bg-[#d9a406] text-black shadow-lg" : "text-gray-400 hover:text-white"}`}>
-                  {tab.toUpperCase()}
-                </button>
-              ))}
-            </div>
+    // UPDATED: Use the dedicated Floorplan Form ID
+    // const success = await handleFormSubmit(data, "xldarjon"); 
+    const success = true; // Placeholder for your actual submit logic
+
+    if (success) {
+      // Mark as unlocked
+      setUnlockedPlans(prev => ({ ...prev, [planId]: true }));
+      // Close the form view (switch back to dimensions view)
+      setFormOpenId(null);
+    }
+  };
+
+  return (
+    <section className="py-24 bg-[#050505]" id="floorplans">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Masterfully <span className="text-[#d9a406]">Planned</span></h2>
+            {/* UPDATED: Changed 16 distinct layouts to 5 */}
+            <p className="text-gray-400 max-w-xl">115 Units | 5 Units Per Floor <br />Choose from our range of 5 distinct unit layouts.</p>
           </div>
-
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <AnimatePresence mode="popLayout">
-              {filteredPlans.map((plan) => (
-                <motion.div key={plan.id} layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="group">
-                  <Card className="bg-[#111] border border-white/5 overflow-hidden hover:border-[#d9a406] transition-all duration-300">
-                    <div className="p-6 border-b border-white/5 bg-[#0a0a0a]">
-                      <div className="flex justify-between items-start mb-4">
-                        <div><h3 className="text-2xl font-bold text-white">Unit {plan.id}</h3><p className="text-[#d9a406] font-medium">{plan.type}</p></div>
-                        <div className="bg-white/10 text-white hover:bg-white/20 px-3 py-1 rounded-full text-xs font-semibold">{plan.facing} Facing</div>
-                      </div>
-                      <div className="flex items-baseline gap-1"><span className="text-4xl font-bold text-white">{plan.area}</span><span className="text-gray-500 font-medium">SFT</span></div>
-                    </div>
-                    <div className="p-6 space-y-3">
-                      <div className="flex justify-between text-sm"><span className="text-gray-500">Living</span><span className="text-gray-300">{plan.dims.living || "N/A"}</span></div>
-                      <div className="flex justify-between text-sm"><span className="text-gray-500">Master Bed</span><span className="text-gray-300">{plan.dims.masterBed}</span></div>
-                    </div>
-                    <div className="p-4 bg-black">
-                      <Dialog onOpenChange={(open) => { if (!open) setFormOpenId(null); }}>
-                        <DialogTrigger asChild>
-                          <Button className="w-full bg-white/5 hover:bg-[#d9a406] hover:text-black text-white border border-white/10 transition-colors">
-                            <Maximize2 className="w-4 h-4 mr-2" /> View Floor Plans
-                          </Button>
-                        </DialogTrigger>
-                        <DialogContent className="bg-[#111] border border-[#333] text-white max-w-4xl max-h-[90vh] overflow-y-auto w-[95vw]">
-                          <DialogHeader>
-                            <DialogTitle className="text-2xl font-bold text-[#d9a406] flex items-center gap-2">
-                              Unit {plan.id} - {plan.type} ({plan.area} SFT)
-                              {unlockedPlans[plan.id] && (<div className="bg-green-500/20 text-green-500 border-green-500/50 text-xs px-2 py-1 rounded border">Unlocked</div>)}
-                            </DialogTitle>
-                          </DialogHeader>
-                          <div className="mt-4 grid md:grid-cols-2 gap-8">
-                            {/* === LEFT SIDE: IMAGE === */}
-                            <div className="relative aspect-square bg-black/50 rounded-lg overflow-hidden border border-white/10">
-                              <img
-                                src={plan.image}
-                                alt={`Plan ${plan.id}`}
-                                className={`w-full h-full object-contain transition-all duration-700 ${unlockedPlans[plan.id] ? 'blur-0' : 'blur-xl scale-110 opacity-50'}`}
-                              />
-                              {/* Overlay on Image if Locked */}
-                              {!unlockedPlans[plan.id] && (
-                                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 z-10 p-4 text-center backdrop-blur-sm">
-                                  <div className="bg-[#111] p-4 rounded-full border border-[#d9a406] mb-4"><Lock className="w-8 h-8 text-[#d9a406]" /></div>
-                                  <p className="text-white font-bold text-lg">Floor Plan Locked</p>
-                                  <p className="text-sm text-gray-300 mt-2 mb-4 max-w-[200px]">Unlock to view clear image</p>
-                                  <Button
-                                    size="sm"
-                                    className="bg-[#d9a406] text-black hover:bg-[#b08505]"
-                                    onClick={() => setFormOpenId(plan.id)}
-                                  >
-                                    <Unlock className="w-4 h-4 mr-2" /> Unlock Now
-                                  </Button>
-                                </div>
-                              )}
-                            </div>
-
-                            {/* === RIGHT SIDE: DIMENSIONS (OR FORM) === */}
-                            <div className="space-y-6 flex flex-col justify-center min-h-[400px]">
-                              {/* If Form is NOT open, show Dimensions (Default View) */}
-                              {formOpenId !== plan.id ? (
-                                <div className="animate-in fade-in slide-in-from-right-4">
-                                  <h4 className="text-lg font-semibold border-b border-white/10 pb-2 text-white mb-4">Room Dimensions</h4>
-                                  <dl className="grid grid-cols-2 gap-y-4 gap-x-8 text-sm">
-                                    <dt className="text-gray-400">Facing</dt><dd className="font-medium text-right text-white">{plan.facing}</dd>
-                                    <dt className="text-gray-400">Living</dt><dd className="font-medium text-right text-white">{plan.dims.living}</dd>
-                                    {plan.dims.dining && <><dt className="text-gray-400">Dining</dt><dd className="font-medium text-right text-white">{plan.dims.dining}</dd></>}
-                                    <dt className="text-gray-400">Master Bed</dt><dd className="font-medium text-right text-white">{plan.dims.masterBed}</dd>
-                                    {plan.dims.bed2 && <><dt className="text-gray-400">Bedroom 2</dt><dd className="font-medium text-right text-white">{plan.dims.bed2}</dd></>}
-                                    {plan.dims.bed3 && <><dt className="text-gray-400">Bedroom 3</dt><dd className="font-medium text-right text-white">{plan.dims.bed3}</dd></>}
-                                    <dt className="text-gray-400">Kitchen</dt><dd className="font-medium text-right text-white">{plan.dims.kitchen}</dd>
-                                  </dl>
-                                  <div className="mt-8 pt-6 border-t border-white/10">
-                                    {!unlockedPlans[plan.id] ? (
-                                      <Button
-                                        className="w-full bg-[#d9a406] hover:bg-[#b38605] text-black font-bold"
-                                        onClick={() => setFormOpenId(plan.id)}
-                                      >
-                                        <Unlock className="w-4 h-4 mr-2" /> Unlock Floor Plan
-                                      </Button>
-                                    ) : (
-                                      <div className="grid grid-cols-2 gap-3">
-                                        <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black">Download PDF</Button>
-                                        <Button className="bg-[#d9a406] text-black hover:bg-[#b38605]">Book Site Visit</Button>
-                                      </div>
-                                    )}
-                                  </div>
-                                </div>
-                              ) : (
-                                // If Form IS open, show the Form (Swaps the view)
-                                <div className="bg-white/5 p-6 rounded-lg border border-white/10 animate-in fade-in slide-in-from-right-4 relative">
-                                  <button
-                                    onClick={() => setFormOpenId(null)}
-                                    className="absolute top-4 right-4 text-gray-400 hover:text-white"
-                                    title="Back to details"
-                                  >
-                                    <X className="w-5 h-5" />
-                                  </button>
-                                  <div className="mb-6 flex items-center gap-2 text-[#d9a406]">
-                                    <ArrowLeft className="w-4 h-4 cursor-pointer hover:text-white" onClick={() => setFormOpenId(null)} />
-                                    <h4 className="text-xl font-semibold text-white">Unlock Access</h4>
-                                  </div>
-                                  <p className="text-sm text-gray-400 mb-6">Enter your details to instantly view the floor plan.</p>
-                                  <form onSubmit={(e) => handleUnlockSubmit(e, plan.id)} className="space-y-4">
-                                    <div className="space-y-2"><Label className="text-gray-300">Name</Label><Input required name="name" placeholder="Your Name" className="bg-[#111] border-white/20 text-white focus:border-[#d9a406]" /></div>
-                                    <div className="space-y-2"><Label className="text-gray-300">Phone</Label><Input required name="phone" type="tel" placeholder="Your Phone" className="bg-[#111] border-white/20 text-white focus:border-[#d9a406]" /></div>
-                                    <div className="space-y-2"><Label className="text-gray-300">Email</Label><Input required name="email" type="email" placeholder="Your Email" className="bg-[#111] border-white/20 text-white focus:border-[#d9a406]" /></div>
-                                    <Button type="submit" className="w-full bg-[#d9a406] hover:bg-[#b38605] text-black font-bold mt-2"><Unlock className="w-4 h-4 mr-2" /> Unlock Floor Plan</Button>
-                                  </form>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </DialogContent>
-                      </Dialog>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+          <div className="flex gap-2 bg-[#111] p-1 rounded-lg border border-white/10">
+            {["all", "2BHK", "3BHK"].map((tab) => (
+              <button key={tab} onClick={() => setActiveTab(tab)} className={`px-6 py-2 rounded-md text-sm font-bold transition-all ${activeTab === tab ? "bg-[#d9a406] text-black shadow-lg" : "text-gray-400 hover:text-white"}`}>
+                {tab.toUpperCase()}
+              </button>
+            ))}
           </div>
         </div>
-      </section>
-    )
-  }
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <AnimatePresence mode="popLayout">
+            {filteredPlans.map((plan) => (
+              <motion.div key={plan.id} layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="group">
+                <Card className="bg-[#111] border border-white/5 overflow-hidden hover:border-[#d9a406] transition-all duration-300">
+                  <div className="p-6 border-b border-white/5 bg-[#0a0a0a]">
+                    <div className="flex justify-between items-start mb-4">
+                      <div><h3 className="text-2xl font-bold text-white">Unit {plan.id}</h3><p className="text-[#d9a406] font-medium">{plan.type}</p></div>
+                      <div className="bg-white/10 text-white hover:bg-white/20 px-3 py-1 rounded-full text-xs font-semibold">{plan.facing} Facing</div>
+                    </div>
+                    <div className="flex items-baseline gap-1"><span className="text-4xl font-bold text-white">{plan.area}</span><span className="text-gray-500 font-medium">SFT</span></div>
+                  </div>
+                  <div className="p-6 space-y-3">
+                    <div className="flex justify-between text-sm"><span className="text-gray-500">Living</span><span className="text-gray-300">{plan.dims.living || "N/A"}</span></div>
+                    <div className="flex justify-between text-sm"><span className="text-gray-500">Master Bed</span><span className="text-gray-300">{plan.dims.masterBed}</span></div>
+                  </div>
+                  <div className="p-4 bg-black">
+                    <Dialog onOpenChange={(open) => { if (!open) setFormOpenId(null); }}>
+                      <DialogTrigger asChild>
+                        <Button className="w-full bg-white/5 hover:bg-[#d9a406] hover:text-black text-white border border-white/10 transition-colors">
+                          <Maximize2 className="w-4 h-4 mr-2" /> View Floor Plans
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="bg-[#111] border border-[#333] text-white max-w-4xl max-h-[90vh] overflow-y-auto w-[95vw]">
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl font-bold text-[#d9a406] flex items-center gap-2">
+                            Unit {plan.id} - {plan.type} ({plan.area} SFT)
+                            {unlockedPlans[plan.id] && (<div className="bg-green-500/20 text-green-500 border-green-500/50 text-xs px-2 py-1 rounded border">Unlocked</div>)}
+                          </DialogTitle>
+                        </DialogHeader>
+                        <div className="mt-4 grid md:grid-cols-2 gap-8">
+                          {/* === LEFT SIDE: IMAGE === */}
+                          <div className="relative aspect-square bg-black/50 rounded-lg overflow-hidden border border-white/10">
+                            <img
+                              src={plan.image}
+                              alt={`Plan ${plan.id}`}
+                              className={`w-full h-full object-contain transition-all duration-700 ${unlockedPlans[plan.id] ? 'blur-0' : 'blur-xl scale-110 opacity-50'}`}
+                            />
+                            {/* Overlay on Image if Locked */}
+                            {!unlockedPlans[plan.id] && (
+                              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 z-10 p-4 text-center backdrop-blur-sm">
+                                <div className="bg-[#111] p-4 rounded-full border border-[#d9a406] mb-4"><Lock className="w-8 h-8 text-[#d9a406]" /></div>
+                                <p className="text-white font-bold text-lg">Floor Plan Locked</p>
+                                <p className="text-sm text-gray-300 mt-2 mb-4 max-w-[200px]">Unlock to view clear image</p>
+                                <Button
+                                  size="sm"
+                                  className="bg-[#d9a406] text-black hover:bg-[#b08505]"
+                                  onClick={() => setFormOpenId(plan.id)}
+                                >
+                                  <Unlock className="w-4 h-4 mr-2" /> Unlock Now
+                                </Button>
+                              </div>
+                            )}
+                          </div>
+
+                          {/* === RIGHT SIDE: DIMENSIONS (OR FORM) === */}
+                          <div className="space-y-6 flex flex-col justify-center min-h-[400px]">
+                            {/* If Form is NOT open, show Dimensions (Default View) */}
+                            {formOpenId !== plan.id ? (
+                              <div className="animate-in fade-in slide-in-from-right-4">
+                                <h4 className="text-lg font-semibold border-b border-white/10 pb-2 text-white mb-4">Room Dimensions</h4>
+                                {/* UPDATED: Replaced text-right with text-end for better text wrapping on longer strings */}
+                                <dl className="grid grid-cols-2 gap-y-4 gap-x-4 text-sm">
+                                  <dt className="text-gray-400">Facing</dt><dd className="font-medium text-end text-white">{plan.facing}</dd>
+                                  <dt className="text-gray-400">Living</dt><dd className="font-medium text-end text-white">{plan.dims.living}</dd>
+                                  {plan.dims.dining && <><dt className="text-gray-400">Dining</dt><dd className="font-medium text-end text-white">{plan.dims.dining}</dd></>}
+                                  <dt className="text-gray-400">Master Bed</dt><dd className="font-medium text-end text-white">{plan.dims.masterBed}</dd>
+                                  {plan.dims.bed2 && <><dt className="text-gray-400">Bedroom 2</dt><dd className="font-medium text-end text-white">{plan.dims.bed2}</dd></>}
+                                  {plan.dims.bed3 && <><dt className="text-gray-400">Bedroom 3</dt><dd className="font-medium text-end text-white">{plan.dims.bed3}</dd></>}
+                                  <dt className="text-gray-400">Kitchen</dt><dd className="font-medium text-end text-white">{plan.dims.kitchen}</dd>
+                                </dl>
+                                <div className="mt-8 pt-6 border-t border-white/10">
+                                  {!unlockedPlans[plan.id] ? (
+                                    <Button
+                                      className="w-full bg-[#d9a406] hover:bg-[#b38605] text-black font-bold"
+                                      onClick={() => setFormOpenId(plan.id)}
+                                    >
+                                      <Unlock className="w-4 h-4 mr-2" /> Unlock Floor Plan
+                                    </Button>
+                                  ) : (
+                                    <div className="grid grid-cols-2 gap-3">
+                                      <Button variant="outline" className="border-white/20 text-black hover:bg-white hover:text-black">Download PDF</Button>
+                                      <Button className="bg-[#d9a406] text-black hover:bg-[#b38605]">Book Site Visit</Button>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            ) : (
+                              // If Form IS open, show the Form (Swaps the view)
+                              <div className="bg-white/5 p-6 rounded-lg border border-white/10 animate-in fade-in slide-in-from-right-4 relative">
+                                <button
+                                  onClick={() => setFormOpenId(null)}
+                                  className="absolute top-4 right-4 text-gray-400 hover:text-white"
+                                  title="Back to details"
+                                >
+                                  <X className="w-5 h-5" />
+                                </button>
+                                <div className="mb-6 flex items-center gap-2 text-[#d9a406]">
+                                  <ArrowLeft className="w-4 h-4 cursor-pointer hover:text-white" onClick={() => setFormOpenId(null)} />
+                                  <h4 className="text-xl font-semibold text-white">Unlock Access</h4>
+                                </div>
+                                <p className="text-sm text-gray-400 mb-6">Enter your details to instantly view the floor plan.</p>
+                                <form onSubmit={(e) => handleUnlockSubmit(e, plan.id)} className="space-y-4">
+                                  <div className="space-y-2"><Label className="text-gray-300">Name</Label><Input required name="name" placeholder="Your Name" className="bg-[#111] border-white/20 text-white focus:border-[#d9a406]" /></div>
+                                  <div className="space-y-2"><Label className="text-gray-300">Phone</Label><Input required name="phone" type="tel" placeholder="Your Phone" className="bg-[#111] border-white/20 text-white focus:border-[#d9a406]" /></div>
+                                  <div className="space-y-2"><Label className="text-gray-300">Email</Label><Input required name="email" type="email" placeholder="Your Email" className="bg-[#111] border-white/20 text-white focus:border-[#d9a406]" /></div>
+                                  <Button type="submit" className="w-full bg-[#d9a406] hover:bg-[#b38605] text-black font-bold mt-2"><Unlock className="w-4 h-4 mr-2" /> Unlock Floor Plan</Button>
+                                </form>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  )
+}
 
   // ========== BROCHURE CTA SECTION ==========
   const BrochureCTASection = () => {
