@@ -19,7 +19,7 @@ const BrochureCTAModal = ({ open, onClose }: BrochureCTAModalProps) => {
     if (state.succeeded) {
       const link = document.createElement("a");
       link.href = BROCHURE_URL;
-      link.download = "Palm Altezze Brochure.pdf";
+      link.download = "https://ik.imagekit.io/j0xzq9pns/RRL%20Palm%20plans/Palm%20Altezze%20Brochure_compressed.pdf?updatedAt=1773156522011";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
