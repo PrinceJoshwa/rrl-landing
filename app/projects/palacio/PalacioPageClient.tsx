@@ -44,25 +44,54 @@ type FloorPlan = {
   image: string
 }
 
-// Full dataset of 16 units
+// Updated dataset based on the provided images (Units 01 to 09)
 const floorPlansData: FloorPlan[] = [
-  { id: "01", type: "2BHK", facing: "North", area: 1125, dims: { living: "11'6\" x 16'0\"", dining: "12'0\" x 8'3\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'3\"", bed2: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "02", type: "2BHK", facing: "North", area: 1105, dims: { living: "16'9\" x 11'0\"", dining: "12'9\" x 8'0\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'6\"", bed2: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "03", type: "2BHK", facing: "North", area: 1080, dims: { living: "11'6\" x 16'0\"", dining: "12'0\" x 8'3\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'3\"", bed2: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "04", type: "3BHK", facing: "North", area: 1425, dims: { living: "16'3\" x 11'6\"", dining: "12'3\" x 9'6\"", masterBed: "11'0\" x 12'0\"", kitchen: "11'0\" x 8'6\"", bed2: "11'0\" x 11'6\"", bed3: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "05", type: "3BHK", facing: "East", area: 1525, dims: { living: "16'3\" x 14'0\"", dining: "8'0\" x 9'6\"", masterBed: "12'0\" x 13'0\"", kitchen: "8'0\" x 9'6\"", bed2: "11'0\" x 11'0\"", bed3: "11'0\" x 12'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "06", type: "3BHK", facing: "East", area: 1360, dims: { living: "23'6\" x 11'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'0\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'9\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "07", type: "2BHK", facing: "East", area: 1245, dims: { living: "11'6\" x 19'3\"", dining: "13'0\" x 8'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "08", type: "3BHK", facing: "East", area: 1400, dims: { living: "24'6\" x 11'6\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "09", type: "3BHK", facing: "East", area: 1460, dims: { living: "11'6\" x 18'9\"", masterBed: "12'0\" x 12'6\"", kitchen: "11'6\" x 8'6\"", bed2: "12'0\" x 11'6\"", bed3: "12'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "10", type: "2BHK", facing: "North", area: 1125, dims: { living: "11'6\" x 16'0\"", dining: "12'0\" x 8'3\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'3\"", bed2: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "11", type: "2BHK", facing: "North", area: 1105, dims: { living: "16'9\" x 11'0\"", dining: "12'9\" x 8'0\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'6\"", bed2: "11'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "12", type: "2BHK", facing: "North", area: 1120, dims: { living: "11'3\" x 16'0\"", dining: "12'9\" x 8'0\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'0\"", bed2: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "13", type: "3BHK", facing: "East", area: 1485, dims: { living: "26'6\" x 11'6\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "14", type: "2BHK", facing: "East", area: 1250, dims: { living: "11'6\" x 19'3\"", dining: "13'0\" x 8'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'0\" x 8'0\"", bed2: "10'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "15", type: "3BHK", facing: "East", area: 1400, dims: { living: "24'6\" x 11'6\"", masterBed: "11'0\" x 12'0\"", kitchen: "11'0\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'6\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-  { id: "16", type: "3BHK", facing: "East", area: 1540, dims: { living: "11'6\" x 22'9\"", masterBed: "12'0\" x 12'6\"", kitchen: "11'6\" x 8'6\"", bed2: "12'0\" x 11'6\"", bed3: "12'0\" x 11'0\"" }, image: "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766430807/Screenshot_2025-12-23_004149_qp72pb.png" },
-]
+  { 
+    id: "01", type: "2BHK", facing: "North", area: 1125, 
+    dims: { living: "11'6\" x 16'0\"", dining: "12'0\" x 8'3\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'3\"", bed2: "11'6\" x 11'0\"" }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213628.png" 
+  },
+  { 
+    id: "02", type: "2BHK", facing: "North", area: 1105, 
+    dims: { living: "16'9\" x 11'0\"", dining: "12'9\" x 8'0\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'6\"", bed2: "11'0\" x 11'0\"" }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213638.png" 
+  },
+  { 
+    id: "03", type: "2BHK", facing: "North", area: 1080, 
+    dims: { living: "11'6\" x 16'0\"", dining: "12'0\" x 8'3\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'3\"", bed2: "11'6\" x 11'0\"" }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213651.png" 
+  },
+  { 
+    id: "04", type: "3BHK", facing: "North", area: 1425, 
+    dims: { living: "16'3\" x 11'6\"", dining: "12'3\" x 9'6\"", masterBed: "11'3\" x 12'0\"", kitchen: "11'0\" x 8'6\"", bed2: "11'0\" x 11'6\"", bed3: "11'0\" x 11'0\"" }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213707.png" 
+  },
+  { 
+    id: "05", type: "3BHK", facing: "East", area: 1525, 
+    dims: { living: "16'3\" x 14'0\"", dining: "8'0\" x 9'6\"", masterBed: "12'0\" x 13'0\"", kitchen: "8'0\" x 9'6\"", bed2: "11'0\" x 11'0\"", bed3: "11'0\" x 12'0\"" }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213723.png" 
+  },
+  { 
+    id: "06", type: "3BHK", facing: "East", area: 1360, 
+    dims: { living: "23'6\" x 11'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'0\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'9\" x 11'0\"" }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213736.png" 
+  },
+  { 
+    id: "07", type: "2BHK", facing: "East", area: 1245, 
+    dims: { living: "11'6\" x 19'3\"", dining: "13'0\" x 8'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"" }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213751.png" 
+  },
+  { 
+    id: "08", type: "3BHK", facing: "East", area: 1400, 
+    dims: { living: "24'6\" x 11'6\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'6\" x 11'0\"" }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213803.png?updatedAt=1773159097900" 
+  },
+  { 
+    id: "09", type: "3BHK", facing: "East", area: 1460, 
+    dims: { living: "11'6\" x 18'9\"", masterBed: "12'0\" x 12'6\"", kitchen: "11'6\" x 8'6\"", bed2: "12'0\" x 11'6\"", bed3: "12'0\" x 11'0\"" }, 
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213813.png" 
+  }
+];
 
 // --- ANIMATION VARIANTS ---
 const fadeIn = {
