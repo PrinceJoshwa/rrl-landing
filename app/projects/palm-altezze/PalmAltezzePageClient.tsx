@@ -1385,10 +1385,22 @@ const FloorPlansSection = () => {
                                       <Unlock className="w-4 h-4 mr-2" /> Unlock Floor Plan
                                     </Button>
                                   ) : (
-                                    <div className="grid grid-cols-2 gap-3">
-                                      <Button variant="outline" className="border-white/20 text-black hover:bg-white hover:text-black">Download PDF</Button>
-                                      <Button className="bg-[#d9a406] text-black hover:bg-[#b38605]">Book Site Visit</Button>
-                                    </div>
+<div className="grid grid-cols-1 gap-3">
+  {/* UPDATED: Download PDF Link with ImageKit download trigger */}
+  <a 
+    href="https://ik.imagekit.io/j0xzq9pns/RRL%20Palm%20plans/Palm%20Altezze%20Brochure_compressed.pdf?ik-attachment=true" 
+    download="Palm_Altezze_Brochure.pdf"
+    className="w-full"
+  >
+    <Button variant="outline" className="w-full border-white/20 text-black hover:bg-white hover:text-black transition-colors">
+      Download PDF
+    </Button>
+  </a>
+  
+  {/* <Button className="bg-[#d9a406] text-black hover:bg-[#b38605]">
+    Book Site Visit
+  </Button> */}
+</div>
                                   )}
                                 </div>
                               </div>
