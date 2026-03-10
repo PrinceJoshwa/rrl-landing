@@ -4,7 +4,7 @@ import { X, User, Smartphone, Mail, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
-const BROCHURE_URL = "/PalmAltezze.pdf";
+const BROCHURE_URL = "https://ik.imagekit.io/j0xzq9pns/RRL%20Palm%20plans/Palm%20Altezze%20Brochure_compressed.pdf?updatedAt=1773156522011";
 
 type BrochureCTAModalProps = {
   open: boolean;
@@ -19,7 +19,7 @@ const BrochureCTAModal = ({ open, onClose }: BrochureCTAModalProps) => {
     if (state.succeeded) {
       const link = document.createElement("a");
       link.href = BROCHURE_URL;
-      link.download = "https://ik.imagekit.io/j0xzq9pns/RRL%20Palm%20plans/Palm%20Altezze%20Brochure_compressed.pdf?updatedAt=1773156522011";
+      link.download = "Palm Altezze Brochure.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
