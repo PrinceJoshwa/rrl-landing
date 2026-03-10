@@ -144,47 +144,101 @@ const HeroImageBanner = () => {
   )
 };
 const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
-  // Integrate Formspree
+  // Integrate Formspree (using your ID)
   const [state, handleSubmit] = useForm("xbdrqepk");
 
-  // Wrap to add CRM call before Formspree
+  // Handle the form submission
   const handleHeroSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const form = e.currentTarget
-    const nameVal = (form.elements.namedItem('name') as HTMLInputElement)?.value ?? ''
-    const phoneVal = (form.elements.namedItem('phone') as HTMLInputElement)?.value ?? ''
-    const emailVal = (form.elements.namedItem('email') as HTMLInputElement)?.value ?? ''
-    // CRM – fire and forget
+    e.preventDefault();
+    const form = e.currentTarget;
+    const nameVal = (form.elements.namedItem('name') as HTMLInputElement)?.value ?? '';
+    const phoneVal = (form.elements.namedItem('phone') as HTMLInputElement)?.value ?? '';
+    const emailVal = (form.elements.namedItem('email') as HTMLInputElement)?.value ?? '';
+
+    // CRM / API Call - fire and forget
     fetch('/download-brochure-api.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: nameVal, phone: phoneVal, email: emailVal, project: 'RRL Palacio' }),
-    }).catch(console.error)
-    await handleSubmit(e)
-  }
+      body: JSON.stringify({ 
+        name: nameVal, 
+        phone: phoneVal, 
+        email: emailVal, 
+        project: 'RRL Palacio' 
+      }),
+    }).catch(console.error);
 
-  useEffect(() => {
-    if (state.succeeded) {
-      const link = document.createElement("a");
-      link.href = "/Palacio.pdf";
-      link.download = "RRL Palacio Brochure.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+    // Formspree submission
+    await handleSubmit(e);
+  };
+
+  // Trigger download automatically when Formspree succeeds
+useEffect(() => {
+    const triggerDownload = async () => {
+      if (state.succeeded) {
+        try {
+          // 1. Fetch the file data
+          const response = await fetch("https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Palacio_compressed.pdf?ik-attachment=true");
+          const blob = await response.blob();
+          
+          // 2. Create a local URL for the blob data
+          const url = window.URL.createObjectURL(blob);
+          
+          // 3. Create a temporary anchor element
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute("download", "RRL_Palacio_Brochure.pdf");
+          
+          // 4. Append and click
+          document.body.appendChild(link);
+          link.click();
+          
+          // 5. Cleanup
+          link.parentNode?.removeChild(link);
+          window.URL.revokeObjectURL(url);
+        } catch (error) {
+          console.error("Download failed:", error);
+          // Fallback: try opening in new tab if blob fails
+          window.open("https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Palacio_compressed.pdf?ik-attachment=true", "_blank");
+        }
+      }
+    };
+
+    triggerDownload();
   }, [state.succeeded]);
+
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
 
   return (
     <section className="relative w-full min-h-screen bg-black overflow-hidden flex items-center pt-24 pb-12">
+      {/* Background Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#d9a406]/20 via-black to-black opacity-60"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
+          
+          {/* Left Content */}
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4 mb-6">
-              <Badge variant="outline" className="text-[#d9a406] border-[#d9a406] px-4 py-1 text-sm uppercase tracking-widest bg-[#d9a406]/10 backdrop-blur-md">Ready To Move In</Badge>
-              <Badge variant="outline" className="text-white border-white/30 px-4 py-1 text-sm uppercase tracking-widest bg-white/5 backdrop-blur-md">BMRDA & RERA Approved</Badge>
+              <Badge variant="outline" className="text-[#d9a406] border-[#d9a406] px-4 py-1 text-sm uppercase tracking-widest bg-[#d9a406]/10 backdrop-blur-md">
+                Ready To Move In
+              </Badge>
+              <Badge variant="outline" className="text-white border-white/30 px-4 py-1 text-sm uppercase tracking-widest bg-white/5 backdrop-blur-md">
+                BMRDA & RERA Approved
+              </Badge>
             </motion.div>
 
             <motion.h1 variants={fadeIn} className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
@@ -198,12 +252,19 @@ const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg px-8 h-14 rounded-none skew-x-[-10deg] transition-all hover:scale-105" onClick={onOpenModal}>
-                <span className="skew-x-[10deg] flex items-center gap-2">Download Brochure <ArrowRight className="w-5 h-5" /></span>
+              <Button 
+                size="lg" 
+                className="bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg px-8 h-14 rounded-none skew-x-[-10deg] transition-all hover:scale-105" 
+                onClick={onOpenModal}
+              >
+                <span className="skew-x-[10deg] flex items-center gap-2">
+                  Download Brochure <ArrowRight className="w-5 h-5" />
+                </span>
               </Button>
             </motion.div>
           </motion.div>
 
+          {/* Right Content - Lead Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -217,7 +278,7 @@ const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
                 <div className="flex flex-col items-center justify-center py-10 text-center animate-in fade-in zoom-in duration-500">
                   <CheckCircle2 className="w-16 h-16 text-[#d9a406] mb-4" />
                   <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
-                  <p className="text-gray-400">Your details have been submitted. We will call you shortly.</p>
+                  <p className="text-gray-400">Your details have been submitted. Your download should start shortly.</p>
                 </div>
               ) : (
                 <>
@@ -230,27 +291,29 @@ const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
                     <div className="relative">
                       <User className="absolute left-3 top-3.5 w-5 h-5 text-gray-500" />
                       <input
-                        name="name" // Added Name
+                        name="name"
                         type="text"
                         placeholder="Your Name"
                         className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-600 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all"
                         required
                       />
                     </div>
+
                     <div className="relative">
                       <Smartphone className="absolute left-3 top-3.5 w-5 h-5 text-gray-500" />
                       <input
-                        name="phone" // Added Name
+                        name="phone"
                         type="tel"
                         placeholder="Phone Number"
                         className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-600 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all"
                         required
                       />
                     </div>
+
                     <div className="relative">
                       <Mail className="absolute left-3 top-3.5 w-5 h-5 text-gray-500" />
                       <input
-                        name="email" // Added Name
+                        name="email"
                         type="email"
                         placeholder="Email Address"
                         className="w-full bg-black/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder:text-gray-600 focus:border-[#d9a406] focus:ring-1 focus:ring-[#d9a406] outline-none transition-all"
@@ -258,7 +321,12 @@ const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
                       />
                       <ValidationError prefix="Email" field="email" errors={state.errors} />
                     </div>
-                    <Button type="submit" disabled={state.submitting} className="w-full bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg h-12 shadow-[0_0_20px_rgba(217,164,6,0.2)] hover:shadow-[0_0_30px_rgba(217,164,6,0.4)] transition-all">
+
+                    <Button 
+                      type="submit" 
+                      disabled={state.submitting} 
+                      className="w-full bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg h-12 shadow-[0_0_20px_rgba(217,164,6,0.2)] hover:shadow-[0_0_30px_rgba(217,164,6,0.4)] transition-all"
+                    >
                       {state.submitting ? "Submitting..." : "Get Call Back"}
                     </Button>
                   </form>
@@ -269,8 +337,8 @@ const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 const HighlightsSection = () => (
   <section className="py-20 bg-[#0a0a0a] border-b border-white/5">
@@ -518,10 +586,21 @@ const FloorPlansSection = () => {
                                       <Unlock className="w-4 h-4 mr-2" /> Unlock Floor Plan
                                     </Button>
                                   ) : (
-                                    <div className="grid grid-cols-2 gap-3">
-                                      <Button variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black">Download PDF</Button>
-                                      <Button className="bg-[#d9a406] text-black hover:bg-[#b38605]">Book Site Visit</Button>
-                                    </div>
+<div className="grid grid-cols-1 gap-3">
+  {/* FIXED: Added ik-attachment=true and removed target="_blank" to prevent tab-switching */}
+  <a 
+    href="https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Palacio_compressed.pdf?ik-attachment=true" 
+    download="Palacio_Brochure.pdf"
+    className="w-full"
+  >
+    <Button 
+      variant="outline" 
+      className="w-full border-white/20 text-white hover:bg-white hover:text-black transition-all"
+    >
+      Download PDF
+    </Button>
+  </a>
+</div>
                                   )}
                                 </div>
                               </div>
