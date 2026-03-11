@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://rrlbuildersanddevelopers.com/sitemap.xml
