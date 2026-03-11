@@ -10,8 +10,7 @@
 
 // // // export const metadata: Metadata = {
 // // //   title: "Affordable Apartments & Flats for Sale in Sarjapur Road",
-// // //   description:
-// // //     "Explore modern apartments in Sarjapur Road with 1, 2 & 3 BHK options. Find the best flats for sale in Sarjapur Road near you with RRL Builders.",
+// // //   description:"Explore modern apartments in Sarjapur Road with 1, 2 & 3 BHK options. Find the best flats for sale in Sarjapur Road near you with RRL Builders.",    
 // // // }
 
 // // // export default function RootLayout({
