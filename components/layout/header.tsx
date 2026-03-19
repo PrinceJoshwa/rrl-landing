@@ -43,6 +43,7 @@ const navigation = [
   { name: "Careers", href: "/careers" },
   { name: "CSR", href: "/csr" },
   { name: "NRI Corner", href: "/nri-corner" },
+  { name: "Channel Partners", href: "/channel-partners" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -319,15 +320,15 @@ export function Header() {
             <Image src="/logo.png" alt="RRL Group Logo" width={150} height={50} />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8" ref={navRef}>
+{/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-6" ref={navRef}>
             {navigation.map((item) => (
               <div key={item.name} className="relative">
                 <div className="flex items-center">
                   <Link
                     href={item.href}
                     className={cn(
-                      "text-gray-300 hover:text-gold-400 font-medium transition-colors py-2",
+                      "text-gray-300 hover:text-gold-400 font-medium transition-colors py-2 whitespace-nowrap lg:text-sm xl:text-base",
                       pathname === item.href && "text-gold-400"
                     )}
                   >
@@ -336,7 +337,7 @@ export function Header() {
                   {item.submenu && (
                     <button
                       onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
-                      className="ml-2 p-1 text-gray-300 hover:text-gold-400"
+                      className="ml-1 p-1 text-gray-300 hover:text-gold-400"
                     >
                       <ChevronDown
                         className={cn(
@@ -357,7 +358,7 @@ export function Header() {
                           key={subItem.name}
                           href={subItem.href}
                           onClick={() => setOpenDropdown(null)}
-                          className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-gold-900/20"
+                          className="block px-4 py-2 text-sm text-gray-300 hover:text-gold-400 hover:bg-gold-900/20 whitespace-nowrap"
                         >
                           {subItem.name}
                         </Link>
