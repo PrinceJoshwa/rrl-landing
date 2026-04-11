@@ -1341,6 +1341,9 @@ const JourneySection = () => {
 // ========== 5. CLIENT GALLERY ==========
 function HappyClientsGallery() {
   const clientImages = [
+    "https://ik.imagekit.io/j0xzq9pns/happy%20clients/happy-clients%20(2).jpeg",
+    "https://ik.imagekit.io/j0xzq9pns/happy%20clients/happy-clients%20(4).jpeg",
+    "https://ik.imagekit.io/j0xzq9pns/happy%20clients/happy-clients%20(1).jpeg",
     "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560219/20250731_121250_nq8l6b.jpg",
     "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560213/20250808_115517_vitgx0.jpg",
     "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560198/20250728_164509_qpnvtc.jpg",
