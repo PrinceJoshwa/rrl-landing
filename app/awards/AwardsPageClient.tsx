@@ -431,7 +431,8 @@ function AwardsHero() {
           >
             <Image
               // src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055536/awardhome_wvhw2f.jpg"
-              src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome.jpeg"
+              // src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome.jpeg"
+              src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
               alt="RRL Awards Ceremony 2025"
               width={600}
               height={400}

@@ -99,7 +99,7 @@ export function Leadership() {
             <div className="relative bg-gradient-to-br from-slate-50 to-amber-50 rounded-3xl p-6 shadow-xl">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ram.jpg-pas5bMH3OcTcVZSxpZxq5DulrmyjEN.jpeg"
-                alt="Mr. Ram Reddy - Director, RRL Builders & Developers"
+                alt="Mr. Ram Reddy -  Managing Director, RRL Builders & Developers"
                 width={500}
                 height={400}
                 className="rounded-2xl w-full h-[350px] object-cover shadow-lg"
@@ -121,7 +121,7 @@ export function Leadership() {
 
             <div className="text-center pt-8">
               <h3 className="font-bold text-xl text-slate-900">Mr. Ram Reddy</h3>
-              <p className="text-slate-600">Director</p>
+              <p className="text-slate-600">Managing Director</p>
             </div>
           </div>
 

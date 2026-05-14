@@ -32,15 +32,17 @@ const navigation = [
       { name: "RRL Nature Woods", href: "/projects/nature-woods" },
       { name: "RRL NC-216", href: "/projects/nc-216" },
       { name: "RRL Commercial", href: "/projects/commercial" },
-
-      // { name: "RRL Sequoia", href: "/projects/sequoia" },
-      // { name: "RRL Oasis", href: "/projects/oasis" },
-      // { name: "RRL Towers", href: "/projects/towers" },
-      // { name: "RRL Complex", href: "/projects/complex" },
     ],
   },
   { name: "Awards", href: "/awards" },
-  { name: "Careers", href: "/careers" },
+  { 
+    name: "Careers", 
+    href: "/careers",
+    submenu: [
+      { name: "Current Openings", href: "/careers" },
+      { name: "Life at RRL", href: "/careers/life-at-rrl" },
+    ]
+  },
   { name: "CSR", href: "/csr" },
   { name: "NRI Corner", href: "/nri-corner" },
   { name: "Channel Partners", href: "/channel-partners" },

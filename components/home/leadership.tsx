@@ -224,7 +224,7 @@ export function Leadership() {
                 />
                 <div className="mt-4 text-center">
                   <h3 className="font-bold text-slate-900">Mr. Ram Reddy</h3>
-                  <p className="text-sm text-slate-600">Co-Founder & Director</p>
+                  <p className="text-sm text-slate-600">Co-Founder & Managing Director</p>
                 </div>
               </div>
 

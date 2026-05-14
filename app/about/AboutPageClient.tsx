@@ -838,7 +838,7 @@ function Leadership() {
               className="rounded-full w-64 h-64 object-cover mx-auto shadow-lg mb-6"
             />
             <h3 className="font-bold text-xl text-black">Mr. Ram Reddy</h3>
-            <p className="text-gray-700">Director</p>
+            <p className="text-gray-700">Managing Director</p>
             <p className="text-gray-600 italic mt-4">"Coming together is a beginning. Keeping together is progress."</p>
           </div>
           <div className="text-center">

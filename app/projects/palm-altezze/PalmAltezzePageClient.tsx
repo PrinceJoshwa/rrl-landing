@@ -276,7 +276,8 @@ export default function Home() {
       {
         id: 1,
         desktop:
-          "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/ok.png",
+          // "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/ok.png",
+          "https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/rrl-palm.jpeg",
         mobile:
           "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/ok.png?updatedAt=1766849914416",
         alt: "RRL Palm Altezze Hero Banner",
@@ -358,7 +359,7 @@ export default function Home() {
             </AnimatePresence>
 
             {/* Dots (Desktop) */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+            {/* <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
               {images.map((_, index) => (
                 <button
                   key={index}
@@ -369,7 +370,7 @@ export default function Home() {
                     }`}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 

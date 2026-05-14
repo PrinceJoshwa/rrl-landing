@@ -5,7 +5,7 @@ import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { motion, Variants, useScroll, useTransform, AnimatePresence} from "framer-motion"
+import { motion, Variants, useScroll, useTransform, AnimatePresence } from "framer-motion"
 
 // UI Components
 import { Button } from "@/components/ui/button"
@@ -58,37 +58,85 @@ import {
 } from "lucide-react"
 import { useForm, ValidationError } from '@formspree/react'
 
+// const HeroImageBanner = () => {
+//   return (
+//     <section className="relative w-full bg-black border-y border-[#333] overflow-hidden">
+
+//       {/* ===== MOBILE HERO (400 × 300) ===== */}
+//       <div className="block md:hidden">
+//         <div className="relative w-full aspect-[4/3] overflow-hidden">
+//           <img
+//             src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)%20(1).png"
+//             alt="RRL Hero Banner Mobile"
+//             loading="eager"
+//             className="w-full h-full object-contain"
+//           />
+//         </div>
+//       </div>
+
+//       {/* ===== DESKTOP HERO (UNCHANGED) ===== */}
+//       <div className="hidden md:block h-[60vh] lg:h-[80vh]">
+//         <motion.div
+//           initial={{ scale: 1.1, opacity: 0 }}
+//           whileInView={{ scale: 1, opacity: 1 }}
+//           transition={{ duration: 1.5, ease: "easeOut" }}
+//           viewport={{ once: true }}
+//           className="relative w-full h-full overflow-hidden"
+//         >
+//           <img
+//             src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/RRl%20website%20banners%20(1536%20x%20752%20px)%20(19).png"
+//             alt="RRL Hero Banner Desktop"
+//             loading="eager"
+//             className="w-full h-full object-fill"
+//           />
+//         </motion.div>
+//       </div>
+
+//     </section>
+//   )
+// }
+
+
+
+// ========== 1. HERO COMPONENT ==========
+
 const HeroImageBanner = () => {
   return (
     <section className="relative w-full bg-black border-y border-[#333] overflow-hidden">
-      
-      {/* ===== MOBILE HERO (400 × 300) ===== */}
+
+      {/* ===== MOBILE HERO ===== */}
       <div className="block md:hidden">
         <div className="relative w-full aspect-[4/3] overflow-hidden">
+
           <img
             src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)%20(1).png"
             alt="RRL Hero Banner Mobile"
             loading="eager"
             className="w-full h-full object-contain"
           />
+
         </div>
       </div>
 
-      {/* ===== DESKTOP HERO (UNCHANGED) ===== */}
-      <div className="hidden md:block h-[60vh] lg:h-[80vh]">
+
+      {/* ===== DESKTOP HERO ===== */}
+      <div className="hidden md:block">
+
         <motion.div
-          initial={{ scale: 1.1, opacity: 0 }}
+          initial={{ scale: 1.05, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative w-full h-full overflow-hidden"
+          className="relative w-full overflow-hidden"
         >
+
           <img
             src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/RRl%20website%20banners%20(1536%20x%20752%20px)%20(19).png"
             alt="RRL Hero Banner Desktop"
             loading="eager"
-            className="w-full h-full object-fill"
+            className="w-full h-auto object-contain"
           />
+
         </motion.div>
       </div>
 
@@ -96,16 +144,13 @@ const HeroImageBanner = () => {
   )
 }
 
-
-
-// ========== 1. HERO COMPONENT ==========
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
   // const [isVRModalOpen, setIsVRModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   // 1. State to control the popup
   const [isVRModalOpen, setIsVRModalOpen] = useState(false)
-  
+
   // 2. Formspree Hook (ID: xkgkyavn)
   const [state, handleSubmit] = useForm("xkgkyavn");
   const router = useRouter()
@@ -127,29 +172,29 @@ function Hero() {
       badge: "Global Recognition",
     },
   ]
-  
-const handleVRSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault()
 
-  // CRM – fire and forget (read form values from the form element)
-  const form = e.currentTarget
-  const nameVal  = (form.elements.namedItem('name')  as HTMLInputElement)?.value ?? ''
-  const phoneVal = (form.elements.namedItem('phone') as HTMLInputElement)?.value ?? ''
-  const emailVal = (form.elements.namedItem('email') as HTMLInputElement)?.value ?? ''
-  fetch('/book-vr-experience-api.php', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: nameVal, phone: phoneVal, email: emailVal, project: 'RRL Palm Altezze' }),
-  }).catch(console.error)
+  const handleVRSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
 
-  await handleSubmit(e)
+    // CRM – fire and forget (read form values from the form element)
+    const form = e.currentTarget
+    const nameVal = (form.elements.namedItem('name') as HTMLInputElement)?.value ?? ''
+    const phoneVal = (form.elements.namedItem('phone') as HTMLInputElement)?.value ?? ''
+    const emailVal = (form.elements.namedItem('email') as HTMLInputElement)?.value ?? ''
+    fetch('/book-vr-experience-api.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: nameVal, phone: phoneVal, email: emailVal, project: 'RRL Palm Altezze' }),
+    }).catch(console.error)
 
-  // IMPORTANT: useForm updates state synchronously
-  if (state.succeeded) {
-    setIsVRModalOpen(false)
-    router.push("/vr-tour/")
+    await handleSubmit(e)
+
+    // IMPORTANT: useForm updates state synchronously
+    if (state.succeeded) {
+      setIsVRModalOpen(false)
+      router.push("/vr-tour/")
+    }
   }
-}
 
 
 
@@ -157,229 +202,220 @@ const handleVRSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     <>
       {/* ===== Hero Section ===== */}
       <motion.section
-        className="relative flex min-h-[90vh] items-center overflow-hidden bg-black"
+        className="relative min-h-screen overflow-hidden bg-black flex items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-grid-white/[0.05]" />
 
-        {/* Background Gradient Accent */}
-        <div className="absolute top-0 right-0 -mt-20 -mr-20 h-[500px] w-[500px] rounded-full bg-gold-500/10 blur-[100px]" />
+        {/* Background */}
+        <div className="absolute inset-0 bg-grid-white/[0.03]" />
+
+        {/* Glow Effects */}
+        <div className="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-[#d9a406]/10 blur-[120px]" />
+        <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-[#d9a406]/5 blur-[100px]" />
 
         <div className="container relative z-10 mx-auto px-4 py-20">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
-            {/* Left Content */}
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* ================= LEFT CONTENT ================= */}
             <motion.div
               className="space-y-8"
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center space-x-3 rounded-full px-6 py-3 text-gold-300 border border-gold-700 bg-gold-900/20">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-500">
+
+              {/* Top Badge */}
+              <div className="inline-flex items-center gap-3 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 backdrop-blur-xl px-6 py-3">
+
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#d9a406]">
                   <Award className="h-4 w-4 text-black" />
                 </div>
-                <span className="text-sm font-semibold">
+
+                <span className="text-sm font-semibold text-[#d9a406] tracking-wide">
                   Times Real Estate Icon Awards 2025 Winner
                 </span>
               </div>
 
+              {/* Heading */}
               <div className="space-y-6">
-                <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-white font-playfair">
-                  RRL Builders & <span className="text-gold-400 block">Developers</span>
+
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white font-playfair">
+                  RRL Builders &
+                  <span className="block text-[#d9a406]">
+                    Developers
+                  </span>
                 </h1>
 
-                <div className="space-y-4 text-lg leading-relaxed text-gray-300">
+                <div className="space-y-5 text-lg leading-relaxed text-gray-300">
+
                   <p>
-                    RRL Builders & Developers is redefining modern luxury. We don't just build apartments; we craft high-quality lifestyles through innovation and a decade of expertise.
-                    With 4 successfully delivered projects, we prioritise precision to ensure early possession for our homeowners
-                    Residents and home buyers experience uncompromising quality in every detail, from premium finishes to future-ready amenities.
+                    RRL Builders & Developers is redefining modern luxury
+                    with future-ready residential communities crafted through
+                    innovation, precision, and uncompromising quality.
                   </p>
+
                   <p>
-                    Our properties are perfectly positioned in Bangalore’s high-value zones:{" "}
-                    <span className="text-gold-400 font-semibold">Sarjapura, Varthur, and Chikkatirupati.</span>
+                    With successfully delivered projects across Bangalore,
+                    we focus on premium construction, timely delivery,
+                    and elevated lifestyles for modern homeowners.
+                  </p>
+
+                  <p>
+                    Strategically located in Bangalore’s fastest-growing zones:
+                    <span className="text-[#d9a406] font-semibold">
+                      {" "}Sarjapura, Varthur & Chikkatirupati.
+                    </span>
                   </p>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-{/* ========== THE BUTTONS ========== */}
-        <div className="flex flex-col gap-4 sm:flex-row pt-4 justify-center md:justify-start">
-            <Link href="/projects">
-              <Button
-                size="lg"
-                className="group w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold text-black bg-[#d9a406] hover:bg-[#b08505] transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)]"
-              >
-                Explore RRL Properties
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
 
-            {/* This Button now opens the Modal */}
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => setIsVRModalOpen(true)}
-              className="group w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold text-[#d9a406] border-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300"
-            >
-              Book a Virtual Tour
-            </Button>
-        </div>
+                <Link href="/projects">
+                  <Button
+                    size="lg"
+                    className="group rounded-full bg-[#d9a406] px-8 py-6 text-lg font-semibold text-black hover:bg-[#b08505] transition-all duration-300 shadow-[0_0_25px_rgba(217,164,6,0.3)]"
+                  >
+                    Explore RRL Properties
 
-        {/* ========== THE POPUP FORM (Required) ========== */}
-      <AnimatePresence>
-        {isVRModalOpen && (
-          <motion.div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsVRModalOpen(false)}
-          >
-            <motion.div 
-              className="bg-[#111] border border-[#d9a406] p-8 rounded-2xl w-full max-w-md relative shadow-[0_0_50px_rgba(217,164,6,0.15)]"
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <button 
-                onClick={() => setIsVRModalOpen(false)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
-              >
-                <X className="w-6 h-6" />
-              </button>
-              
-              {state.succeeded ? (
-                // Success Message
-                <div className="flex flex-col items-center justify-center py-6 text-center animate-in fade-in zoom-in duration-500">
-                  <CheckCircle className="w-16 h-16 text-[#d9a406] mb-4" />
-                  <h3 className="text-2xl font-bold text-white mb-2">Booking Confirmed!</h3>
-                  <p className="text-gray-400 mb-6">We'll contact you shortly to schedule your VR experience.</p>
-                  <Button onClick={() => setIsVRModalOpen(false)} variant="outline" className="border-white/20 text-black hover:bg-white hover:text-black">Close</Button>
-                </div>
-              ) : (
-                // The Form
-                <>
-                  <div className="text-center mb-8">
-                     <h3 className="text-2xl font-bold text-white mb-2">
-                       Book <span className="text-[#d9a406]">VR Experience</span>
-                     </h3>
-                     <p className="text-gray-400 text-sm">Fill in your details to schedule a session.</p>
-                  </div>
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
 
-                  {/* <form onSubmit={handleSubmit} className="space-y-4"> */}
-                  <form onSubmit={handleVRSubmit} className="space-y-4">
-
-                    <input type="hidden" name="subject" value="Hero Section - VR Booking" />
-                    
-                    <div className="space-y-2">
-                       <div className="relative">
-                          <User className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                          <input 
-                            name="name" 
-                            type="text" 
-                            placeholder="Your Name" 
-                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
-                            required 
-                          />
-                       </div>
-                    </div>
-
-                    <div className="space-y-2">
-                       <div className="relative">
-                          <Smartphone className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                          <input 
-                            name="phone" 
-                            type="tel" 
-                            placeholder="Phone Number" 
-                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
-                            required 
-                          />
-                       </div>
-                    </div>
-
-                    <div className="space-y-2">
-                       <div className="relative">
-                          <Mail className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
-                          <input 
-                            name="email" 
-                            type="email" 
-                            placeholder="Email Address" 
-                            className="w-full bg-black border border-[#333] py-3 pl-10 pr-4 rounded-lg text-white focus:border-[#d9a406] outline-none transition-colors" 
-                            required 
-                          />
-                          <ValidationError prefix="Email" field="email" errors={state.errors} />
-                       </div>
-                    </div>
-
-                    <Button 
-                      type="submit" 
-                      disabled={state.submitting} 
-                      className="w-full bg-[#d9a406] text-black font-bold text-lg h-12 hover:bg-[#b08505] mt-4"
-                    >
-                      {state.submitting ? (
-                        <>
-                          <Loader2 className="w-4 h-4 mr-2 animate-spin" /> Scheduling...
-                        </>
-                      ) : (
-                        "Confirm Booking"
-                      )}
-                    </Button>
-                  </form>
-                </>
-              )}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setIsVRModalOpen(true)}
+                  className="rounded-full border-[#d9a406] px-8 py-6 text-lg font-semibold text-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300"
+                >
+                  Book a Virtual Tour
+                </Button>
+              </div>
 
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-gray-800">
-                <div className="flex items-center space-x-2">
-                  <div className="flex -space-x-2">
+              <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-gray-800">
+
+                <div className="flex items-center gap-3">
+
+                  <div className="flex -space-x-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-gold-400 text-gold-400" />
+                      <Star
+                        key={i}
+                        className="h-5 w-5 fill-[#d9a406] text-[#d9a406]"
+                      />
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-gray-400">
+
+                  <span className="text-sm text-gray-400 font-medium">
                     4.9/5 Customer Rating
                   </span>
                 </div>
-                <div className="hidden sm:block h-6 w-px bg-gold-800" />
-                <div className="flex items-center space-x-2">
-                  <Building className="h-5 w-5 text-gold-400" />
-                  <span className="text-sm font-medium text-gray-400">
+
+                <div className="hidden sm:block h-6 w-px bg-gray-700" />
+
+                <div className="flex items-center gap-2">
+
+                  <Building className="h-5 w-5 text-[#d9a406]" />
+
+                  <span className="text-sm text-gray-400 font-medium">
                     150+ Proud Employees
                   </span>
                 </div>
               </div>
             </motion.div>
 
-            {/* Right Content - Video */}
+
+
+            {/* ================= RIGHT CONTENT ================= */}
             <motion.div
-              className="relative flex justify-center lg:justify-end"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="relative flex flex-col gap-6"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-gold-800 shadow-2xl shadow-gold-900/20 group">
-                <div className="absolute inset-0 bg-gold-500/10 z-10 pointer-events-none group-hover:bg-transparent transition-all duration-500" />
+
+              {/* ================= VIDEO ================= */}
+              <div className="relative aspect-video overflow-hidden rounded-[28px] border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.08)] group">
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+
                 <iframe
                   src="https://www.youtube.com/embed/noXGLRYcyBU?autoplay=1&mute=1&loop=1&playlist=noXGLRYcyBU"
-                  title="Our Story Video"
+                  title="RRL Builders Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="absolute top-0 left-0 w-full h-full scale-105"
+                  className="absolute top-0 left-0 h-full w-full scale-[1.02]"
                 ></iframe>
+
+                {/* Video Content */}
+                <div className="absolute bottom-5 left-5 right-5 z-20 flex items-center justify-between">
+
+                  <div>
+                    <p className="text-white text-xl font-bold">
+                      RRL Builders & Developers
+                    </p>
+
+                    <p className="text-gray-300 text-sm">
+                      Beyond Homes. A Lifestyle.
+                    </p>
+                  </div>
+
+                  <div className="rounded-full bg-[#d9a406] p-3 shadow-[0_0_20px_rgba(217,164,6,0.4)]">
+                    <Play className="w-5 h-5 text-black fill-black" />
+                  </div>
+                </div>
               </div>
 
-              {/* Decorative elements around video */}
-              <div className="absolute -bottom-6 -left-6 -z-10 h-full w-full rounded-2xl border border-gold-800/30 bg-gray-900/50" />
+
+              {/* ================= AWARD IMAGE ================= */}
+              <div className="relative overflow-hidden rounded-[30px] border border-[#d9a406]/20 group shadow-[0_0_40px_rgba(217,164,6,0.08)]">
+
+                {/* IMAGE */}
+                <div className="relative h-[500px] w-full overflow-hidden">
+
+                  <Image
+                    src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg?updatedAt=1778529418349"
+                    alt="RRL Award Ceremony"
+                    fill
+                    priority
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
+
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 rounded-full border border-[#d9a406]/30 bg-black/60 backdrop-blur-md px-5 py-2 mb-5">
+
+                      <Award className="w-4 h-4 text-[#d9a406]" />
+
+                      <span className="text-xs uppercase tracking-[0.3em] text-[#d9a406] font-semibold">
+                        Global Recognition
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-3xl md:text-4xl font-bold leading-tight text-white font-playfair">
+                      Times Real Estate
+                      <span className="block text-[#d9a406]">
+                        Icon Awards 2025
+                      </span>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
             </motion.div>
+
           </div>
         </div>
       </motion.section>
@@ -481,43 +517,43 @@ function PalmAltezzeBanner() {
 
           {/* Right Side: Tall Image */}
           <div className="lg:w-1/2 w-full">
-  <div
-    className="
+            <div
+              className="
       relative w-full rounded-2xl overflow-hidden
       border border-gold-500/30 shadow-2xl
       aspect-[348/729] md:aspect-auto
       md:h-[500px] lg:h-[150vh]
     "
-  >
-    {/* Mobile Tall Image (348 × 729) */}
-    <Image
-      src="https://ik.imagekit.io/j0xzq9pns/palm-altezze%20(20).jpeg"
-      alt="Palm Altezze Interior"
-      fill
-      className="block md:hidden object-cover"
-      sizes="100vw"
-    />
+            >
+              {/* Mobile Tall Image (348 × 729) */}
+              <Image
+                src="https://ik.imagekit.io/j0xzq9pns/palm-altezze%20(20).jpeg"
+                alt="Palm Altezze Interior"
+                fill
+                className="block md:hidden object-cover"
+                sizes="100vw"
+              />
 
-    {/* Desktop Tall Image */}
-    <Image
-      src="https://ik.imagekit.io/j0xzq9pns/palm-altezze%20(20).jpeg"
-      alt="Palm Altezze Interior"
-      fill
-      className="hidden md:block object-cover lg:object-fill lg:object-top"
-      sizes="50vw"
-    />
+              {/* Desktop Tall Image */}
+              <Image
+                src="https://ik.imagekit.io/j0xzq9pns/palm-altezze%20(20).jpeg"
+                alt="Palm Altezze Interior"
+                fill
+                className="hidden md:block object-cover lg:object-fill lg:object-top"
+                sizes="50vw"
+              />
 
-    {/* Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-    {/* Caption */}
-    <div className="absolute bottom-8 left-8 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10 z-10">
-      <p className="text-white font-playfair text-lg">
-        High-rise apartment
-      </p>
-    </div>
-  </div>
-</div>
+              {/* Caption */}
+              <div className="absolute bottom-8 left-8 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10 z-10">
+                <p className="text-white font-playfair text-lg">
+                  High-rise apartment
+                </p>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -736,12 +772,14 @@ const AwardsSection = () => {
               <source
                 media="(max-width: 768px)"
                 // srcSet="https://res.cloudinary.com/dsj3kcbf4/image/upload/w_768,c_scale/v1766055536/awardhome_wvhw2f.jpg"
-                srcSet="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome.jpeg"
+                // srcSet="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome.jpeg"
+                srcSet="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
               />
               {/* Desktop Image */}
               <img
                 // src="https://res.cloudinary.com/dsj3kcbf4/image/upload/v1766055536/awardhome_wvhw2f.jpg"
-                src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome.jpeg"
+                // src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome.jpeg"
+                src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
                 alt="RRL Awards Ceremony 2025"
                 className="relative rounded-3xl w-full h-auto shadow-2xl border border-[#333] z-10"
               />
@@ -834,7 +872,7 @@ function Leadership() {
                 />
                 <div className="mt-4 text-center">
                   <h3 className="font-bold text-white">Mr. Ram Reddy</h3>
-                  <p className="text-sm text-gray-400">Director</p>
+                  <p className="text-sm text-gray-400">Managing Director</p>
                 </div>
               </div>
               <div className="rounded-3xl bg-gray-900 p-6 shadow-xl border border-gold-800">
@@ -1015,20 +1053,20 @@ function Properties() {
             >
               {/* LEFT: Image Section (55% width on desktop) - Responsive */}
               <div
-  className="
+                className="
     relative shrink-0 overflow-hidden
     aspect-[366/256] md:aspect-auto
     md:h-64 lg:h-auto lg:w-[55%]
   "
->
+              >
 
                 {/* Mobile Image */}
                 <Image
-  src={property.mobileImage || property.image || "/placeholder.svg"}
-  alt={property.name}
-  fill
-  className="block md:hidden object-fill transition-transform duration-700 group-hover:scale-105"
-/>
+                  src={property.mobileImage || property.image || "/placeholder.svg"}
+                  alt={property.name}
+                  fill
+                  className="block md:hidden object-fill transition-transform duration-700 group-hover:scale-105"
+                />
 
                 {/* Desktop Image */}
                 <Image
@@ -1341,16 +1379,17 @@ const JourneySection = () => {
 // ========== 5. CLIENT GALLERY ==========
 function HappyClientsGallery() {
   const clientImages = [
-    "https://ik.imagekit.io/j0xzq9pns/happy%20clients/happy-clients%20(2).jpeg",
-    "https://ik.imagekit.io/j0xzq9pns/happy%20clients/happy-clients%20(4).jpeg",
-    "https://ik.imagekit.io/j0xzq9pns/happy%20clients/happy-clients%20(1).jpeg",
-    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560219/20250731_121250_nq8l6b.jpg",
-    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560213/20250808_115517_vitgx0.jpg",
-    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560198/20250728_164509_qpnvtc.jpg",
-    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560193/20250801_121200_sorava.jpg",
-    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560094/WhatsApp_Image_2025-11-29_at_20.11.09_qb0dfy.jpg",
-    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560079/WhatsApp_Image_2025-11-29_at_20.11.07_uwd8ac.jpg",
-    "https://res.cloudinary.com/dsj3kcbf4/image/upload/v1764560033/20250805_115305_qoouj2.jpg",
+    // "https://ik.imagekit.io/j0xzq9pns/happy%20clients/happy-clients%20(2).jpeg",
+    // "https://ik.imagekit.io/j0xzq9pns/tr:w-800,c-at_max,f-auto/happy%20clients/happy-clients%20(2).jpeg",
+    "https://ik.imagekit.io/j0xzq9pns/tr:w-800,c-at_max,f-auto/happy%20clients/happy-clients%20(4).jpeg",
+    "https://ik.imagekit.io/j0xzq9pns/tr:w-800,c-at_max,f-auto/happy%20clients/happy-clients%20(1).jpeg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/q_auto,f_auto,w_800,c_limit/v1764560219/20250731_121250_nq8l6b.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/q_auto,f_auto,w_800,c_limit/v1764560213/20250808_115517_vitgx0.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/q_auto,f_auto,w_800,c_limit/v1764560198/20250728_164509_qpnvtc.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/q_auto,f_auto,w_800,c_limit/v1764560193/20250801_121200_sorava.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/q_auto,f_auto,w_800,c_limit/v1764560094/WhatsApp_Image_2025-11-29_at_20.11.09_qb0dfy.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/q_auto,f_auto,w_800,c_limit/v1764560079/WhatsApp_Image_2025-11-29_at_20.11.07_uwd8ac.jpg",
+    "https://res.cloudinary.com/dsj3kcbf4/image/upload/q_auto,f_auto,w_800,c_limit/v1764560033/20250805_115305_qoouj2.jpg",
   ]
 
   return (
@@ -2146,43 +2185,43 @@ function CallToAction() {
   //   }
   // }
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
+    e.preventDefault()
 
-  const data = new FormData()
-  data.append("name", formData.name)
-  data.append("email", formData.email)
-  data.append("contact", formData.contact)
-  data.append("property", formData.property)
-  data.append("message", formData.message)
+    const data = new FormData()
+    data.append("name", formData.name)
+    data.append("email", formData.email)
+    data.append("contact", formData.contact)
+    data.append("property", formData.property)
+    data.append("message", formData.message)
 
-  // Paramantra CRM – fire and forget
-  fetch('/get-in-touch-api.php', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.contact, property: formData.property, message: formData.message }),
-  }).catch(console.error)
+    // Paramantra CRM – fire and forget
+    fetch('/get-in-touch-api.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.contact, property: formData.property, message: formData.message }),
+    }).catch(console.error)
 
-  try {
-    const res = await fetch("https://formspree.io/f/xwprwzdq", {
-      method: "POST",
-      body: data,
-      headers: {
-        Accept: "application/json",
-      },
-    })
+    try {
+      const res = await fetch("https://formspree.io/f/xwprwzdq", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      })
 
-    if (res.ok) {
-      router.push("/c1/thankyou/")
-    } else if (res.status === 429) {
-      alert("Too many requests. Please wait a moment and try again.")
-    } else {
-      alert("Failed to send your request. Please try again.")
+      if (res.ok) {
+        router.push("/c1/thankyou/")
+      } else if (res.status === 429) {
+        alert("Too many requests. Please wait a moment and try again.")
+      } else {
+        alert("Failed to send your request. Please try again.")
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert("Network error. Please try again.")
     }
-  } catch (error) {
-    console.error("Error submitting form:", error)
-    alert("Network error. Please try again.")
   }
-}
 
 
   return (
