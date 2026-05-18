@@ -2706,7 +2706,7 @@ function Hero() {
                     <h3 className="text-3xl md:text-4xl font-bold leading-tight text-white font-playfair">
                       Times Real Estate
                       <span className="block text-[#d9a406]">
-                        Icon Awards 2025
+                        Icon Awards 2023
                       </span>
                     </h3>
                   </div>
@@ -3169,7 +3169,420 @@ const AwardsSection = () => {
 //   )
 // }
 
+// const FeaturedImageGallery = () => {
+//   return (
+//     <section className="py-20 bg-black relative border-b border-[#d9a406]/20 overflow-hidden">
+
+//       {/* Premium Glow */}
+//       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[#d9a406]/5 rounded-full blur-[140px] pointer-events-none" />
+
+//       <div className="container mx-auto px-4 max-w-7xl relative z-10">
+
+//         {/* Header */}
+//         <div className="mb-14 text-center">
+
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             viewport={{ once: true }}
+//             className="inline-flex items-center gap-2 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 px-6 py-2 text-[#d9a406] mb-5"
+//           >
+//             <Star className="h-4 w-4" />
+
+//             <span className="text-sm font-bold uppercase tracking-[0.2em]">
+//               The Times Business Awards
+//             </span>
+//           </motion.div>
+
+//           <motion.h2
+//             initial={{ opacity: 0, y: 20 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ delay: 0.1 }}
+//             viewport={{ once: true }}
+//             className="text-3xl sm:text-4xl md:text-6xl font-playfair font-bold text-white leading-tight"
+//           >
+//             Emerging Developer <br className="hidden md:block" />
+
+//             <span className="text-[#d9a406]">
+//               Of The Year
+//             </span>
+//           </motion.h2>
+//         </div>
+
+//         {/* Main Grid */}
+//         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-stretch">
+
+//           {/* Left Large Image */}
+//           <motion.div
+//             initial={{ opacity: 0, y: 40 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//             viewport={{ once: true }}
+//             className="md:col-span-7 relative min-h-[700px] rounded-[2rem] overflow-hidden group border border-white/5 hover:border-[#d9a406]/50 transition-all duration-500 shadow-[0_0_50px_rgba(217,164,6,0.08)]"
+//           >
+//             <Image
+//               src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg"
+//               alt="RRL Builders Award Ceremony"
+//               fill
+//               className="object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"
+//               unoptimized
+//             />
+
+//             {/* Overlay */}
+//             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+
+//             {/* Content */}
+//             <div className="absolute bottom-8 left-8 right-8">
+
+//               <div className="translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+
+//                 <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white mb-3">
+//                   Times Business Award 2026
+//                 </h3>
+
+//                 <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-lg">
+//                   Honored by The Times of India as the Emerging Developer of the Year – Residential.
+//                 </p>
+
+//               </div>
+//             </div>
+//           </motion.div>
+
+//           {/* Right Side */}
+//           <div className="md:col-span-5 flex flex-col gap-6 md:gap-8 h-full">
+
+//             {/* Top Image */}
+//             <motion.div
+//               initial={{ opacity: 0, x: 40 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.8, delay: 0.2 }}
+//               viewport={{ once: true }}
+//               className="relative flex-1 min-h-[335px] rounded-[2rem] overflow-hidden group border border-white/5 hover:border-[#d9a406]/50 transition-all duration-500 shadow-xl"
+//             >
+//               <Image
+//                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg"
+//                 alt="Award Recognition"
+//                 fill
+//                 className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+//                 unoptimized
+//               />
+
+//               {/* Overlay */}
+//               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+
+//               {/* Text */}
+//               <div className="absolute bottom-6 left-6 right-6">
+
+//                 <div className="translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+
+//                   <h4 className="text-xl md:text-2xl font-playfair font-bold text-white">
+//                     A Moment of Pride
+//                   </h4>
+
+//                 </div>
+//               </div>
+//             </motion.div>
+
+//             {/* Bottom Image */}
+//             <motion.div
+//               initial={{ opacity: 0, x: 40 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.8, delay: 0.4 }}
+//               viewport={{ once: true }}
+//               className="relative flex-1 min-h-[335px] rounded-[2rem] overflow-hidden group border border-white/5 hover:border-[#d9a406]/50 transition-all duration-500 shadow-xl"
+//             >
+//               <Image
+//                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%202.08.15%20PM.jpeg"
+//                 alt="RRL Trophy"
+//                 fill
+//                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+//                 unoptimized
+//               />
+
+//               {/* Overlay */}
+//               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+
+//               {/* Text */}
+//               <div className="absolute bottom-6 left-6 right-6">
+
+//                 <div className="translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+
+//                   <h4 className="text-xl md:text-2xl font-playfair font-bold text-white">
+//                     Celebrating Success
+//                   </h4>
+
+//                 </div>
+//               </div>
+//             </motion.div>
+
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// const FeaturedImageGallery = () => {
+//   return (
+//     <section className="py-20 bg-black relative border-b border-[#d9a406]/20 overflow-hidden">
+
+//       {/* Premium Glow */}
+//       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[#d9a406]/5 rounded-full blur-[140px] pointer-events-none" />
+
+//       <div className="container mx-auto px-4 max-w-7xl relative z-10">
+
+//         {/* Header */}
+//         <div className="mb-14 text-center">
+
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             viewport={{ once: true }}
+//             className="inline-flex items-center gap-2 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 px-6 py-2 text-[#d9a406] mb-5"
+//           >
+//             <Star className="h-4 w-4" />
+
+//             <span className="text-sm font-bold uppercase tracking-[0.2em]">
+//               The Times Business Awards
+//             </span>
+//           </motion.div>
+
+//           <motion.h2
+//             initial={{ opacity: 0, y: 20 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ delay: 0.1 }}
+//             viewport={{ once: true }}
+//             className="text-3xl sm:text-4xl md:text-6xl font-playfair font-bold text-white leading-tight"
+//           >
+//             Emerging Developer <br className="hidden md:block" />
+
+//             <span className="text-[#d9a406]">
+//               Of The Year
+//             </span>
+//           </motion.h2>
+//         </div>
+
+//         {/* ================= DESKTOP VIEW ================= */}
+//         <div className="hidden md:grid md:grid-cols-12 gap-6 md:gap-8 items-stretch">
+
+//           {/* Left Large Image */}
+//           <motion.div
+//             initial={{ opacity: 0, y: 40 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//             viewport={{ once: true }}
+//             className="md:col-span-7 relative min-h-[700px] rounded-[2rem] overflow-hidden group border border-white/5 hover:border-[#d9a406]/50 transition-all duration-500 shadow-[0_0_50px_rgba(217,164,6,0.08)]"
+//           >
+//             <Image
+//               src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg"
+//               alt="RRL Builders Award Ceremony"
+//               fill
+//               className="object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"
+//               unoptimized
+//             />
+
+//             {/* Overlay */}
+//             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+//             {/* Content */}
+//             <div className="absolute bottom-8 left-8 right-8">
+
+//               <h3 className="text-3xl font-playfair font-bold text-white mb-3">
+//                 Times Business Award 2026
+//               </h3>
+
+//               <p className="text-gray-300 text-base leading-relaxed max-w-lg">
+//                 Honored by The Times of India as the Emerging Developer of the Year – Residential.
+//               </p>
+
+//             </div>
+//           </motion.div>
+
+//           {/* Right Side */}
+//           <div className="md:col-span-5 flex flex-col gap-6 h-full">
+
+//             {/* Top Image */}
+//             <motion.div
+//               initial={{ opacity: 0, x: 40 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.8, delay: 0.2 }}
+//               viewport={{ once: true }}
+//               className="relative flex-1 min-h-[335px] rounded-[2rem] overflow-hidden group border border-white/5"
+//             >
+//               <Image
+//                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg"
+//                 alt="Award Recognition"
+//                 fill
+//                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+//                 unoptimized
+//               />
+
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+//               <div className="absolute bottom-6 left-6">
+
+//                 <h4 className="text-2xl font-playfair font-bold text-white">
+//                   A Moment of Pride
+//                 </h4>
+
+//               </div>
+//             </motion.div>
+
+//             {/* Bottom Image */}
+//             <motion.div
+//               initial={{ opacity: 0, x: 40 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.8, delay: 0.4 }}
+//               viewport={{ once: true }}
+//               className="relative flex-1 min-h-[335px] rounded-[2rem] overflow-hidden group border border-white/5"
+//             >
+//               <Image
+//                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%202.08.15%20PM.jpeg"
+//                 alt="RRL Trophy"
+//                 fill
+//                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+//                 unoptimized
+//               />
+
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+//               <div className="absolute bottom-6 left-6">
+
+//                 <h4 className="text-2xl font-playfair font-bold text-white">
+//                   Celebrating Success
+//                 </h4>
+
+//               </div>
+//             </motion.div>
+
+//           </div>
+//         </div>
+
+//         {/* ================= MOBILE CAROUSEL ================= */}
+//         <div className="md:hidden">
+
+//           <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-2">
+
+//             {/* Card 1 */}
+//             <motion.div
+//               initial={{ opacity: 0, x: 40 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.6 }}
+//               viewport={{ once: true }}
+//               className="min-w-[88%] snap-center relative h-[420px] rounded-[2rem] overflow-hidden border border-white/10 flex-shrink-0"
+//             >
+//               <Image
+//                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg"
+//                 alt="Award Ceremony"
+//                 fill
+//                 unoptimized
+//                 className="object-cover"
+//               />
+
+//               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+//               <div className="absolute bottom-6 left-6 right-6">
+
+//                 <h3 className="text-2xl font-playfair font-bold text-white mb-2">
+//                   Times Business Award 2026
+//                 </h3>
+
+//                 <p className="text-sm text-gray-300 leading-relaxed">
+//                   Emerging Developer of the Year – Residential.
+//                 </p>
+
+//               </div>
+//             </motion.div>
+
+//             {/* Card 2 */}
+//             <motion.div
+//               initial={{ opacity: 0, x: 40 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.6, delay: 0.2 }}
+//               viewport={{ once: true }}
+//               className="min-w-[88%] snap-center relative h-[420px] rounded-[2rem] overflow-hidden border border-white/10 flex-shrink-0"
+//             >
+//               <Image
+//                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg"
+//                 alt="Award Recognition"
+//                 fill
+//                 unoptimized
+//                 className="object-cover"
+//               />
+
+//               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+//               <div className="absolute bottom-6 left-6">
+
+//                 <h4 className="text-2xl font-playfair font-bold text-white">
+//                   A Moment of Pride
+//                 </h4>
+
+//               </div>
+//             </motion.div>
+
+//             {/* Card 3 */}
+//             <motion.div
+//               initial={{ opacity: 0, x: 40 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.6, delay: 0.4 }}
+//               viewport={{ once: true }}
+//               className="min-w-[88%] snap-center relative h-[420px] rounded-[2rem] overflow-hidden border border-white/10 flex-shrink-0"
+//             >
+//               <Image
+//                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%202.08.15%20PM.jpeg"
+//                 alt="RRL Trophy"
+//                 fill
+//                 unoptimized
+//                 className="object-cover"
+//               />
+
+//               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+//               <div className="absolute bottom-6 left-6">
+
+//                 <h4 className="text-2xl font-playfair font-bold text-white">
+//                   Celebrating Success
+//                 </h4>
+
+//               </div>
+//             </motion.div>
+
+//           </div>
+//         </div>
+
+//       </div>
+//     </section>
+//   )
+// }
+
 const FeaturedImageGallery = () => {
+
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const container = scrollRef.current
+
+    if (!container) return
+
+    let index = 0
+
+    const cards = container.children.length
+
+    const interval = setInterval(() => {
+      index = (index + 1) % cards
+
+      const cardWidth = container.clientWidth * 0.88 + 16
+
+      container.scrollTo({
+        left: index * cardWidth,
+        behavior: "smooth",
+      })
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="py-20 bg-black relative border-b border-[#d9a406]/20 overflow-hidden">
 
@@ -3209,8 +3622,8 @@ const FeaturedImageGallery = () => {
           </motion.h2>
         </div>
 
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-stretch">
+        {/* ================= DESKTOP VIEW ================= */}
+        <div className="hidden md:grid md:grid-cols-12 gap-6 md:gap-8 items-stretch">
 
           {/* Left Large Image */}
           <motion.div
@@ -3229,27 +3642,24 @@ const FeaturedImageGallery = () => {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
             {/* Content */}
             <div className="absolute bottom-8 left-8 right-8">
 
-              <div className="translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+              <h3 className="text-3xl font-playfair font-bold text-white mb-3">
+                Times Business Award 2026
+              </h3>
 
-                <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white mb-3">
-                  Times Business Award 2026
-                </h3>
+              <p className="text-gray-300 text-base leading-relaxed max-w-lg">
+                Honored by The Times of India as the Emerging Developer of the Year – Residential.
+              </p>
 
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-lg">
-                  Honored by The Times of India as the Emerging Developer of the Year – Residential.
-                </p>
-
-              </div>
             </div>
           </motion.div>
 
           {/* Right Side */}
-          <div className="md:col-span-5 flex flex-col gap-6 md:gap-8 h-full">
+          <div className="md:col-span-5 flex flex-col gap-6 h-full">
 
             {/* Top Image */}
             <motion.div
@@ -3257,29 +3667,24 @@ const FeaturedImageGallery = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="relative flex-1 min-h-[335px] rounded-[2rem] overflow-hidden group border border-white/5 hover:border-[#d9a406]/50 transition-all duration-500 shadow-xl"
+              className="relative flex-1 min-h-[335px] rounded-[2rem] overflow-hidden group border border-white/5"
             >
               <Image
                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg"
                 alt="Award Recognition"
                 fill
-                className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 unoptimized
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-              {/* Text */}
-              <div className="absolute bottom-6 left-6 right-6">
+              <div className="absolute bottom-6 left-6">
 
-                <div className="translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <h4 className="text-2xl font-playfair font-bold text-white">
+                  A Moment of Pride
+                </h4>
 
-                  <h4 className="text-xl md:text-2xl font-playfair font-bold text-white">
-                    A Moment of Pride
-                  </h4>
-
-                </div>
               </div>
             </motion.div>
 
@@ -3289,7 +3694,7 @@ const FeaturedImageGallery = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="relative flex-1 min-h-[335px] rounded-[2rem] overflow-hidden group border border-white/5 hover:border-[#d9a406]/50 transition-all duration-500 shadow-xl"
+              className="relative flex-1 min-h-[335px] rounded-[2rem] overflow-hidden group border border-white/5"
             >
               <Image
                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%202.08.15%20PM.jpeg"
@@ -3299,28 +3704,108 @@ const FeaturedImageGallery = () => {
                 unoptimized
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-              {/* Text */}
-              <div className="absolute bottom-6 left-6 right-6">
+              <div className="absolute bottom-6 left-6">
 
-                <div className="translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <h4 className="text-2xl font-playfair font-bold text-white">
+                  Celebrating Success
+                </h4>
 
-                  <h4 className="text-xl md:text-2xl font-playfair font-bold text-white">
-                    Celebrating Success
-                  </h4>
-
-                </div>
               </div>
             </motion.div>
 
           </div>
         </div>
+
+        {/* ================= MOBILE AUTO CAROUSEL ================= */}
+        <div className="md:hidden">
+
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-2 scroll-smooth"
+          >
+
+            {/* Card 1 */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="min-w-[88%] snap-center relative h-[420px] rounded-[2rem] overflow-hidden border border-white/10 flex-shrink-0"
+            >
+              <Image
+                src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg"
+                alt="Award Ceremony"
+                fill
+                unoptimized
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+              <div className="absolute bottom-6 left-6 right-6">
+
+                <h3 className="text-2xl font-playfair font-bold text-white mb-2">
+                  Times Business Award 2026
+                </h3>
+
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  Emerging Developer of the Year – Residential.
+                </p>
+
+              </div>
+            </motion.div>
+
+            {/* Card 2 */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="min-w-[88%] snap-center relative h-[420px] rounded-[2rem] overflow-hidden border border-white/10 flex-shrink-0"
+            >
+              <Image
+                src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg"
+                alt="Award Recognition"
+                fill
+                unoptimized
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+
+            </motion.div>
+
+            {/* Card 3 */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="min-w-[88%] snap-center relative h-[420px] rounded-[2rem] overflow-hidden border border-white/10 flex-shrink-0"
+            >
+              <Image
+                src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%202.08.15%20PM.jpeg"
+                alt="RRL Trophy"
+                fill
+                unoptimized
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+            </motion.div>
+
+          </div>
+        </div>
+
       </div>
     </section>
   )
 }
+
 
 // ========== NEW: TIMES BUSINESS AWARDS SECTION ==========
 const TimesBusinessAwardSection = () => {

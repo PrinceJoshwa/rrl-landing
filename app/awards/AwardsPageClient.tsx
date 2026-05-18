@@ -1201,7 +1201,7 @@ export default function AwardsPage() {
     <>
       <AwardsHero />
       <TimesBusinessAwardSection /> 
-      {/* <FeaturedImageGallery />   */}
+      <FeaturedImageGallery />  
       <LegacyAchievements />
       {/* <AwardsList /> */}
       <MediaCoverage />

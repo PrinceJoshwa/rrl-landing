@@ -2357,7 +2357,7 @@ const FloorPlansSection = () => {
     <main className="w-full bg-black min-h-screen text-gray-200 overflow-x-hidden">
       <HeroImageBanner />
       <HeroSection />
-      <TowerShowcaseSection />
+      {/* <TowerShowcaseSection /> */}
       <ProjectGlanceSection />
       <ArchitectureSection />
       <VRShowcaseSection />
