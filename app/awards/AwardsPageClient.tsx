@@ -519,6 +519,98 @@ function AwardsList() {
   )
 }
 
+const TimesBusinessAwardSection = () => {
+  return (
+    <section className="py-24 bg-black relative border-t border-[#333] overflow-hidden">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#d9a406]/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#d9a406]/5 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* Text Side */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="inline-flex items-center gap-3 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 px-5 py-2">
+              <Trophy className="h-4 w-4 text-[#d9a406]" />
+              <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#d9a406] uppercase">
+                Times Business Awards
+              </span>
+            </div>
+
+            <div className="space-y-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight font-playfair">
+                Emerging Developer <br />
+                <span className="text-[#d9a406]">of the Year</span>
+              </h2>
+              <div className="w-24 h-1.5 bg-[#d9a406] rounded-full"></div>
+            </div>
+
+            <div className="space-y-6 text-lg text-gray-300 font-light leading-relaxed">
+              <p>
+                <span className="text-white font-semibold">RRL Builders and Developers</span> has been proudly awarded by <span className="text-white font-semibold">The Times of India</span> as the <span className="text-[#d9a406] font-medium">Emerging Developer of the Year - Residential</span>.
+              </p>
+              <p className="text-gray-400">
+                This prestigious recognition stands as a testament to our continuous pursuit of excellence, architectural innovation, and our core philosophy: <span className="italic text-gray-300">"Beyond Homes A Lifestyle."</span> We are dedicated to creating premium residential spaces that redefine modern living.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Images Side - Grand Asymmetrical Grid */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="grid grid-cols-2 gap-4 md:gap-6 items-center">
+              {/* Left Image - Shifted Down */}
+              <div className="mt-16 md:mt-24 relative rounded-[2rem] overflow-hidden border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)] group aspect-[3/4]">
+                <Image
+                  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+                //  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+                  alt="Times Business Award Ceremony"
+                  fill
+                  unoptimized
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500" />
+              </div>
+
+              {/* Right Image - Shifted Up */}
+              <div className="relative rounded-[2rem] overflow-hidden border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)] group aspect-[3/4]">
+                <Image
+                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+                 
+                //  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+                  alt="Emerging Developer of the Year Trophy"
+                  fill
+                  unoptimized
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500" />
+              </div>
+            </div>
+
+            {/* Decorative Center Badge */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-xl border border-[#d9a406]/40 p-5 rounded-full shadow-[0_0_30px_rgba(217,164,6,0.3)] z-20 flex items-center justify-center">
+              <Star className="w-8 h-8 text-[#d9a406] fill-[#d9a406]" />
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function MediaCoverage() {
   const mediaOutlets = [
     {
@@ -954,6 +1046,7 @@ export default function AwardsPage() {
   return (
     <>
       <AwardsHero />
+      <TimesBusinessAwardSection />   
       <LegacyAchievements />
       {/* <AwardsList /> */}
       <MediaCoverage />
