@@ -363,6 +363,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Trophy, Award, Star, Medal, Newspaper, Globe, Quote, Users, Building } from "lucide-react"
 import { motion } from "framer-motion"
+import { useEffect, useRef } from "react"
 
 function AwardsHero() {
   return (
