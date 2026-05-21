@@ -2983,85 +2983,167 @@ function HorizontalBrochureForm() {
 
 
 // ========== AWARDS SECTION (Restored & Corrected) ==========
+// const AwardsSection = () => {
+//   return (
+//     <section className="py-24 bg-black text-white relative border-t border-[#333]">
+//       {/* Background Grid Effect */}
+//       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+
+//       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+//         <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+//           {/* Left Content */}
+//           <div className="space-y-10">
+//             <div>
+//               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+//                 Times Real Estate <br /><span className="text-[#d9a406]">Icon Awards, 2025</span>
+//               </h2>
+//               <div className="w-24 h-1.5 bg-[#d9a406] rounded-full"></div>
+//             </div>
+
+//             <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
+//               RRL Groups has been honored with the prestigious award for <span className="text-white font-semibold">Builder of the Year</span> in
+//               the Mid-Segment Housing category by the Times Real Estate ICON Awards, 2025.
+//             </p>
+
+//             <div className="space-y-6">
+//               {[
+//                 ["Builder of the Year 2025", "Mid-segment housing category by Times Real Estate"],
+//                 ["Global Real Estate Brand Awards 2023", "Winner in Affordability category"],
+//                 ["Excellence in Amenities Premium", "Mid-Segment Homes 2024"],
+//               ].map(([title, desc], i) => (
+//                 <div key={i} className="flex items-start space-x-4 group p-4 rounded-xl border border-transparent hover:border-[#d9a406]/30 hover:bg-[#111] transition-all duration-300">
+//                   <div className="w-10 h-10 bg-[#d9a406]/10 border border-[#d9a406] rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#d9a406] transition-colors duration-300">
+//                     <Star className="h-5 w-5 text-[#d9a406] group-hover:text-black" />
+//                   </div>
+//                   <div>
+//                     <h3 className="font-bold text-white text-xl mb-1">{title}</h3>
+//                     <p className="text-gray-500 text-sm">{desc}</p>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+
+//             {/* Buttons Area - Partner Link Included */}
+//             <div className="flex flex-col sm:flex-row gap-6 pt-4">
+//               <Link href="/awards">
+//                 <Button className="rounded-full px-8 py-7 bg-transparent border-2 border-[#d9a406] text-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300 font-bold text-lg w-full sm:w-auto">
+//                   View All Awards
+//                   <ArrowRight className="ml-2 h-5 w-5" />
+//                 </Button>
+//               </Link>
+
+//               <Link href="/channel-partners">
+//                 <Button className="rounded-full px-8 py-7 bg-[#d9a406] text-black hover:bg-white border-2 border-[#d9a406] hover:border-white transition-all duration-300 font-bold text-lg w-full sm:w-auto">
+//                   <Handshake className="mr-3 h-6 w-6" />
+//                   Partner With Us
+//                 </Button>
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Right Image */}
+//           <div className="relative">
+//             <div className="absolute -inset-4 bg-[#d9a406]/20 rounded-3xl blur-2xl"></div>
+//             {/* Responsive Awards Image */}
+//             <picture>
+//               <source
+//                 media="(max-width: 768px)"
+//                 srcSet="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
+//               />
+//               <img
+//                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
+//                 alt="RRL Awards Ceremony 2025"
+//                 className="relative rounded-3xl w-full h-auto shadow-2xl border border-[#333] z-10"
+//               />
+//             </picture>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
 const AwardsSection = () => {
-  return (
-    <section className="py-24 bg-black text-white relative border-t border-[#333]">
-      {/* Background Grid Effect */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+ return (
+  <section className="py-24 bg-black text-white relative border-t border-[#333]">
+   {/* Background Grid Effect */}
+   <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+   <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left Content */}
-          <div className="space-y-10">
-            <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
-                Times Real Estate <br /><span className="text-[#d9a406]">Icon Awards, 2025</span>
-              </h2>
-              <div className="w-24 h-1.5 bg-[#d9a406] rounded-full"></div>
-            </div>
-
-            <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
-              RRL Groups has been honored with the prestigious award for <span className="text-white font-semibold">Builder of the Year</span> in
-              the Mid-Segment Housing category by the Times Real Estate ICON Awards, 2025.
-            </p>
-
-            <div className="space-y-6">
-              {[
-                ["Builder of the Year 2025", "Mid-segment housing category by Times Real Estate"],
-                ["Global Real Estate Brand Awards 2023", "Winner in Affordability category"],
-                ["Excellence in Amenities Premium", "Mid-Segment Homes 2024"],
-              ].map(([title, desc], i) => (
-                <div key={i} className="flex items-start space-x-4 group p-4 rounded-xl border border-transparent hover:border-[#d9a406]/30 hover:bg-[#111] transition-all duration-300">
-                  <div className="w-10 h-10 bg-[#d9a406]/10 border border-[#d9a406] rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#d9a406] transition-colors duration-300">
-                    <Star className="h-5 w-5 text-[#d9a406] group-hover:text-black" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-white text-xl mb-1">{title}</h3>
-                    <p className="text-gray-500 text-sm">{desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Buttons Area - Partner Link Included */}
-            <div className="flex flex-col sm:flex-row gap-6 pt-4">
-              <Link href="/awards">
-                <Button className="rounded-full px-8 py-7 bg-transparent border-2 border-[#d9a406] text-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300 font-bold text-lg w-full sm:w-auto">
-                  View All Awards
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-
-              <Link href="/channel-partners">
-                <Button className="rounded-full px-8 py-7 bg-[#d9a406] text-black hover:bg-white border-2 border-[#d9a406] hover:border-white transition-all duration-300 font-bold text-lg w-full sm:w-auto">
-                  <Handshake className="mr-3 h-6 w-6" />
-                  Partner With Us
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="relative">
-            <div className="absolute -inset-4 bg-[#d9a406]/20 rounded-3xl blur-2xl"></div>
-            {/* Responsive Awards Image */}
-            <picture>
-              <source
-                media="(max-width: 768px)"
-                srcSet="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
-              />
-              <img
-                src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
-                alt="RRL Awards Ceremony 2025"
-                className="relative rounded-3xl w-full h-auto shadow-2xl border border-[#333] z-10"
-              />
-            </picture>
-          </div>
-        </div>
+     {/* Left Content */}
+     <div className="space-y-10">
+      <div>
+       <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+        Times Real Estate <br /><span className="text-[#d9a406]">Icon Awards, 2025</span>
+       </h2>
+       <div className="w-24 h-1.5 bg-[#d9a406] rounded-full"></div>
       </div>
-    </section>
-  )
+
+      <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
+       RRL Groups has been honored with the prestigious award for <span className="text-white font-semibold">Builder of the Year</span> in
+       the Mid-Segment Housing category by the Times Real Estate ICON Awards, 2025.
+      </p>
+
+      <div className="space-y-6">
+       {[
+        ["Emerging Developer of the Year - Residential 2026", "Times Business Awards by The Times of India"],
+        ["Builder of the Year 2025", "Mid-segment housing category by Times Real Estate"],
+        ["Global Real Estate Brand Awards 2023", "Winner in Affordability category"],
+        ["Excellence in Amenities Premium", "Mid-Segment Homes 2024"],
+       ].map(([title, desc], i) => (
+        <div key={i} className="flex items-start space-x-4 group p-4 rounded-xl border border-transparent hover:border-[#d9a406]/30 hover:bg-[#111] transition-all duration-300">
+         <div className="w-10 h-10 bg-[#d9a406]/10 border border-[#d9a406] rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#d9a406] transition-colors duration-300">
+          <Star className="h-5 w-5 text-[#d9a406] group-hover:text-black" />
+         </div>
+         <div>
+          <h3 className="font-bold text-white text-xl mb-1">{title}</h3>
+          <p className="text-gray-500 text-sm">{desc}</p>
+         </div>
+        </div>
+       ))}
+      </div>
+
+      {/* Buttons Area - Partner Link Included */}
+      <div className="flex flex-col sm:flex-row gap-6 pt-4">
+       <Link href="/awards">
+        <Button className="rounded-full px-8 py-7 bg-transparent border-2 border-[#d9a406] text-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300 font-bold text-lg w-full sm:w-auto">
+         View All Awards
+         <ArrowRight className="ml-2 h-5 w-5" />
+        </Button>
+       </Link>
+
+       <Link href="/channel-partners">
+        <Button className="rounded-full px-8 py-7 bg-[#d9a406] text-black hover:bg-white border-2 border-[#d9a406] hover:border-white transition-all duration-300 font-bold text-lg w-full sm:w-auto">
+         <Handshake className="mr-3 h-6 w-6" />
+         Partner With Us
+        </Button>
+       </Link>
+      </div>
+     </div>
+
+     {/* Right Image */}
+     <div className="relative">
+      <div className="absolute -inset-4 bg-[#d9a406]/20 rounded-3xl blur-2xl"></div>
+      {/* Responsive Awards Image */}
+      <picture>
+       <source
+        media="(max-width: 768px)"
+        srcSet="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
+       />
+       <img
+        src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
+        alt="RRL Awards Ceremony 2025"
+        className="relative rounded-3xl w-full h-auto shadow-2xl border border-[#333] z-10"
+       />
+      </picture>
+     </div>
+    </div>
+   </div>
+  </section>
+ )
 }
 
 // ========== NEW: 3-IMAGE FEATURED GALLERY ==========
