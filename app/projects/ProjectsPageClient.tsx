@@ -485,7 +485,7 @@ const projects = [
     acres: "1.5 Acres",
     units: "103 Units",
     config: "2, 3 BHK",
-    possession: "Early possession granted"
+    possession: "Completed"
   },
   {
     name: "RRL Nature Woods",

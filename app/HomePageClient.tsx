@@ -2497,6 +2497,237 @@ const HeroImageBanner = () => {
   )
 }
 
+// function Hero() {
+//   const [currentSlide, setCurrentSlide] = useState(0)
+//   const [isPlaying, setIsPlaying] = useState(false);
+//   const [isVRModalOpen, setIsVRModalOpen] = useState(false)
+
+//   const [state, handleSubmit] = useForm("xkgkyavn");
+//   const router = useRouter()
+
+//   const slides = [
+//     {
+//       title: "Times Real Estate Icons Award",
+//       subtitle: "2025 Winner",
+//       description: "RRL Groups has crowned esteem award as builder of the year in Mid segment housing",
+//       image: "/awardhome.jpeg",
+//       badge: "Award Winner",
+//     },
+//     {
+//       title: "Global Real Estate Brand",
+//       subtitle: "2023 Champion",
+//       description: "Recognized globally for excellence in affordable luxury real estate development",
+//       image: "/awardhome1.jpeg",
+//       badge: "Global Recognition",
+//     },
+//   ]
+
+//   const handleVRSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault()
+
+//     const form = e.currentTarget
+//     const nameVal = (form.elements.namedItem('name') as HTMLInputElement)?.value ?? ''
+//     const phoneVal = (form.elements.namedItem('phone') as HTMLInputElement)?.value ?? ''
+//     const emailVal = (form.elements.namedItem('email') as HTMLInputElement)?.value ?? ''
+//     fetch('/book-vr-experience-api.php', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({ name: nameVal, phone: phoneVal, email: emailVal, project: 'RRL Palm Altezze' }),
+//     }).catch(console.error)
+
+//     await handleSubmit(e)
+
+//     if (state.succeeded) {
+//       setIsVRModalOpen(false)
+//       router.push("/vr-tour/")
+//     }
+//   }
+
+//   return (
+//     <>
+//       {/* ===== Hero Section ===== */}
+//       <motion.section
+//         className="relative min-h-screen overflow-hidden bg-black flex items-center"
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         transition={{ duration: 1 }}
+//       >
+//         {/* Background */}
+//         <div className="absolute inset-0 bg-grid-white/[0.03]" />
+
+//         {/* Glow Effects */}
+//         <div className="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-[#d9a406]/10 blur-[120px]" />
+//         <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-[#d9a406]/5 blur-[100px]" />
+
+//         <div className="container relative z-10 mx-auto px-4 py-20">
+//           <div className="grid lg:grid-cols-2 gap-16 items-center">
+//             {/* ================= LEFT CONTENT ================= */}
+//             <motion.div
+//               className="space-y-8"
+//               initial={{ opacity: 0, x: -60 }}
+//               animate={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.8 }}
+//             >
+//               {/* Top Badge */}
+//               <div className="inline-flex items-center gap-3 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 backdrop-blur-xl px-6 py-3">
+//                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#d9a406]">
+//                   <Award className="h-4 w-4 text-black" />
+//                 </div>
+//                 <span className="text-sm font-semibold text-[#d9a406] tracking-wide">
+//                   Times Real Estate Icon Awards 2025 Winner
+//                 </span>
+//               </div>
+
+//               {/* Heading */}
+//               <div className="space-y-6">
+//                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white font-playfair">
+//                   RRL Builders &
+//                   <span className="block text-[#d9a406]">
+//                     Developers
+//                   </span>
+//                 </h1>
+//                 <div className="space-y-5 text-lg leading-relaxed text-gray-300">
+//                   <p>
+//                     RRL Builders & Developers is redefining modern luxury
+//                     with future-ready residential communities crafted through
+//                     innovation, precision, and uncompromising quality.
+//                   </p>
+//                   <p>
+//                     With successfully delivered projects across Bangalore,
+//                     we focus on premium construction, timely delivery,
+//                     and elevated lifestyles for modern homeowners.
+//                   </p>
+//                   <p>
+//                     Strategically located in Bangalore’s fastest-growing zones:
+//                     <span className="text-[#d9a406] font-semibold">
+//                       {" "}Sarjapura, Varthur & Chikkatirupati.
+//                     </span>
+//                   </p>
+//                 </div>
+//               </div>
+
+//               {/* CTA Buttons */}
+//               <div className="flex flex-col sm:flex-row gap-4 pt-4">
+//                 <Link href="/projects">
+//                   <Button
+//                     size="lg"
+//                     className="group rounded-full bg-[#d9a406] px-8 py-6 text-lg font-semibold text-black hover:bg-[#b08505] transition-all duration-300 shadow-[0_0_25px_rgba(217,164,6,0.3)]"
+//                   >
+//                     Explore RRL Properties
+//                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+//                   </Button>
+//                 </Link>
+//                 <Button
+//                   variant="outline"
+//                   size="lg"
+//                   onClick={() => setIsVRModalOpen(true)}
+//                   className="rounded-full border-[#d9a406] px-8 py-6 text-lg font-semibold text-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300"
+//                 >
+//                   Book a Virtual Tour
+//                 </Button>
+//               </div>
+
+//               {/* Trust Indicators */}
+//               <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-gray-800">
+//                 <div className="flex items-center gap-3">
+//                   <div className="flex -space-x-1">
+//                     {[...Array(5)].map((_, i) => (
+//                       <Star
+//                         key={i}
+//                         className="h-5 w-5 fill-[#d9a406] text-[#d9a406]"
+//                       />
+//                     ))}
+//                   </div>
+//                   <span className="text-sm text-gray-400 font-medium">
+//                     4.9/5 Customer Rating
+//                   </span>
+//                 </div>
+//                 <div className="hidden sm:block h-6 w-px bg-gray-700" />
+//                 <div className="flex items-center gap-2">
+//                   <Building className="h-5 w-5 text-[#d9a406]" />
+//                   <span className="text-sm text-gray-400 font-medium">
+//                     150+ Proud Employees
+//                   </span>
+//                 </div>
+//               </div>
+//             </motion.div>
+
+//             {/* ================= RIGHT CONTENT ================= */}
+//             <motion.div
+//               className="relative flex flex-col gap-6"
+//               initial={{ opacity: 0, x: 50 }}
+//               animate={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.8, delay: 0.2 }}
+//             >
+//               {/* ================= VIDEO ================= */}
+//               <div className="relative aspect-video overflow-hidden rounded-[28px] border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.08)] group">
+//                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+//                 <iframe
+//                   src="https://www.youtube.com/embed/noXGLRYcyBU?autoplay=1&mute=1&loop=1&playlist=noXGLRYcyBU"
+//                   title="RRL Builders Video"
+//                   frameBorder="0"
+//                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//                   allowFullScreen
+//                   className="absolute top-0 left-0 h-full w-full scale-[1.02]"
+//                 ></iframe>
+//                 <div className="absolute bottom-5 left-5 right-5 z-20 flex items-center justify-between">
+//                   <div>
+//                     <p className="text-white text-xl font-bold">
+//                       RRL Builders & Developers
+//                     </p>
+//                     <p className="text-gray-300 text-sm">
+//                       Beyond Homes. A Lifestyle.
+//                     </p>
+//                   </div>
+//                   <div className="rounded-full bg-[#d9a406] p-3 shadow-[0_0_20px_rgba(217,164,6,0.4)]">
+//                     <Play className="w-5 h-5 text-black fill-black" />
+//                   </div>
+//                 </div>
+//               </div>
+
+//               {/* ================= AWARD IMAGE ================= */}
+//               <div className="relative overflow-hidden rounded-[30px] border border-[#d9a406]/20 group shadow-[0_0_40px_rgba(217,164,6,0.08)]">
+//                 <div className="relative h-[500px] w-full overflow-hidden">
+//                   <Image
+//                     src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg?updatedAt=1778529418349"
+//                     alt="RRL Award Ceremony"
+//                     fill
+//                     priority
+//                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+//                   />
+//                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+//                   <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
+//                     <div className="inline-flex items-center gap-2 rounded-full border border-[#d9a406]/30 bg-black/60 backdrop-blur-md px-5 py-2 mb-5">
+//                       <Award className="w-4 h-4 text-[#d9a406]" />
+//                       <span className="text-xs uppercase tracking-[0.3em] text-[#d9a406] font-semibold">
+//                         Global Recognition
+//                       </span>
+//                     </div>
+//                     <h3 className="text-3xl md:text-4xl font-bold leading-tight text-white font-playfair">
+//                       Times Real Estate
+//                       <span className="block text-[#d9a406]">
+//                         Icon Awards 2023
+//                       </span>
+//                     </h3>
+//                   </div>
+//                 </div>
+//               </div>
+//             </motion.div>
+//           </div>
+//         </div>
+//       </motion.section>
+
+//       <FeaturedImageGallery />
+
+//       {/* ===== Palm Altezze Banner ===== */}
+//       <PalmAltezzeBanner />
+
+//       {/* ===== Horizontal Brochure Form ===== */}
+//       <HorizontalBrochureForm />
+//     </>
+//   )
+// }
+
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false);
@@ -2561,6 +2792,7 @@ function Hero() {
 
         <div className="container relative z-10 mx-auto px-4 py-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
+            
             {/* ================= LEFT CONTENT ================= */}
             <motion.div
               className="space-y-8"
@@ -2627,28 +2859,60 @@ function Hero() {
                 </Button>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-gray-800">
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-5 w-5 fill-[#d9a406] text-[#d9a406]"
-                      />
-                    ))}
+              {/* ===== CLIENT REQUESTED IMAGES + EXISTING TRUST INDICATORS ===== */}
+              <div className="pt-8 border-t border-gray-800 flex flex-col gap-8">
+                
+                {/* 2 New Image Boxes - Fixed to be large & tall */}
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 w-full">
+                  <div className="relative w-full aspect-square md:aspect-auto md:h-[280px] lg:h-[320px] rounded-[2rem] overflow-hidden border border-[#d9a406]/30 shadow-[0_0_30px_rgba(217,164,6,0.15)] group">
+                    <Image
+                      src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/rrl-award.jpeg" 
+                      alt="Hero Highlight 1"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
-                  <span className="text-sm text-gray-400 font-medium">
-                    4.9/5 Customer Rating
-                  </span>
+
+                  <div className="relative w-full aspect-square md:aspect-auto md:h-[280px] lg:h-[320px] rounded-[2rem] overflow-hidden border border-[#d9a406]/30 shadow-[0_0_30px_rgba(217,164,6,0.15)] group">
+                    <Image
+                      src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/Award1.jpeg?updatedAt=1767712378645" 
+                      alt="Hero Highlight 2"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+                  </div>
                 </div>
-                <div className="hidden sm:block h-6 w-px bg-gray-700" />
-                <div className="flex items-center gap-2">
-                  <Building className="h-5 w-5 text-[#d9a406]" />
-                  <span className="text-sm text-gray-400 font-medium">
-                    150+ Proud Employees
-                  </span>
+
+                {/* Existing Trust Indicators (Kept exactly as they were) */}
+                <div className="flex flex-wrap items-center gap-6">
+                  <div className="flex items-center gap-3">
+                    <div className="flex -space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-5 w-5 fill-[#d9a406] text-[#d9a406]"
+                        />
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-400 font-medium">
+                      4.9/5 Customer Rating
+                    </span>
+                  </div>
+
+                  <div className="hidden sm:block h-6 w-px bg-gray-700" />
+
+                  <div className="flex items-center gap-2">
+                    <Building className="h-5 w-5 text-[#d9a406]" />
+                    <span className="text-sm text-gray-400 font-medium">
+                      150+ Proud Employees
+                    </span>
+                  </div>
                 </div>
+                
               </div>
             </motion.div>
 
@@ -2713,16 +2977,14 @@ function Hero() {
                 </div>
               </div>
             </motion.div>
+            
           </div>
         </div>
       </motion.section>
-
+      
+      {/* Existing Sections Below Hero Content Kept Intact */}
       <FeaturedImageGallery />
-
-      {/* ===== Palm Altezze Banner ===== */}
       <PalmAltezzeBanner />
-
-      {/* ===== Horizontal Brochure Form ===== */}
       <HorizontalBrochureForm />
     </>
   )
@@ -3890,6 +4152,99 @@ const FeaturedImageGallery = () => {
 
 
 // ========== NEW: TIMES BUSINESS AWARDS SECTION ==========
+// const TimesBusinessAwardSection = () => {
+//   return (
+//     <section className="py-24 bg-black relative border-t border-[#333] overflow-hidden">
+//       {/* Background Ambient Glow */}
+//       <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#d9a406]/10 rounded-full blur-[150px] pointer-events-none" />
+//       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#d9a406]/5 rounded-full blur-[150px] pointer-events-none" />
+
+//       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+//         <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+//           {/* Text Side */}
+//           <motion.div
+//             initial={{ opacity: 0, y: 30 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//             viewport={{ once: true }}
+//             className="space-y-8"
+//           >
+//             <div className="inline-flex items-center gap-3 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 px-5 py-2">
+//               <Trophy className="h-4 w-4 text-[#d9a406]" />
+//               <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#d9a406] uppercase">
+//                 Times Business Awards
+//               </span>
+//             </div>
+
+//             <div className="space-y-4">
+//               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight font-playfair">
+//                 Emerging Developer <br />
+//                 <span className="text-[#d9a406]">of the Year</span>
+//               </h2>
+//               <div className="w-24 h-1.5 bg-[#d9a406] rounded-full"></div>
+//             </div>
+
+//             <div className="space-y-6 text-lg text-gray-300 font-light leading-relaxed">
+//               <p>
+//                 <span className="text-white font-semibold">RRL Builders and Developers</span> has been proudly awarded by <span className="text-white font-semibold">The Times of India</span> as the <span className="text-[#d9a406] font-medium">Emerging Developer of the Year - Residential</span>.
+//               </p>
+//               <p className="text-gray-400">
+//                 This prestigious recognition stands as a testament to our continuous pursuit of excellence, architectural innovation, and our core philosophy: <span className="italic text-gray-300">"Beyond Homes A Lifestyle."</span> We are dedicated to creating premium residential spaces that redefine modern living.
+//               </p>
+//             </div>
+//           </motion.div>
+
+//           {/* Images Side - Grand Asymmetrical Grid */}
+//           <motion.div
+//             initial={{ opacity: 0, x: 40 }}
+//             whileInView={{ opacity: 1, x: 0 }}
+//             transition={{ duration: 0.8, delay: 0.2 }}
+//             viewport={{ once: true }}
+//             className="relative"
+//           >
+//             <div className="grid grid-cols-2 gap-4 md:gap-6 items-center">
+//               {/* Left Image - Shifted Down */}
+//               <div className="mt-16 md:mt-24 relative rounded-[2rem] overflow-hidden border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)] group aspect-[3/4]">
+//                 <Image
+//                   src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+//                 //  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+//                   alt="Times Business Award Ceremony"
+//                   fill
+//                   unoptimized
+//                   className="object-cover group-hover:scale-110 transition-transform duration-700"
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500" />
+//               </div>
+
+//               {/* Right Image - Shifted Up */}
+//               <div className="relative rounded-[2rem] overflow-hidden border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)] group aspect-[3/4]">
+//                 <Image
+//                  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+                 
+//                 //  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+//                   alt="Emerging Developer of the Year Trophy"
+//                   fill
+//                   unoptimized
+//                   className="object-cover group-hover:scale-110 transition-transform duration-700"
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500" />
+//               </div>
+//             </div>
+
+//             {/* Decorative Center Badge */}
+//             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-xl border border-[#d9a406]/40 p-5 rounded-full shadow-[0_0_30px_rgba(217,164,6,0.3)] z-20 flex items-center justify-center">
+//               <Star className="w-8 h-8 text-[#d9a406] fill-[#d9a406]" />
+//             </div>
+//           </motion.div>
+
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// ========== NEW: TIMES BUSINESS AWARDS SECTION ==========
 const TimesBusinessAwardSection = () => {
   return (
     <section className="py-24 bg-black relative border-t border-[#333] overflow-hidden">
@@ -3898,6 +4253,8 @@ const TimesBusinessAwardSection = () => {
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#d9a406]/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+        
+        {/* ================= TOP ROW: TEXT & MAIN IMAGES ================= */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Text Side */}
@@ -3945,8 +4302,7 @@ const TimesBusinessAwardSection = () => {
               {/* Left Image - Shifted Down */}
               <div className="mt-16 md:mt-24 relative rounded-[2rem] overflow-hidden border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)] group aspect-[3/4]">
                 <Image
-                  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
-                //  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+                  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg" 
                   alt="Times Business Award Ceremony"
                   fill
                   unoptimized
@@ -3958,9 +4314,7 @@ const TimesBusinessAwardSection = () => {
               {/* Right Image - Shifted Up */}
               <div className="relative rounded-[2rem] overflow-hidden border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)] group aspect-[3/4]">
                 <Image
-                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
-                 
-                //  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
+                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg" 
                   alt="Emerging Developer of the Year Trophy"
                   fill
                   unoptimized
@@ -3977,6 +4331,60 @@ const TimesBusinessAwardSection = () => {
           </motion.div>
 
         </div>
+
+        {/* ================= BOTTOM ROW: PRESS COVERAGE BANNER ================= */}
+        {/* ADDED MASSIVE TOP MARGIN HERE (mt-32 lg:mt-48) FOR PROPER BREATHING ROOM */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-32 lg:mt-48 relative rounded-[2rem] overflow-hidden bg-gradient-to-r from-[#111] to-black border border-[#d9a406]/20 shadow-[0_0_50px_rgba(217,164,6,0.05)] flex flex-col lg:flex-row items-center"
+        >
+          {/* Text Side */}
+          <div className="lg:w-2/5 p-8 md:p-12 space-y-6">
+            <div className="inline-flex items-center gap-2 text-[#d9a406]">
+              <Newspaper className="w-5 h-5" />
+              <span className="text-sm font-bold uppercase tracking-[0.15em]">Featured Press</span>
+            </div>
+            
+            <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white leading-snug">
+              Making Headlines in <span className="text-[#d9a406]">The Times of India</span>
+            </h3>
+            
+            <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+              "RRL Builders & Developers Sets New Benchmarks in Intelligent Living with Emerging Developer Recognition."
+            </p>
+          </div>
+
+          {/* Image Side - Fixed Scaling Issue */}
+          <div className="lg:w-3/5 w-full relative p-6 md:p-10 bg-black/40 border-t lg:border-t-0 lg:border-l border-[#d9a406]/10 flex justify-center">
+            <a 
+              href="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-23%20at%209.28.08%20AM.jpeg" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group block relative w-full max-w-2xl rounded-xl overflow-hidden border border-[#d9a406]/30 shadow-2xl transition-all duration-500 hover:border-[#d9a406]"
+            >
+              <Image 
+                src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-23%20at%209.28.08%20AM.jpeg"
+                alt="Times of India Press Coverage"
+                width={1000}
+                height={1150}
+                className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
+                unoptimized
+              />
+              
+              {/* Hover Enlarge Button */}
+              {/* <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/20">
+                <div className="bg-black/90 backdrop-blur-md border border-[#d9a406]/50 rounded-full px-6 py-3 flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 shadow-xl">
+                  <Maximize className="w-4 h-4 text-[#d9a406]" />
+                  <span className="text-[#d9a406] text-sm font-bold tracking-wider uppercase">View Full Article</span>
+                </div>
+              </div> */}
+            </a>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   )
@@ -4133,13 +4541,13 @@ function Properties() {
       name: "RRL Palacio",
       location: "Medahalli, Bangalore",
       type: "Upper Mid-Size Apartment",
-      status: "READY TO MOVE",
+      status: "COMPLETED",
       image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
       mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
       bedrooms: "2, 3 BHK",
       devSize: "1.5 Acres",
       totalUnits: "103 Units",
-      timeline: "Early possession",
+      timeline: "Completed",
       timelineSub: null
     },
     {

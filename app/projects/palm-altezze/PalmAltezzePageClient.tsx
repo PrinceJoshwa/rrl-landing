@@ -2121,7 +2121,7 @@ const FloorPlansSection = () => {
         name: "RRL Palacio",
         location: "Medahalli, Bangalore",
         type: "Luxury Apartment",
-        status: "READY TO MOVE",
+        status: "COMPLETED",
         image:
           "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
         mobileImage:
@@ -2352,6 +2352,85 @@ const FloorPlansSection = () => {
       </section>
     )
   }
+  const CountdownBanner = () => {
+  const [timeLeft, setTimeLeft] = useState({ months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 })
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date()
+      const target = new Date("2027-04-30T00:00:00")
+      const diff = target.getTime() - now.getTime()
+
+      if (diff <= 0) return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 }
+
+      let months = (target.getFullYear() - now.getFullYear()) * 12 + (target.getMonth() - now.getMonth())
+      let days = target.getDate() - now.getDate()
+      
+      if (days < 0) {
+        months--
+        const previousMonth = new Date(target.getFullYear(), target.getMonth(), 0)
+        days += previousMonth.getDate()
+      }
+
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
+      const minutes = Math.floor((diff / 1000 / 60) % 60)
+      const seconds = Math.floor((diff / 1000) % 60)
+
+      return { months, days, hours, minutes, seconds }
+    }
+
+    // Initial set
+    setTimeLeft(calculateTimeLeft())
+    
+    // Update every second
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft())
+    }, 1000)
+    
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <div className="fixed bottom-0 right-0 z-50 p-0 md:p-6 w-full md:w-auto pointer-events-none">
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.8, ease: "easeOut" }}
+        className="bg-[#1a1a1a]/95 backdrop-blur-xl border-t border-l border-white/10 md:rounded-xl shadow-2xl p-4 md:px-8 md:py-4 pointer-events-auto flex flex-col sm:flex-row items-center gap-6 max-w-full"
+      >
+        <div className="text-center md:text-left">
+          <p className="text-white/60 text-xs uppercase tracking-[0.2em] font-semibold mb-2">
+            Countdown to Handover
+          </p>
+          <div className="flex items-center gap-4 md:gap-6">
+            {Object.entries(timeLeft).map(([unit, value]) => (
+              <div key={unit} className="flex flex-col items-center min-w-[3rem]">
+                <span className="text-2xl md:text-3xl font-bold text-white tabular-nums tracking-tight">
+                  {value.toString().padStart(2, '0')}
+                </span>
+                <span className="text-[10px] text-[#D4A574] uppercase tracking-wider mt-1">
+                  {unit}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="hidden sm:block w-px h-16 bg-white/10"></div>
+
+        {/* Live Streaming Badge from Reference Image */}
+        <button className="bg-[#E63946] hover:bg-[#D62828] text-white text-xs font-bold px-5 py-3 rounded uppercase tracking-wider flex items-center gap-3 transition-colors shadow-lg shadow-red-900/20">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+          </span>
+          Live Streaming
+        </button>
+      </motion.div>
+    </div>
+  )
+}
 
   return (
     <main className="w-full bg-black min-h-screen text-gray-200 overflow-x-hidden">
@@ -2380,6 +2459,7 @@ const FloorPlansSection = () => {
       <Journey />
       <ContactSection onSubmit={(data) => handleFormSubmit(data, "xldarjon")} />
       <EnquiryModal onSubmit={(data) => handleFormSubmit(data, "xldarjon")} />
+      <CountdownBanner />
     </main>
   )
 }

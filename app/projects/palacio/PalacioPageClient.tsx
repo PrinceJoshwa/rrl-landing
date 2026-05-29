@@ -46,50 +46,50 @@ type FloorPlan = {
 
 // Updated dataset based on the provided images (Units 01 to 09)
 const floorPlansData: FloorPlan[] = [
-  { 
-    id: "01", type: "2BHK", facing: "North", area: 1125, 
-    dims: { living: "11'6\" x 16'0\"", dining: "12'0\" x 8'3\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'3\"", bed2: "11'6\" x 11'0\"" }, 
-    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213628.png" 
+  {
+    id: "01", type: "2BHK", facing: "North", area: 1125,
+    dims: { living: "11'6\" x 16'0\"", dining: "12'0\" x 8'3\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'3\"", bed2: "11'6\" x 11'0\"" },
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213628.png"
   },
-  { 
-    id: "02", type: "2BHK", facing: "North", area: 1105, 
-    dims: { living: "16'9\" x 11'0\"", dining: "12'9\" x 8'0\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'6\"", bed2: "11'0\" x 11'0\"" }, 
-    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213638.png" 
+  {
+    id: "02", type: "2BHK", facing: "North", area: 1105,
+    dims: { living: "16'9\" x 11'0\"", dining: "12'9\" x 8'0\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'6\"", bed2: "11'0\" x 11'0\"" },
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213638.png"
   },
-  { 
-    id: "03", type: "2BHK", facing: "North", area: 1080, 
-    dims: { living: "11'6\" x 16'0\"", dining: "12'0\" x 8'3\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'3\"", bed2: "11'6\" x 11'0\"" }, 
-    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213651.png" 
+  {
+    id: "03", type: "2BHK", facing: "North", area: 1080,
+    dims: { living: "11'6\" x 16'0\"", dining: "12'0\" x 8'3\"", masterBed: "11'0\" x 11'9\"", kitchen: "8'0\" x 8'3\"", bed2: "11'6\" x 11'0\"" },
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213651.png"
   },
-  { 
-    id: "04", type: "3BHK", facing: "North", area: 1425, 
-    dims: { living: "16'3\" x 11'6\"", dining: "12'3\" x 9'6\"", masterBed: "11'3\" x 12'0\"", kitchen: "11'0\" x 8'6\"", bed2: "11'0\" x 11'6\"", bed3: "11'0\" x 11'0\"" }, 
-    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213707.png" 
+  {
+    id: "04", type: "3BHK", facing: "North", area: 1425,
+    dims: { living: "16'3\" x 11'6\"", dining: "12'3\" x 9'6\"", masterBed: "11'3\" x 12'0\"", kitchen: "11'0\" x 8'6\"", bed2: "11'0\" x 11'6\"", bed3: "11'0\" x 11'0\"" },
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213707.png"
   },
-  { 
-    id: "05", type: "3BHK", facing: "East", area: 1525, 
-    dims: { living: "16'3\" x 14'0\"", dining: "8'0\" x 9'6\"", masterBed: "12'0\" x 13'0\"", kitchen: "8'0\" x 9'6\"", bed2: "11'0\" x 11'0\"", bed3: "11'0\" x 12'0\"" }, 
-    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213723.png" 
+  {
+    id: "05", type: "3BHK", facing: "East", area: 1525,
+    dims: { living: "16'3\" x 14'0\"", dining: "8'0\" x 9'6\"", masterBed: "12'0\" x 13'0\"", kitchen: "8'0\" x 9'6\"", bed2: "11'0\" x 11'0\"", bed3: "11'0\" x 12'0\"" },
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213723.png"
   },
-  { 
-    id: "06", type: "3BHK", facing: "East", area: 1360, 
-    dims: { living: "23'6\" x 11'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'0\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'9\" x 11'0\"" }, 
-    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213736.png" 
+  {
+    id: "06", type: "3BHK", facing: "East", area: 1360,
+    dims: { living: "23'6\" x 11'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'0\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'9\" x 11'0\"" },
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213736.png"
   },
-  { 
-    id: "07", type: "2BHK", facing: "East", area: 1245, 
-    dims: { living: "11'6\" x 19'3\"", dining: "13'0\" x 8'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"" }, 
-    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213751.png" 
+  {
+    id: "07", type: "2BHK", facing: "East", area: 1245,
+    dims: { living: "11'6\" x 19'3\"", dining: "13'0\" x 8'0\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"" },
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213751.png"
   },
-  { 
-    id: "08", type: "3BHK", facing: "East", area: 1400, 
-    dims: { living: "24'6\" x 11'6\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'6\" x 11'0\"" }, 
-    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213803.png?updatedAt=1773159097900" 
+  {
+    id: "08", type: "3BHK", facing: "East", area: 1400,
+    dims: { living: "24'6\" x 11'6\"", masterBed: "12'0\" x 12'0\"", kitchen: "11'3\" x 8'0\"", bed2: "11'6\" x 11'0\"", bed3: "11'6\" x 11'0\"" },
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213803.png?updatedAt=1773159097900"
   },
-  { 
-    id: "09", type: "3BHK", facing: "East", area: 1460, 
-    dims: { living: "11'6\" x 18'9\"", masterBed: "12'0\" x 12'6\"", kitchen: "11'6\" x 8'6\"", bed2: "12'0\" x 11'6\"", bed3: "12'0\" x 11'0\"" }, 
-    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213813.png" 
+  {
+    id: "09", type: "3BHK", facing: "East", area: 1460,
+    dims: { living: "11'6\" x 18'9\"", masterBed: "12'0\" x 12'6\"", kitchen: "11'6\" x 8'6\"", bed2: "12'0\" x 11'6\"", bed3: "12'0\" x 11'0\"" },
+    image: "https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Screenshot%202026-03-10%20213813.png"
   }
 ];
 
@@ -159,11 +159,11 @@ const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
     fetch('/download-brochure-api.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        name: nameVal, 
-        phone: phoneVal, 
-        email: emailVal, 
-        project: 'RRL Palacio' 
+      body: JSON.stringify({
+        name: nameVal,
+        phone: phoneVal,
+        email: emailVal,
+        project: 'RRL Palacio'
       }),
     }).catch(console.error);
 
@@ -172,26 +172,26 @@ const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
   };
 
   // Trigger download automatically when Formspree succeeds
-useEffect(() => {
+  useEffect(() => {
     const triggerDownload = async () => {
       if (state.succeeded) {
         try {
           // 1. Fetch the file data
           const response = await fetch("https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Palacio_compressed.pdf?ik-attachment=true");
           const blob = await response.blob();
-          
+
           // 2. Create a local URL for the blob data
           const url = window.URL.createObjectURL(blob);
-          
+
           // 3. Create a temporary anchor element
           const link = document.createElement("a");
           link.href = url;
           link.setAttribute("download", "RRL_Palacio_Brochure.pdf");
-          
+
           // 4. Append and click
           document.body.appendChild(link);
           link.click();
-          
+
           // 5. Cleanup
           link.parentNode?.removeChild(link);
           window.URL.revokeObjectURL(url);
@@ -229,13 +229,12 @@ useEffect(() => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Content */}
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4 mb-6">
               <Badge variant="outline" className="text-[#d9a406] border-[#d9a406] px-4 py-1 text-sm uppercase tracking-widest bg-[#d9a406]/10 backdrop-blur-md">
-                Ready To Move In
-              </Badge>
+                Completed              </Badge>
               <Badge variant="outline" className="text-white border-white/30 px-4 py-1 text-sm uppercase tracking-widest bg-white/5 backdrop-blur-md">
                 BMRDA & RERA Approved
               </Badge>
@@ -252,9 +251,9 @@ useEffect(() => {
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg px-8 h-14 rounded-none skew-x-[-10deg] transition-all hover:scale-105" 
+              <Button
+                size="lg"
+                className="bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg px-8 h-14 rounded-none skew-x-[-10deg] transition-all hover:scale-105"
                 onClick={onOpenModal}
               >
                 <span className="skew-x-[10deg] flex items-center gap-2">
@@ -322,9 +321,9 @@ useEffect(() => {
                       <ValidationError prefix="Email" field="email" errors={state.errors} />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      disabled={state.submitting} 
+                    <Button
+                      type="submit"
+                      disabled={state.submitting}
                       className="w-full bg-[#d9a406] hover:bg-[#b08505] text-black font-bold text-lg h-12 shadow-[0_0_20px_rgba(217,164,6,0.2)] hover:shadow-[0_0_30px_rgba(217,164,6,0.4)] transition-all"
                     >
                       {state.submitting ? "Submitting..." : "Get Call Back"}
@@ -354,7 +353,7 @@ const HighlightsSection = () => (
           { icon: Award, title: "Free Interiors", desc: "Fully designed & ready to live homes." },
           { icon: ShieldCheck, title: "50% UDS", desc: "Own a significant share of the land." },
           { icon: Zap, title: "100% Power Backup", desc: "Generators for all flats & lifts." },
-          { icon: Building2, title: "Ready To Move In", desc: "No waiting, no delays." }
+          { icon: Building2, title: "Completed", desc: "No waiting, no delays." }
         ].map((item, idx) => (
           <motion.div key={idx} variants={fadeIn} className="group">
             <Card className="bg-black/50 border border-white/10 p-8 h-full hover:border-[#d9a406]/50 transition-colors duration-300 relative overflow-hidden">
@@ -586,21 +585,21 @@ const FloorPlansSection = () => {
                                       <Unlock className="w-4 h-4 mr-2" /> Unlock Floor Plan
                                     </Button>
                                   ) : (
-<div className="grid grid-cols-1 gap-3">
-  {/* FIXED: Added ik-attachment=true and removed target="_blank" to prevent tab-switching */}
-  <a 
-    href="https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Palacio_compressed.pdf?ik-attachment=true" 
-    download="Palacio_Brochure.pdf"
-    className="w-full"
-  >
-    <Button 
-      variant="outline" 
-      className="w-full border-white/20 text-white hover:bg-white hover:text-black transition-all"
-    >
-      Download PDF
-    </Button>
-  </a>
-</div>
+                                    <div className="grid grid-cols-1 gap-3">
+                                      {/* FIXED: Added ik-attachment=true and removed target="_blank" to prevent tab-switching */}
+                                      <a
+                                        href="https://ik.imagekit.io/j0xzq9pns/RRL%20Palacio%20plans/Palacio_compressed.pdf?ik-attachment=true"
+                                        download="Palacio_Brochure.pdf"
+                                        className="w-full"
+                                      >
+                                        <Button
+                                          variant="outline"
+                                          className="w-full border-white/20 text-white hover:bg-white hover:text-black transition-all"
+                                        >
+                                          Download PDF
+                                        </Button>
+                                      </a>
+                                    </div>
                                   )}
                                 </div>
                               </div>

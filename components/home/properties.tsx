@@ -12,7 +12,7 @@ const residentialProperties = [
     name: "RRL Palacio",
     location: "Medahalli",
     type: "Luxury Property",
-    status: "Ready to Move",
+    status: "Completed",
     description: "Our newly constructed luxury property, situated in Medahalli",
     image: "/LookProject2.jpeg",
     features: ["Premium Amenities", "Furnished smart homes"],
