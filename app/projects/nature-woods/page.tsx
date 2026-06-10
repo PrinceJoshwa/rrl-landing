@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import NatureWoodsPageClient from "./NatureWoodsPageClient"
 
 export const metadata: Metadata = {
-  title: "Nearby Apartment Sales in Bangalore | RRL Builders",
+  title: "Property in Whitefield Bangalore | Apartments for Sale Today",
   description:
-    "Discover apartment sales in Bangalore and nearby apartments with RRL Builders. Get modern, stylish, and spacious homes designed for comfort and luxury living.",
+    "Find premium apartments in Whitefield Bangalore with modern amenities, great connectivity, and comfortable living spaces. Book your dream home today.",
   keywords: [
     "RRL Nature Woods",
     "apartments in sarjapur road",
