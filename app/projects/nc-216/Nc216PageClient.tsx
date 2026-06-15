@@ -3058,7 +3058,7 @@ import {
   Train, ShoppingCart, Hospital, Map, Briefcase, Megaphone
 } from "lucide-react"
 import { useForm, ValidationError } from '@formspree/react'
-
+import Image from "next/image";
 // UI Component Imports
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -3234,38 +3234,62 @@ function HappyClientsGallery() {
   ]
 
   return (
-    <section className="py-24 bg-black overflow-hidden relative border-t border-[#333]">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]" />
-      <div className="container mx-auto px-4 max-w-[1280px] mb-16 text-center relative z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <div className="inline-block px-4 py-1.5 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 text-[#d9a406] text-sm font-bold uppercase tracking-wider mb-6">
+    <section className="py-24 bg-neutral-50 overflow-hidden relative">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]" />
+
+      <div className="container mx-auto px-4 mb-16 text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="inline-block px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-600 text-sm font-bold uppercase tracking-wider mb-6">
             Client Stories
           </div>
-          <h2 className="mb-6 text-4xl font-bold text-white lg:text-5xl">
-            Smiles We've <span className="text-[#d9a406] font-serif italic">Created</span>
+          <h2 className="mb-6 text-4xl font-bold text-black font-playfair lg:text-5xl">
+            Smiles We've <span className="text-gold-500">Created</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-400 font-light">
+          <p className="mx-auto max-w-2xl text-xl text-gray-600 font-light">
             Join our growing family of satisfied homeowners who found their dream home with RRL.
           </p>
         </motion.div>
       </div>
 
       <div className="relative w-full overflow-hidden py-10">
-        <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-16 bg-gradient-to-r from-black to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-16 bg-gradient-to-l from-black to-transparent" />
-        <div className="animate-[marquee_40s_linear_infinite] flex gap-4 sm:gap-6 md:gap-8 w-max">
-          {[...clientImages, ...clientImages].map((img, i) => (
-            <div key={i} className="group relative h-[240px] w-[180px] sm:h-[280px] sm:w-[200px] md:h-[360px] md:w-[260px] lg:h-[400px] lg:w-[300px] flex-shrink-0 cursor-pointer">
-              <div className="h-full w-full overflow-hidden rounded-3xl bg-[#111] shadow-xl transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl border border-white/10 group-hover:border-[#d9a406]/50">
+        <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-16 bg-gradient-to-r from-neutral-50 to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-16 bg-gradient-to-l from-neutral-50 to-transparent" />
+
+        <div className="animate-scroll gap-4 sm:gap-6 md:gap-8 pl-4 sm:pl-6 md:pl-8">
+          {[...clientImages, ...clientImages, ...clientImages].map((img, i) => (
+            <div
+              key={i}
+              className="group relative
+                h-[240px] w-[180px]
+                sm:h-[280px] sm:w-[200px]
+                md:h-[360px] md:w-[260px]
+                lg:h-[400px] lg:w-[300px]
+                flex-shrink-0 cursor-pointer"
+            >
+              <div className="h-full w-full overflow-hidden rounded-3xl bg-white shadow-xl transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl border border-gray-100 group-hover:border-gold-500/50">
                 <div className="relative h-full w-full">
-                  <img src={img} alt={`Happy Client ${i}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-300" />
+                  <Image
+                    src={img}
+                    alt={`Happy Client ${i}`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 w-full p-4 sm:p-5 md:p-6 translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
                     <div className="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                      <div className="h-0.5 w-6 bg-[#d9a406]" />
-                      <span className="text-[#d9a406] text-xs font-bold uppercase tracking-wider">Handover</span>
+                      <div className="h-0.5 w-6 bg-gold-400" />
+                      <span className="text-gold-400 text-xs font-bold uppercase tracking-wider">
+                        Handover
+                      </span>
                     </div>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-serif">RRL Family</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-playfair">
+                      RRL Family
+                    </h3>
                   </div>
                 </div>
               </div>
