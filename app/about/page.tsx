@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import AboutPageClient from "./AboutPageClient"
 
 export const metadata: Metadata = {
-  title: "Luxury Houses & Upcoming Apartments Near Me in Karnataka",
+  title: "2 BHK Flats in Bangalore & Luxury Homes & Apartments",
   description:
-    "Discover stylish luxury houses and upcoming apartments near me in Karnataka. RRL Builders offers modern homes with comfort, convenience, and quality.",
+    "Get 2 BHK flats in Bangalore and luxury homes in prime locations. Explore upcoming apartments with modern amenities and great value.",
 }
 
 export default function AboutPage() {

@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import ProjectsPageClient from "./ProjectsPageClient"
 
 export const metadata: Metadata = {
-  title: "Near Me 3 BHK Flat in Bangalore by RRL Builders",
+  title: "Premium Real Estate Projects Near Me & 3 BHK Flats",
   description:
-    "Explore spacious 3 BHK flats near me with RRL Builders. Get modern 3 BHK flat in Bangalore designed with comfort, style and premium living for families.",
+    "Get premium 3 BHK flats near you in top real estate projects. Explore modern homes with great amenities, prime locations, and value.",
 }
 
 export default function ProjectsPage() {
