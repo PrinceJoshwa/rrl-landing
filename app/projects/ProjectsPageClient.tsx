@@ -466,7 +466,7 @@ const projects = [
     image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503",
     // Mobile Image (Update this URL)
     mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503",
-    href: "/projects/sequoia",
+    href: "/projects/nc-216",
     acres: "2.01 Acres",
     units: "216 Units",
     config: "2, 3 BHK",

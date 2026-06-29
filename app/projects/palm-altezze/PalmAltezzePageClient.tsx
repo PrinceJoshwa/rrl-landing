@@ -269,15 +269,15 @@ export default function Home() {
     return <span>{separator ? count.toLocaleString() : count}{suffix}</span>
   }
 
-  const HeroImageBanner = () => {
+const HeroImageBanner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const images = [
       {
         id: 1,
         desktop:
-          // "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/ok.png",
-          "https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/rrl-palm.jpeg",
+          "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/ok.png",
+          // "https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/rrl-palm.jpeg",
         mobile:
           "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/ok.png?updatedAt=1766849914416",
         alt: "RRL Palm Altezze Hero Banner",
@@ -342,9 +342,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ================= DESKTOP SLIDER (UNCHANGED) ================= */}
-        <div className="hidden md:block h-[60vh] lg:h-[80vh]">
-          <div className="relative w-full h-full">
+        {/* ================= DESKTOP SLIDER ================= */}
+        <div className="hidden md:block w-full max-w-[1536px] mx-auto">
+          {/* Changed height properties to aspect-[1536/752] so it sizes naturally */}
+          <div className="relative w-full aspect-[1536/752] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.img
                 key={currentSlide}
@@ -354,7 +355,8 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="absolute inset-0 w-full h-full object-fill"
+                // Swapped object-fill for object-contain
+                className="absolute inset-0 w-full h-full object-contain"
               />
             </AnimatePresence>
 
@@ -723,33 +725,30 @@ export default function Home() {
             </motion.div>
 
             {/* Right Image Section */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="
-              relative w-full rounded-2xl overflow-hidden border border-[#333]
-              aspect-[584/500] md:aspect-auto
-              md:h-[450px]
-            "
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
+{/* Right Image Section */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  // We remove the fixed heights and use an aspect ratio wrapper
+  className="relative w-full rounded-2xl overflow-hidden border border-[#333] shadow-2xl bg-[#111] aspect-[4/5] md:aspect-[5/4]"
+>
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
 
-              <picture className="block w-full h-full">
-                {/* Mobile Image */}
-                <source
-                  media="(max-width: 768px)"
-                  srcSet="https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/Visualize%20Your%20Home%20Virtually.png?updatedAt=1766849722950"
-                />
-                {/* Desktop Image */}
-                <img
-                  src="https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/Visualize%20Your%20Home%20Virtually%202.png?updatedAt=1766849828982"
-                  alt="VR Interior Showcase"
-                  loading="lazy"
-                  className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
-                />
-              </picture>
-            </motion.div>
+  <picture className="block w-full h-full">
+    <source
+      media="(max-width: 768px)"
+      srcSet="https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/Visualize%20Your%20Home%20Virtually.png?updatedAt=1766849722950"
+    />
+    <img
+      src="https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/Visualize%20Your%20Home%20Virtually%202.png?updatedAt=1766849828982"
+      alt="VR Interior Showcase"
+      loading="lazy"
+      // w-full and h-full with aspect-ratio ensures it fills the container perfectly without needing object-fit logic
+      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+    />
+  </picture>
+</motion.div>
           </div>
         </div>
 
@@ -879,7 +878,7 @@ export default function Home() {
     )
   }
   // ========== SOLAR POWER SECTION ==========
-  const SolarPowerSection = () => {
+const SolarPowerSection = () => {
     return (
       <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-[#001f3f]">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
@@ -895,11 +894,11 @@ export default function Home() {
               border border-[#d9a406]/30
               shadow-[0_0_50px_rgba(217,164,6,0.1)]
               aspect-[584/500] md:aspect-auto
-              md:h-[400px]
             "
             >
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/20 z-10 mix-blend-overlay" />
+              {/* Added pointer-events-none so it doesn't block right-clicks or interactions */}
+              <div className="absolute inset-0 bg-black/20 z-10 mix-blend-overlay pointer-events-none" />
 
               <picture className="block w-full h-full">
                 {/* Mobile Image (584 × 500) */}
@@ -913,7 +912,9 @@ export default function Home() {
                   src="https://ik.imagekit.io/j0xzq9pns/RRL%20palm%20altezzee%20page%20images%20(336%20x%20448%20px)/Power.png?updatedAt=1766849830876"
                   alt="Solar Power Integration"
                   loading="lazy"
-                  className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
+                  // REMOVED h-full and object-cover. 
+                  // ADDED h-auto and object-contain to prevent cropping entirely.
+                  className="w-full h-auto object-contain transition-transform duration-700 hover:scale-105"
                 />
               </picture>
             </motion.div>

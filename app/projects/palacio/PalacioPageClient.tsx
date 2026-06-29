@@ -122,27 +122,27 @@ const HeroImageBanner = () => {
         </div>
       </div>
 
-      {/* DESKTOP HERO (UNCHANGED) */}
-      <div className="hidden md:block h-[60vh] md:h-[80vh]">
+      {/* DESKTOP HERO */}
+      <div className="hidden md:block w-full">
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative w-full h-full"
+          className="relative w-full max-w-[1536px] mx-auto overflow-hidden"
         >
           <img
             src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/HOME%20HERO%202.png"
             alt="RRL Hero Banner Desktop"
             loading="eager"
-            className="w-full h-full object-fill"
+            className="w-full h-auto object-contain"
           />
         </motion.div>
       </div>
 
     </section>
   )
-};
+}
 const HeroSection = ({ onOpenModal }: { onOpenModal: () => void }) => {
   // Integrate Formspree (using your ID)
   const [state, handleSubmit] = useForm("xbdrqepk");
