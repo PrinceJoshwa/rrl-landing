@@ -2790,7 +2790,7 @@
 
 // //         <div className="container relative z-10 mx-auto px-4 py-20">
 // //           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            
+
 // //             {/* ================= LEFT CONTENT ================= */}
 // //             <motion.div
 // //               className="space-y-8"
@@ -2859,7 +2859,7 @@
 
 // //               {/* ===== CLIENT REQUESTED IMAGES + EXISTING TRUST INDICATORS ===== */}
 // //               <div className="pt-8 border-t border-gray-800 flex flex-col gap-8">
-                
+
 // //                 {/* 2 New Image Boxes - Fixed to be large & tall */}
 // //                 <div className="grid grid-cols-2 gap-4 sm:gap-6 w-full">
 // //                   <div className="relative w-full aspect-square md:aspect-auto md:h-[280px] lg:h-[320px] rounded-[2rem] overflow-hidden border border-[#d9a406]/30 shadow-[0_0_30px_rgba(217,164,6,0.15)] group">
@@ -2910,7 +2910,7 @@
 // //                     </span>
 // //                   </div>
 // //                 </div>
-                
+
 // //               </div>
 // //             </motion.div>
 
@@ -2975,11 +2975,11 @@
 // //                 </div>
 // //               </div>
 // //             </motion.div>
-            
+
 // //           </div>
 // //         </div>
 // //       </motion.section>
-      
+
 // //       {/* Existing Sections Below Hero Content Kept Intact */}
 // //       <FeaturedImageGallery />
 // //       <PalmAltezzeBanner />
@@ -3414,7 +3414,7 @@
 // // //       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#d9a406]/5 rounded-full blur-[120px] pointer-events-none" />
 
 // // //       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        
+
 // // //         {/* Section Header */}
 // // //         <div className="mb-12 text-center">
 // // //           <motion.div
@@ -3439,7 +3439,7 @@
 
 // // //         {/* Asymmetric 3-Image Grid */}
 // // //         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-          
+
 // // //           {/* Main Large Image (Left) */}
 // // //           <motion.div
 // // //             initial={{ opacity: 0, y: 40 }}
@@ -4219,7 +4219,7 @@
 // // //               <div className="relative rounded-[2rem] overflow-hidden border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)] group aspect-[3/4]">
 // // //                 <Image
 // // //                  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
-                 
+
 // // //                 //  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg" // IMPORTANT: Replace this with your uploaded photo path
 // // //                   alt="Emerging Developer of the Year Trophy"
 // // //                   fill
@@ -4251,7 +4251,7 @@
 // //       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#d9a406]/5 rounded-full blur-[150px] pointer-events-none" />
 
 // //       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-        
+
 // //         {/* ================= TOP ROW: TEXT & MAIN IMAGES ================= */}
 // //         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -4345,11 +4345,11 @@
 // //               <Newspaper className="w-5 h-5" />
 // //               <span className="text-sm font-bold uppercase tracking-[0.15em]">Featured Press</span>
 // //             </div>
-            
+
 // //             <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white leading-snug">
 // //               Making Headlines in <span className="text-[#d9a406]">The Times of India</span>
 // //             </h3>
-            
+
 // //             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
 // //               "RRL Builders & Developers Sets New Benchmarks in Intelligent Living with Emerging Developer Recognition."
 // //             </p>
@@ -4371,7 +4371,7 @@
 // //                 className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-700"
 // //                 unoptimized
 // //               />
-              
+
 // //               {/* Hover Enlarge Button */}
 // //               {/* <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/20">
 // //                 <div className="bg-black/90 backdrop-blur-md border border-[#d9a406]/50 rounded-full px-6 py-3 flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 shadow-xl">
@@ -5583,7 +5583,7 @@
 
 //       <div className="container relative z-10 mx-auto px-4">
 //         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
 //           {/* ================= LEFT CONTENT ================= */}
 //           <motion.div
 //             className="space-y-8"
@@ -5676,7 +5676,7 @@
 //           >
 //             <div className="bg-[#111] p-8 md:p-10 rounded-[2rem] border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)]">
 //               <h3 className="text-2xl font-bold text-white mb-6 font-playfair">Get in Touch</h3>
-              
+
 //               {state.succeeded ? (
 //                 <div className="py-8 text-center">
 //                   <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
@@ -5687,7 +5687,7 @@
 //                   <Input name="name" placeholder="Full Name" required className="bg-black border-neutral-800 text-white h-12 rounded-xl" />
 //                   <Input name="email" type="email" placeholder="Email Address" required className="bg-black border-neutral-800 text-white h-12 rounded-xl" />
 //                   <Input name="phone" type="tel" placeholder="Mobile Number" required className="bg-black border-neutral-800 text-white h-12 rounded-xl" />
-                  
+
 //                   <Button 
 //                     type="submit" 
 //                     disabled={state.submitting}
@@ -5714,13 +5714,13 @@
 //   return (
 //     <section className="relative py-24 bg-black border-b border-[#333] overflow-hidden">
 //       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#d9a406]/5 rounded-full blur-[140px] pointer-events-none -translate-y-1/2 -translate-x-1/4" />
-      
+
 //       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
 //         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
 //           {/* ================= LEFT SIDE: Content & Video ================= */}
 //           <div className="lg:col-span-7 flex flex-col md:flex-row gap-8 items-center md:items-start lg:items-center">
-            
+
 //             <motion.div 
 //               initial={{ opacity: 0, y: 20 }}
 //               whileInView={{ opacity: 1, y: 0 }}
@@ -5731,12 +5731,12 @@
 //                 <Play className="h-4 w-4" />
 //                 <span className="text-xs font-bold uppercase tracking-widest">360° Virtual Tour</span>
 //               </div>
-              
+
 //               <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white leading-tight">
 //                 Visualize your <br className="hidden lg:block" />
 //                 <span className="text-[#d9a406]">dream home</span> today
 //               </h2>
-              
+
 //               <p className="text-lg text-gray-400 font-light max-w-md mx-auto md:mx-0">
 //                 Experience the elegance of Palm Altezze from your screen. Take an immersive walkthrough of our premium interiors and world-class amenities.
 //               </p>
@@ -5772,14 +5772,14 @@
 //           >
 //             <div className="bg-[#111]/80 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] border border-[#d9a406]/20 shadow-2xl relative overflow-hidden">
 //               <div className="absolute top-0 right-0 w-32 h-32 bg-[#d9a406]/10 blur-[50px] pointer-events-none" />
-              
+
 //               <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white mb-2 relative z-10">
 //                 Book Your Tour
 //               </h3>
 //               <p className="text-gray-400 text-sm mb-8 relative z-10">
 //                 Fill in your details and our team will schedule your exclusive virtual walkthrough.
 //               </p>
-              
+
 //               {state.succeeded ? (
 //                 <div className="py-10 text-center relative z-10">
 //                   <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
@@ -5792,17 +5792,17 @@
 //                     <label className="text-[11px] text-gray-500 uppercase tracking-wider font-semibold ml-1">Full Name</label>
 //                     <Input name="name" placeholder="Enter your name" required className="bg-black/50 border-neutral-800 text-white h-14 rounded-xl focus:border-[#d9a406]/50" />
 //                   </div>
-                  
+
 //                   <div className="space-y-1.5">
 //                     <label className="text-[11px] text-gray-500 uppercase tracking-wider font-semibold ml-1">Email Address</label>
 //                     <Input name="email" type="email" placeholder="Enter your email" required className="bg-black/50 border-neutral-800 text-white h-14 rounded-xl focus:border-[#d9a406]/50" />
 //                   </div>
-                  
+
 //                   <div className="space-y-1.5">
 //                     <label className="text-[11px] text-gray-500 uppercase tracking-wider font-semibold ml-1">Mobile Number</label>
 //                     <Input name="phone" type="tel" placeholder="+91" required className="bg-black/50 border-neutral-800 text-white h-14 rounded-xl focus:border-[#d9a406]/50" />
 //                   </div>
-                  
+
 //                   <Button 
 //                     type="submit" 
 //                     disabled={state.submitting}
@@ -5814,7 +5814,7 @@
 //               )}
 //             </div>
 //           </motion.div>
-          
+
 //         </div>
 //       </div>
 //     </section>
@@ -6440,11 +6440,11 @@
 //               <Newspaper className="w-5 h-5" />
 //               <span className="text-sm font-bold uppercase tracking-[0.15em]">Featured Press</span>
 //             </div>
-            
+
 //             <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white leading-snug">
 //               Making Headlines in <span className="text-[#d9a406]">The Times of India</span>
 //             </h3>
-            
+
 //             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
 //               "RRL Builders & Developers Sets New Benchmarks in Intelligent Living with Emerging Developer Recognition."
 //             </p>
@@ -7610,7 +7610,7 @@ import {
   Briefcase,
   TrendingUp,
   Globe,
-  Handshake, 
+  Handshake,
   X, User, Smartphone,
   Loader2, CheckCircle
 } from "lucide-react"
@@ -7658,43 +7658,127 @@ function HeroFirstSection() {
   const [state, handleSubmit] = useForm("mldpovyy"); // Make sure to replace with your ID
 
   return (
-    <section className="bg-black py-20 border-b border-[#333] relative overflow-hidden">
-      <div className="absolute top-0 right-0 h-[400px] w-[400px] rounded-full bg-[#d9a406]/5 blur-[100px] pointer-events-none" />
-      <div className="container mx-auto px-4 grid lg:grid-cols-12 gap-12 items-center max-w-7xl">
-        
-        {/* Left Content */}
-        <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 px-4 py-1.5 text-[#d9a406]">
-            <Building2 className="h-4 w-4" />
-            <span className="text-xs font-bold uppercase tracking-widest">Premium Enquiries</span>
-          </div>
-          <h2 className="text-4xl md:text-6xl font-playfair font-bold text-white leading-tight">
-            Connect With Our <br />
-            <span className="text-[#d9a406]">Property Experts</span>
-          </h2>
-          <p className="text-lg text-gray-400 font-light max-w-xl">
-            Have questions about our upcoming residential or commercial spaces? Leave your information below and our team will get back to you with exclusive insights.
-          </p>
-        </div>
+    <section className="relative w-full min-h-[90vh] flex items-center bg-black overflow-hidden border-b border-[#333]">
+      {/* ===== Premium Background Effects ===== */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#d9a406]/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#d9a406]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black pointer-events-none" />
 
-        {/* Right Form */}
-        <div className="lg:col-span-5 w-full max-w-md mx-auto">
-          <div className="bg-[#111] p-8 rounded-[2rem] border border-[#d9a406]/20 shadow-2xl">
-            <h3 className="text-xl font-bold text-white mb-6 font-playfair">Quick Enquiry</h3>
-            {state.succeeded ? (
-              <p className="text-[#d9a406] font-medium text-center py-4">Thank you! Your request has been submitted.</p>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <Input name="name" placeholder="Full Name" required className="bg-black border-neutral-800 text-white h-12 rounded-xl" />
-                <Input name="email" type="email" placeholder="Email Address" required className="bg-black border-neutral-800 text-white h-12 rounded-xl" />
-                <Input name="phone" type="tel" placeholder="Mobile Number" required className="bg-black border-neutral-800 text-white h-12 rounded-xl" />
-                <Button type="submit" disabled={state.submitting} className="w-full bg-[#d9a406] text-black font-bold h-12 rounded-xl transition-all">
-                  {state.submitting ? "Sending..." : "Submit Details"}
-                </Button>
-              </form>
-            )}
+      <div className="container mx-auto px-4 md:px-8 relative z-10 grid lg:grid-cols-12 gap-16 items-center max-w-7xl py-20">
+        
+        {/* ===== Left Content - Grand Typography ===== */}
+        <motion.div 
+          className="lg:col-span-7 space-y-8"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="inline-flex items-center gap-3 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 backdrop-blur-md px-5 py-2 text-[#d9a406]">
+            <Building2 className="h-4 w-4" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em]">Premium Enquiries</span>
           </div>
-        </div>
+          
+          <div className="space-y-5">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white leading-[1.1]">
+              Connect With Our <br />
+              <span className="text-[#d9a406] relative inline-block mt-2">
+                Property Experts
+                {/* Subtle underline accent */}
+                <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-[#d9a406] rounded-full opacity-70"></span>
+              </span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 font-light max-w-2xl leading-relaxed pt-2">
+              Have questions about our upcoming residential or commercial spaces? Leave your information below and our team will get back to you with exclusive insights.
+            </p>
+          </div>
+          
+          {/* Added Trust/Status Indicators to balance the large height */}
+          <div className="flex items-center gap-8 pt-6">
+             <div className="flex flex-col">
+                <span className="text-3xl font-playfair font-bold text-white">150+</span>
+                <span className="text-xs text-gray-400 uppercase tracking-widest mt-1">Proud Employees</span>
+             </div>
+             <div className="w-px h-12 bg-gray-800"></div>
+             <div className="flex flex-col">
+                <span className="text-3xl font-playfair font-bold text-[#d9a406]">A1</span>
+                <span className="text-xs text-gray-400 uppercase tracking-widest mt-1">Quality Standard</span>
+             </div>
+          </div>
+        </motion.div>
+
+        {/* ===== Right Form - Luxurious Glassmorphism Panel ===== */}
+        <motion.div 
+          className="lg:col-span-5 w-full max-w-md mx-auto lg:ml-auto"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          {/* Gradient Border Wrapper */}
+          <div className="relative p-[1px] rounded-[2.5rem] bg-gradient-to-b from-[#d9a406]/40 via-[#d9a406]/10 to-transparent shadow-[0_0_50px_rgba(217,164,6,0.1)]">
+            <div className="bg-[#0a0a0a]/90 backdrop-blur-2xl p-8 md:p-10 rounded-[2.4rem]">
+              <div className="mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-white font-playfair mb-2">Quick Enquiry</h3>
+                <p className="text-gray-400 text-sm font-light">Register your interest for priority access.</p>
+              </div>
+
+              {state.succeeded ? (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }} 
+                  animate={{ opacity: 1, scale: 1 }} 
+                  className="py-12 text-center"
+                >
+                  <div className="w-16 h-16 bg-[#d9a406]/10 border border-[#d9a406]/30 rounded-full flex items-center justify-center mx-auto mb-5">
+                    <CheckCircle className="w-8 h-8 text-[#d9a406]" />
+                  </div>
+                  <p className="text-[#d9a406] text-xl font-playfair font-bold">Thank you!</p>
+                  <p className="text-gray-400 mt-2 text-sm">Your request has been submitted successfully.</p>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] uppercase tracking-widest text-gray-500 font-semibold ml-2">Full Name</label>
+                    <Input 
+                      name="name" 
+                      placeholder="John Doe" 
+                      required 
+                      className="bg-black/60 border-neutral-800 text-white h-14 rounded-2xl px-5 focus:border-[#d9a406]/60 transition-colors placeholder:text-gray-700" 
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] uppercase tracking-widest text-gray-500 font-semibold ml-2">Email Address</label>
+                    <Input 
+                      name="email" 
+                      type="email" 
+                      placeholder="john@example.com" 
+                      required 
+                      className="bg-black/60 border-neutral-800 text-white h-14 rounded-2xl px-5 focus:border-[#d9a406]/60 transition-colors placeholder:text-gray-700" 
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] uppercase tracking-widest text-gray-500 font-semibold ml-2">Mobile Number</label>
+                    <Input 
+                      name="phone" 
+                      type="tel" 
+                      placeholder="+91 98765 43210" 
+                      required 
+                      className="bg-black/60 border-neutral-800 text-white h-14 rounded-2xl px-5 focus:border-[#d9a406]/60 transition-colors placeholder:text-gray-700" 
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    disabled={state.submitting} 
+                    className="w-full bg-[#d9a406] hover:bg-white text-black font-bold h-14 rounded-2xl transition-all duration-300 mt-6 text-lg shadow-[0_0_20px_rgba(217,164,6,0.2)] group"
+                  >
+                    {state.submitting ? "Sending..." : "Submit Details"}
+                    {!state.submitting && <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />}
+                  </Button>
+                </form>
+              )}
+            </div>
+          </div>
+        </motion.div>
 
       </div>
     </section>
@@ -7762,7 +7846,7 @@ function Hero() {
 
         <div className="container relative z-10 mx-auto px-4 py-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            
+
             {/* ================= LEFT CONTENT ================= */}
             <motion.div
               className="space-y-8"
@@ -7806,7 +7890,7 @@ function Hero() {
                 </div>
               </div>
 
-{/* Grand CTA Button - Combines both button widths into one */}
+              {/* Grand CTA Button - Combines both button widths into one */}
               <div className="flex pt-4">
                 {/* Original Explore Button Commented Out */}
                 {/* 
@@ -7823,14 +7907,14 @@ function Hero() {
 
                 {/* The "Grand" Button (width of 2 buttons combined) */}
                 <Link href="/projects">
-                <Button
-                  size="lg"
-                  // onClick={() => setIsVRModalOpen(true)}
-                  className="rounded-full w-full sm:w-[500px] bg-[#d9a406] px-8 py-6 text-lg font-bold text-black hover:bg-[#b08505] transition-all duration-300 shadow-[0_0_25px_rgba(217,164,6,0.3)]"
-                >
-                  Explore Properties
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                  <Button
+                    size="lg"
+                    // onClick={() => setIsVRModalOpen(true)}
+                    className="rounded-full w-full sm:w-[500px] bg-[#d9a406] px-8 py-6 text-lg font-bold text-black hover:bg-[#b08505] transition-all duration-300 shadow-[0_0_25px_rgba(217,164,6,0.3)]"
+                  >
+                    Explore Properties
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
                 </Link>
               </div>
 
@@ -7838,7 +7922,7 @@ function Hero() {
                 <div className="grid grid-cols-2 gap-4 sm:gap-6 w-full">
                   <div className="relative w-full aspect-square md:aspect-auto md:h-[280px] lg:h-[320px] rounded-[2rem] overflow-hidden border border-[#d9a406]/30 shadow-[0_0_30px_rgba(217,164,6,0.15)] group">
                     <Image
-                      src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/rrl-award.jpeg" 
+                      src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/rrl-award.jpeg"
                       alt="Hero Highlight 1"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -7848,7 +7932,7 @@ function Hero() {
 
                   <div className="relative w-full aspect-square md:aspect-auto md:h-[280px] lg:h-[320px] rounded-[2rem] overflow-hidden border border-[#d9a406]/30 shadow-[0_0_30px_rgba(217,164,6,0.15)] group">
                     <Image
-                      src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/Award1.jpeg?updatedAt=1767712378645" 
+                      src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/Award1.jpeg?updatedAt=1767712378645"
                       alt="Hero Highlight 2"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -7944,13 +8028,13 @@ function VRTourPalm() {
   return (
     <section className="relative py-24 bg-black border-y border-[#333] overflow-hidden">
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#d9a406]/5 rounded-full blur-[140px] pointer-events-none -translate-y-1/2 -translate-x-1/4" />
-      
+
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Side Layout */}
           <div className="lg:col-span-7 flex flex-col md:flex-row gap-8 items-center md:items-start lg:items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -7962,7 +8046,7 @@ function VRTourPalm() {
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white leading-tight">
                 Visualize your <br className="hidden lg:block" />
-                <span className="text-[#d9a406]">dream home</span> today
+                <span className="text-[#d9a406]">home</span> today
               </h2>
               <p className="text-lg text-gray-400 font-light max-w-md mx-auto md:mx-0">
                 Experience the elegance of Palm Altezze from your screen. Take an immersive walkthrough of our premium interiors and world-class amenities.
@@ -7970,7 +8054,7 @@ function VRTourPalm() {
             </motion.div>
 
             {/* Vertically Restrained YouTube Shorts Frame */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -7978,7 +8062,8 @@ function VRTourPalm() {
               className="relative w-full max-w-[220px] lg:max-w-[240px] mx-auto md:mx-0 aspect-[9/16] rounded-3xl overflow-hidden border-[6px] border-[#222] shadow-[0_0_30px_rgba(217,164,6,0.15)] flex-shrink-0"
             >
               <iframe
-                src="https://www.youtube.com/embed/p8VDQZYuJYo"
+                // Added ?autoplay=1&mute=1 to the URL
+                src="https://www.youtube.com/embed/p8VDQZYuJYo?autoplay=1&mute=1"
                 title="Palm Altezze Virtual Tour"
                 className="w-full h-full object-cover scale-[1.05]"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -7988,16 +8073,16 @@ function VRTourPalm() {
           </div>
 
           {/* Right Side Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-5 w-full max-w-lg mx-auto lg:mx-0"
           >
             <div className="bg-[#111]/80 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] border border-[#d9a406]/20 shadow-2xl relative overflow-hidden">
-              <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white mb-2">Book Your Tour</h3>
+              <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white mb-2">Book Your Slot</h3>
               <p className="text-gray-400 text-sm mb-8">Fill in your details and our team will schedule your exclusive virtual walkthrough.</p>
-              
+
               {state.succeeded ? (
                 <div className="py-10 text-center">
                   <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
@@ -8225,79 +8310,79 @@ function HorizontalBrochureForm() {
 }
 
 const AwardsSection = () => {
- return (
-  <section className="py-24 bg-black text-white relative border-t border-[#333]">
-   <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+  return (
+    <section className="py-24 bg-black text-white relative border-t border-[#333]">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
-   <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-    <div className="grid lg:grid-cols-2 gap-16 items-center">
-     <div className="space-y-10">
-      <div>
-       <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
-        Times Real Estate <br /><span className="text-[#d9a406]">Icon Awards, 2025</span>
-       </h2>
-       <div className="w-24 h-1.5 bg-[#d9a406] rounded-full"></div>
-      </div>
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-10">
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+                Times Real Estate <br /><span className="text-[#d9a406]">Icon Awards, 2025</span>
+              </h2>
+              <div className="w-24 h-1.5 bg-[#d9a406] rounded-full"></div>
+            </div>
 
-      <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
-       RRL Groups has been honored with the prestigious award for <span className="text-white font-semibold">Builder of the Year</span> in
-       the Mid-Segment Housing category by the Times Real Estate ICON Awards, 2025.
-      </p>
+            <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
+              RRL Groups has been honored with the prestigious award for <span className="text-white font-semibold">Builder of the Year</span> in
+              the Mid-Segment Housing category by the Times Real Estate ICON Awards, 2025.
+            </p>
 
-      <div className="space-y-6">
-       {[
-        ["Emerging Developer of the Year - Residential 2026", "Times Business Awards by The Times of India"],
-        ["Builder of the Year 2025", "Mid-segment housing category by Times Real Estate"],
-        ["Global Real Estate Brand Awards 2023", "Winner in Affordability category"],
-        ["Excellence in Amenities Premium", "Mid-Segment Homes 2024"],
-       ].map(([title, desc], i) => (
-        <div key={i} className="flex items-start space-x-4 group p-4 rounded-xl border border-transparent hover:border-[#d9a406]/30 hover:bg-[#111] transition-all duration-300">
-         <div className="w-10 h-10 bg-[#d9a406]/10 border border-[#d9a406] rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#d9a406] transition-colors duration-300">
-          <Star className="h-5 w-5 text-[#d9a406] group-hover:text-black" />
-         </div>
-         <div>
-          <h3 className="font-bold text-white text-xl mb-1">{title}</h3>
-          <p className="text-gray-500 text-sm">{desc}</p>
-         </div>
+            <div className="space-y-6">
+              {[
+                ["Emerging Developer of the Year - Residential 2026", "Times Business Awards by The Times of India"],
+                ["Builder of the Year 2025", "Mid-segment housing category by Times Real Estate"],
+                ["Global Real Estate Brand Awards 2023", "Winner in Affordability category"],
+                ["Excellence in Amenities Premium", "Mid-Segment Homes 2024"],
+              ].map(([title, desc], i) => (
+                <div key={i} className="flex items-start space-x-4 group p-4 rounded-xl border border-transparent hover:border-[#d9a406]/30 hover:bg-[#111] transition-all duration-300">
+                  <div className="w-10 h-10 bg-[#d9a406]/10 border border-[#d9a406] rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#d9a406] transition-colors duration-300">
+                    <Star className="h-5 w-5 text-[#d9a406] group-hover:text-black" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white text-xl mb-1">{title}</h3>
+                    <p className="text-gray-500 text-sm">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-6 pt-4">
+              <Link href="/awards">
+                <Button className="rounded-full px-8 py-7 bg-transparent border-2 border-[#d9a406] text-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300 font-bold text-lg w-full sm:w-auto">
+                  View All Awards
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+
+              <Link href="/channel-partners">
+                <Button className="rounded-full px-8 py-7 bg-[#d9a406] text-black hover:bg-white border-2 border-[#d9a406] hover:border-white transition-all duration-300 font-bold text-lg w-full sm:w-auto">
+                  <Handshake className="mr-3 h-6 w-6" />
+                  Partner With Us
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 bg-[#d9a406]/20 rounded-3xl blur-2xl"></div>
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
+              />
+              <img
+                src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
+                alt="RRL Awards Ceremony 2025"
+                className="relative rounded-3xl w-full h-auto shadow-2xl border border-[#333] z-10"
+              />
+            </picture>
+          </div>
         </div>
-       ))}
       </div>
-
-      <div className="flex flex-col sm:flex-row gap-6 pt-4">
-       <Link href="/awards">
-        <Button className="rounded-full px-8 py-7 bg-transparent border-2 border-[#d9a406] text-[#d9a406] hover:bg-[#d9a406] hover:text-black transition-all duration-300 font-bold text-lg w-full sm:w-auto">
-         View All Awards
-         <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
-       </Link>
-
-       <Link href="/channel-partners">
-        <Button className="rounded-full px-8 py-7 bg-[#d9a406] text-black hover:bg-white border-2 border-[#d9a406] hover:border-white transition-all duration-300 font-bold text-lg w-full sm:w-auto">
-         <Handshake className="mr-3 h-6 w-6" />
-         Partner With Us
-        </Button>
-       </Link>
-      </div>
-     </div>
-
-     <div className="relative">
-      <div className="absolute -inset-4 bg-[#d9a406]/20 rounded-3xl blur-2xl"></div>
-      <picture>
-       <source
-        media="(max-width: 768px)"
-        srcSet="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
-       />
-       <img
-        src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/awardhome(1).jpg.jpeg"
-        alt="RRL Awards Ceremony 2025"
-        className="relative rounded-3xl w-full h-auto shadow-2xl border border-[#333] z-10"
-       />
-      </picture>
-     </div>
-    </div>
-   </div>
-  </section>
- )
+    </section>
+  )
 }
 
 const FeaturedImageGallery = () => {
@@ -8551,7 +8636,7 @@ const TimesBusinessAwardSection = () => {
             <div className="grid grid-cols-2 gap-4 md:gap-6 items-center">
               <div className="mt-16 md:mt-24 relative rounded-[2rem] overflow-hidden border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)] group aspect-[3/4]">
                 <Image
-                  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg" 
+                  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.50%20PM.jpeg"
                   alt="Times Business Award Ceremony"
                   fill
                   unoptimized
@@ -8562,7 +8647,7 @@ const TimesBusinessAwardSection = () => {
 
               <div className="relative rounded-[2rem] overflow-hidden border border-[#d9a406]/20 shadow-[0_0_40px_rgba(217,164,6,0.1)] group aspect-[3/4]">
                 <Image
-                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg" 
+                  src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-18%20at%2012.07.51%20PM.jpeg"
                   alt="Emerging Developer of the Year Trophy"
                   fill
                   unoptimized
@@ -8578,7 +8663,7 @@ const TimesBusinessAwardSection = () => {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -8590,24 +8675,24 @@ const TimesBusinessAwardSection = () => {
               <Newspaper className="w-5 h-5" />
               <span className="text-sm font-bold uppercase tracking-[0.15em]">Featured Press</span>
             </div>
-            
+
             <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white leading-snug">
               Making Headlines in <span className="text-[#d9a406]">The Times of India</span>
             </h3>
-            
+
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               "RRL Builders & Developers Sets New Benchmarks in Intelligent Living with Emerging Developer Recognition."
             </p>
           </div>
 
           <div className="lg:w-3/5 w-full relative p-6 md:p-10 bg-black/40 border-t lg:border-t-0 lg:border-l border-[#d9a406]/10 flex justify-center">
-            <a 
-              href="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-23%20at%209.28.08%20AM.jpeg" 
-              target="_blank" 
+            <a
+              href="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-23%20at%209.28.08%20AM.jpeg"
+              target="_blank"
               rel="noopener noreferrer"
               className="group block relative w-full max-w-2xl rounded-xl overflow-hidden border border-[#d9a406]/30 shadow-2xl transition-all duration-500 hover:border-[#d9a406]"
             >
-              <Image 
+              <Image
                 src="https://ik.imagekit.io/j0xzq9pns/RRL%20Awards/WhatsApp%20Image%202026-05-23%20at%209.28.08%20AM.jpeg"
                 alt="Times of India Press Coverage"
                 width={1000}
@@ -8754,12 +8839,12 @@ function Properties() {
       timelineSub: "Next Handover Phase"
     },
     {
-      id: "nc-216", 
+      id: "nc-216",
       name: " RRL NC 216",
       location: "Bangalore",
       type: "Mid size Apartment",
       status: "EOI is Open",
-      image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503", 
+      image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503",
       mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/NC%20216.png?updatedAt=1766849714503",
       bedrooms: "2, 3 BHK",
       devSize: "2.06 Acres",
@@ -9685,13 +9770,16 @@ function CallToAction() {
 export default function HomePage() {
   return (
     <>
-      <HeroImageBanner />
       <HeroFirstSection />
-      <Hero />
-      <FeaturedImageGallery />
       <PalmAltezzeBanner />
       <VRTourPalm />
       <HorizontalBrochureForm />
+
+      {/* <HeroImageBanner /> */}
+
+      <Hero />
+      <FeaturedImageGallery />
+
       <Properties />
       <HappyClientsGallery />
       <JourneySection />

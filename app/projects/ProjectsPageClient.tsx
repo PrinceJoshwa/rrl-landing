@@ -553,6 +553,39 @@ export default function ProjectsPage() {
 
   return (
     <>
+
+        <section className="relative w-full bg-black border-y border-[#333] overflow-hidden">
+          {/* ===== MOBILE HERO ===== */}
+          <div className="block md:hidden">
+            <div className="relative w-full aspect-[4/3] overflow-hidden">
+              <img
+                src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)/RRl%20website%20mobile%20banners%20(400%20x%20300%20px)%20(1).png"
+                alt="RRL Hero Banner Mobile"
+                loading="eager"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+    
+          {/* ===== DESKTOP HERO ===== */}
+          <div className="hidden md:block w-full">
+            <motion.div
+              initial={{ scale: 1.05, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="relative w-full max-w-[1536px] mx-auto overflow-hidden"
+            >
+              <img
+                src="https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/RRl%20website%20banners%20(1536%20x%20752%20px)%20(19).png"
+                alt="RRL Hero Banner Desktop"
+                loading="eager"
+                className="w-full h-auto object-contain"
+              />
+            </motion.div>
+          </div>
+        </section>
+
       {/* --- HERO SECTION --- */}
       <motion.section
         className="py-20 bg-black text-white"
