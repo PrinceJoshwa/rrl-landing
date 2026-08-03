@@ -870,7 +870,41 @@ export default function ConfidentAtriaPage() {
 
   return (
     <main className="w-full bg-black min-h-screen text-white font-sans selection:bg-[#d9a406] selection:text-black overflow-x-hidden">
-      
+
+
+ {/* --- HERO BANNER --- */}
+     <section className="relative w-full bg-black border-y border-[#333] overflow-hidden">
+       {/* ===== MOBILE HERO ===== */}
+       <div className="block md:hidden">
+         <div className="relative w-full aspect-[4/3] overflow-hidden">
+           <img
+             src="https://ik.imagekit.io/j0xzq9pns/svt/WhatsApp%20Image%202026-07-24%20at%205.11.12%20PM.jpeg"
+             alt="RRL Hero Banner Mobile"
+             loading="eager"
+             className="w-full h-full object-contain"
+           />
+         </div>
+       </div>
+ 
+       {/* ===== DESKTOP HERO ===== */}
+       <div className="hidden md:block w-full">
+         <motion.div
+           initial={{ scale: 1.05, opacity: 0 }}
+           whileInView={{ scale: 1, opacity: 1 }}
+           transition={{ duration: 1.2, ease: "easeOut" }}
+           viewport={{ once: true }}
+           className="relative w-full max-w-[1536px] mx-auto overflow-hidden"
+         >
+           <img
+             src="https://ik.imagekit.io/j0xzq9pns/svt/WhatsApp%20Image%202026-07-24%20at%205.11.12%20PM.jpeg"
+             alt="RRL Hero Banner Desktop"
+             loading="eager"
+             className="w-full h-auto object-contain"
+           />
+         </motion.div>
+       </div>
+     </section>
+   
       {/* --- HERO SECTION --- */}
       <section className="relative w-full min-h-[80vh] bg-black overflow-hidden flex items-center pt-28 pb-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#d9a406]/20 via-black to-black opacity-60"></div>
@@ -968,6 +1002,7 @@ export default function ConfidentAtriaPage() {
           </div>
         </div>
       </section>
+
 
       {/* --- PROJECT AT A GLANCE --- */}
       <section className="py-20 bg-gradient-to-b from-black to-[#0a0a0a] border-t border-white/5">
