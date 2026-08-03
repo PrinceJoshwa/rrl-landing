@@ -32,6 +32,7 @@ const navigation = [
       { name: "RRL Nature Woods", href: "/projects/nature-woods" },
       { name: "RRL NC-216", href: "/projects/nc-216" },
       { name: "RRL Commercial", href: "/projects/commercial" },
+      { name: "RRL Confident Atria", href: "/projects/confident-atria" },
     ],
   },
   { name: "Awards", href: "/awards" },
