@@ -7617,6 +7617,9 @@ function HeroFirstSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="space-y-5">
+                        <p className="text-sm sm:text-base font-semibold tracking-[0.1em] uppercase text-gray-300 block pl-1">
+              4bhk Villa starting from <span className="text-[#d9a406]">Rs. 9,000/sqft.</span>
+            </p>
             
             <div className="flex flex-wrap items-center gap-4">
               <div className="inline-flex items-center gap-3 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 backdrop-blur-md px-5 py-2 text-[#d9a406]">
@@ -7980,7 +7983,7 @@ export const AnnouncementBanner = ({ onOpenModal }: { onOpenModal: () => void })
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image 
-          src="https://ik.imagekit.io/j0xzq9pns/svt/WhatsApp%20Image%202026-07-24%20at%205.11.12%20PM.jpeg" 
+          src="https://ik.imagekit.io/j0xzq9pns/svt/WhatsApp%20Image%202026-08-03%20at%202.26.40%20PM.jpeg" 
           alt="Confident Atria Villas" 
           fill 
           className="object-cover object-top"
