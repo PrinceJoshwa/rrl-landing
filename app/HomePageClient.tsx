@@ -7546,7 +7546,7 @@ import {
   Globe,
   Handshake,
   X, User, Smartphone,
-  Loader2, CheckCircle
+  Loader2, CheckCircle, Check
 } from "lucide-react"
 import { useForm, ValidationError } from '@formspree/react'
 
@@ -7979,76 +7979,111 @@ function Hero() {
 // ========== NEW: ANNOUNCEMENT BANNER ==========
 export const AnnouncementBanner = ({ onOpenModal }: { onOpenModal: () => void }) => {
   return (
-    <section className="relative w-full h-[400px] md:h-[450px] flex items-center overflow-hidden border-b border-[#d9a406]/30">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image 
-          src="https://ik.imagekit.io/j0xzq9pns/svt/WhatsApp%20Image%202026-08-03%20at%202.26.40%20PM.jpeg" 
-          alt="Confident Atria Villas" 
-          fill 
-          className="object-cover object-top"
-          priority
-        />
-        {/* Gradient Overlay for text readability & premium feel */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-      </div>
-      
-      <div className="container relative z-10 mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-8 max-w-7xl">
-        <div className="max-w-2xl text-center md:text-left mt-8 md:mt-0">
-           {/* Urgency Tag */}
-           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-500 text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-              Only 10 Units Left
-           </div>
-           
-           <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white leading-tight mb-4">
-             Just Launched <br/>
-             <span className="text-[#d9a406] italic">Premium 4 BHK Villas</span>
-           </h2>
-           
-           <p className="text-lg text-gray-300 font-light">
-             <strong className="text-white font-medium">Confident Atria</strong> | Sarjapura - Attibele Road. <br className="hidden md:block"/>
-             Experience luxury living with exclusive launch benefits.
-           </p>
+    <section className="w-full py-8 px-4 flex justify-center bg-black border-b border-[#d9a406]/20">
+      {/* Main Banner Container */}
+      <div className="relative w-full max-w-[1300px] bg-gradient-to-r from-[#0a0a0a] to-[#1a1a1a] flex flex-col md:flex-row overflow-hidden shadow-[0_0_30px_rgba(217,164,6,0.1)] border border-[#d9a406]/30 group">
 
-           {/* NEW BUTTON - Left Side */}
-           <div className="mt-8 flex justify-center md:justify-start">
-             <a href="https://www.confidentatria.in/" target="_blank" rel="noopener noreferrer">
-               <button className="relative group overflow-hidden rounded-full bg-transparent border border-[#d9a406] px-8 py-3.5 text-[#d9a406] hover:text-black font-bold uppercase tracking-widest transition-all hover:scale-105 backdrop-blur-sm">
-                 <span className="relative z-10 flex items-center justify-center gap-3 whitespace-nowrap">
-                   See More Details
-                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                 </span>
-                 <div className="absolute inset-0 bg-[#d9a406] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
-               </button>
-             </a>
-           </div>
+        {/* --- LEFT SECTION: Image with perfect diagonal cut --- */}
+        <div className="relative w-full md:w-[45%] h-[220px] md:h-auto min-h-[220px]">
+          {/* Leftmost Gold Accent Block */}
+          <div className="absolute top-0 left-0 w-3 md:w-4 h-full bg-[#d9a406] z-20"></div>
+
+          {/* Image with Clip Path for the Slant */}
+          <div className="absolute inset-0 z-10 [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] md:[clip-path:polygon(0_0,100%_0,85%_100%,0_100%)]">
+            <Image 
+              src="https://ik.imagekit.io/j0xzq9pns/svt/WhatsApp%20Image%202026-08-03%20at%202.26.40%20PM.jpeg" 
+              alt="Confident Atria Villas" 
+              fill 
+              /* Changed object position to 80% to focus on the Villa and Family, ignoring flyer text */
+              className="object-right object-[80%_center] group-hover:scale-105 transition-transform duration-700"
+              priority
+            />
+            {/* Dark overlay to blend image into background smoothly */}
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+          </div>
+          
+          {/* Slanted Gold Divider Line */}
+          <div className="absolute inset-0 z-20 hidden md:block pointer-events-none [clip-path:polygon(99.5%_0,100%_0,85%_100%,84.5%_100%)]">
+            <div className="w-full h-full bg-[#d9a406]"></div>
+          </div>
+        </div>
+
+        {/* --- MIDDLE SECTION: Content, Checklist & Details Button --- */}
+        <div className="relative w-full md:w-[35%] flex flex-col justify-center py-6 px-6 md:px-2 z-30">
+          <div className="flex items-center gap-3 mb-2">
+             <span className="px-2 py-1 bg-red-500/10 border border-red-500/30 text-red-500 text-[10px] font-bold uppercase tracking-widest rounded-sm">
+               New Launch
+             </span>
+             <h3 className="text-white/60 text-xs font-bold tracking-[0.2em] uppercase">
+               Confident Atria
+             </h3>
+          </div>
+          
+          <h2 className="text-[#d9a406] text-3xl md:text-4xl font-playfair font-bold uppercase leading-tight mb-4">
+            4 BHK Villas
+          </h2>
+          
+          {/* 2x2 Grid Checklist */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4 text-white/90 text-xs md:text-sm font-medium mb-5">
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-[#d9a406]" strokeWidth={3} /> Starts at ₹2 Cr*
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-[#d9a406]" strokeWidth={3} /> 25-Acre Community
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-[#d9a406]" strokeWidth={3} /> 4 Months Possession
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-4 h-4 text-[#d9a406]" strokeWidth={3} /> 24/7 Security
+            </div>
+          </div>
+
+          {/* Restored Button: See More Details */}
+          <div>
+            <a href="https://www.confidentatria.in/" target="_blank" rel="noopener noreferrer">
+              <button className="relative group/link overflow-hidden rounded-sm bg-transparent border border-white/20 px-5 py-2 text-white font-bold uppercase tracking-widest transition-all hover:border-[#d9a406] text-[10px] md:text-xs">
+                {/* Fixed text hover visibility */}
+                <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap transition-colors duration-300 group-hover/link:text-black">
+                  See More Details
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-[#d9a406] translate-y-[100%] group-hover/link:translate-y-0 transition-transform duration-300"></div>
+              </button>
+            </a>
+          </div>
+        </div>
+
+        {/* --- RIGHT SECTION: Main Action Buttons --- */}
+        <div className="relative w-full md:w-[20%] flex flex-row md:flex-col items-center justify-center gap-3 p-6 md:p-6 md:border-l border-white/5 z-30 bg-black/40">
+          
+          {/* Button 1: Book Site Visit */}
+          <button 
+            onClick={onOpenModal}
+            className="w-full group relative overflow-hidden rounded-sm bg-[#d9a406] px-4 py-3.5 text-black font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_20px_rgba(217,164,6,0.2)] text-[10px] md:text-xs text-center"
+          >
+            {/* Kept text black on hover to contrast with the white sliding background */}
+            <span className="relative z-10 flex items-center justify-center whitespace-nowrap transition-colors duration-300 group-hover:text-black">
+              Book Site Visit
+            </span>
+            <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
+          </button>
+
+          {/* Button 2: Explore Project */}
+          <Link href="/projects/confident-atria" className="w-full">
+            <button className="w-full group relative overflow-hidden rounded-sm bg-transparent border border-[#d9a406] px-4 py-3.5 text-[#d9a406] font-bold uppercase tracking-wider transition-all hover:scale-[1.02] text-[10px] md:text-xs text-center">
+               {/* Fixed text hover visibility */}
+              <span className="relative z-10 flex items-center justify-center whitespace-nowrap transition-colors duration-300 group-hover:text-black">
+                Explore Project
+              </span>
+              <div className="absolute inset-0 bg-[#d9a406] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
+            </button>
+          </Link>
+
+          {/* Corner Accent matching the reference */}
+          <div className="hidden md:block absolute -bottom-4 -right-4 w-8 h-8 bg-[#d9a406] transform rotate-45 z-10"></div>
         </div>
         
-        <div className="shrink-0 flex flex-col sm:flex-row md:flex-col gap-4 w-full md:w-auto">
-           {/* Button 1: Opens the Popup Modal */}
-           <button 
-             onClick={onOpenModal}
-             className="relative group overflow-hidden rounded-full bg-[#d9a406] px-8 py-4 text-black font-bold uppercase tracking-widest transition-all hover:scale-105 shadow-[0_0_40px_rgba(217,164,6,0.3)] w-full"
-           >
-             <span className="relative z-10 flex items-center justify-center gap-3 whitespace-nowrap">
-               Book Site Visit <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-             </span>
-             {/* Button Hover Effect */}
-             <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
-           </button>
-
-           {/* Button 2: Navigates to the Project Page */}
-           <Link href="/projects/confident-atria" className="w-full block">
-             <button className="relative group overflow-hidden rounded-full bg-black/50 border border-white/30 px-8 py-4 text-white hover:text-black font-bold uppercase tracking-widest transition-all hover:scale-105 backdrop-blur-md w-full hover:border-[#d9a406]">
-               <span className="relative z-10 flex items-center justify-center gap-3 whitespace-nowrap">
-                 Explore Project
-               </span>
-               <div className="absolute inset-0 bg-[#d9a406] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
-             </button>
-           </Link>
-        </div>
       </div>
     </section>
   );
