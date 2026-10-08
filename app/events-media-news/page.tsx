@@ -46,10 +46,10 @@ function MediaSection() {
             <span className="font-semibold">RRL Legacy of Achievements</span>
           </div>
 
-          <h2 className="mb-6 text-3xl font-bold font-playfair sm:text-4xl lg:text-5xl">
+          <h1 className="mb-6 text-3xl font-bold font-playfair sm:text-4xl lg:text-5xl">
             Committed to Results: Highlights of Our
             <span className="text-gold-400 block">Real Estate Success</span>
-          </h2>
+          </h1>
 
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl">
             At RRL Builders and Developers Pvt Ltd, we take immense pride in our dedication to excellence and our
