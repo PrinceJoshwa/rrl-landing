@@ -4,7 +4,7 @@ import AboutPageClient from "./AboutPageClient"
 export const metadata: Metadata = {
   title: "2 BHK Flats in Bangalore & Luxury Homes & Apartments",
   description:
-    "Get 2 BHK flats in Bangalore and luxury homes in prime locations. Explore upcoming apartments with modern amenities and great value.",
+    "Get premium 2 BHK flats in Bangalore with modern amenities. Explore luxury houses and upcoming apartments near you for comfortable living.",
 }
 
 export default function AboutPage() {
