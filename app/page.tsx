@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import HomePageClient from "./HomePageClient"
 
 export const metadata: Metadata = {
-  title: "RRL Builders and Developers | Premium Builders in Bangalore",
+  title: "Affordable Apartments & Flats for Sale in Sarjapur Road",
   description:
-    "RRL Builders and Developers – Award-winning real estate projects in Bangalore. Explore 2 & 3 BHK luxury apartments in Sarjapur, Varthur, and Medahalli. Book a site visit today.",
+    "Explore modern apartments in Sarjapur Road with 1, 2 & 3 BHK options. Find the best flats for sale in Sarjapur Road near you with RRL Builders.",
   keywords: [
     "RRL Builders Bangalore",
     "luxury apartments bangalore",
