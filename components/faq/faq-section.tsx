@@ -299,7 +299,7 @@ export function FAQSection({
               <span className="font-semibold">FAQ</span>
             </div>
   
-            <h2 className="mb-6 text-4xl font-bold font-playfair lg:text-5xl">{title}</h2>
+            <h1 className="mb-6 text-4xl font-bold font-playfair lg:text-5xl">{title}</h1>
   
             <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-gray-400">{subtitle}</p>
   

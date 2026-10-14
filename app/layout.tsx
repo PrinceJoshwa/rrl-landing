@@ -251,7 +251,7 @@
 //   metadataBase: new URL("https://www.rrlbuildersanddevelopers.com"),
 //   title: {
 //     default: "Affordable Apartments & Flats for Sale in Sarjapur Road",
-//     template: "%s | RRL Builders and Developers",
+//     template: "%s",
 //   },
 
 //   description:
@@ -357,7 +357,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.rrlbuildersanddevelopers.com"),
   title: {
     default: "Affordable Apartments & Flats for Sale in Sarjapur Road",
-    template: "%s | RRL Builders and Developers",
+    template: "%s",
   },
   description:
     "Explore modern apartments in Sarjapur Road with 1, 2 & 3 BHK options. Find the best flats for sale in Sarjapur Road near you with RRL Builders.",
