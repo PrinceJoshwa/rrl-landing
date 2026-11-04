@@ -107,6 +107,8 @@ import Link from "next/link"
 import { Facebook, Linkedin, Mail, Phone, MapPin, Award, ArrowRight, Instagram } from "lucide-react"
 import Image from "next/image"
 
+const blogUrl = process.env.NEXT_PUBLIC_WORDPRESS_BLOG_URL || "https://rrlbuildersanddevelopers.com/blog/"
+
 // Links for the footer columns
 const projectLinks = [
   { name: "RRL Palacio", href: "/projects/palacio" },
@@ -125,9 +127,11 @@ const companyLinks = [
   { name: "Projects", href: "/projects" },
   { name: "Awards", href: "/awards" },
   { name: "Contact", href: "/contact" },
+  { name: "Privacy Policy", href: "/privacy" },
 ]
 
 const exploreLinks = [
+  { name: "Blog", href: blogUrl, external: true },
   { name: "Our Partners", href: "/our-partners" },
   { name: "Events, Media & News", href: "/events-media-news" },
   { name: "FAQs", href: "/faq" },
@@ -185,7 +189,7 @@ export function Footer() {
             <ul className="space-y-3">
               {projectLinks.map((link) => (
                 <li key={link.name}>
-                   <Link href={link.href} className="text-gray-400 hover:text-gold-400 text-sm">{link.name}</Link>
+                  <Link href={link.href} className="text-gray-400 hover:text-gold-400 text-sm">{link.name}</Link>
                  </li>
               ))}
             </ul>
@@ -210,13 +214,20 @@ export function Footer() {
             <ul className="space-y-3">
               {exploreLinks.map((link) => (
                 <li key={link.name}>
-                   <Link href={link.href} className="text-gray-400 hover:text-gold-400 text-sm">{link.name}</Link>
+                  {"external" in link && link.external ? (
+                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-400 text-sm">{link.name}</a>
+                  ) : (
+                    <Link href={link.href} className="text-gray-400 hover:text-gold-400 text-sm">{link.name}</Link>
+                  )}
                  </li>
               ))}
             </ul>
           </div>
         </div>
         <div className="border-t border-gold-800 mt-12 pt-8 text-center">
+          <Link href="/privacy" className="inline-flex items-center rounded-full border border-gold-700 px-5 py-2 text-sm font-semibold text-gold-300 transition-colors hover:border-gold-400 hover:bg-gold-500 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400">
+            Privacy Policy
+          </Link>
           <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} RRL Builders and Developers Pvt. Ltd. All Rights Reserved.</p>
         </div>
       </div>
