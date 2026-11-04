@@ -16,11 +16,12 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## WordPress blog link
+## WordPress blog integration
 
-The site footer links to the RRL WordPress blog at `https://rrlbuildersanddevelopers.com/blog/`.
-If the WordPress blog uses a different public URL, set `NEXT_PUBLIC_WORDPRESS_BLOG_URL` in the
-deployment environment before building the static site.
+The `/blog` page loads published posts from the public WordPress REST API at
+`https://blog.rrlbuildersanddevelopers.com/wp-json/wp/v2/posts`. Blog navigation in the site
+header and footer points to `/blog`; article cards open each post on the WordPress subdomain.
+The listing fetches posts in the browser so it remains compatible with the static site export.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

@@ -343,15 +343,11 @@
 // app/layout.tsx
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import WhatsAppChat from "@/components/Whatsappchat";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rrlbuildersanddevelopers.com"),
@@ -398,7 +394,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
 
         {/* Google Tag Manager (head) */}
         <Script id="gtm-head" strategy="afterInteractive">

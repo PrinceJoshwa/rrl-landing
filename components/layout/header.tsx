@@ -36,6 +36,7 @@ const navigation = [
     ],
   },
   { name: "Awards", href: "/awards" },
+  { name: "Blog", href: "/blog" },
   { 
     name: "Careers", 
     href: "/careers",

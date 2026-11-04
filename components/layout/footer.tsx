@@ -107,8 +107,6 @@ import Link from "next/link"
 import { Facebook, Linkedin, Mail, Phone, MapPin, Award, ArrowRight, Instagram } from "lucide-react"
 import Image from "next/image"
 
-const blogUrl = process.env.NEXT_PUBLIC_WORDPRESS_BLOG_URL || "https://rrlbuildersanddevelopers.com/blog/"
-
 // Links for the footer columns
 const projectLinks = [
   { name: "RRL Palacio", href: "/projects/palacio" },
@@ -131,7 +129,7 @@ const companyLinks = [
 ]
 
 const exploreLinks = [
-  { name: "Blog", href: blogUrl, external: true },
+  { name: "Blog", href: "/blog" },
   { name: "Our Partners", href: "/our-partners" },
   { name: "Events, Media & News", href: "/events-media-news" },
   { name: "FAQs", href: "/faq" },
@@ -214,11 +212,7 @@ export function Footer() {
             <ul className="space-y-3">
               {exploreLinks.map((link) => (
                 <li key={link.name}>
-                  {"external" in link && link.external ? (
-                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gold-400 text-sm">{link.name}</a>
-                  ) : (
-                    <Link href={link.href} className="text-gray-400 hover:text-gold-400 text-sm">{link.name}</Link>
-                  )}
+                  <Link href={link.href} className="text-gray-400 hover:text-gold-400 text-sm">{link.name}</Link>
                  </li>
               ))}
             </ul>
