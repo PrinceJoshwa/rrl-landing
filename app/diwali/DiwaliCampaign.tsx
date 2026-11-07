@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, type FormEvent, type ReactNode } from "react"
+import { useEffect, useState, type FormEvent, type ReactNode } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowDown, ArrowRight, Check, ChevronDown, CircleCheck, Instagram, LoaderCircle, Mail, MapPin, Sparkles } from "lucide-react"
+import { ArrowDown, ArrowRight, Check, ChevronDown, CircleCheck, Instagram, LoaderCircle, Mail, MapPin, Sparkles, X } from "lucide-react"
 import { projectCards } from "@/lib/project-data"
 import styles from "./diwali.module.css"
 
@@ -50,10 +50,30 @@ function SectionEyebrow({ children }: { children: ReactNode }) {
 }
 
 export default function DiwaliCampaign() {
+  const [welcomeOpen, setWelcomeOpen] = useState(false)
   const [values, setValues] = useState<FormValues>(initialValues)
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [submission, setSubmission] = useState<"idle" | "sending" | "success" | "error">("idle")
   const [serverMessage, setServerMessage] = useState("")
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setWelcomeOpen(true), 350)
+    return () => window.clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    if (!welcomeOpen) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setWelcomeOpen(false)
+    }
+    window.addEventListener("keydown", closeOnEscape)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener("keydown", closeOnEscape)
+    }
+  }, [welcomeOpen])
 
   const setField = <K extends keyof FormValues>(field: K, value: FormValues[K]) => {
     setValues(current => ({ ...current, [field]: value }))
@@ -110,6 +130,18 @@ export default function DiwaliCampaign() {
 
   return (
     <main className={styles.page}>
+      {welcomeOpen && <div className={styles.welcomeOverlay} onMouseDown={event => { if (event.target === event.currentTarget) setWelcomeOpen(false) }}>
+        <section className={styles.welcomeDialog} role="dialog" aria-modal="true" aria-labelledby="welcome-title" aria-describedby="welcome-message">
+          <button type="button" autoFocus className={styles.welcomeClose} onClick={() => setWelcomeOpen(false)} aria-label="Close Diwali greeting"><X size={18} /></button>
+          <div className={styles.welcomeOrnament} aria-hidden="true"><span>✦</span><i>✧</i><span>✦</span></div>
+          <div className={styles.welcomeDiya}><Diya /></div>
+          <SectionEyebrow>A festive wish from RRL</SectionEyebrow>
+          <h2 id="welcome-title">Happy <em>Diwali</em></h2>
+          <p id="welcome-message">May this festival of lights fill your home with joy, prosperity, and beautiful new beginnings.</p>
+          <div className={styles.welcomeSignature}>With warm wishes, <strong>RRL Group</strong></div>
+          <a href="#greetings" className={styles.welcomeButton} onClick={() => setWelcomeOpen(false)}>Enter the celebration <ArrowRight size={16} /></a>
+        </section>
+      </div>}
       <section className={styles.hero} id="top">
         <div className={styles.heroGlow} />
         <div className={styles.heroArch} />
