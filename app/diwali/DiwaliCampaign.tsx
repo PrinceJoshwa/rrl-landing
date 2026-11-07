@@ -156,7 +156,7 @@ export default function DiwaliCampaign() {
         <div className={styles.referralInner}>
           <div className={styles.referralCopy}>
             <SectionEyebrow>RRL GROUP · REFER &amp; EARN</SectionEyebrow>
-            <h1>Know someone<br /><em>looking for a home?</em></h1>
+            <h1>Happy Diwali!<br /><em>Wishing you a Bright and Prosperous Diwali</em></h1>
             <p>Refer any RRL Group project, share their contact with us, and earn a <strong>2% reward on every successful sale.</strong></p>
             <div className={styles.rewardSeal}><span>REFER</span><i>✦</i><span>SHARE</span><i>✦</i><span>EARN</span></div>
             <div className={styles.rewardCallout}><span>YOUR CONTACT. OUR EXPERTISE.</span><strong>YOUR <em>2%</em> REWARD.</strong></div>
