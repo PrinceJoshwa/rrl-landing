@@ -35,8 +35,6 @@ const referralProjectOptions = [
   "RRL Palm Altezze",
   "RRL Code Name - NC 216",
   "Confident Atria Villas",
-  "RRL AH560",
-  "RRL ZC216",
 ]
 
 function Diya({ className = "" }: { className?: string }) {
