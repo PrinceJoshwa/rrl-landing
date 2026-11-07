@@ -144,15 +144,28 @@ export default function DiwaliCampaign() {
           <a href="#projects" className={styles.welcomeButton} onClick={() => setWelcomeOpen(false)}>Explore the campaign <ArrowRight size={16} /></a>
         </section>
       </div>}
-      <header className={`${styles.nav} ${styles.campaignNav}`} id="top">
+      <header className={`${styles.nav} ${styles.campaignNav}`}>
         <Link href="/" className={styles.brand} aria-label="RRL Builders & Developers home">
           <Image src="/logo.png" alt="RRL Group" width={160} height={70} priority />
           <span>BUILDERS &amp; DEVELOPERS</span>
         </Link>
         <a className={styles.navButton} href="#referral-form">Join the programme <ArrowRight size={15} /></a>
       </header>
-      <section className={styles.openingBanner} aria-label="RRL Group refer and earn campaign">
-        <Image src="/diwali-referral.jpg" alt="Know someone looking for a home? Refer an RRL Group project and earn 2% on every successful sale." fill priority sizes="100vw" />
+      <section className={`${styles.referral} ${styles.campaignHero}`} id="top" aria-label="RRL Group refer and earn campaign">
+        <div className={styles.referralTexture} />
+        <div className={styles.referralInner}>
+          <div className={styles.referralCopy}>
+            <SectionEyebrow>RRL GROUP · REFER &amp; EARN</SectionEyebrow>
+            <h1>Know someone<br /><em>looking for a home?</em></h1>
+            <p>Refer any RRL Group project, share their contact with us, and earn a <strong>2% reward on every successful sale.</strong></p>
+            <div className={styles.rewardSeal}><span>REFER</span><i>✦</i><span>SHARE</span><i>✦</i><span>EARN</span></div>
+            <div className={styles.rewardCallout}><span>YOUR CONTACT. OUR EXPERTISE.</span><strong>YOUR <em>2%</em> REWARD.</strong></div>
+            <a className={styles.referralButton} href="#projects">Explore RRL projects <ArrowRight size={15} /></a>
+          </div>
+          <div className={styles.referralArtwork}>
+            <Image src="/diwali-referral.jpg" alt="Know someone looking for a home? Refer an RRL Group project and earn 2% on every successful sale." fill priority sizes="(max-width: 850px) 100vw, 48vw" />
+          </div>
+        </div>
       </section>
 
       <section className={styles.projects} id="projects">
