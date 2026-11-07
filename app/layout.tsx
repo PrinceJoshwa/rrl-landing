@@ -345,12 +345,10 @@ import type React from "react";
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import WhatsAppChat from "@/components/Whatsappchat";
+import SiteShell from "./SiteShell";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.rrlbuildersanddevelopers.com"),
+  metadataBase: new URL("https://rrlbuildersanddevelopers.com"),
   title: {
     default: "Affordable Apartments & Flats for Sale in Sarjapur Road",
     template: "%s",
@@ -381,10 +379,6 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "RRL Builders and Developers",
-  },
-  // ADDED: Missing Canonical URL and Google Site Verification
-  alternates: {
-    canonical: "https://rrlbuildersanddevelopers.com/",
   },
   verification: {
     google: "ciMgqXran8pfQupwhfS283PtHMzig6Ls2KfZhSkQZs4",
@@ -438,10 +432,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ></iframe>
         </noscript>
 
-        <Header />
-        <main>{children}</main>
-        <WhatsAppChat />
-        <Footer />
+        <SiteShell>{children}</SiteShell>
 
       </body>
     </html>

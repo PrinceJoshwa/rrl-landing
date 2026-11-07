@@ -930,6 +930,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from 'framer-motion';
+import { projectCards } from "@/lib/project-data";
 
 // Updated Project Data with strict instructions
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -938,7 +939,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-const projects = [
+/*const projects = [
   {
     name: "RRL Palm Altezze",
     location: "Varthur, Bangalore",
@@ -1044,7 +1045,8 @@ const projects = [
     config: "4 BHK",
     possession: "Possession: 4 Months"
   },
-];
+];*/
+const projects = projectCards;
 
 const features = [
   { icon: Building, title: "RRL Palm Altezze", description: "High-rise apartment in a premium location." },

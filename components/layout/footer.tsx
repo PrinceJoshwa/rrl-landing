@@ -129,7 +129,7 @@ const companyLinks = [
 ]
 
 const exploreLinks = [
-  { name: "Blog", href: "/blog" },
+  { name: "Blogs", href: "/blogs" },
   { name: "Our Partners", href: "/our-partners" },
   { name: "Events, Media & News", href: "/events-media-news" },
   { name: "FAQs", href: "/faq" },

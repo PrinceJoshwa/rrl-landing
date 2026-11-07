@@ -1,10 +1,12 @@
 import type { Metadata } from "next"
 import PalmAltezzePageClient from "./PalmAltezzePageClient"
+import { canonicalUrl } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "RRL Palm Altezze | Premium 2 & 3 BHK Apartments in Varthur, Bangalore",
   description:
     "RRL Palm Altezze – High-rise premium 2 & 3 BHK apartments in Varthur, Bangalore. 115 units across 1 acre 38 guntas. Possession in 2027. Open for booking. Download brochure.",
+  alternates: { canonical: canonicalUrl("/projects/palm-altezze") },
   keywords: [
     "RRL Palm Altezze",
     "apartments in varthur",

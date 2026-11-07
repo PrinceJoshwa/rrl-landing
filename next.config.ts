@@ -34,6 +34,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
+  // This public Formspree endpoint is required by the static campaign form.
+  env: {
+    VITE_FORMSPREE_ENDPOINT: process.env.VITE_FORMSPREE_ENDPOINT,
+  },
 
   images: {
     remotePatterns: [

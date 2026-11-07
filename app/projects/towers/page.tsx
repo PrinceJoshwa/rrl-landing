@@ -5,6 +5,14 @@ import { ContactForm } from "@/components/contact/contact-form"
 import { ProjectAmenities } from "@/components/projects/project-amenities"
 import { ProjectGallery } from "@/components/projects/project-gallery"
 import { ProjectSpecifications } from "@/components/projects/project-specifications"
+import type { Metadata } from "next"
+import { canonicalUrl } from "@/lib/seo"
+
+export const metadata: Metadata = {
+  title: "RRL Towers | Commercial Space in Sarjapur",
+  description: "Explore commercial spaces at RRL Towers in Sarjapur, Bengaluru.",
+  alternates: { canonical: canonicalUrl("/projects/towers") },
+}
 
 export default function TowersPage() {
   const projectData = {

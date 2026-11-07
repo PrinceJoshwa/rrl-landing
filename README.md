@@ -18,9 +18,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## WordPress blog integration
 
-The `/blog` page loads published posts from the public WordPress REST API at
+The `/blogs` page loads published posts from the public WordPress REST API at
 `https://blog.rrlbuildersanddevelopers.com/wp-json/wp/v2/posts`. Blog navigation in the site
-header and footer points to `/blog`; article cards open each post on the WordPress subdomain.
+header and footer points to `/blogs`; article cards open each post on the WordPress subdomain.
 The listing fetches posts in the browser so it remains compatible with the static site export.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.

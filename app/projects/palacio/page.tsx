@@ -1,10 +1,12 @@
 import type { Metadata } from "next"
 import PalacioPageClient from "./PalacioPageClient"
+import { canonicalUrl } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "RRL Palacio | Ready to Move 2 & 3 BHK Flats in Medahalli, Bangalore",
   description:
     "RRL Palacio – Luxury 2 & 3 BHK fully furnished apartments in Medahalli, Bangalore. 103 units, 1.5 Acres. RERA approved. Ready to move. Enquire now for best price.",
+  alternates: { canonical: canonicalUrl("/projects/palacio") },
   keywords: [
     "RRL Palacio",
     "apartments in medahalli",

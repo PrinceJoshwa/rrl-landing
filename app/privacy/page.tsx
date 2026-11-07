@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowUpRight, Cookie, Database, Eye, FileText, LockKeyhole, Mail, ShieldCheck, UserRound } from "lucide-react"
+import { canonicalUrl } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | RRL Builders and Developers",
   description:
     "Learn how RRL Builders and Developers collects, uses, and protects information submitted through this website.",
+  alternates: { canonical: canonicalUrl("/privacy") },
 }
 
 const sections = [

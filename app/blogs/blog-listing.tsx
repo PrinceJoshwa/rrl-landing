@@ -70,7 +70,6 @@ const projects = [
 type WordPressPost = {
   id: number
   date: string
-  link: string
   slug: string
   title: { rendered: string }
   excerpt: { rendered: string }
@@ -189,16 +188,16 @@ export default function BlogListing() {
                 const excerpt = plainText(post.excerpt.rendered)
                 return (
                   <article key={post.id} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#101010] transition-all duration-300 hover:-translate-y-1 hover:border-gold-800/80 hover:shadow-[0_16px_50px_rgba(217,164,6,0.08)]">
-                    <a href={post.link} target="_blank" rel="noopener noreferrer" className="relative block aspect-[16/10] overflow-hidden bg-gradient-to-br from-gold-950/60 to-gray-900" aria-label={`Read ${title}`}>
+                    <Link href={`/blogs/${post.slug}/`} className="relative block aspect-[16/10] overflow-hidden bg-gradient-to-br from-gold-950/60 to-gray-900" aria-label={`Read ${title}`}>
                       {cover ? <Image src={cover} alt={title} fill unoptimized sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" /> : <div className="flex h-full items-center justify-center"><BookOpen className="h-10 w-10 text-gold-500/50" /></div>}
-                    </a>
+                    </Link>
                     <div className="flex flex-1 flex-col p-6">
                       <p className="mb-3 inline-flex items-center gap-2 text-xs font-medium text-gold-400"><CalendarDays className="h-3.5 w-3.5" />{formatDate(post.date)}</p>
                       <h3 className="font-playfair text-xl font-semibold leading-snug text-white transition-colors group-hover:text-gold-300">{title}</h3>
                       <p className="mt-3 line-clamp-3 text-sm leading-6 text-gray-400">{excerpt}</p>
-                      <a href={post.link} target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-gold-300 hover:text-gold-200">
+                      <Link href={`/blogs/${post.slug}/`} className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-gold-300 hover:text-gold-200">
                         Read article <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </a>
+                      </Link>
                     </div>
                   </article>
                 )

@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
+import { canonicalUrl } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description:
     "Review the website terms and conditions for RRL Builders and Developers project information and enquiries.",
+  alternates: { canonical: canonicalUrl("/terms") },
 }
 
 export default function TermsPage() {

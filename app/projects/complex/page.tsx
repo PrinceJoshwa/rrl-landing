@@ -5,6 +5,14 @@ import { ContactForm } from "@/components/contact/contact-form"
 import { ProjectAmenities } from "@/components/projects/project-amenities"
 import { ProjectGallery } from "@/components/projects/project-gallery"
 import { ProjectSpecifications } from "@/components/projects/project-specifications"
+import type { Metadata } from "next"
+import { canonicalUrl } from "@/lib/seo"
+
+export const metadata: Metadata = {
+  title: "RRL Complex | Commercial Spaces in Bengaluru",
+  description: "Explore RRL Complex, a commercial development by RRL Builders and Developers.",
+  alternates: { canonical: canonicalUrl("/projects/complex") },
+}
 
 export default function ComplexPage() {
   const projectData = {

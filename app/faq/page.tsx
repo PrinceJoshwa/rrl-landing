@@ -3,6 +3,14 @@
 // Let's assume you moved the FAQSection component from `page.tsx` to a new file: `components/sections/FAQSection.tsx`
 
 import { FAQSection } from "@/components/faq/faq-section"; // Hypothetical path
+import type { Metadata } from "next"
+import { canonicalUrl } from "@/lib/seo"
+
+export const metadata: Metadata = {
+  title: "Frequently Asked Questions | RRL Builders and Developers",
+  description: "Answers to common questions about RRL Builders, our projects, and the home buying process.",
+  alternates: { canonical: canonicalUrl("/faq") },
+}
 
 export default function FAQPage() {
   return (
