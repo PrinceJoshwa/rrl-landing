@@ -3,7 +3,7 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowDown, ArrowRight, Check, ChevronDown, CircleCheck, Instagram, LoaderCircle, Mail, MapPin, Sparkles, X } from "lucide-react"
+import { ArrowRight, Check, ChevronDown, CircleCheck, Instagram, LoaderCircle, Mail, MapPin, X } from "lucide-react"
 import { projectCards } from "@/lib/project-data"
 import styles from "./diwali.module.css"
 
@@ -31,6 +31,13 @@ const initialValues: FormValues = {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const mobilePattern = /^[6-9]\d{9}$/
+const referralProjectOptions = [
+  "RRL Palm Altezze",
+  "RRL Code Name - NC 216",
+  "Confident Atria Villas",
+  "RRL AH560",
+  "RRL ZC216",
+]
 
 function Diya({ className = "" }: { className?: string }) {
   return (
@@ -50,16 +57,11 @@ function SectionEyebrow({ children }: { children: ReactNode }) {
 }
 
 export default function DiwaliCampaign() {
-  const [welcomeOpen, setWelcomeOpen] = useState(false)
+  const [welcomeOpen, setWelcomeOpen] = useState(true)
   const [values, setValues] = useState<FormValues>(initialValues)
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [submission, setSubmission] = useState<"idle" | "sending" | "success" | "error">("idle")
   const [serverMessage, setServerMessage] = useState("")
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => setWelcomeOpen(true), 350)
-    return () => window.clearTimeout(timer)
-  }, [])
 
   useEffect(() => {
     if (!welcomeOpen) return
@@ -109,7 +111,7 @@ export default function DiwaliCampaign() {
     }
     setSubmission("sending")
     try {
-      const endpoint = process.env.VITE_FORMSPREE_ENDPOINT
+      const endpoint = "https://formspree.io/f/myeeadnz";
       if (!endpoint) throw new Error("Referral submissions are not configured yet. Please call +91 84949 66966 to speak with our team.")
       const response = await fetch(endpoint, {
         method: "POST",
@@ -139,71 +141,18 @@ export default function DiwaliCampaign() {
           <h2 id="welcome-title">Happy <em>Diwali</em></h2>
           <p id="welcome-message">May this festival of lights fill your home with joy, prosperity, and beautiful new beginnings.</p>
           <div className={styles.welcomeSignature}>With warm wishes, <strong>RRL Group</strong></div>
-          <a href="#greetings" className={styles.welcomeButton} onClick={() => setWelcomeOpen(false)}>Enter the celebration <ArrowRight size={16} /></a>
+          <a href="#projects" className={styles.welcomeButton} onClick={() => setWelcomeOpen(false)}>Explore the campaign <ArrowRight size={16} /></a>
         </section>
       </div>}
-      <section className={styles.hero} id="top">
-        <div className={styles.heroGlow} />
-        <div className={styles.heroArch} />
-        <div className={styles.heroStars} aria-hidden="true">✦<i>·</i>✧<b>·</b>✦<i>·</i>✧<b>·</b>✦</div>
-        <header className={styles.nav}>
-          <Link href="/" className={styles.brand} aria-label="RRL Builders & Developers home">
-            <Image src="/logo.png" alt="RRL Group" width={160} height={70} priority />
-            <span>BUILDERS &amp; DEVELOPERS</span>
-          </Link>
-          <nav aria-label="Campaign navigation">
-            <a href="#greetings">The wishes</a><a href="#projects">Our homes</a><a href="#refer">Refer &amp; earn</a>
-          </nav>
-          <a className={styles.navButton} href="#referral-form">Join the programme <ArrowRight size={15} /></a>
-        </header>
-
-        <div className={styles.heroContent}>
-          <div className={styles.heroCopy}>
-            <p className={styles.heroKicker}><Sparkles size={15} /> A season of light. A home for every beginning.</p>
-            <h1>Happy<br /><em>Diwali</em><span className={styles.headingDot}>.</span></h1>
-            <div className={styles.goldRule}><span /><i>✦</i><span /></div>
-            <h2>Wishing you a bright<br />and prosperous Diwali</h2>
-            <p className={styles.heroDescription}>May this Diwali illuminate your life with happiness, prosperity, success, and beautiful new beginnings.</p>
-            <p className={styles.warmWishes}>Warm wishes from <strong>RRL Group</strong></p>
-            <div className={styles.heroActions}>
-              <a className={styles.buttonGold} href="#projects">Explore our projects <ArrowRight size={16} /></a>
-              <a className={styles.buttonOutline} href="#refer">Refer a friend</a>
-            </div>
-          </div>
-          <div className={styles.heroArt} aria-label="A glowing diya celebrating Diwali">
-            <div className={styles.mandala}><span>✦</span><span>✦</span><span>✦</span><span>✦</span></div>
-            <div className={styles.lantern}><div /><div /><div /></div>
-            <div className={styles.artCaption}><span>THE FESTIVAL OF LIGHTS</span><b>May your home glow<br />with joy.</b></div>
-            <Diya className={styles.diya} />
-            <span className={styles.artSparkle}>✦</span><span className={styles.artSparkleTwo}>✧</span>
-          </div>
-        </div>
-        <a href="#greetings" className={styles.scrollCue}><span>SCROLL TO CELEBRATE</span><ArrowDown size={15} /></a>
-        <div className={styles.heroBottomLine} />
-      </section>
-
-      <section className={styles.greeting} id="greetings">
-        <div className={styles.greetingOrb} />
-        <div className={styles.greetingInner}>
-          <div className={styles.greetingImage}>
-            <div className={styles.photoFrame}>
-              <div className={styles.photoSky} />
-              <div className={styles.photoWindow}><span /><span /><span /><span /></div>
-              <div className={styles.photoBuilding}><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
-              <Diya className={styles.photoDiya} />
-              <div className={styles.photoNote}>Light finds its way<br />home.</div>
-            </div>
-            <span className={styles.imageIndex}>01 <i /> 02</span>
-          </div>
-          <div className={styles.greetingCopy}>
-            <SectionEyebrow>A note from our family</SectionEyebrow>
-            <h2>Celebrate the<br /><em>Festival of Lights</em></h2>
-            <div className={styles.shortRule} />
-            <p>Wishing you and your family a joyful and prosperous Diwali filled with happiness, peace, success, and countless beautiful moments.</p>
-            <p>May this festival bring new opportunities, brighter beginnings, and happiness to your home.</p>
-            <div className={styles.signature}><span>With love,</span><strong>Team RRL</strong><span className={styles.signatureLine} /></div>
-          </div>
-        </div>
+      <header className={`${styles.nav} ${styles.campaignNav}`} id="top">
+        <Link href="/" className={styles.brand} aria-label="RRL Builders & Developers home">
+          <Image src="/logo.png" alt="RRL Group" width={160} height={70} priority />
+          <span>BUILDERS &amp; DEVELOPERS</span>
+        </Link>
+        <a className={styles.navButton} href="#referral-form">Join the programme <ArrowRight size={15} /></a>
+      </header>
+      <section className={styles.openingBanner} aria-label="RRL Group refer and earn campaign">
+        <Image src="/diwali-referral.jpg" alt="Know someone looking for a home? Refer an RRL Group project and earn 2% on every successful sale." fill priority sizes="100vw" />
       </section>
 
       <section className={styles.projects} id="projects">
@@ -213,10 +162,10 @@ export default function DiwaliCampaign() {
           <p>Thoughtfully designed homes for the beautiful new beginnings ahead.</p>
         </div>
         <div className={styles.projectGrid}>
-          {projectCards.map((project, index) => {
+          {projectCards.map(project => {
             const isNc216 = project.href === "/projects/nc-216"
             return (
-              <article className={`${styles.projectCard} ${isNc216 ? styles.featuredCard : ""}`} key={project.href}>
+              <article className={`${styles.projectCard} ${isNc216 ? styles.featuredCard : ""}`} key={`${project.href}-${project.name}`}>
                 <Link href={project.href} className={styles.projectImage} aria-label={`Explore ${project.name}`}>
                   <Image src={project.image} alt={`${project.name} by RRL Builders`} fill sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 33vw" loading="lazy" />
                   <span className={styles.projectStatus}>{isNc216 ? "Featured project" : project.status}</span>
@@ -234,23 +183,6 @@ export default function DiwaliCampaign() {
           })}
         </div>
         <div className={styles.projectsFooter}><span>More spaces. More ways to belong.</span><Link href="/projects">View all projects <ArrowRight size={15} /></Link></div>
-      </section>
-
-      <section className={styles.referral} id="refer">
-        <div className={styles.referralTexture} />
-        <div className={styles.referralInner}>
-          <div className={styles.referralCopy}>
-            <SectionEyebrow>A little light, shared</SectionEyebrow>
-            <h2>Know someone<br /><em>looking for a home?</em></h2>
-            <p>Good things are even better when shared. Introduce a friend to any RRL Group project and earn a <strong>2% reward on every successful sale.</strong></p>
-            <div className={styles.rewardSeal}><span>REFER</span><i>✦</i><span>SHARE</span><i>✦</i><span>EARN</span></div>
-            <div className={styles.rewardCallout}><span>YOUR CONTACT. OUR EXPERTISE.</span><strong>YOUR <em>2%</em> REWARD.</strong></div>
-          </div>
-          <div className={styles.referralArtwork}>
-            <Image src="/diwali-referral.jpg" alt="Know someone looking for a home? Refer a friend and earn 2% on every successful sale." fill sizes="(max-width: 850px) 100vw, 48vw" loading="lazy" />
-          </div>
-        </div>
-        <div className={styles.rewardNote}>A thoughtful introduction can make someone’s next chapter brighter.</div>
       </section>
 
       <section className={styles.enroll} id="referral-form">
@@ -293,7 +225,7 @@ export default function DiwaliCampaign() {
 
           <div className={styles.formSectionTitle}><span>{values.referralType === "self_referral" ? "02" : "03"}</span><h3>What are they looking for?</h3><i /></div>
           <div className={styles.fieldGrid}>
-            <label className={`${styles.field} ${styles.fullField}`}><span>Preferred RRL project <b>*</b></span><div className={styles.selectWrap}><select value={values.project} onChange={e => setField("project", e.target.value)}><option value="">Select a project</option>{projectCards.map(project => <option key={project.href} value={project.name}>{project.name}</option>)}</select><ChevronDown size={16} /></div>{fieldError("project")}</label>
+            <label className={`${styles.field} ${styles.fullField}`}><span>Preferred RRL project <b>*</b></span><div className={styles.selectWrap}><select value={values.project} onChange={e => setField("project", e.target.value)}><option value="">Select a project</option>{referralProjectOptions.map(project => <option key={project} value={project}>{project}</option>)}</select><ChevronDown size={16} /></div>{fieldError("project")}</label>
             <label className={styles.field}><span>Preferred contact method</span><div className={styles.selectWrap}><select value={values.preferredContact} onChange={e => setField("preferredContact", e.target.value)}><option>Phone</option><option>WhatsApp</option><option>Email</option></select><ChevronDown size={16} /></div></label>
             <label className={styles.field}><span>I am a</span><div className={styles.selectWrap}><select value={values.residentType} onChange={e => setField("residentType", e.target.value)}><option>Resident</option><option>Non-resident Indian (NRI)</option><option>Other</option></select><ChevronDown size={16} /></div></label>
           </div>

@@ -3,14 +3,13 @@ import DiwaliCampaign from "./DiwaliCampaign"
 import { canonicalUrl } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "A Diwali of Bright Beginnings | RRL Builders & Developers",
+  title: "Refer & Earn 2% | RRL Builders & Developers",
   description:
-    "Celebrate Diwali with RRL Builders & Developers. Explore our homes, discover NC216, and join our Refer a Friend programme.",
+    "Refer a friend to any RRL Group project and earn a 2% reward on a successful sale. Explore RRL homes and submit a referral.",
   alternates: { canonical: canonicalUrl("/diwali") },
   openGraph: {
-    title: "A Diwali of Bright Beginnings | RRL Group",
-    description:
-      "Wishing you a bright and prosperous Diwali. Find your next beginning with RRL.",
+    title: "Refer & Earn 2% | RRL Group",
+    description: "Refer a friend to RRL Group projects and earn a 2% reward on a successful sale.",
     images: ["/diwali-referral.jpg"],
   },
 }
