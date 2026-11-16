@@ -9603,6 +9603,138 @@ const FeaturedImageGallery = () => {
   )
 }
 
+// function CallToAction() {
+//   const [formData, setFormData] = useState({ name: "", email: "", contact: "", property: "", message: "" })
+//   const router = useRouter()
+
+//   const handleSubmit = async (e: React.FormEvent) => {
+//     e.preventDefault()
+//     const data = new FormData()
+//     data.append("name", formData.name)
+//     data.append("email", formData.email)
+//     data.append("contact", formData.contact)
+//     data.append("property", formData.property)
+//     data.append("message", formData.message)
+
+//     fetch('/get-in-touch-api.php', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.contact, property: formData.property, message: formData.message }),
+//     }).catch(console.error)
+
+//     try {
+//       const res = await fetch("https://formspree.io/f/xwprwzdq", {
+//         method: "POST",
+//         body: data,
+//         headers: { Accept: "application/json" },
+//       })
+
+//       if (res.ok) {
+//         router.push("/c1/thankyou/")
+//       } else if (res.status === 429) {
+//         alert("Too many requests. Please wait a moment and try again.")
+//       } else {
+//         alert("Failed to send your request. Please try again.")
+//       }
+//     } catch (error) {
+//       console.error("Error submitting form:", error)
+//       alert("Network error. Please try again.")
+//     }
+//   }
+
+//   return (
+//     <section id="contact" className="relative overflow-hidden bg-black py-24 text-white">
+//       <div className="container relative mx-auto px-4">
+//         <div className="mb-16 text-center">
+//           <h2 className="mb-6 text-4xl font-bold font-playfair lg:text-5xl">Request A Call Back</h2>
+//           <p className="mx-auto max-w-2xl text-xl text-gray-400">Contact Us: Let's Start Your Real Estate Journey Together</p>
+//         </div>
+
+//         <div className="mx-auto max-w-6xl">
+//           <div className="grid items-start gap-16 lg:grid-cols-2">
+//             <motion.div className="rounded-3xl p-8 bg-[#111] border border-white/10 shadow-2xl" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, ease: "easeOut" }}>
+//               <h3 className="mb-6 text-2xl font-bold text-white">Get In Touch</h3>
+//               <form onSubmit={handleSubmit} className="space-y-6">
+//                 <div className="grid gap-4 md:grid-cols-2">
+//                   <div>
+//                     <label className="mb-2 block text-sm font-medium text-gray-400">Name *</label>
+//                     <Input placeholder="Your name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="bg-black border-white/20 focus:border-[#d9a406] text-white" required />
+//                   </div>
+//                   <div>
+//                     <label className="mb-2 block text-sm font-medium text-gray-400">Contact Number *</label>
+//                     <Input placeholder="Your phone number" value={formData.contact} onChange={(e) => setFormData({ ...formData, contact: e.target.value })} className="bg-black border-white/20 focus:border-[#d9a406] text-white" required />
+//                   </div>
+//                 </div>
+//                 <div>
+//                   <label className="mb-2 block text-sm font-medium text-gray-400">Email Address *</label>
+//                   <Input type="email" placeholder="Your email address" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="bg-black border-white/20 focus:border-[#d9a406] text-white" required />
+//                 </div>
+//                 <div>
+//                   <label className="mb-2 block text-sm font-medium text-gray-400">I'm interested in *</label>
+//                   <Select value={formData.property} onValueChange={(value) => setFormData({ ...formData, property: value })}>
+//                     <SelectTrigger className="bg-black border-white/20 text-white">
+//                       <SelectValue placeholder="Select a property" />
+//                     </SelectTrigger>
+//                     <SelectContent className="bg-[#111] text-white border-[#333]">
+//                       <SelectItem value="palacio">RRL Palacio</SelectItem>
+//                       <SelectItem value="altezze">RRL Palm Altezze</SelectItem>
+//                       <SelectItem value="nc216">RRL NC-216</SelectItem>
+//                       <SelectItem value="atria">Confident Atria</SelectItem>
+//                     </SelectContent>
+//                   </Select>
+//                 </div>
+//                 <div>
+//                   <label className="mb-2 block text-sm font-medium text-gray-400">Message</label>
+//                   <Textarea placeholder="Your query in brief" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="min-h-[100px] bg-black border-white/20 focus:border-[#d9a406] text-white" />
+//                 </div>
+//                 <Button type="submit" size="lg" className="group w-full rounded-full py-4 font-semibold text-black bg-[#d9a406] hover:bg-white transition-all duration-300">
+//                   Submit Request <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+//                 </Button>
+//               </form>
+//             </motion.div>
+
+//             <motion.div className="space-y-8" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
+//               <div>
+//                 <h3 className="mb-6 text-2xl font-bold text-white">Contact Information</h3>
+//                 <p className="mb-8 leading-relaxed text-gray-400">Take the first step towards your real estate goals. Contact our expert team for personalised assistance.</p>
+//               </div>
+//               <div className="space-y-6">
+//                 <div className="flex items-start space-x-4 group">
+//                   <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[#111] border border-white/10 group-hover:border-[#d9a406] transition-colors">
+//                     <Phone className="h-6 w-6 text-[#d9a406]" />
+//                   </div>
+//                   <div>
+//                     <h4 className="mb-2 text-lg font-semibold text-white">Call Us</h4>
+//                     <a href="tel:+918494966966" className="text-gray-400 hover:text-[#d9a406] transition-colors">+91-8494966966</a>
+//                   </div>
+//                 </div>
+//                 <div className="flex items-start space-x-4 group">
+//                   <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[#111] border border-white/10 group-hover:border-[#d9a406] transition-colors">
+//                     <Mail className="h-6 w-6 text-[#d9a406]" />
+//                   </div>
+//                   <div>
+//                     <h4 className="mb-2 text-lg font-semibold text-white">Email Us</h4>
+//                     <p className="text-gray-400">enquiry@rrlbuildersanddevelopers.com</p>
+//                   </div>
+//                 </div>
+//                 <div className="flex items-start space-x-4 group">
+//                   <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[#111] border border-white/10 group-hover:border-[#d9a406] transition-colors">
+//                     <MapPin className="h-6 w-6 text-[#d9a406]" />
+//                   </div>
+//                   <div>
+//                     <h4 className="mb-2 text-lg font-semibold text-white">Visit Us</h4>
+//                     <p className="text-gray-400 leading-relaxed">RRL Towers, 4th Floor, Sampige Jala, Sarjapur, Attibele Rd, Bengaluru, Karnataka 561113</p>
+//                   </div>
+//                 </div>
+//               </div>
+//             </motion.div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
 function CallToAction() {
   const [formData, setFormData] = useState({ name: "", email: "", contact: "", property: "", message: "" })
   const router = useRouter()
@@ -9612,14 +9744,20 @@ function CallToAction() {
     const data = new FormData()
     data.append("name", formData.name)
     data.append("email", formData.email)
-    data.append("contact", formData.contact)
-    data.append("property", formData.property)
+    data.append("phone", formData.contact)      // Changed from "contact" to "phone"
+    data.append("project", formData.property)   // Changed from "property" to "project"
     data.append("message", formData.message)
 
     fetch('/get-in-touch-api.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.contact, property: formData.property, message: formData.message }),
+      body: JSON.stringify({ 
+        name: formData.name, 
+        email: formData.email, 
+        phone: formData.contact, 
+        project: formData.property,             // Changed from "property" to "project"
+        message: formData.message 
+      }),
     }).catch(console.error)
 
     try {
