@@ -7588,6 +7588,172 @@ const HeroImageBanner = () => {
 }
 
 // ========== NEW: HERO FIRST SECTION (Below Banner) ==========
+// function HeroFirstSection() {
+//   const [state, handleSubmit] = useForm("mldpovyy"); // Make sure to replace with your ID
+
+//   // Array of project logo URLs provided by the client
+//   const projectLogos = [
+//     "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/Screenshot%202026-07-03%20154633.png", // Palm Altezze
+//     "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/Screenshot%202026-07-03%20154619.png", // Nature Woods
+//     // "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/Screenshot%202026-07-03%20154540.png", // Palacio
+//     "https://ik.imagekit.io/j0xzq9pns/RRl%20website%20banners%20(1536%20x%20752%20px)/Screenshot%202026-07-03%20154601.png"  // Nature Crust
+//   ];
+
+//   return (
+//     <section className="relative w-full min-h-[90vh] flex items-center bg-black overflow-hidden border-b border-[#333]">
+//       {/* ===== Premium Background Effects ===== */}
+//       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+//       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#d9a406]/10 rounded-full blur-[150px] pointer-events-none" />
+//       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#d9a406]/5 rounded-full blur-[120px] pointer-events-none" />
+//       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black pointer-events-none" />
+
+//       <div className="container mx-auto px-4 md:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center max-w-7xl py-20">
+        
+//         {/* ===== Left Content - Grand Typography ===== */}
+//         <motion.div 
+//           className="lg:col-span-7 space-y-8"
+//           initial={{ opacity: 0, x: -50 }}
+//           animate={{ opacity: 1, x: 0 }}
+//           transition={{ duration: 0.8, ease: "easeOut" }}
+//         >
+//           <div className="space-y-5">
+//                         <p className="text-sm sm:text-base font-semibold tracking-[0.1em] uppercase text-gray-300 block pl-1">
+//               4bhk Villa starting from <span className="text-[#d9a406]">Rs. 9,000/sqft.</span>
+//             </p>
+            
+//             <div className="flex flex-wrap items-center gap-4">
+//               <div className="inline-flex items-center gap-3 rounded-full border border-[#d9a406]/30 bg-[#d9a406]/10 backdrop-blur-md px-5 py-2 text-[#d9a406]">
+//                 <Building2 className="h-4 w-4" />
+//                 <span className="text-xs font-bold uppercase tracking-[0.2em]">Premium Projects</span>
+//               </div>
+              
+//               {/* Highlighted 5% Badge */}
+//               <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#d9a406] to-[#b08505] px-5 py-2 text-black shadow-[0_0_20px_rgba(217,164,6,0.3)]">
+//                 <span className="text-xs sm:text-sm font-black uppercase tracking-wider">Pay Only 5%</span>
+//               </div>
+//             </div>
+            
+//             <p className="text-sm sm:text-base font-semibold tracking-[0.1em] uppercase text-gray-300 block pl-1">
+//               Own your dream home now and move in by <span className="text-[#d9a406]">March 2027</span>
+//             </p>
+//           </div>
+          
+//           <div className="space-y-5">
+//             <h2 className="text-4xl md:text-5xl lg:text-[44px] xl:text-[54px] font-playfair font-bold text-white leading-[1.2]">
+//               <span className="block lg:whitespace-nowrap">
+//                 2 & 3 BHK Flats for Sale in
+//               </span>
+//               <span className="text-[#d9a406] relative inline-block mt-2 lg:mt-4 lg:whitespace-nowrap">
+//                 Varthur and Sarjapura
+//                 {/* Subtle underline accent */}
+//                 <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-[#d9a406] rounded-full opacity-70"></span>
+//               </span>
+//             </h2>
+//             <p className="text-lg md:text-xl text-gray-300 font-light max-w-2xl leading-relaxed pt-3">
+//               Have questions about our upcoming residential or commercial spaces? Leave your information below and our team will get back to you with exclusive insights.
+//             </p>
+//           </div>
+          
+//           {/* Premium Project Logos */}
+//           <div className="pt-6">
+//             <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-4">Our Signature Projects</p>
+//             <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+//               {projectLogos.map((logoUrl, i) => (
+//                 <div 
+//                   key={i} 
+//                   className="relative h-16 w-24 sm:h-20 sm:w-28 rounded-xl overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-lg hover:border-[#d9a406]/50 hover:shadow-[0_0_20px_rgba(217,164,6,0.15)] transition-all duration-300"
+//                 >
+//                   <Image 
+//                     src={logoUrl} 
+//                     alt={`Project Logo ${i + 1}`} 
+//                     fill 
+//                     className="object-contain p-2 sm:p-3" 
+//                     unoptimized 
+//                   />
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </motion.div>
+
+//         {/* ===== Right Form - Luxurious Glassmorphism Panel ===== */}
+//         <motion.div 
+//           className="lg:col-span-5 w-full max-w-md mx-auto lg:ml-auto"
+//           initial={{ opacity: 0, y: 50 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+//         >
+//           <div className="relative p-[1px] rounded-[2.5rem] bg-gradient-to-b from-[#d9a406]/40 via-[#d9a406]/10 to-transparent shadow-[0_0_50px_rgba(217,164,6,0.1)]">
+//             <div className="bg-[#0a0a0a]/90 backdrop-blur-2xl p-8 md:p-10 rounded-[2.4rem]">
+//               <div className="mb-8">
+//                 {/* Updated Headers */}
+//                 <h3 className="text-2xl md:text-3xl font-bold text-white font-playfair mb-2">Book Your Site Visit</h3>
+//                 <p className="text-[#d9a406] text-sm font-semibold tracking-wider uppercase">Get Instant Price Sheet</p>
+//               </div>
+
+//               {state.succeeded ? (
+//                 <motion.div 
+//                   initial={{ opacity: 0, scale: 0.9 }} 
+//                   animate={{ opacity: 1, scale: 1 }} 
+//                   className="py-12 text-center"
+//                 >
+//                   <div className="w-16 h-16 bg-[#d9a406]/10 border border-[#d9a406]/30 rounded-full flex items-center justify-center mx-auto mb-5">
+//                     <CheckCircle className="w-8 h-8 text-[#d9a406]" />
+//                   </div>
+//                   <p className="text-[#d9a406] text-xl font-playfair font-bold">Thank you!</p>
+//                   <p className="text-gray-400 mt-2 text-sm">Your request has been submitted successfully.</p>
+//                 </motion.div>
+//               ) : (
+//                 <form onSubmit={handleSubmit} className="space-y-5">
+//                   <div className="space-y-1.5">
+//                     <label className="text-[11px] uppercase tracking-widest text-gray-500 font-semibold ml-2">Full Name</label>
+//                     <Input 
+//                       name="name" 
+//                       placeholder="John Doe" 
+//                       required 
+//                       className="bg-black/60 border-neutral-800 text-white h-14 rounded-2xl px-5 focus:border-[#d9a406]/60 transition-colors placeholder:text-gray-700" 
+//                     />
+//                   </div>
+//                   <div className="space-y-1.5">
+//                     <label className="text-[11px] uppercase tracking-widest text-gray-500 font-semibold ml-2">Email Address</label>
+//                     <Input 
+//                       name="email" 
+//                       type="email" 
+//                       placeholder="john@example.com" 
+//                       required 
+//                       className="bg-black/60 border-neutral-800 text-white h-14 rounded-2xl px-5 focus:border-[#d9a406]/60 transition-colors placeholder:text-gray-700" 
+//                     />
+//                   </div>
+//                   <div className="space-y-1.5">
+//                     <label className="text-[11px] uppercase tracking-widest text-gray-500 font-semibold ml-2">Mobile Number</label>
+//                     <Input 
+//                       name="phone" 
+//                       type="tel" 
+//                       placeholder="+91 98765 43210" 
+//                       required 
+//                       className="bg-black/60 border-neutral-800 text-white h-14 rounded-2xl px-5 focus:border-[#d9a406]/60 transition-colors placeholder:text-gray-700" 
+//                     />
+//                   </div>
+                  
+//                   {/* Updated Button CTA */}
+//                   <Button 
+//                     type="submit" 
+//                     disabled={state.submitting} 
+//                     className="w-full bg-[#d9a406] hover:bg-white text-black font-bold h-14 rounded-2xl transition-all duration-300 mt-6 text-lg shadow-[0_0_20px_rgba(217,164,6,0.2)] group"
+//                   >
+//                     {state.submitting ? "Sending..." : "Submit Details"}
+//                     {!state.submitting && <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />}
+//                   </Button>
+//                 </form>
+//               )}
+//             </div>
+//           </div>
+//         </motion.div>
+
+//       </div>
+//     </section>
+//   )
+// }
 function HeroFirstSection() {
   const [state, handleSubmit] = useForm("mldpovyy"); // Make sure to replace with your ID
 
@@ -7617,7 +7783,7 @@ function HeroFirstSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="space-y-5">
-                        <p className="text-sm sm:text-base font-semibold tracking-[0.1em] uppercase text-gray-300 block pl-1">
+            <p className="text-sm sm:text-base font-semibold tracking-[0.1em] uppercase text-gray-300 block pl-1">
               4bhk Villa starting from <span className="text-[#d9a406]">Rs. 9,000/sqft.</span>
             </p>
             
@@ -7734,6 +7900,19 @@ function HeroFirstSection() {
                       className="bg-black/60 border-neutral-800 text-white h-14 rounded-2xl px-5 focus:border-[#d9a406]/60 transition-colors placeholder:text-gray-700" 
                     />
                   </div>
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] uppercase tracking-widest text-gray-500 font-semibold ml-2">Select Project</label>
+                    <select
+                      name="project"
+                      defaultValue="Palm Altezze"
+                      className="w-full bg-black/60 border border-neutral-800 text-white h-14 rounded-2xl px-5 focus:outline-none focus:border-[#d9a406]/60 transition-colors text-sm"
+                    >
+                      <option value="Palm Altezze" className="bg-[#0a0a0a]">Palm Altezze</option>
+                      <option value="Nature Woods" className="bg-[#0a0a0a]">Nature Woods</option>
+                      <option value="Nature Crust" className="bg-[#0a0a0a]">Nature Crust</option>
+                      <option value="All Projects" className="bg-[#0a0a0a]">All Projects</option>
+                    </select>
+                  </div>
                   
                   {/* Updated Button CTA */}
                   <Button 
@@ -7752,9 +7931,8 @@ function HeroFirstSection() {
 
       </div>
     </section>
-  )
+  );
 }
-
 // ========== ORIGINAL UNTOUCHED HERO SECTION ==========
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)

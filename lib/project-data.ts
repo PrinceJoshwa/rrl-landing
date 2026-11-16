@@ -43,7 +43,7 @@ export const projectCards: ProjectCardData[] = [
     name: "RRL Palacio",
     location: "Medahalli, Bangalore",
     type: "Luxury Apartment",
-    status: "READY TO MOVE",
+    status: "Completed",
     image: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
     mobileImage: "https://ik.imagekit.io/j0xzq9pns/Project/RRL%20project%20explore%20(366%20x%20256%20px)/RRL%20Palacio.png?updatedAt=1766849721531",
     href: "/projects/palacio",

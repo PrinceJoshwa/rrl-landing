@@ -35,6 +35,8 @@ const referralProjectOptions = [
   "RRL Palm Altezze",
   "RRL Code Name - NC 216",
   "Confident Atria Villas",
+  "RRL AH560",
+  "RRL ZC216",
 ]
 
 function Diya({ className = "" }: { className?: string }) {
@@ -139,7 +141,7 @@ export default function DiwaliCampaign() {
           <h2 id="welcome-title">Happy <em>Diwali</em></h2>
           <p id="welcome-message">May this festival of lights fill your home with joy, prosperity, and beautiful new beginnings.</p>
           <div className={styles.welcomeSignature}>With warm wishes, <strong>RRL Group</strong></div>
-          <a href="#projects" className={styles.welcomeButton} onClick={() => setWelcomeOpen(false)}>Explore the campaign <ArrowRight size={16} /></a>
+          <a href="#referral-form" className={styles.welcomeButton} onClick={() => setWelcomeOpen(false)}>Check Surprise Diwali bonus<ArrowRight size={16} /></a>
         </section>
       </div>}
       <header className={`${styles.nav} ${styles.campaignNav}`}>
@@ -158,7 +160,7 @@ export default function DiwaliCampaign() {
             <p>Refer any RRL Group project, share their contact with us, and earn a <strong>2% reward on every successful sale.</strong></p>
             <div className={styles.rewardSeal}><span>REFER</span><i>✦</i><span>SHARE</span><i>✦</i><span>EARN</span></div>
             <div className={styles.rewardCallout}><span>YOUR CONTACT. OUR EXPERTISE.</span><strong>YOUR <em>2%</em> REWARD.</strong></div>
-            <a className={styles.referralButton} href="#projects">Explore RRL projects <ArrowRight size={15} /></a>
+            <a className={styles.referralButton} href="#referral-form">Refer a Friend<ArrowRight size={15} /></a>
           </div>
           <div className={styles.referralArtwork}>
             <Image src="/diwali-referral.jpg" alt="Know someone looking for a home? Refer an RRL Group project and earn 2% on every successful sale." fill priority sizes="(max-width: 850px) 100vw, 48vw" />
@@ -166,40 +168,10 @@ export default function DiwaliCampaign() {
         </div>
       </section>
 
-      <section className={styles.projects} id="projects">
-        <div className={styles.sectionHead}>
-          <SectionEyebrow>Made for life’s next chapter</SectionEyebrow>
-          <h2>Find your dream home <em>with RRL</em></h2>
-          <p>Thoughtfully designed homes for the beautiful new beginnings ahead.</p>
-        </div>
-        <div className={styles.projectGrid}>
-          {projectCards.map(project => {
-            const isNc216 = project.href === "/projects/nc-216"
-            return (
-              <article className={`${styles.projectCard} ${isNc216 ? styles.featuredCard : ""}`} key={`${project.href}-${project.name}`}>
-                <Link href={project.href} className={styles.projectImage} aria-label={`Explore ${project.name}`}>
-                  <Image src={project.image} alt={`${project.name} by RRL Builders`} fill sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 33vw" loading="lazy" />
-                  <span className={styles.projectStatus}>{isNc216 ? "Featured project" : project.status}</span>
-                  {isNc216 && <span className={styles.ncBadge}>NC216</span>}
-                </Link>
-                <div className={styles.projectInfo}>
-                  <div className={styles.projectTitle}><div><span>{project.type}</span><h3>{isNc216 ? "NC216" : project.name}</h3></div><ArrowRight size={19} /></div>
-                  <p>{project.location}</p>
-                  {isNc216 && <div className={styles.projectPrice}><span>Starting price</span><strong>₹42 Lakhs <small>onwards</small></strong></div>}
-                  <div className={styles.projectMeta}>{project.config && <span>{project.config}</span>}{project.acres && <span>{project.acres}</span>}{project.units && <span>{project.units}</span>}</div>
-                  <Link href={project.href} className={styles.projectLink}>{isNc216 ? "Explore NC216" : "Explore project"}<ArrowRight size={15} /></Link>
-                </div>
-              </article>
-            )
-          })}
-        </div>
-        <div className={styles.projectsFooter}><span>More spaces. More ways to belong.</span><Link href="/projects">View all projects <ArrowRight size={15} /></Link></div>
-      </section>
-
-      <section className={styles.enroll} id="referral-form">
+            <section className={styles.enroll} id="referral-form">
         <div className={styles.enrollAside}>
           <SectionEyebrow>Your next bright beginning</SectionEyebrow>
-          <h2>Let’s make<br /><em>the introduction.</em></h2>
+          <h2>Share your referral<br /><em>Every successful referral gets 2% refferal bonus.</em></h2>
           <p>Share a few details and our team will take it from here with care.</p>
           <div className={styles.enrollSteps}><span><i>01</i> Tell us about you</span><span><i>02</i> Share the home seeker</span><span><i>03</i> We’ll be in touch</span></div>
           <a href="tel:+918494966966" className={styles.contactPhone}>Questions? Call <strong>+91 84949 66966</strong></a>
@@ -251,6 +223,38 @@ export default function DiwaliCampaign() {
           <p className={styles.formFootnote}>Your information will only be used to follow up on this enquiry.</p>
         </form>
       </section>
+
+      <section className={styles.projects} id="projects">
+        <div className={styles.sectionHead}>
+          <SectionEyebrow>Made for life’s next chapter</SectionEyebrow>
+          <h2>Find your dream home <em>with RRL</em></h2>
+          <p>Thoughtfully designed homes for the beautiful new beginnings ahead.</p>
+        </div>
+        <div className={styles.projectGrid}>
+          {projectCards.map(project => {
+            const isNc216 = project.href === "/projects/nc-216"
+            return (
+              <article className={`${styles.projectCard} ${isNc216 ? styles.featuredCard : ""}`} key={`${project.href}-${project.name}`}>
+                <Link href={project.href} className={styles.projectImage} aria-label={`Explore ${project.name}`}>
+                  <Image src={project.image} alt={`${project.name} by RRL Builders`} fill sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 33vw" loading="lazy" />
+                  <span className={styles.projectStatus}>{isNc216 ? "Featured project" : project.status}</span>
+                  {isNc216 && <span className={styles.ncBadge}>NC216</span>}
+                </Link>
+                <div className={styles.projectInfo}>
+                  <div className={styles.projectTitle}><div><span>{project.type}</span><h3>{isNc216 ? "NC216" : project.name}</h3></div><ArrowRight size={19} /></div>
+                  <p>{project.location}</p>
+                  {isNc216 && <div className={styles.projectPrice}><span>Starting price</span><strong>₹46 Lakhs <small>onwards</small></strong></div>}
+                  <div className={styles.projectMeta}>{project.config && <span>{project.config}</span>}{project.acres && <span>{project.acres}</span>}{project.units && <span>{project.units}</span>}</div>
+                  <Link href={project.href} className={styles.projectLink}>{isNc216 ? "Explore NC216" : "Explore project"}<ArrowRight size={15} /></Link>
+                </div>
+              </article>
+            )
+          })}
+        </div>
+        <div className={styles.projectsFooter}><span>More spaces. More ways to belong.</span><Link href="/projects">View all projects <ArrowRight size={15} /></Link></div>
+      </section>
+
+
 
       <footer className={styles.footer}>
         <div className={styles.footerMain}><div className={styles.footerBrand}><Image src="/logo.png" alt="RRL Group" width={150} height={66} /><p>Beyond homes, a lifestyle.</p><a className={styles.instagramLink} href="https://www.instagram.com/rrl_builders/" target="_blank" rel="noreferrer"><Instagram size={15} /> Follow RRL on Instagram</a></div><div className={styles.footerNav}><span>EXPLORE</span><Link href="/projects">Our projects</Link><Link href="/projects/nc-216">NC216</Link><a href="#refer">Refer a friend</a><a href="#referral-form">Self referral</a><Link href="/about">About RRL</Link></div><div className={styles.footerContact}><span>LET’S TALK</span><a href="tel:+918494966966">+91 84949 66966</a><a href="mailto:enquiry@rrlbuildersanddevelopers.com"><Mail size={13} /> enquiry@rrlbuildersanddevelopers.com</a><Link href="/contact">Contact RRL <ArrowRight size={14} /></Link><p><MapPin size={14} /> RRL Towers, 4th Floor, Sampige Jala, Sarjapur, Attibele Rd, Bengaluru, Karnataka 561113</p></div></div>
